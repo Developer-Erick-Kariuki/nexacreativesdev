@@ -72,35 +72,38 @@ const Services = () => {
         </div>
         <div className="w-[20rem]"></div>
       </div>
+
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: easeIn }}
-        className="flex justify-center mt-16 flex-col"
+        className="flex justify-center flex-col"
       >
         <h2 className="text-accent font-bold text-center">Our Process</h2>
         <p className="text-center text-3xl ">
           The process we use to deliver exceptional services
         </p>
-      </motion.div>
-      <div className="flex gap-12 h-[20rem] flex-wrap justify-center">
-        {processes.map((process, index) => (
-          <div
-            key={index}
-            className="flex activate relative  justify-center mt-8 hover:-translate-y-2 transition-all duration-300 ease-linear"
-          >
-            <div className="flex flex-col justify-center">
-              <div className="h-[5rem] w-[5rem] ring-1 flex justify-center items-center border-dashed rounded-full">
-                <FcProcess size={48} />
+        <div className="flex flex-wrap gap-8 justify-center">
+          {processes.map((process, index) => (
+            <div
+              key={index}
+              className="flex justify-center mt-8 hover:-translate-y-2 transition-all duration-300 ease-linear"
+            >
+              <div className="flex justify-center activate gap-4 items-center">
+                <div className="h-[4rem] w-[4rem] ring-1 flex justify-center items-center border-dashed rounded-full">
+                  <FcProcess size={38} />
+                </div>
+                <div className="flex justify-start flex-col gap-2 ">
+                  <h2 className=" text-accent font-semibold">{process.name}</h2>
+                  <p className=" show transition-all duration-500 ease-in-out">
+                    {process.desc}
+                  </p>
+                </div>
               </div>
-              <h2 className="text-center mt-4">{process.name}</h2>
-              <p className=" w-[20rem] show ring-1 transition-all duration-500 ease-in ring-slate-500 p-5 rounded-[2rem] -bottom-4 absolute">
-                {process.desc}
-              </p>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </motion.div>
     </motion.section>
   );
 };

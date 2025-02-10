@@ -23,7 +23,7 @@ const Introduction = () => {
   }, [isVisible]);
 
   return (
-    <section className="w-full  flex justify-center ring-1 ring-slate-500 hover:ring-accent  bg-slate-900 rounded-3xl  items-center mx-auto mt-32">
+    <section className="w-full md:flex-row flex items-center flex-col justify-center ring-1 ring-slate-500 hover:ring-accent  bg-slate-900 rounded-3xl mt-32">
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -42,10 +42,12 @@ const Introduction = () => {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-        <p className="text-2xl lg:text-3xl font-semibold lg:max-w-sm max-w-xs  -ml-48 mt-20">
-          Commitment to delivering exceptional{" "}
-          <span className="text-accent">web</span> experiences.
-        </p>
+        <div className="flex justify-center max-w-md items-center">
+          <p className="text-xl md:text-3xl text-center md:text-start font-semibold">
+            Commitment to delivering exceptional{" "}
+            <span className="text-accent">web</span> experiences.
+          </p>
+        </div>
       </motion.div>
     </section>
   );
