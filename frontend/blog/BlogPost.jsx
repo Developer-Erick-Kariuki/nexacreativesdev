@@ -26,9 +26,7 @@ const serializers = {
           );
         default:
           return (
-            <p className="text-base leading-loose mt-4 text-justify">
-              {props.children}
-            </p>
+            <p className="leading-loose mt-4 text-justify">{props.children}</p>
           );
       }
     },
