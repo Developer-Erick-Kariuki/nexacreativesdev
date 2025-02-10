@@ -26,7 +26,12 @@ const serializers = {
           );
         default:
           return (
-            <p className="leading-loose mt-4 text-justify">{props.children}</p>
+            <p
+              style={{ textAlign: "justify" }}
+              className="leading-loose text-right"
+            >
+              {props.children}
+            </p>
           );
       }
     },
@@ -62,15 +67,17 @@ const BlogPost = () => {
   return (
     <section className="text-white px-6 md:px-10 max-w-7xl mx-auto pt-4">
       <Header />
-      <div className="flex flex-col md:flex-row w-full justify-center gap-8 md:mt-12 py-4">
+      <div className="flex flex-col md:flex-row w-full mt-20 justify-center gap-8">
         {SinglePost.map((current) => (
           <div key={current.customId}>
             <img src={current.imageUrl} width={600} alt={current.title} />
             <p className="mt-4 text-accent">
               {moment(current.publishedAt).format("MMMM, YYYY")}
             </p>
-            <h1 className="text-3xl max-w-md font-bold">{current.title}</h1>
-            <div className="max-w-lg mt-6">
+            <h1 className="text-3xl mt-3 max-w-md font-bold">
+              {current.title}
+            </h1>
+            <div className="max-w-lg mt-6 text-justify">
               <SanityBlockContent
                 blocks={current.body}
                 serializers={serializers}
@@ -86,7 +93,9 @@ const BlogPost = () => {
               <Link to={`/blog/BlogPost/${post.customId}`}>
                 <h2 className="text-2xl font-bold mt-2">{post.title}</h2>
               </Link>
-              {moment(post.publishedAt).format("MMMM, YYYY")}
+              <p className="mt-2 text-accent">
+                {moment(post.publishedAt).format("MMMM, YYYY")}
+              </p>
             </div>
           ))}
         </div>

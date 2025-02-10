@@ -18,7 +18,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <section className="mt-32 w-full  mx-auto footer">
+    <section className="mt-32 w-full py-4 mx-auto footer">
       <div className="flex w-full flex-wrap gap-6  justify-between">
         <div className="flex flex-col">
           <img src="/logo.svg" alt="logo" className="w-36" />
@@ -27,7 +27,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex flex-col">
-          <h2 className="font-semibold md:text-3xl text-xl max-w-sm">
+          <h2 className="font-semibold md:text-4xl text-xl max-w-sm">
             Friendly and valuable services at your door step.
           </h2>
         </div>
