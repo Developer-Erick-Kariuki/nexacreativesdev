@@ -13,20 +13,20 @@ const serializers = {
 
       switch (style) {
         case "h1":
-          return <h1 className="text-3xl my-4 font-bold">{props.children}</h1>;
+          return <h1 className="text-3xl py-4 font-bold">{props.children}</h1>;
         case "h2":
           return (
-            <h2 className="text-2xl my-4 font-semibold">{props.children}</h2>
+            <h2 className="text-2xl py-4 font-semibold">{props.children}</h2>
           );
         case "blockquote":
           return (
-            <blockquote className="border-l-4 my-4 pl-4 italic">
+            <blockquote className="border-l-4 py-4 pl-4 italic">
               {props.children}
             </blockquote>
           );
         default:
           return (
-            <p className="text-base leading-relaxed my-4">{props.children}</p>
+            <p className="text-base leading-loose mt-4">{props.children}</p>
           );
       }
     },
@@ -64,7 +64,7 @@ const BlogPost = () => {
       <Header />
       <div className="flex flex-col md:flex-row w-full justify-center gap-8 mt-32">
         {SinglePost.map((current) => (
-          <div key={current.customId} className="">
+          <div key={current.customId}>
             <img src={current.imageUrl} width={600} alt={current.title} />
             <p className="mt-4 text-accent">
               {moment(current.publishedAt).format("MMMM, YYYY")}
@@ -91,7 +91,6 @@ const BlogPost = () => {
           ))}
         </div>
       </div>
-
       <Footer />
     </section>
   );
