@@ -26,7 +26,9 @@ const serializers = {
           );
         default:
           return (
-            <p className="text-base leading-loose mt-4">{props.children}</p>
+            <p className="text-base leading-loose mt-4 text-justify">
+              {props.children}
+            </p>
           );
       }
     },
@@ -62,7 +64,7 @@ const BlogPost = () => {
   return (
     <section className="text-white px-6 md:px-10 max-w-7xl mx-auto pt-4">
       <Header />
-      <div className="flex flex-col md:flex-row w-full justify-center gap-8 mt-32">
+      <div className="flex flex-col md:flex-row w-full justify-center gap-8 py-4">
         {SinglePost.map((current) => (
           <div key={current.customId}>
             <img src={current.imageUrl} width={600} alt={current.title} />
