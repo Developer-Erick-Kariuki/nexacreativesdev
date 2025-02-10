@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <>
       <section className="relative mt-16 items-start justify-between flex flex-col md:flex-row">
-        <div className="flex w-full flex-col z-10 mt-20">
+        <div className="flex w-full flex-col z-20 mt-20">
           <motion.h1
             initial={{ x: -400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -33,7 +33,7 @@ const Hero = () => {
             className="flex gap-8 flex-col md:flex-row mt-16"
           >
             <a href="#contact">
-              <button className="cursor-pointer w-full md:w-auto justify-center flex gap-4 items-center bg-accent text-white px-8 text-sm py-3 rounded-3xl font-bold">
+              <button className="cursor-pointer w-full md:w-auto justify-center flex gap-4 items-center bg-accent text-white px-8 text-sm py-3 rounded-2xl font-bold">
                 Have yours today
                 <span className="rotate-45">
                   <FaLocationArrow />
@@ -41,8 +41,8 @@ const Hero = () => {
               </button>
             </a>
             <a href="#portfolio">
-              <button className="flex gap-4 w-full md:w-auto justify-center items-center cursor-pointer ring-2 ring-white text-white px-8 text-sm py-3 rounded-3xl font-bold">
-                Our Work{" "}
+              <button className="flex gap-4 w-full md:w-auto justify-center items-center cursor-pointer ring-2 ring-white text-white px-8 text-sm py-3 rounded-2xl font-bold">
+                Our Work
                 <span className="rotate-45">
                   <FaLocationArrow />
                 </span>
@@ -58,13 +58,9 @@ const Hero = () => {
             delay: 1,
             stiffness: 100,
           }}
-          className="w-1/2 z-10 hidden md:flex float-start"
+          className="z-10 hidden md:flex float-start"
         >
-          <img
-            className="w-[588px] h-[634] object-contain"
-            src="/hero.png"
-            alt=""
-          />
+          <img className=" object-contain" src="/hero.png" alt="" />
         </motion.div>
         <motion.div
           initial={{ y: -400, opacity: 0 }}
@@ -72,7 +68,7 @@ const Hero = () => {
           transition={{ type: "spring", stiffness: 100 }}
           className="absolute z-0"
         >
-          <h1 className="text-[400px] font-extrabold text-slate-500/50 opacity-10">
+          <h1 className="text-[400px] hidden md:flex font-extrabold text-slate-500/50 opacity-10">
             NEXA
           </h1>
         </motion.div>
