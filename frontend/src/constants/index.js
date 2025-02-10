@@ -5,3 +5,13 @@ export const links = [
   { name: "Portfolio", href: "#portfolio" },
   { name: "Contact", href: "#contact" },
 ];
+
+export const animation = [
+  {
+    delay: 0.5,
+    duration: 0.5,
+    viewPort: "once",
+    initialOpacity: 0,
+    opacity: 1,
+  },
+];

@@ -34,7 +34,9 @@ const Services = () => {
     >
       <div className="flex flex-col w-full mx-auto justify-center items-center">
         <h2 className="text-base font-bold text-accent">Services</h2>
-        <p className="text-3xl">We offer the best services in</p>
+        <p className="text-3xl max-w-xs md:max-w-md font-bold text-center">
+          We offer the best services in
+        </p>
       </div>
       <div className="flex flex-wrap gap-8 justify-center  mt-16">
         <div className="relative flex items-center justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[20rem]">

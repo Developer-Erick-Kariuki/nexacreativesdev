@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "../index.css";
-import { easeIn, easeInOut, motion } from "framer-motion";
-import SocialMedia from "../components/SocialMedia";
+import { easeIn, motion } from "framer-motion";
+
+import { animation } from "../constants";
 
 const info = [
   { name: "Innovative", icon: "/innovative.svg" },
@@ -36,7 +37,12 @@ const AboutUs = () => {
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1, ease: easeIn }}
+        transition={{
+          duration: animation.duration,
+          delay: animation.delay,
+          ease: easeIn,
+        }}
+        viewport={{ once: true }}
         className="flex flex-col"
       >
         <h2 className="text-lg flex-col font-bold flex text-center">
@@ -47,7 +53,8 @@ const AboutUs = () => {
       <motion.div
         initial={{ opacity: 0, y: 300 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: easeIn }}
+        transition={{ duration: 0.5, ease: easeIn }}
+        viewport={{ once: true }}
         className="flex flex-col w-full justify-between md:flex-row  mt-16"
       >
         <p className="text-base max-w-full text-left md:max-w-md my-8 leading-relaxed">
@@ -57,12 +64,14 @@ const AboutUs = () => {
           captivate but also convert. Our mission is to transform your vision
           into a powerful online presence that drives results.
         </p>
-        <div className="flex gap-6  items-center">
+        <div className="flex gap-6 flex-col md:flex-row items-start md:items-center">
           {info.map((icon, index) => (
             <motion.div
               initial={{ width: 80 }}
               whileHover={{ width: 300 }}
               transition={{ duration: 0.5, ease: easeIn }}
+              exit={{ width: 80 }}
+              viewport={{ once: true }}
               key={index}
               className={`p-4 hover items-center gap-8 flex ring-1 ring-accent rounded-full`}
             >
@@ -78,7 +87,8 @@ const AboutUs = () => {
         <motion.img
           initial={{ opacity: 0, x: -200 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 1, ease: easeIn }}
+          transition={{ duration: 1, delay: 0.5, ease: easeIn }}
+          viewport={{ once: true }}
           src="/aboutImg.png"
           alt=""
           width={600}
@@ -88,7 +98,12 @@ const AboutUs = () => {
           <motion.div
             initial={{ opacity: 0, y: 200 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1, ease: easeIn }}
+            transition={{
+              duration: animation.duration,
+              delay: animation.delay,
+              ease: easeIn,
+            }}
+            viewport={{ once: true }}
             className="flex ring-1 ring-slate-500 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
           >
             <h2 className="text-base text-accent font-bold mb-8">Our Story</h2>
@@ -101,9 +116,14 @@ const AboutUs = () => {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 200 }}
+            initial={{ opacity: animation.initialOpacity, y: 200 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1, ease: easeIn }}
+            transition={{
+              duration: animation.duration,
+              delay: animation.delay,
+              ease: easeIn,
+            }}
+            viewport={{ once: true }}
             className="flex max-w-md flex-col"
           >
             <div className="flex ring-1 ring-slate-500 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0">

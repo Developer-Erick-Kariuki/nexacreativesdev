@@ -28,6 +28,7 @@ const Introduction = () => {
         initial={{ opacity: 0, y: 200 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         <img
           src={IntroImg}
@@ -39,6 +40,7 @@ const Introduction = () => {
         initial={{ opacity: 0, x: 800 }}
         animate={isVisible ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         <p className="text-2xl lg:text-3xl font-semibold lg:max-w-sm max-w-xs  -ml-48 mt-20">
           Commitment to delivering exceptional{" "}

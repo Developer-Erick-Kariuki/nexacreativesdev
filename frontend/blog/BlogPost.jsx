@@ -60,9 +60,9 @@ const BlogPost = () => {
   if (!SinglePost) return <p>Loading...</p>;
 
   return (
-    <section className="text-white max-w-7xl mx-auto py-2">
+    <section className="text-white px-6 md:px-10 max-w-7xl mx-auto pt-4">
       <Header />
-      <div className="flex justify-center gap-8 mt-32">
+      <div className="flex flex-col md:flex-row w-full justify-center gap-8 mt-32">
         {SinglePost.map((current) => (
           <div key={current.customId} className="">
             <img src={current.imageUrl} width={600} alt={current.title} />
@@ -82,12 +82,7 @@ const BlogPost = () => {
         <div className="flex flex-col gap-6">
           {posts.map((post) => (
             <div key={post.title} className="flex max-w-sm flex-col">
-              <img
-                className="mx-8"
-                src={post.imageUrl}
-                width={300}
-                alt={post.title}
-              />
+              <img className="mx-8" src={post.imageUrl} alt={post.title} />
               <Link to={`/blog/BlogPost/${post.customId}`}>
                 <h2 className="text-2xl font-bold mt-2">{post.title}</h2>
               </Link>
@@ -96,6 +91,7 @@ const BlogPost = () => {
           ))}
         </div>
       </div>
+
       <Footer />
     </section>
   );

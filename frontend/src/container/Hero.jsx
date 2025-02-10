@@ -1,6 +1,7 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import SocialMedia from "../components/SocialMedia";
+import { Link } from "react-router-dom";
+
 const Hero = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const Hero = () => {
             initial={{ x: -400, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 100 }}
-            className="text-5xl leading-normal font-semibold max-w-lg"
+            className="text-4xl leading-slug font-zenDots uppercase max-w-lg"
           >
             Transforming your vision into stunning{" "}
             <span className="text-accent"> websites...</span>{" "}
@@ -18,7 +19,7 @@ const Hero = () => {
           <motion.p
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="text-base max-w-lg mt-8 leading-loose"
           >
             Our award-winning web design agency blends creativity with
@@ -39,18 +40,24 @@ const Hero = () => {
                 </span>
               </button>
             </a>
-            <button className="flex gap-4 items-center cursor-pointer ring-2 ring-white text-white px-8 text-sm py-2 rounded-3xl font-bold">
-              Our Work{" "}
-              <span className="rotate-45">
-                <FaLocationArrow />
-              </span>
-            </button>
+            <a href="#portfolio">
+              <button className="flex gap-4 items-center cursor-pointer ring-2 ring-white text-white px-8 text-sm py-3 rounded-3xl font-bold">
+                Our Work{" "}
+                <span className="rotate-45">
+                  <FaLocationArrow />
+                </span>
+              </button>
+            </a>
           </motion.div>
         </div>
         <motion.div
-          initial={{ z: 100, x: 100, y: 330, opacity: 0 }}
+          initial={{ x: 1000, opacity: 0 }}
           animate={{ z: 0, x: 0, y: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
+          transition={{
+            duration: 1,
+            delay: 1,
+            stiffness: 100,
+          }}
           className="w-1/2 z-10 hidden md:flex float-start"
         >
           <img
