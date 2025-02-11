@@ -48,7 +48,7 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="w-full mt-32 flex flex-col md:flex-row gap-12 justify-start">
+    <section className="w-full px-6 md:px-10 mt-32 flex flex-col md:flex-row gap-12 justify-start">
       <div className="flex flex-col">
         <h2 className="text-accent">News & Blogs</h2>
         <h1 className="text-5xl font-bold">Our Latest News & Blogs</h1>

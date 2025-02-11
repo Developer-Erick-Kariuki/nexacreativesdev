@@ -18,7 +18,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <section className="mt-32 w-full py-4 mx-auto footer">
+    <section className="mt-32 w-full py-4 mx-auto bg-slate-900 px-6 md:px-10 footer">
       <div className="flex w-full flex-wrap gap-6  justify-between">
         <div className="flex flex-col">
           <img src="/logo.svg" alt="logo" className="w-36" />

@@ -17,33 +17,35 @@ const Header = () => {
 
   return (
     <>
-      <nav className="max-w-7xl mx-auto hidden md:flex top-0 py-4 z-30 bg-gray-950/50 justify-between fixed w-full items-center">
-        <div className="w-48 flex">
+      <nav className="hidden md:flex py-3 w-full bg-secondary  top-0 z-50 tex-sm right-0 left-0 p-6 md:px-10 justify-between items-start fixed">
+        <div className="w-32 flex">
           <img src={LogoSVG} alt="site-logo" />
         </div>
         <div className="flex justify-between gap-6 items-center">
           {links.map((link, index) => (
             <li
               className={`no-underline list-none cursor-pointer transition-all duration-300 ${
-                isActive === index ? "text-accent" : "text-primary"
+                isActive === index
+                  ? "bg-gradient-to-tr bg-accent rounded-xl px-3"
+                  : "text-primary"
               }`}
               key={link.name}
               onClick={() => {
                 setisActive(index);
               }}
             >
-              <Link to={link.href}>{link.name}</Link>
+              <a href={link.href}>{link.name}</a>
             </li>
           ))}
         </div>
       </nav>
 
       {/* mobile navbar */}
-      <nav className="w-full md:hidden flex justify-between items-center">
+      <nav className="w-full md:hidden fixed top-0 px-6 z-50 bg-secondary shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
         <div className="w-36 flex">
           <img src={LogoSVG} alt="site-logo" />
         </div>
-        <div className="flex absolute h-screen top-0 right-0 p-3 z-30 transition-all duration-300 w-3/4">
+        <div className="flex absolute h-screen top-2 right-0 p-3 z-30 transition-all duration-300 w-full">
           <div className="right-4 absolute bg-accent rounded-md">
             {isOpen ? (
               <MdClose

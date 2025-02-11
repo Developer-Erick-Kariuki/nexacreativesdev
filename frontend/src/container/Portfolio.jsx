@@ -80,7 +80,8 @@ const Portfolio = () => {
           <img
             key={index}
             src={image.image}
-            className={`md:w-[350px] w-[200px] h-full object-contain`}
+            width={500}
+            className={`h-full object-contain`}
             alt=""
           />
         ))}

@@ -14,14 +14,13 @@ import Whyus from "./container/Whyus";
 
 function App() {
   return (
-    <main className="overflow-x-clip text-white font-inter max-w-7xl mx-auto p-6 md:p-10">
+    <main className="overflow-x-clip  text-white font-inter  mx-auto">
       <Header />
       <Hero />
       <Introduction />
       <AboutUs />
       <Whyus />
       <Services />
-      {/* <Portfolio /> */}
       <Portfolioa />
       <Testimonial />
       <Blog />

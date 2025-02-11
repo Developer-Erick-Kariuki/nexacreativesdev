@@ -55,7 +55,7 @@ const AboutUs = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: easeIn }}
         viewport={{ once: true }}
-        className="flex flex-col w-full justify-between md:flex-row  mt-16"
+        className="flex flex-col w-full justify-center gap-8 md:flex-row"
       >
         <p className="text-base max-w-full text-left md:max-w-md my-8 leading-relaxed">
           At Nexa Creative Solutions, we believe that every brand has a unique
@@ -64,7 +64,7 @@ const AboutUs = () => {
           captivate but also convert. Our mission is to transform your vision
           into a powerful online presence that drives results.
         </p>
-        <div className="flex gap-6 flex-col md:flex-row items-start md:items-center">
+        <div className="gap-6 hidden md:flex flex-col md:flex-row items-start md:items-center">
           {info.map((icon, index) => (
             <motion.div
               initial={{ width: 80 }}
@@ -83,7 +83,7 @@ const AboutUs = () => {
           ))}
         </div>
       </motion.div>
-      <div className="flex flex-col justify-between md:flex-row mx-0 md:mx-12 mt-16">
+      <div className="flex flex-col gap-8 justify-center md:flex-row mx-0 md:mx-12 mt-16">
         <motion.img
           initial={{ opacity: 0, x: -200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -91,7 +91,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
           src="/aboutImg.png"
           alt=""
-          width={600}
+          width={500}
         />
 
         <div className="flex max-w-md flex-col gap-8">
@@ -104,7 +104,7 @@ const AboutUs = () => {
               ease: easeIn,
             }}
             viewport={{ once: true }}
-            className="flex ring-1 ring-slate-500 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
+            className="flex bg-slate-900 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
           >
             <h2 className="text-base text-accent font-bold mb-8">Our Story</h2>
             <p className="text-base  leading-relaxed">
@@ -126,7 +126,7 @@ const AboutUs = () => {
             viewport={{ once: true }}
             className="flex max-w-md flex-col"
           >
-            <div className="flex ring-1 ring-slate-500 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0">
+            <div className="flex ring-1 ring-slate-800 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0">
               <h2 className="text-base text-accent font-bold mb-8">
                 Our Philosophy
               </h2>

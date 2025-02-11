@@ -30,7 +30,7 @@ const Services = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 1, ease: easeIn }}
       id="services"
-      className="w-full mt-32 pt-4"
+      className="w-full mt-16 "
     >
       <div className="flex flex-col w-full mx-auto justify-center items-center">
         <h2 className="text-base font-bold text-accent">Services</h2>
@@ -38,13 +38,13 @@ const Services = () => {
           We offer the best services in
         </p>
       </div>
-      <div className="flex flex-wrap gap-8 justify-center  mt-16">
+      <div className="flex flex-wrap gap-8 justify-center mx-auto items-center w-full mt-16">
         <div className="relative flex items-center justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[20rem]">
           <a href="#" className="absolute text-2xl font-bold mx-auto">
             Graphic Design
           </a>
           <img
-            className="h-full object-cover rounded-[2.5rem] ring-1 ring-accent"
+            className="h-full object-cover rounded-2xl ring-1 ring-slate-700"
             src="/graphic.png"
             alt="graphic design"
           />
@@ -54,7 +54,7 @@ const Services = () => {
             Web Design
           </a>
           <img
-            className="h-full object-cover rounded-[2.5rem] ring-1 ring-accent"
+            className="h-full object-cover rounded-[2.5rem] ring-1 ring-slate-700"
             src="/webdesign.png"
             alt="graphic design"
           />
@@ -65,19 +65,18 @@ const Services = () => {
             <p className="text-center text-accent">Marketing</p>
           </a>
           <img
-            className="h-full object-cover rounded-[2.5rem] ring-1 ring-accent"
+            className="h-full object-cover rounded-[2.5rem] ring-1 ring-slate-700"
             src="/media.png"
             alt="graphic design"
           />
         </div>
-        <div className="w-[20rem]"></div>
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: easeIn }}
-        className="flex justify-center flex-col"
+        className="flex justify-center mt-16 flex-col"
       >
         <h2 className="text-accent font-bold text-center">Our Process</h2>
         <p className="text-center text-3xl ">

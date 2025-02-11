@@ -5,7 +5,7 @@ import { AnimatePresence, easeIn, motion } from "framer-motion";
 const Portfolioa = () => {
   const [images, setImages] = useState([]);
   const [isSlug, setIsSlug] = useState(null);
-  const [isActive, setIsActive] = useState(4);
+  const [isActive, setIsActive] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
 
   // Fetch images from Sanity

@@ -62,7 +62,7 @@ const ContactUs = () => {
   return (
     <section
       id="contact"
-      className="ring-1 ring-slate-500 py-8 px-5 rounded-3xl bg-secondary w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
+      className="py-8 px-5 rounded-3xl bg-secondary w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
       <div className="flex w-full md:w-1/2 flex-col">
         <h2 className="text-2xl font-bold">Contact Us</h2>

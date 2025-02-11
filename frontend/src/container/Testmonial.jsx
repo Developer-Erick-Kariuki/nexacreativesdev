@@ -40,7 +40,7 @@ const Testmonial = () => {
     fetchTestimonials();
   }, []);
   return (
-    <section className="mt-32 w-full">
+    <section className="mt-32 px-6 md:px-10 w-full">
       <div className="flex flex-col">
         <h2 className="flex flex-col text-center text-3xl font-bold">
           <span className="text-accent text-base">Testmonials</span> Review from
@@ -61,7 +61,7 @@ const Testmonial = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className={`flex cursor-pointer mx-2 flex-col ring-1 ring-slate-500 p-3 rounded-3xl gap-8 mt-16`}
+              className={`flex cursor-pointer mx-2 shadow shadow-slate-500 flex-col bg-slate-900 ring-2 ring-slate-800 p-3 rounded-3xl gap-8 mt-16`}
             >
               <div className="flex justify-between gap-4">
                 <div className="flex space-x-1">
