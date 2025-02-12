@@ -93,12 +93,7 @@ const Portfolioa = () => {
               key={index}
               src={image.imageUrl}
               alt={image.title}
-<<<<<<< HEAD
               className={`rounded-2xl grid-item`}
-=======
-              width={300}
-              className={`rounded-xl h-full object-contain`}
->>>>>>> ab770fe7827a6f6d162617784b722bb011393597
               onClick={() => setSelectedImage(image.imageUrl)}
             />
           ))}
