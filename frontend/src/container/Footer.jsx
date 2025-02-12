@@ -5,6 +5,8 @@ import { FaBehance } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import WhatsAppButton from "../components/Whatsapp";
+import { IoCall } from "react-icons/io5";
+import { SiMinutemailer } from "react-icons/si";
 
 const year = new Date().getFullYear();
 
@@ -18,16 +20,27 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <section className="mt-32 w-full py-4 mx-auto bg-slate-900 px-6 md:px-10 footer">
+    <section className="mt-32 w-full py-4 mx-auto px-6 md:px-10 footer">
       <div className="flex w-full flex-wrap gap-6  justify-between">
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-3">
           <img src="/logo.svg" alt="logo" className="w-36" />
           <p className="max-w-sm mt-3">
             Enhancing online presence simply the best
           </p>
+          <a className="flex gap-2 items-center" href="tel:0797710074">
+            {" "}
+            <IoCall size={20} className="text-accent" /> +254 797710074
+          </a>
+          <a
+            className="flex gap-2 items-center"
+            href="mailto:nexacreatives@gmail.com"
+          >
+            <SiMinutemailer size={20} className="text-accent" />{" "}
+            info@nexacreatives.com
+          </a>
         </div>
         <div className="flex flex-col">
-          <h2 className="font-semibold md:text-4xl text-xl max-w-sm">
+          <h2 className="font-semibold text-xl max-w-sm">
             Friendly and valuable services at your door step.
           </h2>
         </div>
@@ -53,7 +66,7 @@ const Footer = () => {
       <div className="flex  flex-wrap justify-center items-center gap-6">
         {socialLinks.map((image, index) => (
           <div
-            className="w-[2.5rem] h-[2.5rem] rounded-full ring-1 ring-slate-500 hover:ring-accent transition-all duration-300 ease-linear flex justify-center items-center"
+            className="size-8  rounded-full ring-1 ring-slate-500 hover:ring-accent transition-all duration-300 ease-linear flex justify-center items-center"
             key={index}
           >
             {image.image}

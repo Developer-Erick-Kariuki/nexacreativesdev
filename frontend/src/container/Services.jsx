@@ -30,7 +30,7 @@ const Services = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 1, ease: easeIn }}
       id="services"
-      className="w-full mt-16 "
+      className="z-10 w-full mt-16 "
     >
       <div className="flex flex-col w-full mx-auto justify-center items-center">
         <h2 className="text-base font-bold text-accent">Services</h2>
@@ -79,22 +79,20 @@ const Services = () => {
         className="flex justify-center mt-16 flex-col"
       >
         <h2 className="text-accent font-bold text-center">Our Process</h2>
-        <p className="text-center text-3xl ">
-          The process we use to deliver exceptional services
-        </p>
-        <div className="flex flex-wrap gap-8 justify-center">
+        <p className="text-center text-3xl font-bold ">Our Solution Process</p>
+        <div className="flex flex-wrap gap-8 mt-8 justify-center">
           {processes.map((process, index) => (
             <div
               key={index}
-              className="flex justify-center mt-8 hover:-translate-y-2 transition-all duration-300 ease-linear"
+              className="flex hover:bg-slate-900 px-2 py-3 rounded-xl justify-center hover:-translate-y-2 transition-all duration-300 ease-linear"
             >
-              <div className="flex justify-center activate gap-4 items-center">
+              <div className="flex justify-center gap-4 items-center">
                 <div className="h-[4rem] w-[4rem] ring-1 flex justify-center items-center border-dashed rounded-full">
                   <FcProcess size={38} />
                 </div>
                 <div className="flex justify-start flex-col gap-2 ">
                   <h2 className=" text-accent font-semibold">{process.name}</h2>
-                  <p className=" show transition-all duration-500 ease-in-out">
+                  <p className=" transition-all duration-500 ease-in-out">
                     {process.desc}
                   </p>
                 </div>

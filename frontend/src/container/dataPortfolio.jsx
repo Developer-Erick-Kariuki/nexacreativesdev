@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { client } from "../client";
-import { AnimatePresence, easeIn, motion } from "framer-motion";
+import { AnimatePresence, easeIn, easeInOut, motion } from "framer-motion";
 
 const Portfolioa = () => {
   const [images, setImages] = useState([]);
@@ -32,7 +32,7 @@ const Portfolioa = () => {
     <motion.section
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 1, ease: easeIn }}
+      transition={{ duration: 1, delay: 0.5, ease: easeIn }}
       exit={{ opacity: 0 }}
       id="portfolio"
       className="mt-32"
@@ -46,37 +46,48 @@ const Portfolioa = () => {
 
       {/* Filter Buttons */}
       <ul className="flex w-full flex-wrap  justify-center gap-2 mt-8 md:gap-8">
-        {["All", "Flyer", "Branding", "Layout", "Website"].map(
-          (item, index) => (
-            <li
-              key={index}
-              className={`cursor-pointer   px-5 py-2 rounded-[3rem] ${
-                isActive === index ? "bg-accent" : " ring-1  ring-primary"
-              }`}
-              onClick={() => {
-                setIsActive(index);
-                setIsSlug(item === "All" ? null : item.toLowerCase());
-              }}
-            >
-              {item}
-            </li>
-          )
-        )}
+        {[
+          "All",
+          "Graphic Design",
+          "Branding",
+          "Print Design",
+          "Web Design",
+        ].map((item, index) => (
+          <li
+            key={index}
+            className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
+              isActive === index ? "bg-accent" : " bg-slate-600/20"
+            }`}
+            onClick={() => {
+              setIsActive(index);
+              setIsSlug(item === "All" ? null : item.toLowerCase());
+            }}
+          >
+            {item}
+          </li>
+        ))}
       </ul>
 
       {/* Image Gallery */}
-      <div className="flex flex-wrap gap-4 justify-center mt-8">
+      <div className="flex flex-wrap gap-5  justify-center mt-8">
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
-            <img
+            <motion.img
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
               key={index}
               src={image.imageUrl}
               alt={image.title}
-              className={`w-[24rem] h-full object-contain`}
+              width={500}
+              className={`rounded-xl h-full object-contain`}
               onClick={() => setSelectedImage(image.imageUrl)}
             />
           ))}
+
+        {images.length % 2 !== 0 && <img src="" width={500} alt="" />}
+
         {/* Full-Screen Modal with Framer Motion */}
         <AnimatePresence>
           {selectedImage && (

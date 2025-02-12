@@ -4,11 +4,9 @@ import { HiBars3BottomRight } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { links } from "../constants";
-import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [isActive, setisActive] = useState(null);
-
+  const [isActive, setisActive] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -17,10 +15,12 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden md:flex py-3 w-full bg-secondary  top-0 z-50 tex-sm right-0 left-0 p-6 md:px-10 justify-between items-start fixed">
-        <div className="w-32 flex">
-          <img src={LogoSVG} alt="site-logo" />
-        </div>
+      <nav className="hidden md:flex fixed bg-secondary w-full py-2 px-6 top-0 z-10 tex-sm right-0 left-0 md:px-10 justify-between items-start ">
+        <a href="/">
+          <div className="w-32 flex">
+            <img src={LogoSVG} alt="site-logo" />
+          </div>
+        </a>
         <div className="flex justify-between gap-6 items-center">
           {links.map((link, index) => (
             <li
@@ -41,7 +41,7 @@ const Header = () => {
       </nav>
 
       {/* mobile navbar */}
-      <nav className="w-full md:hidden fixed top-0 px-6 z-50 bg-secondary shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
+      <nav className="w-full md:hidden top-0 px-6 z-20 bg-secondary shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
         <div className="w-36 flex">
           <img src={LogoSVG} alt="site-logo" />
         </div>
@@ -66,7 +66,7 @@ const Header = () => {
               initial={{ opacity: 0, x: 200 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
-              className="flex mt-8 shadow-2xl bg-secondary min-h-[100vh] absolute top-4 z-20 flex-col gap-8 w-full py-6 items-end px-6"
+              className="flex mt-8 shadow-2xl bg-secondary min-h-[100vh] absolute top-20 z-20 flex-col gap-8 w-full py-6 items-end px-6"
             >
               {links.map((link, index) => (
                 <li

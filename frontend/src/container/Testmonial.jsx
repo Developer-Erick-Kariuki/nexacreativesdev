@@ -61,7 +61,7 @@ const Testmonial = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className={`flex cursor-pointer mx-2 shadow shadow-slate-500 flex-col bg-slate-900 ring-2 ring-slate-800 p-3 rounded-3xl gap-8 mt-16`}
+              className={`flex cursor-pointer mx-2 flex-col bg-slate-900/40 ring-1 py-4 px-6 rounded-2xl gap-8 mt-16`}
             >
               <div className="flex justify-between gap-4">
                 <div className="flex space-x-1">
@@ -78,14 +78,14 @@ const Testmonial = () => {
                   ))}
                 </div>
 
-                <div className="bg-accent/20 -mt-10 -mr-5  rounded-full w-16 h-16 flex items-center justify-center">
+                <div className="bg-accent -mt-10 -mr-5  rounded-full w-16 h-16 flex items-center justify-center">
                   <PiQuotesFill size={48} />
                 </div>
               </div>
-              <p className="leading-relaxed font-light text-slate-400 text-sm">
+              <p className="leading-relaxed font-light text-slate-400 text-base">
                 {item.message}
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 items-center">
                 <img
                   src={item.profile.asset.url}
                   className="w-12 h-12 ring-2 ring-white rounded-full"
@@ -93,9 +93,7 @@ const Testmonial = () => {
                 />
                 <div className="flex flex-col gap-2">
                   <h2 className="font-bold">{item.name}</h2>
-                  <p className="text-xs max-w-[10rem] text-gray-400">
-                    {item.designation}
-                  </p>
+                  <p className="text-sm  text-gray-400">{item.designation}</p>
                 </div>
               </div>
             </div>

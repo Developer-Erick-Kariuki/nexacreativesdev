@@ -33,3 +33,7 @@ html {
 .modal-enter-active {
   opacity: 1;
 }
+
+#root {
+  max-width: 4000px;
+}

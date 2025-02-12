@@ -1,6 +1,5 @@
 import AboutUs from "./container/AboutUs";
 import Blog from "./container/Blog";
-
 import ContactUs from "./container/ContactUs";
 import Portfolioa from "./container/dataPortfolio";
 import Footer from "./container/Footer";
@@ -14,7 +13,7 @@ import Whyus from "./container/Whyus";
 
 function App() {
   return (
-    <main className="overflow-x-clip  text-white font-inter  mx-auto">
+    <main className="overflow-x-clip text-white font-inter px-6 md:px-10 relative mx-auto">
       <Header />
       <Hero />
       <Introduction />

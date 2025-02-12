@@ -1,18 +1,19 @@
 import { FaLocationArrow } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import SocialMedia from "../components/SocialMedia";
 
 const Hero = () => {
   return (
-    <section className="relative mt-16 px-6 md:px-10 items-start justify-between flex flex-col md:flex-row">
-      <div className="flex w-full  flex-col mt-20">
+    <section className="mt-16 relative items-start justify-between flex flex-col md:flex-row">
+      <div className="flex w-full flex-col mt-20">
         <motion.h1
           initial={{ x: -400, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
           className="text-3xl md:text-4xl max-w-md leading-slug font-zenDots uppercase"
         >
-          Transforming your vision into stunning
-          <span className="text-accent"> websites...</span>{" "}
+          Transforming your vision into stunning visual
+          <span className="text-accent"> designs</span>{" "}
         </motion.h1>
         <motion.p
           initial={{ y: 200, opacity: 0 }}
@@ -28,7 +29,7 @@ const Hero = () => {
           initial={{ y: 400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, stiffness: 100, delay: 1 }}
-          className="flex gap-8 flex-col md:flex-row mt-16"
+          className="flex z-10 gap-4 flex-col md:flex-row mt-16"
         >
           <a href="#contact">
             <button className="cursor-pointer w-full md:w-auto justify-center flex gap-4 items-center bg-accent text-white px-8 text-sm py-3 rounded-xl font-bold">
@@ -56,7 +57,7 @@ const Hero = () => {
           delay: 1,
           stiffness: 100,
         }}
-        className="z-10 hidden md:flex float-start"
+        className="hidden md:flex float-start"
       >
         <img className=" object-contain" width={1000} src="/hero.png" alt="" />
       </motion.div>
@@ -64,12 +65,13 @@ const Hero = () => {
         initial={{ y: -400, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 100 }}
-        className="absolute z-0"
+        className="absolute -z-10"
       >
-        <h1 className="text-[400px] hidden md:flex font-extrabold text-slate-500/50 opacity-10">
+        <h1 className="text-[28rem] md:flex font-extrabold text-slate-600 opacity-10">
           NEXA
         </h1>
       </motion.div>
+      <SocialMedia />
     </section>
   );
 };

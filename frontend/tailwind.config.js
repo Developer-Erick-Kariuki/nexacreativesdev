@@ -7,7 +7,7 @@ export default {
       colors: {
         primary: "#F4F4F4",
         secondary: "#0C0C0C",
-        accent: "#f2663c",
+        accent: "#b100cd",
       },
       fontFamily: {
         zenDots: ["Zen Dots"],

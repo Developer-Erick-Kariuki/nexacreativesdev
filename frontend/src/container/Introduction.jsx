@@ -23,7 +23,7 @@ const Introduction = () => {
   }, [isVisible]);
 
   return (
-    <section className="md:flex-row px-6 md:px-10 mx-8 flex items-center flex-col justify-center  bg-slate-900 p-2 rounded-2xl mt-32">
+    <section className="md:flex-row flex items-center flex-col justify-center  bg-slate-900 p-2 rounded-2xl mt-32">
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
@@ -34,7 +34,7 @@ const Introduction = () => {
           src={IntroImg}
           className="h-full object-cover"
           alt="model image"
-          width={500}
+          width={800}
         />
       </motion.div>
       <motion.div
