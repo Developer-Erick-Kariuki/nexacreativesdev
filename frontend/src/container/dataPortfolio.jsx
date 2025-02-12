@@ -69,7 +69,7 @@ const Portfolioa = () => {
       </ul>
 
       {/* Image Gallery */}
-      <div className="flex grid grid-col-1 md:grid-col-3 gap-5  justify-center mt-8">
+      <div className="flex grid grid-col-1 md:grid-col-2 gap-5  justify-center mt-8">
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
