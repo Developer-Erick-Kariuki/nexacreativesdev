@@ -80,7 +80,7 @@ const Portfolioa = () => {
               key={index}
               src={image.imageUrl}
               alt={image.title}
-              width={500}
+              width={300}
               className={`rounded-xl h-full object-contain`}
               onClick={() => setSelectedImage(image.imageUrl)}
             />
