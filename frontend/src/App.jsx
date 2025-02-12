@@ -13,7 +13,7 @@ import Whyus from "./container/Whyus";
 
 function App() {
   return (
-    <main className="overflow-x-hidden max-w-7xl text-white font-inter px-6 md:px-10 relative mx-auto">
+    <main className="overflow-x-hidden max-w-7xl text-white font-inter relative mx-auto">
       <Header />
       <Hero />
       <Introduction />
