@@ -67,7 +67,7 @@ const Hero = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="absolute -z-10"
       >
-        <h1 className="text-[28rem] md:flex font-extrabold text-slate-600 opacity-10">
+        <h1 className="text-[28rem] text-center md:flex font-extrabold text-slate-600 opacity-10">
           NEXA
         </h1>
       </motion.div>
