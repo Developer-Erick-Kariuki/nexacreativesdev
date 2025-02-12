@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { client } from "../client";
 import { AnimatePresence, easeIn, easeInOut, motion } from "framer-motion";
+import Masonry from "react-masonry-css";
+import "../index.css";
 
 const Portfolioa = () => {
   const [images, setImages] = useState([]);
@@ -27,6 +29,13 @@ const Portfolioa = () => {
 
     fetchImages();
   }, []);
+
+  const breakpointColums = {
+    default: 4,
+    1100: 3,
+    768: 2,
+    580: 1,
+  };
 
   return (
     <motion.section
@@ -69,7 +78,11 @@ const Portfolioa = () => {
       </ul>
 
       {/* Image Gallery */}
-      <div className="flex flex-wrap gap-5  justify-center mt-8">
+      <Masonry
+        breakpointColums={breakpointColums}
+        className="masonry-grid"
+        columnClassName="masonry-column"
+      >
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
@@ -80,43 +93,40 @@ const Portfolioa = () => {
               key={index}
               src={image.imageUrl}
               alt={image.title}
-              width={500}
-              className={`rounded-xl h-full object-contain`}
+              className={`rounded-2xl grid-item`}
               onClick={() => setSelectedImage(image.imageUrl)}
             />
           ))}
+      </Masonry>
 
-        {images.length % 2 !== 0 && <img src="" width={500} alt="" />}
-
-        {/* Full-Screen Modal with Framer Motion */}
-        <AnimatePresence>
-          {selectedImage && (
-            <motion.div
-              className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+      {/* Full-Screen Modal with Framer Motion */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.img
+              src={selectedImage}
+              alt="Full Screen"
+              className="max-w-full max-h-full object-contain"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            />
+            <button
+              className="absolute top-4 right-4 text-white text-3xl"
               onClick={() => setSelectedImage(null)}
             >
-              <motion.img
-                src={selectedImage}
-                alt="Full Screen"
-                className="max-w-full max-h-full object-contain"
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                exit={{ scale: 0.8 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              />
-              <button
-                className="absolute top-4 right-4 text-white text-3xl"
-                onClick={() => setSelectedImage(null)}
-              >
-                ✕
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+              ✕
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.section>
   );
 };
