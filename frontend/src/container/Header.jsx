@@ -45,7 +45,7 @@ const Header = () => {
         <div className="w-36 flex">
           <img src={LogoSVG} alt="site-logo" />
         </div>
-        <div className="flex absolute h-screen top-2 right-0 p-3 z-30 transition-all duration-300 w-full">
+        <div className="flex absolute min-h-screen top-2 right-0 p-3 z-30 transition-all duration-300 w-full">
           <div className="right-4 absolute bg-accent rounded-md">
             {isOpen ? (
               <MdClose
