@@ -4,8 +4,8 @@ import SocialMedia from "../components/SocialMedia";
 
 const Hero = () => {
   return (
-    <section className="mt-16 relative items-start justify-between flex flex-col md:flex-row">
-      <div className="flex w-full flex-col mt-20">
+    <section className="mt-16 relative items-start justify-between w-full flex flex-col md:flex-row">
+      <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ x: -400, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
