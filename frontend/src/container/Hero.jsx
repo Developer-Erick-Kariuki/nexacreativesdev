@@ -4,7 +4,7 @@ import SocialMedia from "../components/SocialMedia";
 
 const Hero = () => {
   return (
-    <section className="mt-16  items-start justify-between w-full flex flex-col-reverse md:flex-row">
+    <section className="mt-16 relative items-start justify-between w-full flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ x: -400, opacity: 0 }}
@@ -59,7 +59,7 @@ const Hero = () => {
         }}
         className="flex"
       >
-        <img className=" object-contain" src="/hero1.png" alt="" />
+        <img className=" object-contain" width={600} src="/hero1.png" alt="" />
       </motion.div>
       <motion.div
         initial={{ y: -400, opacity: 0 }}
