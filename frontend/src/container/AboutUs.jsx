@@ -64,7 +64,7 @@ const AboutUs = () => {
           captivate but also convert. Our mission is to transform your vision
           into a powerful online presence that drives results.
         </p>
-        <div className="flex flex-col md:flex-row items-start gap-2 md:items-center">
+        <div className="flex flex-wrap gap-4 items-start justify-center md:items-center">
           {info.map((icon, index) => (
             <motion.div
               key={index}

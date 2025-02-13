@@ -4,7 +4,7 @@ import SocialMedia from "../components/SocialMedia";
 
 const Hero = () => {
   return (
-    <section className="mt-16 relative items-start justify-between w-full flex flex-col md:flex-row">
+    <section className="mt-16  items-start justify-between w-full flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ x: -400, opacity: 0 }}
@@ -29,7 +29,7 @@ const Hero = () => {
           initial={{ y: 400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, stiffness: 100, delay: 1 }}
-          className="flex z-10 gap-4 flex-col md:flex-row mt-16"
+          className="flex z-50 md:z-10 gap-4 flex-col md:flex-row mt-16"
         >
           <a href="#contact">
             <button className="cursor-pointer w-full md:w-auto justify-center flex gap-4 items-center bg-accent text-white px-8 text-sm py-3 rounded-xl font-bold">
@@ -57,9 +57,9 @@ const Hero = () => {
           delay: 1,
           stiffness: 100,
         }}
-        className="hidden md:flex float-start"
+        className="flex"
       >
-        <img className=" object-contain" width={1000} src="/hero.png" alt="" />
+        <img className=" object-contain" src="/hero1.png" alt="" />
       </motion.div>
       <motion.div
         initial={{ y: -400, opacity: 0 }}
@@ -67,7 +67,7 @@ const Hero = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="absolute -z-10"
       >
-        <h1 className="text-[28rem] text-center md:flex font-extrabold text-slate-600 opacity-10">
+        <h1 className=" hidden text-[28rem] md:flex font-extrabold text-slate-800/50">
           NEXA
         </h1>
       </motion.div>

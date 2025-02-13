@@ -55,32 +55,28 @@ const Portfolioa = () => {
 
       {/* Filter Buttons */}
       <ul className="flex w-full flex-wrap  justify-center gap-2 mt-8 md:gap-8">
-        {[
-          "All",
-          "Graphic Design",
-          "Branding",
-          "Print Design",
-          "Web Design",
-        ].map((item, index) => (
-          <li
-            key={index}
-            className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
-              isActive === index ? "bg-accent" : " bg-slate-600/20"
-            }`}
-            onClick={() => {
-              setIsActive(index);
-              setIsSlug(item === "All" ? null : item.toLowerCase());
-            }}
-          >
-            {item}
-          </li>
-        ))}
+        {["Graphic Design", "Branding", "Print Design", "Web Design"].map(
+          (item, index) => (
+            <li
+              key={index}
+              className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
+                isActive === index ? "bg-accent" : " bg-slate-600/20"
+              }`}
+              onClick={() => {
+                setIsActive(index);
+                setIsSlug(item === "All" ? null : item.toLowerCase());
+              }}
+            >
+              {item}
+            </li>
+          )
+        )}
       </ul>
 
       {/* Image Gallery */}
       <Masonry
         breakpointColums={breakpointColums}
-        className="masonry-grid"
+        className="masonry-grid bg-primary rounded-xl p-3"
         columnClassName="masonry-column"
       >
         {images
@@ -93,7 +89,7 @@ const Portfolioa = () => {
               key={index}
               src={image.imageUrl}
               alt={image.title}
-              className={`rounded-2xl grid-item`}
+              className={`shadow-lg grid-item`}
               onClick={() => setSelectedImage(image.imageUrl)}
             />
           ))}

@@ -1,5 +1,11 @@
 import { FcProcess } from "react-icons/fc";
 import { easeIn, motion } from "framer-motion";
+
+const services = [
+  { name: "Graphic Design", src: "/graphic.png" },
+  { name: "Website Design", src: "/webdesign.png" },
+  { name: "Branding Identity", src: "/media.png" },
+];
 const processes = [
   {
     name: "Discover",
@@ -28,7 +34,7 @@ const Services = () => {
     <motion.section
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 1, ease: easeIn }}
+      transition={{ duration: 0.5, delay: 0.5, ease: easeIn }}
       id="services"
       className="z-10 w-full mt-16 "
     >
@@ -38,38 +44,24 @@ const Services = () => {
           We offer the best services in
         </p>
       </div>
-      <div className="flex flex-wrap gap-8 justify-center mx-auto items-center w-full mt-16">
-        <div className="relative flex items-center justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[20rem]">
-          <a href="#" className="absolute text-2xl font-bold mx-auto">
-            Graphic Design
-          </a>
-          <img
-            className="h-full object-cover rounded-2xl ring-1 ring-slate-700"
-            src="/graphic.png"
-            alt="graphic design"
-          />
-        </div>
-        <div className="relative flex items-center justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[20rem]">
-          <a href="#" className="absolute text-2xl font-bold mx-auto">
-            Web Design
-          </a>
-          <img
-            className="h-full object-cover rounded-[2.5rem] ring-1 ring-slate-700"
-            src="/webdesign.png"
-            alt="graphic design"
-          />
-        </div>
-        <div className="relative flex items-center justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[20rem]">
-          <a href="#" className="absolute text-2xl font-bold">
-            Social Media
-            <p className="text-center text-accent">Marketing</p>
-          </a>
-          <img
-            className="h-full object-cover rounded-[2.5rem] ring-1 ring-slate-700"
-            src="/media.png"
-            alt="graphic design"
-          />
-        </div>
+
+      <div className="flex justify-center flex-wrap gap-4 mt-16">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="relative flex items-center justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[20rem]"
+          >
+            <a href="#" className="absolute text-xl font-bold mx-auto">
+              {service.name}
+            </a>
+            <img
+              className="rounded-full object-contain ring-1"
+              src={service.src}
+              alt="graphic design"
+              width={200}
+            />
+          </div>
+        ))}
       </div>
 
       <motion.div

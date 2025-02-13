@@ -23,7 +23,7 @@ const Footer = () => {
     <section className="mt-32 w-full py-4 mx-auto px-6 md:px-10 footer">
       <div className="flex w-full flex-wrap gap-6  justify-between">
         <div className="flex flex-col gap-3">
-          <img src="/logo.svg" alt="logo" className="w-36" />
+          <img src="/logo.png" alt="logo" className="w-36" />
           <p className="max-w-sm mt-3">
             Enhancing online presence simply the best
           </p>
