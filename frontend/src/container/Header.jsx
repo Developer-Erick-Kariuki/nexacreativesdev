@@ -41,7 +41,7 @@ const Header = () => {
       </nav>
 
       {/* mobile navbar */}
-      <nav className="w-full md:hidden  top-0 px-6 z-20 bg-slate-900 shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
+      <nav className="w-full md:hidden  top-0 px-6 z-20  shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
         <div className="w-36 flex">
           <img src="/logo.png" alt="site-logo" />
         </div>
