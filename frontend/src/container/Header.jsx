@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LogoSVG from "/logo.svg";
+
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden md:flex fixed bg-secondary w-full py-2 px-6 top-0 z-10 tex-sm right-0 left-0 md:px-24 justify-between items-start ">
+      <nav className="hidden ring-1 ring-primary md:flex items-center fixed bg-secondary w-full py-2 px-6 top-0 z-10 tex-sm right-0 left-0 md:px-24 justify-between">
         <a href="/">
           <div className="w-32 flex">
             <img src="/logo.png" alt="site-logo" />
@@ -41,7 +41,7 @@ const Header = () => {
       </nav>
 
       {/* mobile navbar */}
-      <nav className="w-full md:hidden top-0 px-6 z-20 bg-secondary shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
+      <nav className="w-full md:hidden  top-0 px-6 z-20 bg-secondary shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
         <div className="w-36 flex">
           <img src="/logo.png" alt="site-logo" />
         </div>

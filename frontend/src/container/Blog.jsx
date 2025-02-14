@@ -73,7 +73,7 @@ const Blog = () => {
       >
         {posts.map((post) => (
           <div className="mx-4" key={post.title}>
-            <img src={post.imageUrl} alt="" />
+            <img src={post.imageUrl} alt="" width={500} />
             <Link to={`/blog/BlogPost/${post.customId}`}>
               <h2 className="text-accent font-semibold cursor-pointer text-xl mt-6">
                 {post.title}

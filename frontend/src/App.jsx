@@ -13,20 +13,23 @@ import Whyus from "./container/Whyus";
 
 function App() {
   return (
-    <main className="overflow-x-hidden w-full px-6 md:px-10 max-w-7xl text-white font-inter relative mx-auto">
-      <Header />
-      <Hero />
-      <Introduction />
-      <AboutUs />
-      <Whyus />
-      <Services />
-      <Portfolioa />
-      <Testimonial />
-      <Blog />
-      <Subscription />
-      <ContactUs />
+    <>
+      <main className="overflow-x-hidden w-full px-6 md:px-10 max-w-7xl text-white font-inter relative mx-auto">
+        <Header />
+        <Hero />
+        <Introduction />
+        <AboutUs />
+        <Whyus />
+        <Services />
+        <Portfolioa />
+        <Testimonial />
+        <Blog />
+        <Subscription />
+        <ContactUs />
+      </main>
+
       <Footer />
-    </main>
+    </>
   );
 }
 

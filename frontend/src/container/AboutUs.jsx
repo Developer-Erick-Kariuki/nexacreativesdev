@@ -102,7 +102,7 @@ const AboutUs = () => {
               ease: easeIn,
             }}
             viewport={{ once: true }}
-            className="flex bg-slate-900 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
+            className="flex bg-slate-950 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
           >
             <h2 className="text-base text-accent font-bold mb-8">Our Story</h2>
             <p className="text-base  leading-relaxed">

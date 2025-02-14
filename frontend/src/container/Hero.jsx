@@ -1,6 +1,8 @@
-import { FaLocationArrow } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import SocialMedia from "../components/SocialMedia";
+import Button from "../components/Button";
+
+import SpinningBorderButton from "../components/Button";
 
 const Hero = () => {
   return (
@@ -10,16 +12,19 @@ const Hero = () => {
           initial={{ x: -400, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="text-3xl md:text-4xl max-w-md leading-slug font-zenDots uppercase"
+          className="text-3xl md:text-4xl max-w-lg leading-slug  leading-snug uppercase"
         >
           Transforming your vision into stunning visual
-          <span className="text-accent"> designs</span>{" "}
+          <span className="bg-gradient-to-r from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text">
+            {" "}
+            designs
+          </span>{" "}
         </motion.h1>
         <motion.p
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-base max-w-lg mt-8 leading-loose"
+          className="text-base font-light max-w-lg mt-8 leading-loose"
         >
           Our award-winning web design agency blends creativity with
           cutting-edge technology to deliver unique and engaging digital
@@ -32,19 +37,14 @@ const Hero = () => {
           className="flex z-50 md:z-10 gap-4 flex-col md:flex-row mt-16"
         >
           <a href="#contact">
-            <button className="cursor-pointer w-full md:w-auto justify-center flex gap-4 items-center bg-accent text-white px-8 text-sm py-3 rounded-xl font-bold">
-              Have yours today
-              <span className="rotate-45">
-                <FaLocationArrow />
-              </span>
-            </button>
+            <SpinningBorderButton
+              name="Have yours Today"
+              className="bg-black"
+            />
           </a>
           <a href="#portfolio">
-            <button className="flex gap-4 w-full md:w-auto justify-center items-center cursor-pointer ring-2 ring-white text-white px-8 text-sm py-3 rounded-xl font-bold">
+            <button className="bg-transparent px-6 text-sm py-3 w-full ring-1 ring-primary rounded-xl ">
               Our Work
-              <span className="rotate-45">
-                <FaLocationArrow />
-              </span>
             </button>
           </a>
         </motion.div>
@@ -67,7 +67,7 @@ const Hero = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="absolute -z-10"
       >
-        <h1 className=" hidden text-[28rem] md:flex font-extrabold text-slate-800/50">
+        <h1 className=" hidden text-[400px] md:flex font-extrabold text-slate-200/5">
           NEXA
         </h1>
       </motion.div>
