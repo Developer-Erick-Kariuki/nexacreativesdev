@@ -40,52 +40,50 @@ const Subscription = () => {
     }
   };
   return (
-    <div className="px-6 md:px-10">
-      <section className="w-full  ring-1 mt-16 bg-secondary ring-slate-800 p-3 rounded-3xl">
-        <div className="flex flex-col md:flex-row justify-center">
-          <div>
-            <img src="/Background.png" alt="send" width={500} />
-          </div>
-          <div className="flex flex-col gap-4 md:w-1/2 w-full items-start justify-center">
-            <h1 className="text-4xl font-bold max-w-md">
-              Subscribe to Our Newsletter
-            </h1>
-            <p className="text-slate-500 max-w-sm">
-              Subscribe to our newsletter and stay ahead of the curve with
-              cutting edge designs ideas and tips
-            </p>
-            <form
-              className="flex flex-col w-full items-start gap-2"
-              onSubmit={handleSubmit}
-            >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full outline-none py-3 bg-transparent ring-1 ring-slate-700 rounded-xl px-2"
-                placeholder="Your Email address"
-              />
-              <button
-                type="submit"
-                disabled={isLoading}
-                className={`${
-                  buttonText === "Success!"
-                    ? "bg-green-500"
-                    : buttonText === "Failed"
-                    ? "bg-red-500"
-                    : "bg-accent"
-                }  w-full py-3 px-4 rounded-xl mt-2`}
-              >
-                {buttonText}
-              </button>
-            </form>
-          </div>
+    <section className="w-full  ring-1 mt-16 bg-secondary ring-slate-800 p-3 rounded-3xl">
+      <div className="flex flex-col md:flex-row justify-center">
+        <div>
+          <img src="/Background.png" alt="send" width={500} />
         </div>
-      </section>
-    </div>
+        <div className="flex flex-col gap-4 md:w-1/2 w-full items-start justify-center">
+          <h1 className="text-4xl font-bold max-w-md">
+            Subscribe to Our Newsletter
+          </h1>
+          <p className="text-slate-500 max-w-sm">
+            Subscribe to our newsletter and stay ahead of the curve with cutting
+            edge designs ideas and tips
+          </p>
+          <form
+            className="flex flex-col w-full items-start gap-2"
+            onSubmit={handleSubmit}
+          >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full outline-none py-3 bg-transparent ring-1 ring-slate-700 rounded-xl px-2"
+              placeholder="Your Email address"
+            />
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`${
+                buttonText === "Success!"
+                  ? "bg-green-500"
+                  : buttonText === "Failed"
+                  ? "bg-red-500"
+                  : "bg-accent"
+              }  w-full py-3 px-4 rounded-xl mt-2`}
+            >
+              {buttonText}
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
   );
 };
 
