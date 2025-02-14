@@ -6,18 +6,18 @@ import SpinningBorderButton from "../components/Button";
 
 const Hero = () => {
   return (
-    <section className="mt-16 relative items-start justify-between w-full flex flex-col-reverse md:flex-row">
+    <section className="mt-16 relative items-center justify-between w-full flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ x: -400, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="text-3xl md:text-4xl max-w-lg leading-slug  leading-snug uppercase"
+          className="text-3xl md:text-4xl max-w-lg leading-slug  font-semibold leading-snug uppercase"
         >
-          Transforming your vision into stunning visual
+          Transforming your vision into
           <span className="bg-gradient-to-r from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text">
             {" "}
-            designs
+            stunning visual designs
           </span>{" "}
         </motion.h1>
         <motion.p
@@ -26,9 +26,9 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-base font-light max-w-lg mt-8 leading-loose"
         >
-          Our award-winning web design agency blends creativity with
-          cutting-edge technology to deliver unique and engaging digital
-          experiences. Let’s create something extraordinary together.
+          Our award-winning design agency blends creativity with cutting-edge
+          technology to deliver unique and engaging digital experiences. Let’s
+          create something extraordinary together.
         </motion.p>
         <motion.div
           initial={{ y: 400, opacity: 0 }}
