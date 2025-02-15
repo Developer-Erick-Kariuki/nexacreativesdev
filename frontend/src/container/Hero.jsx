@@ -43,7 +43,7 @@ const Hero = () => {
             />
           </a>
           <a href="#portfolio">
-            <button className="bg-transparent px-6 text-sm py-3 w-full ring-1 ring-primary rounded-xl ">
+            <button className="bg-transparent px-8 text-sm py-3 w-full ring-1 ring-primary rounded-xl ">
               Our Work
             </button>
           </a>
