@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden  md:flex items-center fixed bg-slate-900/75 w-full py-2 px-6 top-0 z-10 tex-sm right-0 left-0 md:px-24 justify-between">
+      <nav className="hidden border-b border-slate-600  md:flex items-center fixed bg-slate-900/75 w-full py-2 px-6 top-0 z-10 tex-sm right-0 left-0 md:px-24 justify-between">
         <a href="/">
           <div className="w-32 flex">
             <img src="/logo.png" alt="site-logo" />
