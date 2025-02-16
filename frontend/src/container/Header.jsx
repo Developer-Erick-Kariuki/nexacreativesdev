@@ -17,8 +17,8 @@ const Header = () => {
     <>
       <nav className="hidden border-b border-slate-600  md:flex items-center fixed bg-slate-900/75 w-full py-2 px-6 top-0 z-10 tex-sm right-0 left-0 md:px-24 justify-between">
         <a href="/">
-          <div className="w-32 flex">
-            <img src="/logo.png" alt="site-logo" />
+          <div className="flex">
+            <img width={24} src="/logo.png" alt="site-logo" />
           </div>
         </a>
         <div className="flex justify-between gap-6 items-center">
@@ -42,8 +42,8 @@ const Header = () => {
 
       {/* mobile navbar */}
       <nav className="w-full md:hidden  top-0 px-6 z-20  shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
-        <div className="w-36 flex">
-          <img src="/logo.png" alt="site-logo" />
+        <div className="flex">
+          <img width={20} src="/logo.png" alt="site-logo" />
         </div>
         <div className="flex absolute min-h-screen top-2 right-0 p-3 z-30 transition-all duration-300 w-full">
           <div className="right-4 absolute bg-accent rounded-md">
