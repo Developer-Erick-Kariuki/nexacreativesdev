@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import SocialMedia from "../components/SocialMedia";
-import Button from "../components/Button";
 
 import SpinningBorderButton from "../components/Button";
 

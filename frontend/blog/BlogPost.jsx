@@ -66,7 +66,7 @@ const BlogPost = () => {
 
   return (
     <>
-      <section className="text-white px-6 md:px-10 mx-auto pt-4">
+      <section className="text-primary px-6 md:px-10 mx-auto pt-4">
         <Header />
         <div className="flex justify-center">
           <div className="flex items-start gap-8 flex-col md:flex-row mt-20">
