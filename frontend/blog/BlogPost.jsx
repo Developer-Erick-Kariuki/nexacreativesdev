@@ -5,6 +5,7 @@ import moment from "moment";
 import Header from "../src/container/Header";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Footer from "../src/container/Footer";
+import { easeInOut, motion } from "framer-motion";
 
 const serializers = {
   types: {
@@ -68,10 +69,21 @@ const BlogPost = () => {
     <>
       <section className="text-primary px-6 md:px-10 mx-auto pt-4">
         <Header />
-        <div className="flex justify-center">
-          <div className="flex items-start gap-8 flex-col md:flex-row mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 500 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0, ease: easeInOut }}
+          className="flex justify-center"
+        >
+          <div className="flex items-start gap-8  flex-col md:flex-row mt-20">
             {SinglePost.map((current) => (
-              <div className="flex flex-col" key={current.customId}>
+              <motion.div
+                initial={{ opacity: 0, y: 800 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0, ease: easeInOut }}
+                className="flex flex-col"
+                key={current.customId}
+              >
                 <img
                   className="bg-slate-900"
                   src={current.imageUrl}
@@ -90,7 +102,7 @@ const BlogPost = () => {
                     serializers={serializers}
                   />
                 </div>
-              </div>
+              </motion.div>
             ))}
 
             <div className="flex flex-col w-1/4  gap-6">
@@ -112,7 +124,7 @@ const BlogPost = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       <Footer />
     </>
