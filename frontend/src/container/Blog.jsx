@@ -14,11 +14,11 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 2000, min: 1024 },
-    items: 2,
+    items: 3,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1,
+    items: 2,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -60,29 +60,31 @@ const Blog = () => {
         </button>
       </div>
 
-      <Carousel
-        responsive={responsive}
-        showDots={true}
-        infinite={true}
-        focusOnSelect={true}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        sliderClass="mine"
-        itemClass="item"
-        containerClass="container"
-        dotListClass="dots"
-      >
-        {posts.map((post) => (
-          <div className="mx-4" key={post.title}>
-            <img src={post.imageUrl} alt="" />
-            <Link to={`/blog/BlogPost/${post.customId}`}>
-              <h2 className="font-bold cursor-pointer text-xl mt-6">
-                {post.title}
-              </h2>
-            </Link>
-            <h3>{moment(post.publishedAt).format("MMMM, YYYY")}</h3>
-          </div>
-        ))}
-      </Carousel>
+      <div className="flex-1">
+        <Carousel
+          responsive={responsive}
+          showDots={true}
+          infinite={true}
+          focusOnSelect={true}
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          sliderClass="mine"
+          itemClass="item"
+          containerClass="container"
+          dotListClass="dots"
+        >
+          {posts.map((post) => (
+            <div className="mx-4" key={post.title}>
+              <img src={post.imageUrl} alt="" />
+              <Link to={`/blog/BlogPost/${post.customId}`}>
+                <h2 className="font-bold cursor-pointer text-xl mt-6">
+                  {post.title}
+                </h2>
+              </Link>
+              <h3>{moment(post.publishedAt).format("MMMM, YYYY")}</h3>
+            </div>
+          ))}
+        </Carousel>
+      </div>
     </section>
   );
 };
