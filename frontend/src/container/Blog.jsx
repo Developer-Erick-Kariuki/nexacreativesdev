@@ -75,7 +75,7 @@ const Blog = () => {
           <div className="mx-4" key={post.title}>
             <img src={post.imageUrl} alt="" />
             <Link to={`/blog/BlogPost/${post.customId}`}>
-              <h2 className="font-bold cursor-pointer text-xl mt-6">
+              <h2 className="font-bold cursor-pointer max-w-md text-xl mt-6">
                 {post.title}
               </h2>
             </Link>
