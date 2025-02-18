@@ -60,31 +60,29 @@ const Blog = () => {
         </button>
       </div>
 
-      <div className="w-1/2">
-        <Carousel
-          responsive={responsive}
-          showDots={true}
-          infinite={true}
-          focusOnSelect={true}
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          sliderClass="mine"
-          itemClass="item"
-          containerClass="container"
-          dotListClass="dots"
-        >
-          {posts.map((post) => (
-            <div className="mx-4" key={post.title}>
-              <img src={post.imageUrl} alt="" />
-              <Link to={`/blog/BlogPost/${post.customId}`}>
-                <h2 className="font-bold cursor-pointer text-xl mt-6">
-                  {post.title}
-                </h2>
-              </Link>
-              <h3>{moment(post.publishedAt).format("MMMM, YYYY")}</h3>
-            </div>
-          ))}
-        </Carousel>
-      </div>
+      <Carousel
+        responsive={responsive}
+        showDots={true}
+        infinite={true}
+        focusOnSelect={true}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        sliderClass="mine"
+        itemClass="item"
+        containerClass="container"
+        dotListClass="dots"
+      >
+        {posts.map((post) => (
+          <div className="mx-4" key={post.title}>
+            <img src={post.imageUrl} alt="" />
+            <Link to={`/blog/BlogPost/${post.customId}`}>
+              <h2 className="font-bold cursor-pointer text-xl mt-6">
+                {post.title}
+              </h2>
+            </Link>
+            <h3>{moment(post.publishedAt).format("MMMM, YYYY")}</h3>
+          </div>
+        ))}
+      </Carousel>
     </section>
   );
 };
