@@ -6,7 +6,7 @@ import SpinningBorderButton from "../components/Button";
 
 const Hero = () => {
   return (
-    <section className="mt-16 relative items-center justify-between w-full flex flex-col-reverse md:flex-row">
+    <section className="mt-16 relative justify-between w-full flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ x: -400, opacity: 0 }}

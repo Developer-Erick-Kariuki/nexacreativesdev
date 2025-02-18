@@ -93,3 +93,11 @@ html {
 .btn:hover::after {
   color: white;
 }
+
+.container {
+  justify-items: center;
+}
+
+.dots {
+  justify-content: center;
+}

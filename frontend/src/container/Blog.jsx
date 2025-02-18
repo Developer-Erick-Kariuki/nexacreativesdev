@@ -48,7 +48,10 @@ const Blog = () => {
   }, []);
 
   return (
-    <section className="w-full px-6 md:px-10 mt-32 flex flex-col md:flex-row gap-12 justify-start">
+    <section
+      id="blog"
+      className="w-full px-6 md:px-10 mt-32 flex flex-col  md:flex-row gap-12 justify-center"
+    >
       <div className="flex flex-col">
         <h2 className="text-accent">News & Blogs</h2>
         <h1 className="text-5xl font-bold">Our Latest News & Blogs</h1>
@@ -73,13 +76,15 @@ const Blog = () => {
       >
         {posts.map((post) => (
           <div className="mx-4" key={post.title}>
-            <img src={post.imageUrl} alt="" />
+            <img src={post.imageUrl} alt="" width={500} />
             <Link to={`/blog/BlogPost/${post.customId}`}>
               <h2 className="font-bold cursor-pointer max-w-md text-xl mt-6">
                 {post.title}
               </h2>
             </Link>
-            <h3>{moment(post.publishedAt).format("MMMM, YYYY")}</h3>
+            <h3 className="text-accent">
+              {moment(post.publishedAt).format("MMMM, YYYY")}
+            </h3>
           </div>
         ))}
       </Carousel>
