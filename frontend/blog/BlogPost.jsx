@@ -87,7 +87,7 @@ const BlogPost = () => {
                 <img
                   className="bg-slate-900"
                   src={current.imageUrl}
-                  width={600}
+                  width={800}
                   alt={current.title}
                 />
                 <p className="mt-4 text-accent">
