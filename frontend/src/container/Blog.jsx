@@ -60,7 +60,7 @@ const Blog = () => {
         </button>
       </div>
 
-      <div className="flex-1 w-full">
+      <div className="w-1/2">
         <Carousel
           responsive={responsive}
           showDots={true}
