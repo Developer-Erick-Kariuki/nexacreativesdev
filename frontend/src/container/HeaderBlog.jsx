@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { links } from "../constants";
 
-const Header = () => {
+const HeaderBlog = () => {
   const [isActive, setisActive] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -91,4 +91,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderBlog;

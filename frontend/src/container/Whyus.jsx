@@ -7,7 +7,7 @@ const Whyus = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.5, ease: easeIn }}
       viewport={{ once: true }}
-      className="flex mt-32 flex-col-reverse gap-4 items-center bg-slate-950 px-3 rounded-2xl md:flex-row"
+      className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800 px-3 rounded-2xl md:flex-row"
     >
       <div className="flex flex-col px-6 justify-center">
         <h2 className="text-3xl text-accent font-bold mb-8">Why Choose Us?</h2>

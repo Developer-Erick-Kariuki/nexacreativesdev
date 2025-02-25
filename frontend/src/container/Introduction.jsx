@@ -23,7 +23,7 @@ const Introduction = () => {
   }, [isVisible]);
 
   return (
-    <section className="md:flex-row flex items-center flex-col justify-center bg-slate-950 p-2 rounded-2xl mt-32">
+    <section className="md:flex-row flex items-center flex-col justify-center bg-gray-800 p-2 rounded-2xl mt-32">
       <motion.div
         initial={{ opacity: 0, y: 200 }}
         animate={isVisible ? { opacity: 1, y: 0 } : {}}

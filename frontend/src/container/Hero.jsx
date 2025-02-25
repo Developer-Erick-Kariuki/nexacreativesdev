@@ -38,11 +38,11 @@ const Hero = () => {
           <a href="#contact">
             <SpinningBorderButton
               name="Have yours Today"
-              className="bg-black"
+              className="bg-black hover:bg-accent transition-all duration-300 ease-linear"
             />
           </a>
           <a href="#portfolio">
-            <button className="bg-transparent px-8 text-sm py-3 w-full ring-1 ring-primary rounded-xl ">
+            <button className="bg-transparent hover:bg-accent hover:ring-0 transition-colors duration-300 ease-linear px-8 text-sm py-3 w-full ring-1 ring-primary rounded-xl ">
               Our Work
             </button>
           </a>
@@ -58,7 +58,7 @@ const Hero = () => {
         }}
         className="flex"
       >
-        <img className=" object-contain" width={600} src="/hero1.png" alt="" />
+        <img className=" object-contain" width={400} src="/hero1.png" alt="" />
       </motion.div>
       <motion.div
         initial={{ y: -400, opacity: 0 }}

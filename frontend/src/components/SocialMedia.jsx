@@ -19,7 +19,7 @@ const SocialMedia = () => {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className={`hidden md:flex left-0 bottom-0 absolute border z-20 gap-3 px-6 py-3`}
+      className={`hidden md:flex right-0 -bottom-20 mt-8 absolute border rounded-full z-20 gap-3 px-6 py-3`}
     >
       {socialLinks.map((icon, index) => (
         <div className={`cursor-pointer hover:text-accent`} key={index}>

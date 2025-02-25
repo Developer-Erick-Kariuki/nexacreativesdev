@@ -14,7 +14,7 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 2000, min: 1024 },
-    items: 1,
+    items: 2,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -50,7 +50,7 @@ const Blog = () => {
   return (
     <section
       id="blog"
-      className="w-full px-6 md:px-10 mt-32 flex flex-col  md:flex-row gap-12 justify-center"
+      className="w-full px-6 md:px-10 mt-32 flex flex-col md:flex-row gap-8 justify-center"
     >
       <div className="flex flex-col">
         <h2 className="text-accent">News & Blogs</h2>

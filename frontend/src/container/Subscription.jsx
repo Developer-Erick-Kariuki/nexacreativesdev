@@ -40,7 +40,7 @@ const Subscription = () => {
     }
   };
   return (
-    <section className="w-full bg-gray-950 mt-16 p-3 rounded-3xl">
+    <section className="w-full bg-gray-800 mt-16 p-3 rounded-3xl">
       <div className="flex flex-col md:flex-row justify-center">
         <div>
           <img src="/Background.png" alt="send" width={500} />

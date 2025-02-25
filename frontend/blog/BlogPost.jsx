@@ -2,10 +2,10 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { client } from "../src/client";
 import moment from "moment";
-import Header from "../src/container/Header";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import Footer from "../src/container/Footer";
 import { easeInOut, motion } from "framer-motion";
+import HeaderBlog from "../src/container/HeaderBlog";
 
 const serializers = {
   types: {
@@ -28,8 +28,8 @@ const serializers = {
         default:
           return (
             <p
-              style={{ textAlign: "left" }}
-              className="leading-loose text-right"
+              style={{ textAlign: "justify" }}
+              className="leading-loose text-lg"
             >
               {props.children}
             </p>
@@ -68,14 +68,14 @@ const BlogPost = () => {
   return (
     <>
       <section className="text-primary px-6 md:px-10 mx-auto pt-4">
-        <Header />
+        <HeaderBlog />
         <motion.div
           initial={{ opacity: 0, y: 500 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0, ease: easeInOut }}
           className="flex justify-center"
         >
-          <div className="flex items-start gap-8  flex-col md:flex-row mt-20">
+          <div className="flex items-start gap-8 flex-col  mt-20">
             {SinglePost.map((current) => (
               <motion.div
                 initial={{ opacity: 0, y: 800 }}
@@ -85,18 +85,16 @@ const BlogPost = () => {
                 key={current.customId}
               >
                 <img
-                  className="bg-slate-900"
+                  className="rounded-xl"
                   src={current.imageUrl}
-                  width={800}
                   alt={current.title}
+                  width={800}
                 />
-                <p className="mt-4 text-accent">
+                <p className=" text-accent mt-2">
                   {moment(current.publishedAt).format("MMMM, YYYY")}
                 </p>
-                <h1 className="text-3xl mt-3 max-w-lg font-bold">
-                  {current.title}
-                </h1>
-                <div className="max-w-lg mt-6 text-justify">
+                <h1 className="text-4xl font-bold max-w-lg">{current.title}</h1>
+                <div className="text-justify max-w-lg">
                   <SanityBlockContent
                     blocks={current.body}
                     serializers={serializers}
@@ -105,13 +103,14 @@ const BlogPost = () => {
               </motion.div>
             ))}
 
-            <div className="flex flex-col w-1/4  gap-6">
+            <h1 className="text-lg font-bold mt-8">Related Posts</h1>
+            <div className="flex flex-wrap gap-6">
               {posts.map((post) => (
                 <div key={post.title} className="flex max-w-xs flex-col">
                   <img
-                    className="mx-8"
+                    className="mx-8 rounded-xl"
                     src={post.imageUrl}
-                    width={200}
+                    width={500}
                     alt={post.title}
                   />
                   <Link to={`/blog/BlogPost/${post.customId}`}>
