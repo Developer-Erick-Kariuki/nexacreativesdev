@@ -1,11 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { client } from "../src/client";
 import moment from "moment";
 import SanityBlockContent from "@sanity/block-content-to-react";
-import Footer from "../src/container/Footer";
 import { easeInOut, motion } from "framer-motion";
-import HeaderBlog from "../src/container/HeaderBlog";
+
+import Header from "../container/Header";
+import { client } from "../client";
+import Footer from "../container/Footer";
 
 const serializers = {
   types: {
@@ -72,14 +73,14 @@ const BlogPost = () => {
   return (
     <>
       <section className="text-primary max-w-7xl px-6 md:px-10 mx-auto pt-4">
-        <HeaderBlog />
+        <Header />
         <motion.div
           initial={{ opacity: 0, y: 500 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0, ease: easeInOut }}
           className="flex justify-center"
         >
-          <div className="flex items-start gap-8 flex-col  mt-20">
+          <div className="flex items-start gap-8 flex-col px-28 mt-20">
             {SinglePost.map((current) => (
               <motion.div
                 initial={{ opacity: 0, y: 800 }}
@@ -100,7 +101,7 @@ const BlogPost = () => {
                 <h1 className="text-4xl font-bold max-w-2xl">
                   {current.title}
                 </h1>
-                <div className="text-justify max-w-2xl">
+                <div className="text-justify">
                   <SanityBlockContent
                     blocks={current.body}
                     serializers={serializers}
@@ -112,22 +113,27 @@ const BlogPost = () => {
             <h1 className="text-lg font-bold mt-8">Related Posts</h1>
             <div className="flex flex-wrap gap-6">
               {posts.map((post) => (
-                <div key={post.title} className="flex max-w-md flex-col">
+                <div
+                  key={post.title}
+                  className="flex max-w-md items-center flex-col"
+                >
                   <img
                     className="mx-8 rounded-xl"
                     src={post.imageUrl}
                     width={500}
                     alt={post.title}
                   />
-                  <Link
-                    onClick={handleScrollToTop}
-                    to={`/blog/BlogPost/${post.customId}`}
-                  >
-                    <h2 className="text-lg font-bold mt-2">{post.title}</h2>
-                  </Link>
-                  <p className="mt-2 text-accent">
-                    {moment(post.publishedAt).format("MMMM, YYYY")}
-                  </p>
+                  <div>
+                    <Link
+                      onClick={handleScrollToTop}
+                      to={`/blog/BlogPost/${post.customId}`}
+                    >
+                      <h2 className="text-lg font-bold mt-2">{post.title}</h2>
+                    </Link>
+                    <p className="mt-2 text-accent">
+                      {moment(post.publishedAt).format("MMMM, YYYY")}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

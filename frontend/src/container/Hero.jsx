@@ -1,11 +1,10 @@
 import { easeInOut, motion } from "framer-motion";
 import SocialMedia from "../components/SocialMedia";
-import Button from "../components/Button";
 import CallToAction from "../components/callToAction";
 
 const Hero = () => {
   return (
-    <section className="mt-16 relative justify-between w-full flex flex-col-reverse md:flex-row">
+    <section className="mt-16 relative justify-between w-full  flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ y: 200, opacity: 0 }}

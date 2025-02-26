@@ -72,7 +72,7 @@ const Services = () => {
         <p className="text-center text-3xl font-bold ">Our Solution Process</p>
         <div className="flex flex-col md:flex-row w-full items-center mt-8 mb-32 gap-16 justify-center">
           <div className=" flex flex-col md:w-1/2 w-full gap-4">
-            <div className="flex flex-col  bg-slate-800 rounded-3xl p-6 space-y-4">
+            <div className="flex flex-col bg-slate-800 rounded-3xl p-6 space-y-4">
               <div className="flex items-center">
                 <div className="flex items-center space-x-[-8px]">
                   {avatars.map((src, index) => (
@@ -95,14 +95,14 @@ const Services = () => {
               </div>
               <hr className="h-1 border-slate-600" />
               <div className="flex items-center justify-between">
-                <div className="flex gap-2">
-                  <img src="/animation.gif" alt="gif" width={16} />
+                <div className="flex items-center gap-1 justify-end">
+                  <img src="/animation.gif" alt="gif" width={16} height={16} />
                   <p className="text-sm text-slate-400">
                     <span className="text-slate-50">24/7</span> Available
                     support
                   </p>
                 </div>
-                <div className="flex gap-3 justify-between">
+                <div className="flex gap-1 items-center justify-between">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, index) => (
                       <AiFillStar key={index} size={20} />
@@ -134,7 +134,7 @@ const Services = () => {
                       : isActive == index && index == 3
                       ? "bg-orange-50"
                       : "hover:bg-purple-950/20 hover:scale-105"
-                  } flex cursor-pointer p-4 items-center w-full overflow-clip rounded-3xl gap-4 transition-all duration-500 ease-linear`}
+                  } flex cursor-pointer p-2 items-center w-full overflow-clip rounded-3xl gap-4 transition-all duration-500 ease-linear`}
                 >
                   <h1
                     className={`${
@@ -177,13 +177,13 @@ const Services = () => {
                 istop === index
                   ? "z-50 top-0 px-5 opacity-100 translate-x-0 translate-y-0"
                   : index == 0 && isActive !== index
-                  ? "top-2 translate-x-4 translate-y-4 opacity-75"
+                  ? "top-2 translate-x-4 translate-y-4 opacity-50"
                   : index == 1 && isActive !== index
-                  ? "top-4 translate-x-6 translate-y-6 opacity-70"
+                  ? "top-4 translate-x-6 translate-y-6 opacity-30"
                   : index == 2 && isActive !== index
-                  ? "top-8 translate-x-8 translate-y-8 opacity-65"
+                  ? "top-8 translate-x-8 translate-y-8 opacity-10"
                   : index == 3 && isActive !== index
-                  ? "top-2 translate-x-4 translate-y-4 opacity-60"
+                  ? "top-2 translate-x-4 translate-y-4 opacity-0"
                   : ""
               } text-slate-600 text-lg w-full p-4 flex absolute md:bottom-0 right-0 rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
               >

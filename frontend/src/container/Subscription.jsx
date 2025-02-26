@@ -81,7 +81,7 @@ const Subscription = () => {
                   ? "bg-green-500"
                   : buttonText === "Failed"
                   ? "bg-red-500"
-                  : "bg-gradient-to-tr from-purple-600 to-blue-600"
+                  : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600"
               }  w-full py-3 px-4 rounded-3xl mt-2`}
             >
               {buttonText}

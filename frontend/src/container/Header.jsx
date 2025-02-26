@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden  md:flex items-center top-0 z-10 tex-sm py-2 justify-between">
+      <nav className="hidden md:flex items-center tex-sm py-2 justify-between">
         <a href="/">
           <div className="flex">
             <img width={36} src="/logo.png" alt="site-logo" />

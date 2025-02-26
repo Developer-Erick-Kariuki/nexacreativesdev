@@ -23,28 +23,23 @@ const Introduction = () => {
   }, [isVisible]);
 
   return (
-    <section className="md:flex-row flex items-center flex-col justify-center bg-gray-800 p-2 rounded-[4rem] mt-36">
+    <section className="md:flex-row flex items-center flex-col justify-center bg-gray-800 rounded-3xl mt-32">
       <motion.div
         initial={{ opacity: 0, y: 200, z: 200 }}
         animate={isVisible ? { opacity: 1, y: 0, z: 0 } : {}}
         transition={{ duration: 1, delay: 1, ease: easeInOut }}
       >
-        <img
-          src={IntroImg}
-          className="h-full object-cover"
-          alt="model image"
-          width={800}
-        />
+        <img src={IntroImg} className="h-full object-cover" alt="model image" />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: 800 }}
         animate={isVisible ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1, ease: easeIn }}
       >
-        <div className="flex justify-center max-w-lg items-center">
+        <div className="flex justify-center items-center">
           <p className="text-xl md:text-3xl text-center md:text-start font-semibold">
-            Commited to delivering exceptional{" "}
-            <span className="text-accent">online</span> experiences
+            Commited to delivering exceptional
+            <span className="text-accent"> online </span> experiences
             <span className="text-accent">.</span>
           </p>
         </div>

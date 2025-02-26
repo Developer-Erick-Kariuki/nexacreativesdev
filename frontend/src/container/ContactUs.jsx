@@ -121,7 +121,7 @@ const ContactUs = () => {
                 ? "bg-green-500"
                 : buttonText === "Failed"
                 ? "bg-red-500"
-                : "bg-gradient-to-tr from-purple-600 to-blue-600"
+                : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600"
             } px-5 py-2 rounded-3xl outline-none mt-8`}
             type="submit"
             disabled={isLoading}

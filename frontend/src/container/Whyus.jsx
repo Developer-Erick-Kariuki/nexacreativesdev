@@ -2,7 +2,7 @@ import { motion, easeInOut, easeIn } from "framer-motion";
 
 const Whyus = () => {
   return (
-    <section className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800 px-3 rounded-[4rem] md:flex-row">
+    <section className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800 px-3 rounded-3xl md:flex-row">
       <motion.div
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -11,7 +11,7 @@ const Whyus = () => {
       >
         <h2 className="text-3xl text-accent font-bold mb-8">Why Choose Us?</h2>
         <ul className="list-outside leading-relaxed space-y-2 flex flex-col list-disc">
-          <li className="text-base font-light leading-relaxed">
+          <li className="font-light leading-relaxed">
             <b className="font-bold">Tailored Solutions:</b> We create
             customized strategies that align with your brand’s goals and target
             audience.
@@ -34,7 +34,7 @@ const Whyus = () => {
         transition={{ duration: 1, ease: easeInOut }}
         className="flex justify-center items-center w-full"
       >
-        <img src="/whyus.png" alt="" width={500} />
+        <img src="/whyus.png" alt="" />
       </motion.div>
     </section>
   );
