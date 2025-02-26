@@ -31,9 +31,9 @@ const Services = () => {
     <motion.section
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.5, ease: easeIn }}
+      transition={{ duration: 1, ease: easeIn }}
       id="services"
-      className="z-10 w-full mt-16 "
+      className="z-10 w-full mt-16"
     >
       <div className="flex flex-col w-full mx-auto justify-center items-center">
         <h2 className="text-base font-bold text-accent">Services</h2>
@@ -63,7 +63,7 @@ const Services = () => {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 200 }}
+        initial={{ opacity: 0, y: 300 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: easeIn }}
         className="flex justify-center mt-16 flex-col"
@@ -72,7 +72,7 @@ const Services = () => {
         <p className="text-center text-3xl font-bold ">Our Solution Process</p>
         <div className="flex flex-col md:flex-row w-full items-center mt-8 mb-32 gap-16 justify-center">
           <div className=" flex flex-col md:w-1/2 w-full gap-4">
-            <div className="flex flex-col  bg-slate-800 rounded-2xl p-6 space-y-4">
+            <div className="flex flex-col  bg-slate-800 rounded-3xl p-6 space-y-4">
               <div className="flex items-center">
                 <div className="flex items-center space-x-[-8px]">
                   {avatars.map((src, index) => (
@@ -134,7 +134,7 @@ const Services = () => {
                       : isActive == index && index == 3
                       ? "bg-orange-50"
                       : "hover:bg-purple-950/20 hover:scale-105"
-                  } flex cursor-pointer p-4 items-center w-full overflow-clip rounded-2xl gap-4 transition-all duration-500 ease-linear`}
+                  } flex cursor-pointer p-4 items-center w-full overflow-clip rounded-3xl gap-4 transition-all duration-500 ease-linear`}
                 >
                   <h1
                     className={`${
@@ -168,7 +168,7 @@ const Services = () => {
           </div>
 
           {/* begin process cards  */}
-          <div className="w-full  md:h-[60vh] h-[50vh] relative">
+          <div className="w-full  h-[50vh] relative">
             {processes.map((process, index) => (
               <div
                 key={index}
@@ -185,11 +185,11 @@ const Services = () => {
                   : index == 3 && isActive !== index
                   ? "top-2 translate-x-4 translate-y-4 opacity-60"
                   : ""
-              } text-slate-600 text-lg w-full flex absolute md:bottom-0 right-0 p-4 rounded-2xl transition-transform duration-700 delay-75 ease-ilinear`}
+              } text-slate-600 text-lg w-full p-4 flex absolute md:bottom-0 right-0 rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
               >
                 <div className="flex justify-center gap-4 items-center">
                   <div className="flex justify-start flex-col gap-2 ">
-                    <div className="flex items-center justify-start gap-4 ">
+                    <div className="flex items-center justify-start gap-y-4 ">
                       <div
                         className={`${
                           index == 0
@@ -201,12 +201,12 @@ const Services = () => {
                             : index == 3
                             ? "bg-orange-400"
                             : ""
-                        } text-white p-4 mb-8 rounded-2xl items-center"`}
+                        } text-white p-4 rounded-2xl mb-8 items-center"`}
                       >
                         <process.icon size={28} />
                       </div>
                     </div>
-                    <p className="transition-all duration-500 ease-in-out">
+                    <p className="transition-all leading-relaxed  duration-500 ease-in-out">
                       {process.desc}
                     </p>
                   </div>

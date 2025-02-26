@@ -1,15 +1,14 @@
-import { motion, easeIn } from "framer-motion";
+import { motion, easeInOut, easeIn } from "framer-motion";
 
 const Whyus = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.5, ease: easeIn }}
-      viewport={{ once: true }}
-      className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800 px-3 rounded-2xl md:flex-row"
-    >
-      <div className="flex flex-col px-6 justify-center">
+    <section className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800 px-3 rounded-[4rem] md:flex-row">
+      <motion.div
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2, ease: easeIn }}
+        className="flex flex-col px-6 justify-center"
+      >
         <h2 className="text-3xl text-accent font-bold mb-8">Why Choose Us?</h2>
         <ul className="list-outside leading-relaxed space-y-2 flex flex-col list-disc">
           <li className="text-base font-light leading-relaxed">
@@ -28,11 +27,16 @@ const Whyus = () => {
             above and beyond to ensure your vision is realized.
           </li>
         </ul>
-      </div>
-      <div className="flex justify-center items-center w-full">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, x: 200 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, ease: easeInOut }}
+        className="flex justify-center items-center w-full"
+      >
         <img src="/whyus.png" alt="" width={500} />
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 };
 

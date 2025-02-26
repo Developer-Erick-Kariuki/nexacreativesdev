@@ -39,10 +39,9 @@ const Portfolioa = () => {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.5, ease: easeIn }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: easeIn }}
       id="portfolio"
       className="mt-32"
     >
@@ -60,7 +59,9 @@ const Portfolioa = () => {
             <li
               key={index}
               className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
-                isActive === index ? "bg-accent" : " bg-slate-600/20"
+                isActive === index
+                  ? "bg-gradient-to-tr from-purple-600 to-blue-600"
+                  : " bg-slate-600/20"
               }`}
               onClick={() => {
                 setIsActive(index);

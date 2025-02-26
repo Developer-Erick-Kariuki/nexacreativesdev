@@ -1,20 +1,20 @@
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import SocialMedia from "../components/SocialMedia";
-
-import SpinningBorderButton from "../components/Button";
+import Button from "../components/Button";
+import CallToAction from "../components/callToAction";
 
 const Hero = () => {
   return (
     <section className="mt-16 relative justify-between w-full flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
-          initial={{ x: -400, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
+          initial={{ y: 200, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0, ease: easeInOut }}
           className="text-3xl md:text-4xl max-w-lg leading-slug  font-semibold leading-snug uppercase"
         >
           Transforming your vision into
-          <span className="bg-gradient-to-r from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text">
+          <span className="bg-gradient-to-l from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text">
             {" "}
             stunning visual designs
           </span>{" "}
@@ -22,7 +22,7 @@ const Hero = () => {
         <motion.p
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
           className="text-base font-light max-w-lg mt-8 leading-loose"
         >
           Our award-winning design agency blends creativity with cutting-edge
@@ -32,20 +32,19 @@ const Hero = () => {
         <motion.div
           initial={{ y: 400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, stiffness: 100, delay: 1 }}
+          transition={{ duration: 1, delay: 1, ease: easeInOut }}
           className="flex z-50 md:z-10 gap-4 flex-col md:flex-row mt-16"
         >
-          <a href="#contact">
-            <SpinningBorderButton
-              name="Have yours Today"
-              className="bg-black hover:bg-accent transition-all duration-300 ease-linear"
-            />
-          </a>
-          <a href="#portfolio">
-            <button className="bg-transparent hover:bg-accent hover:ring-0 transition-colors duration-300 ease-linear px-8 text-sm py-3 w-full ring-1 ring-primary rounded-xl ">
-              Our Work
-            </button>
-          </a>
+          <CallToAction
+            href="#contact"
+            name="Get started"
+            className="bg-gradient-to-tr border-none hover:from-purple-600 hover:to-blue-600 transition-color duration-300 ease-linear from-blue-600 to-purple-600 "
+          />
+          <CallToAction
+            href="#portfolio"
+            name="Our Work"
+            className="transition-color duration-300 ease-linear bg-transparent ring-1 ring-white hover:ring-0 border-none hover:bg-gradient-to-tr from-blue-600 to-purple-600"
+          />
         </motion.div>
       </div>
       <motion.div
@@ -66,7 +65,7 @@ const Hero = () => {
         transition={{ type: "spring", stiffness: 100 }}
         className="absolute -z-10"
       >
-        <h1 className=" hidden text-[400px] md:flex font-extrabold text-slate-200/5">
+        <h1 className=" hidden text-[400px] md:flex font-extrabold text-slate-800/25">
           NEXA
         </h1>
       </motion.div>

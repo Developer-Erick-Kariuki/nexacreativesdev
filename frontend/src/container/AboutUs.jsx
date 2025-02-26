@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import "../index.css";
-import { easeIn, motion } from "framer-motion";
+import { easeIn, easeInOut, motion } from "framer-motion";
 
 import { animation } from "../constants";
 
@@ -11,62 +10,42 @@ const info = [
 ];
 
 const AboutUs = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 100 && !isVisible) {
-        setIsVisible(true);
-      } else if (scrollY <= 50 && isVisible) {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isVisible]);
   return (
     <section
       id="about"
       className="mx-auto justify-center w-full items-center mt-32"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 200 }}
+      <motion.h2
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: animation.duration,
-          delay: animation.delay,
-          ease: easeIn,
-        }}
-        viewport={{ once: true }}
-        className="flex flex-col"
+        transition={{ duration: 1, ease: easeIn }}
+        className="text-lg flex-col font-bold flex text-center"
       >
-        <h2 className="text-lg flex-col font-bold flex text-center">
-          <span className="text-accent text-base">About</span> Nexa Creative
-          Solutions
-        </h2>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 300 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: easeIn }}
-        viewport={{ once: true }}
-        className="flex flex-col-reverse items-center mt-8 justify-center gap-4 w-full"
-      >
-        <p className="text-base max-w-2xl text-justify mt-8 leading-relaxed">
+        <span className="text-accent">About</span> Nexa Creative Solutions
+      </motion.h2>
+
+      <div className="flex flex-col-reverse items-center mt-8 justify-center gap-4 w-full">
+        <motion.p
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="text-base max-w-2xl text-center mt-8 leading-relaxed"
+        >
           At Nexa Creative Solutions, we believe that every brand has a unique
           story to tell. As a premier web design and development agency, we
           specialize in crafting innovative digital experiences that not only
           captivate but also convert. Our mission is to transform your vision
           into a powerful online presence that drives results.
-        </p>
+        </motion.p>
         <div className="flex flex-wrap gap-4 items-start justify-center md:items-center">
           {info.map((icon, index) => (
-            <motion.div key={index} className="flex items-center gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3, ease: easeIn }}
+              key={index}
+              className="flex items-center gap-4"
+            >
               <div className="p-2 ring-1 ring-accent rounded-full">
                 <img src={icon.icon} alt="icon" width={48} />
               </div>
@@ -74,13 +53,12 @@ const AboutUs = () => {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
       <div className="flex flex-col gap-8 justify-center md:flex-row mx-0 md:mx-12 mt-16">
         <motion.img
-          initial={{ opacity: 0, x: -200 }}
+          initial={{ opacity: 0, x: -300 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: easeIn }}
-          viewport={{ once: true }}
+          transition={{ duration: 1, ease: easeInOut }}
           src="/aboutImg.png"
           alt=""
           width={600}
@@ -88,15 +66,10 @@ const AboutUs = () => {
 
         <div className="flex max-w-md flex-col gap-8">
           <motion.div
-            initial={{ opacity: 0, y: 200 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: animation.duration,
-              delay: animation.delay,
-              ease: easeIn,
-            }}
-            viewport={{ once: true }}
-            className="flex bg-slate-950 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: easeIn }}
+            className="flex bg-slate-800 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
           >
             <h2 className="text-base text-accent font-bold mb-8">Our Story</h2>
             <p className="text-base  leading-relaxed">
@@ -108,14 +81,9 @@ const AboutUs = () => {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: animation.initialOpacity, y: 200 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: animation.duration,
-              delay: animation.delay,
-              ease: easeIn,
-            }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, x: 200 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: easeIn }}
             className="flex max-w-md flex-col"
           >
             <div className="flex ring-1 ring-slate-800 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import IntroImg from "/intro.png";
-import { motion } from "framer-motion";
+import { easeIn, easeInOut, motion } from "framer-motion";
 
 const Introduction = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,9 +8,9 @@ const Introduction = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      if (scrollY > 100 && !isVisible) {
+      if (scrollY > 50 && !isVisible) {
         setIsVisible(true);
-      } else if (scrollY <= 50 && isVisible) {
+      } else if (scrollY <= 100 && isVisible) {
         setIsVisible(false);
       }
     };
@@ -23,12 +23,11 @@ const Introduction = () => {
   }, [isVisible]);
 
   return (
-    <section className="md:flex-row flex items-center flex-col justify-center bg-gray-800 p-2 rounded-2xl mt-32">
+    <section className="md:flex-row flex items-center flex-col justify-center bg-gray-800 p-2 rounded-[4rem] mt-36">
       <motion.div
-        initial={{ opacity: 0, y: 200 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 200, z: 200 }}
+        animate={isVisible ? { opacity: 1, y: 0, z: 0 } : {}}
+        transition={{ duration: 1, delay: 1, ease: easeInOut }}
       >
         <img
           src={IntroImg}
@@ -40,13 +39,13 @@ const Introduction = () => {
       <motion.div
         initial={{ opacity: 0, x: 800 }}
         animate={isVisible ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        transition={{ duration: 1, ease: easeIn }}
       >
-        <div className="flex justify-center max-w-md items-center">
+        <div className="flex justify-center max-w-lg items-center">
           <p className="text-xl md:text-3xl text-center md:text-start font-semibold">
-            Commitment to delivering exceptional{" "}
-            <span className="text-accent">web</span> experiences.
+            Commited to delivering exceptional{" "}
+            <span className="text-accent">online</span> experiences
+            <span className="text-accent">.</span>
           </p>
         </div>
       </motion.div>

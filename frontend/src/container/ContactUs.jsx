@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { client } from "../client";
+import { easeIn, motion } from "framer-motion";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -60,7 +61,10 @@ const ContactUs = () => {
     }
   };
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, x: 200 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, ease: easeIn }}
       id="contact"
       className="py-8 px-5 rounded-3xl bg-secondary w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
@@ -117,8 +121,8 @@ const ContactUs = () => {
                 ? "bg-green-500"
                 : buttonText === "Failed"
                 ? "bg-red-500"
-                : "bg-accent"
-            } px-5 py-2 rounded-xl outline-none mt-8`}
+                : "bg-gradient-to-tr from-purple-600 to-blue-600"
+            } px-5 py-2 rounded-3xl outline-none mt-8`}
             type="submit"
             disabled={isLoading}
           >
@@ -129,7 +133,7 @@ const ContactUs = () => {
       <div className="flex">
         <img src="/contactimg.png" width={400} alt="" />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

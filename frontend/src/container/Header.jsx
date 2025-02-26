@@ -26,9 +26,9 @@ const Header = () => {
             <li
               className={`no-underline list-none cursor-pointer transition-all duration-300 ${
                 isActive === index
-                  ? "bg-gradient-to-tr bg-accent rounded-xl px-3"
-                  : "text-primary"
-              }`}
+                  ? "bg-gradient-to-tr bg-gradient-tl from-blue-600 to-purple-600 "
+                  : "text-primary "
+              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50 rounded-3xl px-3`}
               key={link.name}
               onClick={() => {
                 setisActive(index);

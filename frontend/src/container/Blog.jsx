@@ -1,10 +1,12 @@
 import Carousel from "react-multi-carousel";
 import { client } from "../client";
+import { easeIn, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import "../index.css";
 import moment from "moment";
 
 import { Link } from "react-router-dom";
+import CallToAction from "../components/callToAction";
 
 const responsive = {
   superLargeDesktop: {
@@ -48,7 +50,10 @@ const Blog = () => {
   }, []);
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: easeIn }}
       id="blog"
       className="w-full px-6 md:px-10 mt-32 flex flex-col md:flex-row gap-8 justify-center"
     >
@@ -58,9 +63,11 @@ const Blog = () => {
         <p className="mt-2 text-32 ">
           Insights and Trends from Nexa Creative Solutions
         </p>
-        <button className="bg-accent rounded-2xl w-48 py-3 mt-6">
-          Get in Touch
-        </button>
+        <CallToAction
+          name="Get intouch"
+          href="#contact"
+          className="bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
+        />
       </div>
 
       <Carousel
@@ -88,7 +95,7 @@ const Blog = () => {
           </div>
         ))}
       </Carousel>
-    </section>
+    </motion.section>
   );
 };
 

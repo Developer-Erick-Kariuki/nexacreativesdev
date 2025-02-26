@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import { client } from "../client";
 import { useEffect, useState } from "react";
+import { easeIn, motion } from "framer-motion";
 
 const responsive = {
   superLargeDesktop: {
@@ -40,7 +41,12 @@ const Testmonial = () => {
     fetchTestimonials();
   }, []);
   return (
-    <section className="mt-32 px-6 md:px-10 w-full">
+    <motion.section
+      initial={{ opacity: 0, y: 200 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: easeIn }}
+      className="mt-32 px-6 md:px-10 w-full"
+    >
       <div className="flex flex-col">
         <h2 className="flex flex-col text-center text-3xl font-bold">
           <span className="text-accent text-base">Testmonials</span> Review from
@@ -100,7 +106,7 @@ const Testmonial = () => {
           ))}
         </Carousel>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

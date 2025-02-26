@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { client } from "../client";
+import { easeIn, motion } from "framer-motion";
 
 const Subscription = () => {
   const [email, setEmail] = useState("");
@@ -40,7 +41,12 @@ const Subscription = () => {
     }
   };
   return (
-    <section className="w-full bg-gray-800 mt-16 p-3 rounded-3xl">
+    <motion.section
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: easeIn }}
+      className="w-full bg-gray-800 mt-16 p-3 rounded-3xl"
+    >
       <div className="flex flex-col md:flex-row justify-center">
         <div>
           <img src="/Background.png" alt="send" width={500} />
@@ -75,15 +81,15 @@ const Subscription = () => {
                   ? "bg-green-500"
                   : buttonText === "Failed"
                   ? "bg-red-500"
-                  : "bg-accent"
-              }  w-full py-3 px-4 rounded-xl mt-2`}
+                  : "bg-gradient-to-tr from-purple-600 to-blue-600"
+              }  w-full py-3 px-4 rounded-3xl mt-2`}
             >
               {buttonText}
             </button>
           </form>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
