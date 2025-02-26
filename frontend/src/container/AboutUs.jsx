@@ -55,9 +55,9 @@ const AboutUs = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: easeIn }}
         viewport={{ once: true }}
-        className="flex flex-col justify-center gap-16 w-full md:flex-row"
+        className="flex flex-col-reverse items-center mt-8 justify-center gap-4 w-full"
       >
-        <p className="text-base text-left max-w-md my-8 leading-relaxed">
+        <p className="text-base max-w-2xl text-justify mt-8 leading-relaxed">
           At Nexa Creative Solutions, we believe that every brand has a unique
           story to tell. As a premier web design and development agency, we
           specialize in crafting innovative digital experiences that not only
@@ -66,16 +66,10 @@ const AboutUs = () => {
         </p>
         <div className="flex flex-wrap gap-4 items-start justify-center md:items-center">
           {info.map((icon, index) => (
-            <motion.div
-              key={index}
-              className={`flex ring-1 ring-accent items-center  rounded-full p-2 gap-4`}
-            >
-              <img
-                src={icon.icon}
-                alt="icon"
-                className="flex-1 flex"
-                width={48}
-              />
+            <motion.div key={index} className="flex items-center gap-4">
+              <div className="p-2 ring-1 ring-accent rounded-full">
+                <img src={icon.icon} alt="icon" width={48} />
+              </div>
               <p className="transition-all duration-300 ease-in">{icon.name}</p>
             </motion.div>
           ))}
@@ -89,7 +83,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
           src="/aboutImg.png"
           alt=""
-          width={500}
+          width={600}
         />
 
         <div className="flex max-w-md flex-col gap-8">

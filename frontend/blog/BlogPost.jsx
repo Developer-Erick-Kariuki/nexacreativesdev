@@ -61,13 +61,17 @@ const BlogPost = () => {
     fetchPosts();
   }, []);
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
   if (!SinglePost) return <p>Loading...</p>;
 
   return (
     <>
-      <section className="text-primary px-6 md:px-10 mx-auto pt-4">
+      <section className="text-primary max-w-7xl px-6 md:px-10 mx-auto pt-4">
         <HeaderBlog />
         <motion.div
           initial={{ opacity: 0, y: 500 }}
@@ -88,13 +92,15 @@ const BlogPost = () => {
                   className="rounded-xl"
                   src={current.imageUrl}
                   alt={current.title}
-                  width={800}
+                  width={1000}
                 />
                 <p className=" text-accent mt-2">
                   {moment(current.publishedAt).format("MMMM, YYYY")}
                 </p>
-                <h1 className="text-4xl font-bold max-w-lg">{current.title}</h1>
-                <div className="text-justify max-w-lg">
+                <h1 className="text-4xl font-bold max-w-2xl">
+                  {current.title}
+                </h1>
+                <div className="text-justify max-w-2xl">
                   <SanityBlockContent
                     blocks={current.body}
                     serializers={serializers}
@@ -106,14 +112,17 @@ const BlogPost = () => {
             <h1 className="text-lg font-bold mt-8">Related Posts</h1>
             <div className="flex flex-wrap gap-6">
               {posts.map((post) => (
-                <div key={post.title} className="flex max-w-xs flex-col">
+                <div key={post.title} className="flex max-w-md flex-col">
                   <img
                     className="mx-8 rounded-xl"
                     src={post.imageUrl}
                     width={500}
                     alt={post.title}
                   />
-                  <Link to={`/blog/BlogPost/${post.customId}`}>
+                  <Link
+                    onClick={handleScrollToTop}
+                    to={`/blog/BlogPost/${post.customId}`}
+                  >
                     <h2 className="text-lg font-bold mt-2">{post.title}</h2>
                   </Link>
                   <p className="mt-2 text-accent">
