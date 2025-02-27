@@ -3,7 +3,6 @@ import { processes } from "../constants";
 import { AiFillStar } from "react-icons/ai";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from "react";
-import { IoIosArrowRoundDown } from "react-icons/io";
 
 const services = [
   { name: "Graphic Design", src: "/graphic.png" },
@@ -46,7 +45,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="relative flex items-center h-[14rem] rounded-3xl overflow-clip justify-center hover:-translate-y-3 transition-transform duration-300 ease-in-out cursor-pointer w-[14rem]"
+            className="relative flex items-center h-[14rem] rounded-3xl overflow-clip justify-center hover:-translate-y-3 transition-transform duration-500 ease-in-out cursor-pointer w-[14rem]"
           >
             <a href="#" className="absolute text-xl z-20 font-bold mx-auto">
               {service.name}
@@ -57,7 +56,7 @@ const Services = () => {
               src={service.src}
               alt="graphic design"
             />
-            <div className="bg-transparent hover:bg-black transition-colors duration-500 ease-in-out rounded-3xl h-full opacity-75 w-full z-10 inset-0 "></div>
+            <div className="bg-transparent hover:bg-gradient-to-tl  from-blue-700 to-purple-600 transition-colors duration-500 ease-linear rounded-3xl h-full opacity-75 w-full z-10 inset-0 "></div>
           </div>
         ))}
       </div>
@@ -134,7 +133,7 @@ const Services = () => {
                       : isActive == index && index == 3
                       ? "bg-orange-50"
                       : "hover:bg-purple-950/20 hover:scale-105"
-                  } flex cursor-pointer p-2 items-center w-full overflow-clip rounded-3xl gap-4 transition-all duration-500 ease-linear`}
+                  } flex cursor-pointer p-2 items-center w-full overflow-clip rounded-2xl gap-4 transition-all duration-500 ease-linear`}
                 >
                   <h1
                     className={`${

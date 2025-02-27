@@ -3,7 +3,7 @@ import { client } from "../client";
 import { easeIn, motion } from "framer-motion";
 import { BsFillSendFill } from "react-icons/bs";
 
-const ContactUs = () => {
+const Comment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -70,7 +70,7 @@ const ContactUs = () => {
       className="py-8 px-5 rounded-3xl bg-secondary w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
       <div className="flex w-full md:w-1/2 flex-col">
-        <h2 className="text-2xl font-bold">Contact Us</h2>
+        <h2 className="text-2xl font-bold">Leave Us a comment</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-4">
           <input
             type="text"
@@ -103,7 +103,7 @@ const ContactUs = () => {
             onChange={(e) => setSubject(e.target.value)}
             className="outline-none bg-transparent"
             required
-            placeholder="Subject"
+            placeholder="Comment Title e.g feedback"
           />
           <hr className="h-2" />
           <textarea
@@ -134,11 +134,8 @@ const ContactUs = () => {
           </button>
         </form>
       </div>
-      <div className="flex">
-        <img src="/contactimg.png" width={400} alt="" />
-      </div>
     </motion.section>
   );
 };
 
-export default ContactUs;
+export default Comment;

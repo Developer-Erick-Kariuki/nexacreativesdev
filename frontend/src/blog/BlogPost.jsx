@@ -7,6 +7,7 @@ import { easeInOut, motion } from "framer-motion";
 import Header from "../container/Header";
 import { client } from "../client";
 import Footer from "../container/Footer";
+import Comment from "../container/Comment";
 
 const serializers = {
   types: {
@@ -26,15 +27,10 @@ const serializers = {
               {props.children}
             </blockquote>
           );
+        case "p":
+          return <p className="text-lg leading-relaxed">{props.children}</p>;
         default:
-          return (
-            <p
-              style={{ textAlign: "justify" }}
-              className="leading-loose text-lg"
-            >
-              {props.children}
-            </p>
-          );
+          return <p className="leading-relaxed text-lg">{props.children}</p>;
       }
     },
   },
@@ -72,73 +68,76 @@ const BlogPost = () => {
 
   return (
     <>
-      <section className="text-primary max-w-7xl px-6 md:px-10 mx-auto pt-4">
-        <Header />
-        <motion.div
-          initial={{ opacity: 0, y: 500 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0, ease: easeInOut }}
-          className="flex justify-center"
-        >
-          <div className="flex items-start gap-8 flex-col px-28 mt-20">
-            {SinglePost.map((current) => (
-              <motion.div
-                initial={{ opacity: 0, y: 800 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0, ease: easeInOut }}
-                className="flex flex-col"
-                key={current.customId}
-              >
-                <img
-                  className="rounded-xl"
-                  src={current.imageUrl}
-                  alt={current.title}
-                  width={1000}
-                />
-                <p className=" text-accent mt-2">
-                  {moment(current.publishedAt).format("MMMM, YYYY")}
-                </p>
-                <h1 className="text-4xl font-bold max-w-2xl">
-                  {current.title}
-                </h1>
-                <div className="text-justify">
+      <Header />
+      <section className="text-primary px-6 md:px-10 border-red-500 mx-auto max-w-7xl">
+        <div className="w-full flex flex-col justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 500 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0, ease: easeInOut }}
+            className="max-w-5xl "
+          >
+            <div className="">
+              {SinglePost.map((current) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 800 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 0, ease: easeInOut }}
+                  className=""
+                  key={current.customId}
+                >
+                  <div className="w-full overflow-clip">
+                    <img
+                      className="object-cover rounded-md w-full"
+                      src={current.imageUrl}
+                      alt={current.title}
+                    />
+                  </div>
+                  <p className=" text-accent mt-2">
+                    {moment(current.publishedAt).format("MMMM, YYYY")}
+                  </p>
+                  <h1 className="text-4xl font-bold max-w-2xl">
+                    {current.title}
+                  </h1>
+
                   <SanityBlockContent
                     blocks={current.body}
                     serializers={serializers}
                   />
-                </div>
-              </motion.div>
-            ))}
-
-            <h1 className="text-lg font-bold mt-8">Related Posts</h1>
-            <div className="flex flex-wrap gap-6">
-              {posts.map((post) => (
-                <div
-                  key={post.title}
-                  className="flex max-w-md items-center flex-col"
-                >
-                  <img
-                    className="mx-8 rounded-xl"
-                    src={post.imageUrl}
-                    width={500}
-                    alt={post.title}
-                  />
-                  <div>
-                    <Link
-                      onClick={handleScrollToTop}
-                      to={`/blog/BlogPost/${post.customId}`}
-                    >
-                      <h2 className="text-lg font-bold mt-2">{post.title}</h2>
-                    </Link>
-                    <p className="mt-2 text-accent">
-                      {moment(post.publishedAt).format("MMMM, YYYY")}
-                    </p>
-                  </div>
-                </div>
+                </motion.div>
               ))}
+
+              <h1 className="text-xl text-yellow-400 font-bold mt-8">
+                Related Posts
+              </h1>
+              <div className="flex justify-between mt-8 gap-8 flex-col md:flex-row">
+                {posts.map((post) => (
+                  <div key={post.title} className="font-bold max-w-lg text-lg">
+                    <img
+                      className="rounded-md"
+                      src={post.imageUrl}
+                      width={500}
+                      alt={post.title}
+                    />
+                    <div className="flex flex-col ">
+                      <Link
+                        onClick={handleScrollToTop}
+                        to={`/blog/BlogPost/${post.customId}`}
+                      >
+                        <h2 className="mt-4">{post.title}</h2>
+                      </Link>
+                      <p className="text-base mt-2 text-green-400">
+                        <span className="text-primary">Posted on </span>
+                        {moment(post.publishedAt).format("DD, MMMM, YYYY")}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
+        <Comment />
       </section>
       <Footer />
     </>

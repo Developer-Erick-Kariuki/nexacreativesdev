@@ -19,9 +19,10 @@ const AboutUs = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: easeIn }}
-        className="text-lg flex-col font-bold flex text-center"
+        className="text-2xl flex-col font-bold flex text-center"
       >
-        <span className="text-accent">About</span> Nexa Creative Solutions
+        <span className="text-accent text-lg">About</span> Nexa Creative
+        Solutions
       </motion.h2>
 
       <div className="flex flex-col-reverse items-center mt-8 justify-center gap-4 w-full">
@@ -37,7 +38,7 @@ const AboutUs = () => {
           captivate but also convert. Our mission is to transform your vision
           into a powerful online presence that drives results.
         </motion.p>
-        <div className="flex flex-wrap gap-4 items-start justify-center md:items-center">
+        <div className="flex flex-col md:flex-row gap-4 items-start justify-center md:items-center">
           {info.map((icon, index) => (
             <motion.div
               initial={{ opacity: 0, y: 100 }}
@@ -46,8 +47,8 @@ const AboutUs = () => {
               key={index}
               className="flex items-center gap-4"
             >
-              <div className="p-2 ring-1 ring-accent rounded-full">
-                <img src={icon.icon} alt="icon" width={48} />
+              <div className="p-2 w-16 h-16 ring-1 ring-accent rounded-full">
+                <img src={icon.icon} alt="icon" />
               </div>
               <p className="transition-all duration-300 ease-in">{icon.name}</p>
             </motion.div>

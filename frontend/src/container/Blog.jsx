@@ -90,7 +90,7 @@ const Blog = () => {
               </h2>
             </Link>
             <h3 className="text-accent">
-              {moment(post.publishedAt).format("MMMM, YYYY")}
+              {moment(post.publishedAt).format("DD, MMMM, YYYY")}
             </h3>
           </div>
         ))}

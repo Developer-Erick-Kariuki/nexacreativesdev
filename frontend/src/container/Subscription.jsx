@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { client } from "../client";
 import { easeIn, motion } from "framer-motion";
+import { IoMdNotifications } from "react-icons/io";
 
 const Subscription = () => {
   const [email, setEmail] = useState("");
@@ -81,9 +82,10 @@ const Subscription = () => {
                   ? "bg-green-500"
                   : buttonText === "Failed"
                   ? "bg-red-500"
-                  : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600"
+                  : "bg-gradient-to-tr flex justify-center items-center gap-4 from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600"
               }  w-full py-3 px-4 rounded-3xl mt-2`}
             >
+              <IoMdNotifications />
               {buttonText}
             </button>
           </form>

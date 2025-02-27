@@ -4,6 +4,7 @@ import { HiBars3BottomRight } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { links } from "../constants";
+import { FaArrowRight } from "react-icons/fa";
 
 const Header = () => {
   const [isActive, setisActive] = useState(0);
@@ -15,7 +16,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden md:flex items-center tex-sm py-2 justify-between">
+      <nav className="hidden md:flex shadow-2xl max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
         <a href="/">
           <div className="flex">
             <img width={36} src="/logo.png" alt="site-logo" />
@@ -41,7 +42,7 @@ const Header = () => {
       </nav>
 
       {/* mobile navbar */}
-      <nav className="w-full md:hidden  top-0 px-6 z-20  shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
+      <nav className="w-full md:hidden max-w-7xl text-primary top-0 px-6 z-20  shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
         <div className="flex">
           <img width={32} src="/logo.png" alt="site-logo" />
         </div>
@@ -66,13 +67,13 @@ const Header = () => {
               initial={{ opacity: 0, x: 200 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
-              className="flex mt-8 shadow-2xl bg-secondary min-h-[100vh] absolute top-20 z-20 flex-col gap-8 w-full py-6 items-end px-6"
+              className="flex mt-8 shadow-2xl bg-secondary min-h-[100vh] absolute top-[5%] z-20 flex-col gap-8 w-full py-6 items-end px-6"
             >
               {links.map((link, index) => (
                 <li
                   id={link.href}
-                  className={`no-underline list-none cursor-pointer hover:bg-accent p-2 rounded-sm w-full transition-all duration-300 ${
-                    isActive === index ? "w-full " : "text-primary"
+                  className={`no-underline flex items-center justify-between list-none cursor-pointer hover:bg-accent/25 py-5 px-5 rounded-2xl w-full transition-all duration-300 ${
+                    isActive === index ? "w-full bg-accent" : "text-primary"
                   }`}
                   key={link.name}
                   onClick={() => {
@@ -81,6 +82,7 @@ const Header = () => {
                   }}
                 >
                   <a href={link.href}>{link.name}</a>
+                  {isActive == index && <FaArrowRight />}
                 </li>
               ))}
             </motion.div>

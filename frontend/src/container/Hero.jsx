@@ -4,7 +4,7 @@ import CallToAction from "../components/callToAction";
 
 const Hero = () => {
   return (
-    <section className="mt-16 relative justify-between w-full  flex flex-col-reverse md:flex-row">
+    <section className="mt-16 relative justify-between w-full flex flex-col-reverse md:flex-row">
       <div className="flex flex-col mt-20">
         <motion.h1
           initial={{ y: 200, opacity: 0 }}
@@ -32,17 +32,17 @@ const Hero = () => {
           initial={{ y: 400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: easeInOut }}
-          className="flex z-50 md:z-10 gap-4 flex-col md:flex-row mt-16"
+          className="flex flex-col md:flex-row gap-8 z-50 md:z-10  mt-8"
         >
           <CallToAction
             href="#contact"
             name="Get started"
-            className="bg-gradient-to-tr border-none hover:from-purple-600 hover:to-blue-600 transition-color duration-300 ease-linear from-blue-600 to-purple-600 "
+            className="bg-gradient-to-tr w-full hover:from-purple-600 hover:to-blue-600 transition-color duration-300 ease-linear from-blue-600 to-purple-600 "
           />
           <CallToAction
             href="#portfolio"
             name="Our Work"
-            className="transition-color duration-300 ease-linear bg-transparent ring-1 ring-white hover:ring-0 border-none hover:bg-gradient-to-tr from-blue-600 to-purple-600"
+            className="transition-color w-full duration-300 ease-linear bg-transparent ring-1 ring-white hover:ring-0 border-none hover:bg-gradient-to-tr from-blue-600 to-purple-600"
           />
         </motion.div>
       </div>
