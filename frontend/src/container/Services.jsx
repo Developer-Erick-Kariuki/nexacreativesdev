@@ -24,7 +24,7 @@ const cardNavigation = [
 ];
 
 const Services = () => {
-  const [isActive, setisActive] = useState(null);
+  const [isActive, setisActive] = useState(0);
   const [istop, setistop] = useState(0);
   return (
     <motion.section
