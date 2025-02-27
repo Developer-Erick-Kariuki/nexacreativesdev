@@ -18,7 +18,8 @@ const Portfolioa = () => {
           title,
           slug,
           "imageUrl": image.asset->url,
-          category
+          category,
+          description,
         }`;
         const data = await client.fetch(query);
         setImages(data);
@@ -28,7 +29,7 @@ const Portfolioa = () => {
     };
 
     fetchImages();
-  }, []);
+  }, [images]);
 
   const breakpointColums = {
     default: 4,
@@ -83,16 +84,18 @@ const Portfolioa = () => {
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
-            <motion.img
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
-              key={index}
-              src={image.imageUrl}
-              alt={image.title}
-              className={`shadow-lg grid-item`}
-              onClick={() => setSelectedImage(image.imageUrl)}
-            />
+            <div key={index} className="flex flex-col">
+              <motion.img
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
+                src={image.imageUrl}
+                alt={image.title}
+                className={`shadow-lg grid-item`}
+                onClick={() => setSelectedImage(image.imageUrl)}
+              />
+              <p className="text-sm text-slate-300 my-4">{image.description}</p>
+            </div>
           ))}
       </Masonry>
 
