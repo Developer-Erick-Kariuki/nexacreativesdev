@@ -56,24 +56,28 @@ const Portfolioa = () => {
 
       {/* Filter Buttons */}
       <ul className="flex w-full flex-wrap  justify-center gap-2 mt-8 md:gap-8">
-        {["All", "Social Media", "Branding", "Print Design", "Web Design"].map(
-          (item, index) => (
-            <li
-              key={index}
-              className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
-                isActive === index
-                  ? "bg-gradient-to-tr from-purple-600 to-blue-600"
-                  : " bg-slate-600/20"
-              }`}
-              onClick={() => {
-                setIsActive(index);
-                setIsSlug(item === "All" ? null : item.toLowerCase());
-              }}
-            >
-              {item}
-            </li>
-          )
-        )}
+        {[
+          "All",
+          "Social Media",
+          "Branding",
+          "Print Design",
+          "Website Design",
+        ].map((item, index) => (
+          <li
+            key={index}
+            className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
+              isActive === index
+                ? "bg-gradient-to-tr from-purple-600 to-blue-600"
+                : " bg-slate-600/20"
+            }`}
+            onClick={() => {
+              setIsActive(index);
+              setIsSlug(item === "All" ? null : item.toLowerCase());
+            }}
+          >
+            {item}
+          </li>
+        ))}
       </ul>
 
       {/* Image Gallery */}
