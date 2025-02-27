@@ -99,7 +99,7 @@ const Portfolioa = () => {
                 className={`shadow-lg grid-item`}
                 onClick={() => setSelectedImage(image.imageUrl)}
               />
-              <p className="text-sm text-gray-800 my-4">{image.description}</p>
+              <p className="text-sm text-slate-200 my-4">{image.description}</p>
             </div>
           ))}
       </Masonry>
