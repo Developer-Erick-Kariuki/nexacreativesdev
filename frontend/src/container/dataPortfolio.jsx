@@ -54,7 +54,7 @@ const Portfolioa = () => {
 
       {/* Filter Buttons */}
       <ul className="flex w-full flex-wrap  justify-center gap-2 mt-8 md:gap-8">
-        {["Graphic Design", "Branding", "Print Design", "Web Design"].map(
+        {["Social Media", "Branding", "Print Design", "Web Design"].map(
           (item, index) => (
             <li
               key={index}

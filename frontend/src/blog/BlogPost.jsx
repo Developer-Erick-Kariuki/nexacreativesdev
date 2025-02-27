@@ -122,7 +122,7 @@ const BlogPost = () => {
                     <div className="flex flex-col ">
                       <Link
                         onClick={handleScrollToTop}
-                        to={`/blog/BlogPost/${post.customId}`}
+                        to={`/blog/BlogPost/${post.title}`}
                       >
                         <h2 className="mt-4">{post.title}</h2>
                       </Link>

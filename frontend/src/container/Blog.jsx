@@ -75,7 +75,7 @@ const Blog = () => {
         showDots={true}
         infinite={true}
         focusOnSelect={true}
-        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
         sliderClass="mine"
         itemClass="item"
         containerClass="container"

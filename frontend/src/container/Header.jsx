@@ -4,6 +4,7 @@ import { HiBars3BottomRight } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { links } from "../constants";
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 const Header = () => {
@@ -17,11 +18,12 @@ const Header = () => {
   return (
     <>
       <nav className="hidden md:flex shadow-2xl max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
-        <a href="/">
+        <Link to="/">
           <div className="flex">
             <img width={36} src="/logo.png" alt="site-logo" />
           </div>
-        </a>
+        </Link>
+
         <div className="flex justify-between gap-6 items-center">
           {links.map((link, index) => (
             <li
@@ -44,7 +46,9 @@ const Header = () => {
       {/* mobile navbar */}
       <nav className="w-full md:hidden max-w-7xl text-primary top-0 px-6 z-20  shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
         <div className="flex">
-          <img width={32} src="/logo.png" alt="site-logo" />
+          <Link to="/" className="cursor-pointer z-40">
+            <img width={32} src="/logo.png" alt="site-logo" />
+          </Link>
         </div>
         <div className="flex absolute min-h-screen top-2 right-0 p-3 z-30 transition-all duration-300 w-full">
           <div className="right-4 absolute bg-accent rounded-md">
