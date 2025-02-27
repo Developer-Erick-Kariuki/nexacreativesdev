@@ -66,6 +66,7 @@ const ContactUs = () => {
       initial={{ opacity: 0, x: 200 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, ease: easeIn }}
+      viewport={{ once: true }}
       id="contact"
       className="py-8 px-5 rounded-3xl bg-secondary w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >

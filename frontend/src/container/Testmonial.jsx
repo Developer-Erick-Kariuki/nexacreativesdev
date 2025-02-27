@@ -45,6 +45,7 @@ const Testmonial = () => {
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: easeIn }}
+      viewport={{ once: true }}
       className="mt-32 px-6 md:px-10 w-full"
     >
       <div className="flex flex-col">

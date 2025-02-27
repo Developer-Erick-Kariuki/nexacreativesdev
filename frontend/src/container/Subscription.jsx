@@ -46,6 +46,7 @@ const Subscription = () => {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: easeIn }}
+      viewport={{ once: true }}
       className="w-full bg-gray-800 mt-16 p-3 rounded-3xl"
     >
       <div className="flex flex-col md:flex-row justify-center">

@@ -7,6 +7,7 @@ const Whyus = () => {
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2, ease: easeIn }}
+        viewport={{ once: true }}
         className="flex flex-col p-5 mx-4 relative justify-center"
       >
         <h2 className="text-3xl text-primary font-bold mb-8">Why Choose Us?</h2>
@@ -36,6 +37,7 @@ const Whyus = () => {
         initial={{ opacity: 0, x: 200 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, ease: easeInOut }}
+        viewport={{ once: true }}
         className="flex justify-center items-center overflow-hidden h-[60vh] relative w-full"
       >
         <img src="/whyus.png" alt="" className="z-10 absolute top-0" />

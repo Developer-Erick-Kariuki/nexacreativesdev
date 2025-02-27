@@ -31,6 +31,7 @@ const Services = () => {
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: easeIn }}
+      viewport={{ once: true }}
       id="services"
       className="z-10 w-full mt-16"
     >
@@ -65,6 +66,7 @@ const Services = () => {
         initial={{ opacity: 0, y: 300 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: easeIn }}
+        viewport={{ once: true }}
         className="flex justify-center mt-16 flex-col"
       >
         <h2 className="text-accent font-bold text-center">Our Process</h2>

@@ -10,6 +10,7 @@ const Hero = () => {
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0, ease: easeInOut }}
+          viewport={{ once: true }}
           className="text-3xl md:text-4xl max-w-lg leading-slug  font-semibold leading-snug uppercase"
         >
           Transforming your vision into
@@ -22,6 +23,7 @@ const Hero = () => {
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
+          viewport={{ once: true }}
           className="text-base font-light max-w-lg mt-8 leading-loose"
         >
           Our award-winning design agency blends creativity with cutting-edge
@@ -32,6 +34,7 @@ const Hero = () => {
           initial={{ y: 400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: easeInOut }}
+          viewport={{ once: true }}
           className="flex flex-col md:flex-row gap-8 z-50 md:z-10  mt-8"
         >
           <CallToAction

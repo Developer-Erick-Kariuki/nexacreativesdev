@@ -19,6 +19,7 @@ const AboutUs = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: easeIn }}
+        viewport={{ once: true }}
         className="text-2xl flex-col font-bold flex text-center"
       >
         <span className="text-accent text-lg">About</span> Nexa Creative
@@ -30,6 +31,7 @@ const AboutUs = () => {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: true }}
           className="text-base max-w-2xl text-center mt-8 leading-relaxed"
         >
           At Nexa Creative Solutions, we believe that every brand has a unique
@@ -44,6 +46,7 @@ const AboutUs = () => {
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3, ease: easeIn }}
+              viewport={{ once: true }}
               key={index}
               className="flex items-center gap-4"
             >
@@ -60,6 +63,7 @@ const AboutUs = () => {
           initial={{ opacity: 0, x: -300 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: easeInOut }}
+          viewport={{ once: true }}
           src="/aboutImg.png"
           alt=""
           width={600}
@@ -70,6 +74,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: easeIn }}
+            viewport={{ once: true }}
             className="flex bg-slate-800 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0"
           >
             <h2 className="text-base text-accent font-bold mb-8">Our Story</h2>
@@ -85,6 +90,7 @@ const AboutUs = () => {
             initial={{ opacity: 0, x: 200 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: easeIn }}
+            viewport={{ once: true }}
             className="flex max-w-md flex-col"
           >
             <div className="flex ring-1 ring-slate-800 hover:ring-accent p-5 rounded-3xl flex-col mt-8 md:mt-0">

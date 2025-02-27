@@ -43,6 +43,7 @@ const Portfolioa = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: easeIn }}
+      viewport={{ once: true }}
       id="portfolio"
       className="mt-32"
     >
