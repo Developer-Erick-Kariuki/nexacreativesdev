@@ -79,7 +79,7 @@ const Portfolioa = () => {
       {/* Image Gallery */}
       <Masonry
         breakpointColums={breakpointColums}
-        className="masonry-grid pl-0 pr-2 py-2"
+        className="masonry-grid pl-0 pr-2 py-2 bg-slate-50"
         columnClassName="masonry-column"
       >
         {images
