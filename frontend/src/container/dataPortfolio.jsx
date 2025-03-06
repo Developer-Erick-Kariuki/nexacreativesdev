@@ -82,14 +82,14 @@ const Portfolioa = () => {
 
       {/* Image Gallery */}
       <Masonry
-        breakpointColums={breakpointColums}
-        className="masonry-grid pl-0 pr-2 py-2"
+        breakpointCols={breakpointColums}
+        className="masonry-grid"
         columnClassName="masonry-column"
       >
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
-            <div key={index} className="flex flex-col">
+            <div key={index}>
               <motion.img
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
