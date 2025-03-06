@@ -9,29 +9,68 @@ import { client } from "../client";
 import Footer from "../container/Footer";
 import Comment from "../container/Comment";
 
+// serializers
+
 const serializers = {
   types: {
-    block: (props) => {
-      const { style = "normal" } = props.node;
+    block: ({ node, children }) => {
+      const { style = "normal" } = node;
 
       switch (style) {
         case "h1":
-          return <h1 className="text-3xl py-4 font-bold">{props.children}</h1>;
-        case "h2":
           return (
-            <h2 className="text-2xl py-4 font-semibold">{props.children}</h2>
+            <h1 className="text-5xl font-extrabold mt-10 mb-6">{children}</h1>
+          );
+        case "h2":
+          return <h2 className="text-3xl font-bold mt-8 mb-5">{children}</h2>;
+        case "h3":
+          return (
+            <h3 className="text-2xl font-semibold mt-6 mb-4">{children}</h3>
           );
         case "blockquote":
           return (
-            <blockquote className="border-l-4 py-4 pl-4 italic">
-              {props.children}
+            <blockquote className="border-l-4 border-gray-400 bg-gray-100 p-5 italic rounded-md mb-6">
+              {children}
             </blockquote>
           );
+        case "normal":
         case "p":
-          return <p className="text-lg leading-relaxed">{props.children}</p>;
+          return <p className="text-lg leading-relaxed mb-5">{children}</p>;
         default:
-          return <p className="leading-relaxed text-lg">{props.children}</p>;
+          return <p className="text-lg leading-relaxed mb-5">{children}</p>;
       }
+    },
+
+    list: ({ type, children }) => {
+      if (type === "bullet") {
+        return <ul className="list-disc pl-6 space-y-2 mb-6">{children}</ul>;
+      }
+      if (type === "number") {
+        return <ol className="list-decimal pl-6 space-y-2 mb-6">{children}</ol>;
+      }
+      return <ul className="list-disc pl-6 space-y-2 mb-6">{children}</ul>;
+    },
+
+    listItem: ({ children }) => <li className="ml-2">{children}</li>,
+
+    image: ({ node }) => {
+      const { asset, caption } = node;
+      if (!asset) return null;
+
+      return (
+        <figure className="flex flex-col items-center text-center my-8">
+          <img
+            src={asset.url}
+            alt={caption}
+            className="w-full max-w-3xl h-auto rounded-lg shadow-md object-cover"
+          />
+          {caption && (
+            <figcaption className="text-sm text-gray-500 mt-2 italic">
+              {caption}
+            </figcaption>
+          )}
+        </figure>
+      );
     },
   },
 };
@@ -46,11 +85,17 @@ const BlogPost = () => {
         title,
         slug,
         customId,
-        body,
+        body[]{
+          ...,
+          asset->{
+            _id,
+            url
+          }
+        },
         publishedAt,
         "imageUrl": image.asset->url,
-        
       }`;
+
       const data = await client.fetch(query);
       setPosts(data);
     };
@@ -87,18 +132,21 @@ const BlogPost = () => {
                   key={current.customId}
                 >
                   <div className="w-full overflow-clip">
+                    <h1 className="text-6xl font-bold mt-4 text-center">
+                      {current.title}
+                    </h1>
+                    <p className=" text-accent text-center my-4">
+                      <span className="text-primary">
+                        Written By Nexa Creatives{" "}
+                      </span>
+                      {moment(current.publishedAt).format("MMMM DD, YYYY")}
+                    </p>
                     <img
                       className="object-cover rounded-md w-full"
                       src={current.imageUrl}
                       alt={current.title}
                     />
                   </div>
-                  <p className=" text-accent mt-2">
-                    {moment(current.publishedAt).format("MMMM, YYYY")}
-                  </p>
-                  <h1 className="text-4xl font-bold max-w-2xl">
-                    {current.title}
-                  </h1>
 
                   <SanityBlockContent
                     blocks={current.body}
@@ -122,7 +170,7 @@ const BlogPost = () => {
                     <div className="flex flex-col ">
                       <Link
                         onClick={handleScrollToTop}
-                        to={`/blog/BlogPost/${post.title}`}
+                        to={`/blog/BlogPost/${post.customId}`}
                       >
                         <h2 className="mt-4">{post.title}</h2>
                       </Link>

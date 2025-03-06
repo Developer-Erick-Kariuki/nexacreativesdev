@@ -60,14 +60,16 @@ const Blog = () => {
     >
       <div className="flex flex-col">
         <h2 className="text-accent">News & Blogs</h2>
-        <h1 className="text-5xl font-bold">Our Latest News & Blogs</h1>
+        <h1 className="md:text-5xl text-3xl font-bold">
+          Our Latest News & Blogs
+        </h1>
         <p className="mt-2 text-32 ">
           Insights and Trends from Nexa Creative Solutions
         </p>
         <CallToAction
           name="Get intouch"
           href="#contact"
-          className="bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
+          className="bg-gradient-to-tr w-full md:w-auto from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
         />
       </div>
 
@@ -75,6 +77,8 @@ const Blog = () => {
         responsive={responsive}
         showDots={true}
         infinite={true}
+        autoPlay={true}
+        partialVisbile={true}
         focusOnSelect={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         sliderClass="mine"
