@@ -45,7 +45,7 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="mt-32"
+      className="mt-32 bg-slate-800 p-3 rounded-xl"
     >
       <div className="flex flex-col justify-center items-center">
         <h2 className="font-bold text-center text-3xl flex flex-col">

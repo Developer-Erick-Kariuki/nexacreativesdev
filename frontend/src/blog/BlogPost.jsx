@@ -132,7 +132,7 @@ const BlogPost = () => {
                   key={current.customId}
                 >
                   <div className="w-full overflow-clip">
-                    <h1 className="text-6xl font-bold mt-4 text-center">
+                    <h1 className="text-3xl md:text-6xl font-bold mt-4 text-center">
                       {current.title}
                     </h1>
                     <p className=" text-accent text-center my-4">

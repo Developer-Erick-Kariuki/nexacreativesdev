@@ -2,12 +2,53 @@ import { easeIn, motion } from "framer-motion";
 import { processes } from "../constants";
 import { AiFillStar } from "react-icons/ai";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaBorderTopLeft } from "react-icons/fa6";
+import { IoBulbOutline } from "react-icons/io5";
+import { SiWebgpu } from "react-icons/si";
+import { SiGooglemarketingplatform } from "react-icons/si";
+import { MdOutlineAutoAwesomeMotion } from "react-icons/md";
+import { MdOutlineLinkedCamera } from "react-icons/md";
 import { useState } from "react";
 
+const size = 38;
+
 const services = [
-  { name: "Graphic Design", src: "/graphic.png" },
-  { name: "Website Design", src: "/webdesign.png" },
-  { name: "Branding Identity", src: "/media.png" },
+  {
+    name: "UX/UI Design",
+    icon: <FaBorderTopLeft size={size} />,
+    description:
+      "Designing intuitive and user-friendly digital experiencies, including mobile and web app interfaces that enhance usability and engagement",
+  },
+  {
+    name: "Graphic Design",
+    description:
+      "Creating visually compelling designs, including logos, social media graphics, business cards, brochures, and other branding materials.",
+    icon: <IoBulbOutline size={size} />,
+  },
+  {
+    name: "Digital Marketing",
+    description:
+      "Crafting effective marketing strategies, managing social media, running paid ads, and boosting brand visibility through digital campaigns.",
+    icon: <SiGooglemarketingplatform />,
+  },
+  {
+    name: "Motion Graphics & Video Editing",
+    icon: <MdOutlineAutoAwesomeMotion size={size} />,
+    description:
+      "Producing engaging animations, logo intros, promotional videos, and social media video content to enhance brand storytelling.",
+  },
+  {
+    name: "Web Design & Development",
+    description:
+      "Designing and developing custom websites, landing pages, and eCommerce platforms optimized for performance and user experience.",
+    icon: <SiWebgpu size={size} />,
+  },
+  {
+    name: "Photography & Videography",
+    description:
+      "Capturing high-quality visuals for events, corporate needs, real estate, and creative studio shoots to elevate brand presence.",
+    icon: <MdOutlineLinkedCamera size={size} />,
+  },
 ];
 
 const avatars = [
@@ -42,22 +83,19 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="flex justify-center flex-wrap gap-4 mt-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 mt-16">
         {services.map((service, index) => (
           <div
             key={index}
-            className="relative flex items-center h-[14rem] rounded-3xl overflow-clip justify-center hover:-translate-y-3 transition-transform duration-500 ease-in-out cursor-pointer w-[14rem]"
+            className="flex flex-col bg-slate-800 p-6 rounded-xl overflow-clip hover:-translate-x-3 transition-all duration-300 ease-in-out cursor-pointer"
           >
-            <a href="#" className="absolute text-xl z-20 font-bold mx-auto">
+            <i className="mb-4 text-accent">{service.icon}</i>
+            <a href="#" className="uppercase z-20 font-light">
               {service.name}
             </a>
-
-            <img
-              className="object-cover absolute inset-0"
-              src={service.src}
-              alt="graphic design"
-            />
-            <div className="bg-transparent hover:bg-gradient-to-tl  from-blue-700 to-purple-600 transition-colors duration-500 ease-linear rounded-3xl h-full opacity-75 w-full z-10 inset-0 "></div>
+            <p className="mt-4 text-slate-400 text-sm leading-relaxed">
+              {service.description}
+            </p>
           </div>
         ))}
       </div>
@@ -156,7 +194,7 @@ const Services = () => {
                   <p
                     className={`${
                       isActive === index ? "text-secondary" : "text-slate-400 "
-                    } text-lg flex justify-between items-center w-full font-bold`}
+                    } flex justify-between items-center w-full font-medium`}
                   >
                     {link.name}
                     {isActive === index && (

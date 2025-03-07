@@ -20,7 +20,7 @@ const Header = () => {
       <nav className="hidden md:flex shadow-2xl max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
         <Link to="/">
           <div className="flex">
-            <img width={36} src="/logo.png" alt="site-logo" />
+            <img width={200} src="/logo light.png" alt="site-logo" />
           </div>
         </Link>
 
@@ -31,7 +31,7 @@ const Header = () => {
                 isActive === index
                   ? "bg-gradient-to-tr bg-gradient-tl from-blue-600 to-purple-600 "
                   : "text-primary "
-              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50 rounded-3xl px-3`}
+              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50 rounded-3xl px-5 py-1`}
               key={link.name}
               onClick={() => {
                 setisActive(index);
@@ -44,14 +44,14 @@ const Header = () => {
       </nav>
 
       {/* mobile navbar */}
-      <nav className="w-full md:hidden max-w-7xl text-primary top-0 px-6 z-20  shadow-2xl py-6 right-0 left-0 flex justify-between items-center">
+      <nav className="md:hidden container text-primary top-0 px-6 z-20 py-6 right-0 left-0 flex justify-between items-center">
         <div className="flex">
           <Link to="/" className="cursor-pointer z-40">
-            <img width={32} src="/logo.png" alt="site-logo" />
+            <img width={150} src="/logo light.png" alt="site-logo" />
           </Link>
         </div>
         <div className="flex absolute min-h-screen top-2 right-0 p-3 z-30 transition-all duration-300 w-full">
-          <div className="right-4 absolute bg-accent rounded-md">
+          <div className="right-4 absolute bg-slate-800  rounded-md">
             {isOpen ? (
               <MdClose
                 size={36}
@@ -76,8 +76,8 @@ const Header = () => {
               {links.map((link, index) => (
                 <li
                   id={link.href}
-                  className={`no-underline flex items-center justify-between list-none cursor-pointer hover:bg-accent/25 py-5 px-5 rounded-2xl w-full transition-all duration-300 ${
-                    isActive === index ? "w-full bg-accent" : "text-primary"
+                  className={`no-underline flex items-center justify-between list-none cursor-pointer hover:scale-105 py-5 px-5 rounded-2xl w-full transition-all duration-300 ${
+                    isActive === index ? "w-full bg-slate-800" : "text-primary"
                   }`}
                   key={link.name}
                   onClick={() => {

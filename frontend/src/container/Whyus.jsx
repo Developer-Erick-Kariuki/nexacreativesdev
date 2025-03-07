@@ -2,7 +2,7 @@ import { motion, easeInOut, easeIn } from "framer-motion";
 
 const Whyus = () => {
   return (
-    <section className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800  rounded-3xl md:flex-row">
+    <section className="flex mt-32 flex-col-reverse gap-4 items-center bg-gray-800 drop-shadow-md  rounded-3xl md:flex-row">
       <motion.div
         initial={{ opacity: 0, x: -200 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -41,11 +41,6 @@ const Whyus = () => {
         className="flex justify-center items-center overflow-hidden h-[60vh] relative w-full"
       >
         <img src="/whyus.png" alt="" className="z-10 absolute top-0" />
-        <img
-          src="/abstract.png"
-          className="absolute w-full h-full opacity-25"
-          alt=""
-        />
       </motion.div>
     </section>
   );
