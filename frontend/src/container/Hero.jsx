@@ -35,17 +35,17 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 1, ease: easeInOut }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row gap-8 z-50 md:z-10  mt-8"
+          className="flex flex-col md:flex-row gap-8 md:z-10  mt-8"
         >
           <CallToAction
             href="#contact"
-            name="Get started"
-            className="bg-gradient-to-tr w-full hover:from-purple-600 hover:to-blue-600 transition-color duration-300 ease-linear from-blue-600 to-purple-600 "
+            name="Get a Design"
+            className="bg-gradient-to-tr hover:from-purple-600 hover:to-blue-600 transition-color duration-300 ease-linear from-blue-600 to-purple-600 "
           />
           <CallToAction
             href="#portfolio"
-            name="Our Work"
-            className="transition-color w-full duration-300 ease-linear bg-transparent ring-1 ring-white hover:ring-0 border-none hover:bg-gradient-to-tr from-blue-600 to-purple-600"
+            name="See our work"
+            className="transition-color duration-300 ease-linear bg-transparent ring-1 ring-white hover:ring-0 border-none hover:bg-gradient-to-tr from-blue-600 to-purple-600"
           />
         </motion.div>
       </div>

@@ -14,8 +14,8 @@ import Whyus from "./container/Whyus";
 function App() {
   return (
     <>
-      <Header />
       <main className="overflow-x-hidden scroll-smooth  w-full px-6 md:px-10 max-w-7xl text-white font-inter mx-auto">
+        <Header />
         <Hero />
         <Introduction />
         <AboutUs />

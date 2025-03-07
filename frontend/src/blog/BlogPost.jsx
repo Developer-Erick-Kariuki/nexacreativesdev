@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { easeInOut, motion } from "framer-motion";
-
-import Header from "../container/Header";
 import { client } from "../client";
 import Footer from "../container/Footer";
 import Comment from "../container/Comment";
+import BlogHeader from "../container/BlogHeader";
 
 // serializers
 
@@ -19,7 +18,7 @@ const serializers = {
       switch (style) {
         case "h1":
           return (
-            <h1 className="text-5xl font-extrabold mt-10 mb-6">{children}</h1>
+            <h1 className="text-4xl font-extrabold mt-10 mb-6">{children}</h1>
           );
         case "h2":
           return <h2 className="text-3xl font-bold mt-8 mb-5">{children}</h2>;
@@ -35,9 +34,9 @@ const serializers = {
           );
         case "normal":
         case "p":
-          return <p className="text-lg leading-relaxed mb-5">{children}</p>;
+          return <p className="leading-relaxed mb-5">{children}</p>;
         default:
-          return <p className="text-lg leading-relaxed mb-5">{children}</p>;
+          return <p className="leading-relaxed mb-5">{children}</p>;
       }
     },
 
@@ -62,7 +61,7 @@ const serializers = {
           <img
             src={asset.url}
             alt={caption}
-            className="w-full max-w-3xl h-auto rounded-lg shadow-md object-cover"
+            className="w-full rounded-lg h-[300px] shadow-md object-cover"
           />
           {caption && (
             <figcaption className="text-sm text-gray-500 mt-2 italic">
@@ -113,79 +112,75 @@ const BlogPost = () => {
 
   return (
     <>
-      <Header />
-      <section className="text-primary px-6 md:px-10 border-red-500 mx-auto max-w-7xl">
-        <div className="w-full flex flex-col justify-center items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 500 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0, ease: easeInOut }}
-            className="max-w-5xl "
-          >
-            <div className="">
-              {SinglePost.map((current) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 800 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0, ease: easeInOut }}
-                  className=""
-                  key={current.customId}
-                >
-                  <div className="w-full overflow-clip">
-                    <h1 className="text-3xl md:text-6xl font-bold mt-4 text-center">
-                      {current.title}
-                    </h1>
-                    <p className=" text-accent text-center my-4">
-                      <span className="text-primary">
-                        Written By Nexa Creatives{" "}
-                      </span>
-                      {moment(current.publishedAt).format("MMMM DD, YYYY")}
-                    </p>
-                    <img
-                      className="object-cover rounded-md w-full"
-                      src={current.imageUrl}
-                      alt={current.title}
-                    />
-                  </div>
+      <BlogHeader />
+      <section className="text-primary mt-4  border-red-500 mx-auto max-w-7xl">
+        <div className="w-full relative  flex items-center">
+          <div className="flex flex-col md:flex-row gap-x-2">
+            {SinglePost.map((current) => (
+              <motion.div
+                initial={{ opacity: 0, y: 800 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0, ease: easeInOut }}
+                className="bg-slate-800 px-4 max-w-4xl"
+                key={current.customId}
+              >
+                <div className="w-full overflow-clip">
+                  <h1 className="text-3xl md:text-4xl font-bold my-4">
+                    {current.title}
+                  </h1>
+                  <p className=" text-slate-600 my-4">
+                    <span className="">Written By Nexa Creatives </span>
+                    {moment(current.publishedAt).format("MMMM DD, YYYY")}
+                  </p>
 
-                  <SanityBlockContent
-                    blocks={current.body}
-                    serializers={serializers}
+                  <img
+                    className="object-cover rounded-md w-full h-[60vh]"
+                    src={current.imageUrl}
+                    alt={current.title}
                   />
-                </motion.div>
-              ))}
+                </div>
 
-              <h1 className="text-xl text-yellow-400 font-bold mt-8">
-                Related Posts
-              </h1>
-              <div className="flex justify-between mt-8 gap-8 flex-col md:flex-row">
-                {posts.map((post) => (
-                  <div key={post.title} className="font-bold max-w-lg text-lg">
-                    <img
-                      className="rounded-md"
-                      src={post.imageUrl}
-                      width={500}
-                      alt={post.title}
-                    />
-                    <div className="flex flex-col ">
-                      <Link
-                        onClick={handleScrollToTop}
-                        to={`/blog/BlogPost/${post.customId}`}
-                      >
-                        <h2 className="mt-4">{post.title}</h2>
-                      </Link>
-                      <p className="text-base mt-2 text-green-400">
-                        <span className="text-primary">Posted on </span>
-                        {moment(post.publishedAt).format("DD, MMMM, YYYY")}
+                <SanityBlockContent
+                  blocks={current.body}
+                  serializers={serializers}
+                />
+                <Comment />
+              </motion.div>
+            ))}
+
+            <div className="flex flex-col h-fit md:sticky my-2 max-w-full inset-0 md:max-w-md drop-shadow-md bg-slate-800 p-2">
+              <h1 className="text-xl font-bold my-4">Popular Posts</h1>
+              <hr className="w-full border-white" />
+              {posts.map((post) => (
+                <div key={post.title}>
+                  <Link
+                    onClick={handleScrollToTop}
+                    className="flex justify-between gap-x-4"
+                    to={`/blog/BlogPost/${post.customId}`}
+                  >
+                    <div className="w-20 h-16 flex mt-4 overflow-clip">
+                      <img
+                        src={post.imageUrl}
+                        alt={post.title}
+                        className="object-cover h-full w-full"
+                      />
+                    </div>
+
+                    <div className="flex flex-col justify-center w-full">
+                      <h2 className="mt-4 text-sm  hover:text-green-400 transition-colors duration-300 ease-in-out font-normal">
+                        {post.title}
+                      </h2>
+
+                      <p className="text-xs mt-2 text-slate-500">
+                        {moment(post.publishedAt).format("MMMM DD, YYYY")}
                       </p>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  </Link>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
         </div>
-        <Comment />
       </section>
       <Footer />
     </>

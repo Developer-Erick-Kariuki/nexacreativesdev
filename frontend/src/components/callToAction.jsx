@@ -1,8 +1,12 @@
 // eslint-disable-next-line react/prop-types
 const CallToAction = ({ className, href, name }) => {
   return (
-    <a href={href}>
-      <button className={`${className} px-6  py-3 rounded-3xl`}>{name}</button>
+    <a href={href} className="w-full">
+      <div
+        className={`${className} flex justify-center items-baseline px-6  py-3 rounded-2xl`}
+      >
+        {name}
+      </div>
     </a>
   );
 };

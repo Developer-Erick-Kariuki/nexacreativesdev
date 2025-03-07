@@ -60,16 +60,16 @@ const Blog = () => {
     >
       <div className="flex flex-col">
         <h2 className="text-accent">News & Blogs</h2>
-        <h1 className="md:text-5xl text-3xl font-bold">
+        <h1 className="md:text-4xl text-3xl font-bold">
           Our Latest News & Blogs
         </h1>
-        <p className="mt-2 text-32 ">
+        <p className="mt-2 text-slate-300">
           Insights and Trends from Nexa Creative Solutions
         </p>
         <CallToAction
           name="Get intouch"
           href="#contact"
-          className="bg-gradient-to-tr w-full md:w-auto from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
+          className="bg-gradient-to-tr w-full  from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
         />
       </div>
 
@@ -88,14 +88,20 @@ const Blog = () => {
       >
         {posts.map((post) => (
           <div className="mx-4" key={post.title}>
-            <img src={post.imageUrl} alt="" width={500} />
+            <div className="overflow-hidden w-full h-[200px]">
+              <img
+                src={post.imageUrl}
+                alt="default"
+                className="object-cover w-full h-full"
+              />
+            </div>
             <Link to={`/blog/BlogPost/${post.customId}`}>
-              <h2 className="font-bold cursor-pointer max-w-md text-xl mt-6">
+              <h2 className="cursor-pointer hover:text-orange-600 mt-6">
                 {post.title}
               </h2>
             </Link>
-            <h3 className="text-accent">
-              {moment(post.publishedAt).format("DD, MMMM, YYYY")}
+            <h3 className="text-sm text-slate-500">
+              {moment(post.publishedAt).format("MMMM DD, YYYY")}
             </h3>
           </div>
         ))}

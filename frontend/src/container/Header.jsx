@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { links } from "../constants";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import Button from "../components/Button";
 
 const Header = () => {
   const [isActive, setisActive] = useState(0);
@@ -17,10 +18,10 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden md:flex shadow-2xl max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
+      <nav className="hidden md:flex h-16  max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
         <Link to="/">
           <div className="flex">
-            <img width={200} src="/logo light.png" alt="site-logo" />
+            <img width={120} src="/logo light.png" alt="site-logo" />
           </div>
         </Link>
 
@@ -31,7 +32,7 @@ const Header = () => {
                 isActive === index
                   ? "bg-gradient-to-tr bg-gradient-tl from-blue-600 to-purple-600 "
                   : "text-primary "
-              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50 rounded-3xl px-5 py-1`}
+              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50 rounded-2xl px-5 py-1`}
               key={link.name}
               onClick={() => {
                 setisActive(index);
@@ -40,6 +41,10 @@ const Header = () => {
               <a href={link.href}>{link.name}</a>
             </li>
           ))}
+          <Button
+            className="bg-gradient-to-tr bg-red-500 to-red-400"
+            name="GET A DESIGN"
+          />
         </div>
       </nav>
 

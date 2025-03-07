@@ -50,8 +50,8 @@ const Testmonial = () => {
     >
       <div className="flex flex-col">
         <h2 className="flex flex-col text-center text-3xl font-bold">
-          <span className="text-accent text-base">Testmonials</span> Review from
-          Our Clients
+          <span className="text-accent text-base">Testmonials</span> What
+          clients say about us
         </h2>
 
         <Carousel
@@ -68,12 +68,15 @@ const Testmonial = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className={`flex cursor-pointer mx-2 flex-col bg-slate-900/40 ring-1 py-4 px-6 rounded-2xl gap-8 mt-16`}
+              className={`flex cursor-pointer relative mx-2 flex-col  ring-1 ring-slate-700 py-4 px-6 rounded-2xl gap-8 mt-16`}
             >
               <div className="flex justify-between gap-4">
                 <div className="flex space-x-1">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="text-accent fill-accent w-5 h-5" />
+                    <Star
+                      key={i}
+                      className="text-amber-600 fill-amber-600 w-5 h-5"
+                    />
                   ))}
 
                   {/* Render unfilled stars */}
@@ -85,22 +88,23 @@ const Testmonial = () => {
                   ))}
                 </div>
 
-                <div className="bg-accent -mt-10 -mr-5  rounded-full w-16 h-16 flex items-center justify-center">
+                <div className="bg-amber-600 absolute -right-2 -top-2 rounded-full p-2 flex items-center justify-center">
                   <PiQuotesFill size={48} />
                 </div>
               </div>
-              <p className="leading-relaxed font-light text-slate-400 text-base">
+              <p className="leading-relaxed font-light text-slate-400 text-sm">
                 {item.message}
               </p>
               <div className="flex gap-4 items-center">
                 <img
+                  width={50}
                   src={item.profile.asset.url}
-                  className="w-12 h-12 ring-2 ring-white rounded-full"
-                  alt=""
+                  className="rounded-full ring-slate-500 ring-2"
+                  alt="default"
                 />
-                <div className="flex flex-col gap-2">
-                  <h2 className="font-bold">{item.name}</h2>
-                  <p className="text-sm  text-gray-400">{item.designation}</p>
+                <div className="flex flex-col my-3">
+                  <h2 className="font-bold text-base">{item.name}</h2>
+                  <p className="text-sm text-gray-400">{item.designation}</p>
                 </div>
               </div>
             </div>

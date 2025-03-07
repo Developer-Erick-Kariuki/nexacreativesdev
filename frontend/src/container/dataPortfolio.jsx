@@ -45,17 +45,19 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="mt-32 bg-slate-800 p-3 rounded-xl"
+      className="mt-32 bg-gray-900 py-8 px-6 drop-shadow-md rounded-xl"
     >
       <div className="flex flex-col justify-center items-center">
-        <h2 className="font-bold text-center text-3xl flex flex-col">
-          <span className="text-accent text-base font-bold">Portfolio</span>
+        <h2 className="font-bold text-center text-2xl my-4 flex flex-col">
+          <span className="text-accent text-base my-4 font-bold">
+            Portfolio
+          </span>
           Our Recent Projects
         </h2>
       </div>
 
       {/* Filter Buttons */}
-      <ul className="flex w-full flex-wrap  justify-center gap-2 mt-8 md:gap-8">
+      <ul className="flex w-full flex-wrap  justify-center gap-2 my-8 md:gap-8">
         {[
           "All",
           "Social Media",
@@ -96,7 +98,7 @@ const Portfolioa = () => {
                 transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
                 src={image.imageUrl}
                 alt={image.title}
-                className={`shadow-lg grid-item`}
+                className={`shadow-lg grid-item drop-shadow-md`}
                 onClick={() => setSelectedImage(image.imageUrl)}
               />
               {/* <p className="text-sm text-slate-200 my-4">{image.description}</p> */}
