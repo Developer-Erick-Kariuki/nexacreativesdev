@@ -64,7 +64,7 @@ const Comment = () => {
   return (
     <section
       id="contact"
-      className="py-8 px-5 w-full mt-32  md:flex-row justify-center items-center flex "
+      className="py-8 px-5 w-full mt-16  md:flex-row justify-center items-center flex "
     >
       <div className="flex flex-col w-full">
         <h2 className="text-2xl font-bold"> Leave Us a comment </h2>

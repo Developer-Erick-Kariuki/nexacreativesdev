@@ -18,13 +18,13 @@ const serializers = {
       switch (style) {
         case "h1":
           return (
-            <h1 className="text-4xl font-extrabold mt-10 mb-6">{children}</h1>
+            <h1 className="text-3xl font-extrabold mt-10 mb-6">{children}</h1>
           );
         case "h2":
-          return <h2 className="text-3xl font-bold mt-8 mb-5">{children}</h2>;
+          return <h2 className="text-2xl font-bold mt-8 mb-5">{children}</h2>;
         case "h3":
           return (
-            <h3 className="text-2xl font-semibold mt-6 mb-4">{children}</h3>
+            <h3 className="text-xl font-semibold mt-6 mb-4">{children}</h3>
           );
         case "blockquote":
           return (

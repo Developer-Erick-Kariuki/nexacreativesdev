@@ -53,7 +53,6 @@ const Testmonial = () => {
           <span className="text-accent text-base">Testmonials</span> What
           clients say about us
         </h2>
-
         <Carousel
           responsive={responsive}
           showDots={true}

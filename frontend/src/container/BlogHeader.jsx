@@ -21,7 +21,7 @@ const BlogHeader = () => {
       <nav className="hidden md:flex h-16  max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
         <Link to="/">
           <div className="flex">
-            <img width={120} src="/logo light.png" alt="site-logo" />
+            <img width={150} src="/logo light.png" alt="site-logo" />
           </div>
         </Link>
 

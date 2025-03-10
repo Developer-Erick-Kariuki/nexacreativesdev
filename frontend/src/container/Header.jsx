@@ -18,21 +18,21 @@ const Header = () => {
 
   return (
     <>
-      <nav className="hidden md:flex h-16  max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
+      <nav className="hidden md:flex max-w-7xl mx-auto items-center text-primary tex-sm py-3 justify-between">
         <Link to="/">
           <div className="flex">
-            <img width={120} src="/logo light.png" alt="site-logo" />
+            <img width={150} src="/logo light.png" alt="site-logo" />
           </div>
         </Link>
 
-        <div className="flex justify-between gap-6 items-center">
+        <div className="flex justify-between gap-x-1 items-center">
           {links.map((link, index) => (
             <li
               className={`no-underline list-none cursor-pointer transition-all duration-300 ${
                 isActive === index
                   ? "bg-gradient-to-tr bg-gradient-tl from-blue-600 to-purple-600 "
                   : "text-primary "
-              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50 rounded-2xl px-5 py-1`}
+              } hover:bg-gradient-to-tr hover:from-blue-600/50 hover:to-purple-600/50  px-3 py-1 rounded`}
               key={link.name}
               onClick={() => {
                 setisActive(index);
@@ -41,10 +41,6 @@ const Header = () => {
               <a href={link.href}>{link.name}</a>
             </li>
           ))}
-          <Button
-            className="bg-gradient-to-tr bg-red-500 to-red-400"
-            name="GET A DESIGN"
-          />
         </div>
       </nav>
 
