@@ -59,7 +59,7 @@ const Hero = () => {
         }}
         className="flex"
       >
-        <img className=" object-contain" width={400} src="/hero1.png" alt="" />
+        <img className=" object-contain" width={400} height={400} src="/hero1.png" alt="" />
       </motion.div>
       <motion.div
         initial={{ y: -400, opacity: 0 }}

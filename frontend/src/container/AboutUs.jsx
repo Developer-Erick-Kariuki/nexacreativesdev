@@ -66,6 +66,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
           src="/aboutImg.png"
           alt=""
+          height = {600}
           width={600}
         />
 
