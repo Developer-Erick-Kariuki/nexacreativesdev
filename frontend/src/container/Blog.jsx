@@ -23,7 +23,7 @@ const responsive = {
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 350, min: 0 },
     items: 1,
   },
 };
@@ -58,7 +58,7 @@ const Blog = () => {
       id="blog"
       className="w-full px-6 md:px-10 mt-32 flex flex-col md:flex-row gap-8 justify-center"
     >
-      <div className="flex max-w-7xl">
+      <div className="flex flex-col md:flex-row max-w-7xl">
         <div className="flex flex-col">
           <h2 className="text-accent">News & Blogs</h2>
           <h1 className="md:text-4xl text-3xl font-bold">
