@@ -1,14 +1,6 @@
 import "../index.css";
 import { easeIn, easeInOut, motion } from "framer-motion";
 
-import { animation } from "../constants";
-
-const info = [
-  { name: "Innovative", icon: "/innovative.svg" },
-  { name: "Client Satisfaction", icon: "/success.svg" },
-  { name: "Quality guaranteed", icon: "/client.svg" },
-];
-
 const AboutUs = () => {
   return (
     <section
@@ -40,23 +32,6 @@ const AboutUs = () => {
           captivate but also convert. Our mission is to transform your vision
           into a powerful online presence that drives results.
         </motion.p>
-        <div className="flex flex-col md:flex-row gap-4 items-start justify-center md:items-center">
-          {info.map((icon, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3, ease: easeIn }}
-              viewport={{ once: true }}
-              key={index}
-              className="flex items-center gap-4"
-            >
-              <div className="p-2 w-16 h-16 ring-1 ring-accent rounded-full">
-                <img src={icon.icon} alt="icon" />
-              </div>
-              <p className="transition-all duration-300 ease-in">{icon.name}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
       <div className="flex flex-col gap-8 justify-center md:flex-row mx-0 md:mx-12 mt-16">
         <motion.img
@@ -65,8 +40,7 @@ const AboutUs = () => {
           transition={{ duration: 1, ease: easeInOut }}
           viewport={{ once: true }}
           src="/aboutImg.png"
-          alt=""
-          height = {600}
+          height={600}
           width={600}
         />
 

@@ -15,11 +15,6 @@ const Introduction = () => {
           className="h-full z-10 absolute inset-0 object-cover"
           alt="model image"
         />
-        <img
-          src="/pngegg.png"
-          className="w-full absolute top-0"
-          alt="pattern"
-        />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: 800 }}
