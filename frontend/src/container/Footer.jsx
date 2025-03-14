@@ -28,7 +28,7 @@ const Footer = () => {
         theme === "dark"
           ? "bg-slate-800 text-primary"
           : "bg-slate-200 text-secondary"
-      } px-6 text-primary py-4 bg-slate-800 mx-auto md:px-12 w-full`}
+      } px-6 text-primary py-4  mx-auto md:px-12 w-full`}
     >
       <div className="flex  py-6 w-full flex-wrap gap-6  justify-between">
         <div className="flex flex-col gap-3">
