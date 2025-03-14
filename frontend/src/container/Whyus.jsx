@@ -9,7 +9,7 @@ const Whyus = () => {
       <div
         className={`${
           theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-        } flex items-center max-w-7xl rounded-2xl px-10 justify-between flex-col md:flex-row bg-slate-800`}
+        } flex items-center max-w-7xl rounded-2xl px-10 justify-between flex-col md:flex-row`}
       >
         <motion.div
           initial={{ opacity: 0, x: -200 }}

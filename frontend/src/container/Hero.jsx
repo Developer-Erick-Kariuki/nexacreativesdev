@@ -10,16 +10,16 @@ const Hero = () => {
     <section
       className={`${
         theme === "dark" ? "bg-slate-900" : "bg-slate-200"
-      }  justify-center   flex md:flex-row`}
+      }  justify-center relative  md:h-screen  flex md:flex-row`}
     >
-      <div className="flex gap-y-8 max-w-7xl px-6 mx-auto flex-col-reverse  md:flex-row z-10">
-        <div className="flex flex-col justify-between">
+      <div className="flex max-w-7xl px-6 mx-auto gap-4 flex-col-reverse md:flex-row z-10">
+        <div className="flex flex-col justify-center">
           <motion.h1
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0, ease: easeInOut }}
             viewport={{ once: true }}
-            className="text-4xl max-w-lg leading-slug font-bold uppercase"
+            className="text-4xl md:text-5xl max-w-xl leading-slug font-bold uppercase"
           >
             Transforming your vision into
             <span className="bg-gradient-to-l from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text mx-1">
@@ -42,7 +42,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1, ease: easeInOut }}
             viewport={{ once: true }}
-            className="flex-col my-8 gap-4 flex md:flex-row"
+            className="flex-col gap-4 my-8  flex md:flex-row"
           >
             <CallToAction
               href="#contact"
@@ -70,7 +70,7 @@ const Hero = () => {
           }}
           className="flex md:w-1/2 w-full justify-center items-center"
         >
-          <div className="overflow-hidden mt-32 md:mt-0 w-[80%]">
+          <div className="overflow-hidden mt-32 md:mt-0 w-[70%]">
             <img
               className="object-contain h-full"
               src="/hero1.png"
@@ -89,7 +89,7 @@ const Hero = () => {
         <h1
           className={`${
             theme === "dark" ? "text-gray-600/5" : "text-gray-600/5"
-          }  text-[32rem] md:flex font-extrabold text-gray-200/5`}
+          } rotate-90 md:rotate-0 text-[32rem] md:flex font-extrabold text-gray-200/5`}
         >
           NEXA
         </h1>

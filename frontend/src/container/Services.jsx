@@ -93,7 +93,7 @@ const Services = () => {
                 key={index}
                 className={`${
                   theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-                } flex flex-col bg-slate-800 p-6 rounded-xl overflow-clip hover:-translate-x-3 transition-all duration-300 ease-in-out cursor-pointer`}
+                } flex flex-col p-6 rounded-xl overflow-clip hover:-translate-x-3 transition-all duration-300 ease-in-out cursor-pointer`}
               >
                 <i className="mb-4 text-accent">{service.icon}</i>
                 <a href="#" className="uppercase z-20 font-light">
