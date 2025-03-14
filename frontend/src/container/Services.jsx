@@ -76,7 +76,7 @@ const Services = () => {
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
       id="services"
-      className="z-10 w-full mt-16 flex justify-center"
+      className="z-10 w-full mt-16 px-6 flex justify-center"
     >
       <div className="max-w-7xl">
         <div className="flex flex-col w-full mx-auto justify-center items-center">

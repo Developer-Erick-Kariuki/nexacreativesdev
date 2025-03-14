@@ -8,7 +8,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="mx-auto justify-center w-full items-center mt-32"
+      className="mx-auto justify-center w-full px-6 items-center mt-32"
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}

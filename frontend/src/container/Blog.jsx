@@ -70,7 +70,7 @@ const Blog = () => {
           <CallToAction
             name="Get intouch"
             href="#contact"
-            className="bg-gradient-to-tr w-full  from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
+            className="bg-gradient-to-tr w-full text-primary  from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
           />
         </div>
 

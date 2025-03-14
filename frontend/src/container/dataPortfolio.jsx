@@ -48,7 +48,7 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="min-h-screen"
+      className=" px-6"
     >
       <div className="flex flex-col justify-center items-center">
         <h2 className="font-bold text-center text-2xl my-4 flex flex-col">

@@ -10,10 +10,10 @@ const Hero = () => {
     <section
       className={`${
         theme === "dark" ? "bg-slate-900" : "bg-slate-200"
-      } md:h-screen relative justify-center   flex md:flex-row`}
+      }  justify-center   flex md:flex-row`}
     >
-      <div className="flex justify-between max-w-7xl px-6 mx-auto flex-col-reverse md:flex-row z-10">
-        <div className="flex flex-col justify-center">
+      <div className="flex gap-y-8 max-w-7xl px-6 mx-auto flex-col-reverse  md:flex-row z-10">
+        <div className="flex flex-col justify-between">
           <motion.h1
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -31,7 +31,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.5, ease: easeInOut }}
             viewport={{ once: true }}
-            className="text-base font-light max-w-lg mt-8 leading-loose"
+            className="text-base font-light max-w-lg mt-8 leading-relaxed"
           >
             Our award-winning design agency blends creativity with cutting-edge
             technology to deliver unique and engaging digital experiences. Let’s
@@ -42,7 +42,7 @@ const Hero = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 1, ease: easeInOut }}
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row gap-4 md:z-10 my-8"
+            className="flex-col my-8 gap-4 flex md:flex-row"
           >
             <CallToAction
               href="#contact"
@@ -68,9 +68,9 @@ const Hero = () => {
             delay: 1,
             stiffness: 100,
           }}
-          className="flex md:w-1/2 w-full my-4 justify-center items-center"
+          className="flex md:w-1/2 w-full justify-center items-center"
         >
-          <div className="overflow-hidden w-[50%] md:w-[70%]">
+          <div className="overflow-hidden mt-32 md:mt-0 w-[80%]">
             <img
               className="object-contain h-full"
               src="/hero1.png"
@@ -89,7 +89,7 @@ const Hero = () => {
         <h1
           className={`${
             theme === "dark" ? "text-gray-600/5" : "text-gray-600/5"
-          } hidden text-[32rem] md:flex font-extrabold text-gray-200/5`}
+          }  text-[32rem] md:flex font-extrabold text-gray-200/5`}
         >
           NEXA
         </h1>
