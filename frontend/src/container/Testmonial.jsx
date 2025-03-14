@@ -46,9 +46,9 @@ const Testmonial = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
-      className="mt-32 px-6 md:px-10 w-full"
+      className="mt-32 mx-auto w-full flex justify-center"
     >
-      <div className="flex flex-col">
+      <div className="flex-col w-full max-w-7xl justify-center mx-auto">
         <h2 className="flex flex-col text-center text-3xl font-bold">
           <span className="text-accent text-base">Testmonials</span> What
           clients say about us
@@ -59,10 +59,7 @@ const Testmonial = () => {
           infinite={true}
           focusOnSelect={true}
           removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-          sliderClass="mine"
-          itemClass="item"
-          containerClass="container"
-          dotListClass="dots"
+          className="mt-4 py-6"
         >
           {testimonials.map((item, index) => (
             <div
@@ -87,18 +84,18 @@ const Testmonial = () => {
                   ))}
                 </div>
 
-                <div className="bg-amber-600 absolute -right-2 -top-2 rounded-full p-2 flex items-center justify-center">
+                <div className="bg-amber-600 absolute text-primary -right-2 -top-2 rounded-full p-2 flex items-center justify-center">
                   <PiQuotesFill size={48} />
                 </div>
               </div>
-              <p className="leading-relaxed font-light text-slate-400 text-sm">
+              <p className="leading-relaxed font-light text-sm">
                 {item.message}
               </p>
               <div className="flex gap-4 items-center">
                 <img
                   width={50}
                   src={item.profile.asset.url}
-                  className="rounded-full ring-slate-500 ring-2"
+                  className="rounded-full ring-slate-500 ring-1"
                   alt="default"
                 />
                 <div className="flex flex-col my-3">

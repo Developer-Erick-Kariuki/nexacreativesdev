@@ -7,6 +7,8 @@ import { FaXTwitter } from "react-icons/fa6";
 import WhatsAppButton from "../components/Whatsapp";
 import { IoCall } from "react-icons/io5";
 import { SiMinutemailer } from "react-icons/si";
+import { useContext } from "react";
+import { ThemeContext } from "../components/ThemeContextProvider";
 
 const year = new Date().getFullYear();
 
@@ -19,8 +21,15 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section className="mt-32 px-6 text-primary py-4 bg-slate-800 mx-auto md:px-12 w-full">
+    <section
+      className={`${
+        theme === "dark"
+          ? "bg-slate-800 text-primary"
+          : "bg-slate-200 text-secondary"
+      } px-6 text-primary py-4 bg-slate-800 mx-auto md:px-12 w-full`}
+    >
       <div className="flex  py-6 w-full flex-wrap gap-6  justify-between">
         <div className="flex flex-col gap-3">
           <img src="/logo light.png" alt="logo" width={120} />

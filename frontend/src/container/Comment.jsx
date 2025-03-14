@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { client } from "../client";
 import { easeIn, motion } from "framer-motion";
 import { BsFillSendFill } from "react-icons/bs";
+import { ThemeContext } from "../components/ThemeContextProvider";
 
 const Comment = () => {
   const [name, setName] = useState("");
@@ -61,6 +62,8 @@ const Comment = () => {
       setTimeout(() => setButtonText("Submit"), 3000);
     }
   };
+
+  const { theme } = useContext(ThemeContext);
   return (
     <section
       id="contact"
@@ -110,7 +113,9 @@ const Comment = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            className="outline-none p-2 h-52 bg-slate-700/30"
+            className={`${
+              theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+            } outline-none p-2 h-48`}
             placeholder="Type your message here"
           />
 
@@ -121,7 +126,7 @@ const Comment = () => {
                 : buttonText === "Failed"
                 ? "bg-red-500"
                 : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600"
-            } px-6 py-3 rounded-xl flex items-center gap-4 justify-center text-lg outline-none mt-8`}
+            } px-6 py-3 rounded-xl flex items-center gap-4 justify-center text-lg outline-none mt-8 text-primary`}
             type="submit"
             disabled={isLoading}
           >

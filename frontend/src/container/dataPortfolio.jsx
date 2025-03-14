@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { client } from "../client";
 import { AnimatePresence, easeIn, easeInOut, motion } from "framer-motion";
 import Masonry from "react-masonry-css";
 import "../index.css";
+import { ThemeContext } from "../components/ThemeContextProvider";
 
 const Portfolioa = () => {
+  const { theme } = useContext(ThemeContext);
+
   const [images, setImages] = useState([]);
   const [isSlug, setIsSlug] = useState(null);
   const [isActive, setIsActive] = useState(0);
@@ -45,11 +48,11 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="mt-32 bg-gray-900 py-8 px-6 drop-shadow-md rounded-xl"
+      className="min-h-screen"
     >
       <div className="flex flex-col justify-center items-center">
         <h2 className="font-bold text-center text-2xl my-4 flex flex-col">
-          <span className="text-accent text-base my-4 font-bold">
+          <span className="text-accent text-base mt-4 font-bold">
             Portfolio
           </span>
           Our Recent Projects
@@ -57,7 +60,7 @@ const Portfolioa = () => {
       </div>
 
       {/* Filter Buttons */}
-      <ul className="flex w-full flex-wrap  justify-center gap-2 my-8 md:gap-8">
+      <ul className="flex w-full flex-wrap justify-center gap-2 mt-8 md:gap-8">
         {[
           "All",
           "Social Media",
@@ -69,8 +72,12 @@ const Portfolioa = () => {
             key={index}
             className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
               isActive === index
-                ? "bg-gradient-to-tr from-purple-600 to-blue-600"
-                : " bg-slate-600/20"
+                ? "bg-gradient-to-tr from-purple-600 to-blue-600 text-slate-200"
+                : theme === "light"
+                ? " bg-slate-600/5"
+                : theme === "dark"
+                ? "bg-slate-600/10"
+                : ""
             }`}
             onClick={() => {
               setIsActive(index);
@@ -83,28 +90,31 @@ const Portfolioa = () => {
       </ul>
 
       {/* Image Gallery */}
-      <Masonry
-        breakpointCols={breakpointColums}
-        className="masonry-grid"
-        columnClassName="masonry-column"
-      >
-        {images
-          .filter((image) => (isSlug ? image.category === isSlug : true))
-          .map((image, index) => (
-            <div key={index}>
-              <motion.img
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
-                src={image.imageUrl}
-                alt={image.title}
-                className={`shadow-lg grid-item drop-shadow-md`}
-                onClick={() => setSelectedImage(image.imageUrl)}
-              />
-              {/* <p className="text-sm text-slate-200 my-4">{image.description}</p> */}
-            </div>
-          ))}
-      </Masonry>
+      <div className="flex  justify-center mt-8">
+        <Masonry
+          breakpointCols={breakpointColums}
+          className={`${
+            theme === "dark" ? "bg-slate-800" : "bg-slate-300"
+          } px-1 py-2 flex mt-2 max-w-7xl rounded-md`}
+          columnClassName="masonry-column"
+        >
+          {images
+            .filter((image) => (isSlug ? image.category === isSlug : true))
+            .map((image, index) => (
+              <div key={index}>
+                <motion.img
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
+                  src={image.imageUrl}
+                  alt={image.title}
+                  className={`shadow-lg grid-item drop-shadow-md`}
+                  onClick={() => setSelectedImage(image.imageUrl)}
+                />
+              </div>
+            ))}
+        </Masonry>
+      </div>
 
       {/* Full-Screen Modal with Framer Motion */}
       <AnimatePresence>
@@ -131,6 +141,9 @@ const Portfolioa = () => {
             >
               ✕
             </button>
+            <p className="text-sm text-slate-200 my-4">
+              {selectedImage.description}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>

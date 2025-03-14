@@ -19,7 +19,7 @@ const SocialMedia = () => {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 2, ease: "easeInOut" }}
-      className={`hidden md:flex right-0 -bottom-20 mt-8 absolute z-20 gap-3 px-6 py-3`}
+      className={`hidden md:flex right-0 bottom-10 absolute z-20 gap-3 md:px-12 `}
     >
       {socialLinks.map((icon, index) => (
         <div

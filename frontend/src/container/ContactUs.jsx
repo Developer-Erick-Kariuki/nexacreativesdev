@@ -68,7 +68,7 @@ const ContactUs = () => {
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
       id="contact"
-      className="py-8 px-5 rounded-3xl bg-secondary w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
+      className="py-8 px-5 rounded-2xl w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
       <div className="flex w-full md:w-1/2 flex-col">
         <h2 className="text-2xl font-bold">Contact Us</h2>
@@ -123,7 +123,7 @@ const ContactUs = () => {
                 ? "bg-green-500"
                 : buttonText === "Failed"
                 ? "bg-red-500"
-                : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600"
+                : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 text-primary hover:to-purple-600"
             } px-6 py-3 rounded-3xl flex items-center gap-4 justify-center text-lg outline-none mt-8`}
             type="submit"
             disabled={isLoading}
