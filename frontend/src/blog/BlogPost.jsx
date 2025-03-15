@@ -6,7 +6,7 @@ import { easeInOut, motion } from "framer-motion";
 import { client } from "../client";
 import Footer from "../container/Footer";
 import Comment from "../container/Comment";
-import BlogHeader from "../container/BlogHeader";
+import "../blog/blog.css";
 import Header from "../container/Header";
 import { ThemeContext } from "../components/ThemeContextProvider";
 
@@ -111,7 +111,19 @@ const BlogPost = () => {
   const { theme } = useContext(ThemeContext);
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
-  if (!SinglePost) return <p>Loading...</p>;
+  if (!SinglePost)
+    return (
+      <section className="w-screen h-screen flex justify-center items-center">
+        <div className="loader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </section>
+    );
 
   return (
     <section

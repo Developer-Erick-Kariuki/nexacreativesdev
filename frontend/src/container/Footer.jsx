@@ -9,6 +9,8 @@ import { IoCall } from "react-icons/io5";
 import { SiMinutemailer } from "react-icons/si";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContextProvider";
+import NexaLogo from "/nexalogo.png";
+import LightLogo from "/logo light.png";
 
 const year = new Date().getFullYear();
 
@@ -32,7 +34,11 @@ const Footer = () => {
     >
       <div className="flex  py-6 w-full flex-wrap gap-6  justify-between">
         <div className="flex flex-col gap-3">
-          <img src="/logo light.png" alt="logo" width={120} />
+          <img
+            src={theme === "dark" ? LightLogo : NexaLogo}
+            alt="logo"
+            width={120}
+          />
           <p className="max-w-sm mt-3">
             Enhancing online presence simply the best
           </p>
