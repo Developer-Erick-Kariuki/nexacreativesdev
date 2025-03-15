@@ -201,7 +201,7 @@ const Services = () => {
                           : isActive == index && index == 3
                           ? "bg-orange-500"
                           : "bg-slate-100 text-slate-400"
-                      }   text-xl p-3 text-slate-200 rounded-2xl relative`}
+                      }   text-xl px-4 py-3 text-slate-200 rounded-2xl relative`}
                     >
                       {link.number}
                     </h1>
