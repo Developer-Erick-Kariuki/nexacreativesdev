@@ -30,14 +30,14 @@ const Footer = () => {
         theme === "dark"
           ? "bg-slate-800 text-primary"
           : "bg-slate-200 text-secondary"
-      } px-6 text-primary py-4  mx-auto md:px-12 w-full`}
+      } px-6 text-primary py-4 mx-auto md:px-12  w-full`}
     >
-      <div className="flex  py-6 w-full flex-wrap gap-6  justify-between">
+      <div className="flex  py-6 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-3">
           <img
             src={theme === "dark" ? LightLogo : NexaLogo}
             alt="logo"
-            width={120}
+            width={150}
           />
           <p className="max-w-sm mt-3">
             Enhancing online presence simply the best
@@ -53,11 +53,7 @@ const Footer = () => {
             <SiMinutemailer size={20} /> info@nexacreatives.com
           </a>
         </div>
-        <div className="flex flex-col">
-          <h2 className="font-semibold text-xl max-w-sm">
-            Friendly and valuable services at your door step.
-          </h2>
-        </div>
+
         <div className="flex flex-col gap-2">
           <h2 className="font-bold mb-2">Services</h2>
           <ul className="flex flex-col gap-2">

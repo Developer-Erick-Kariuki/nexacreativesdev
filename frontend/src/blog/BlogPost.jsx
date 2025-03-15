@@ -108,7 +108,7 @@ const BlogPost = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const { theme } = useContext(ThemeContext);
+  const { theme, isSet } = useContext(ThemeContext);
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
   if (!SinglePost)
@@ -131,10 +131,10 @@ const BlogPost = () => {
         theme === "dark"
           ? "bg-slate-900 text-primary"
           : "bg-primary text-secondary"
-      } `}
+      } ${isSet ? "mt-28 md:mt-24" : "mt-14"} `}
     >
       <Header />
-      <div className="w-full mt-14 relative justify-center  flex">
+      <div className="w-full  relative justify-center  flex">
         <div className="flex flex-col md:flex-row max-w-7xl gap-x-2">
           {SinglePost.map((current) => (
             <motion.div
@@ -177,7 +177,7 @@ const BlogPost = () => {
           ))}
 
           <div className="flex flex-col h-fit md:sticky my-2 max-w-full inset-0 md:max-w-md drop-shadow-md p-2">
-            <h1 className="text-xl font-bold my-4">Popular Posts</h1>
+            <h1 className="text-2xl font-bold my-4">Popular Posts</h1>
             <hr className="w-full border-white" />
             {posts.map((post) => (
               <div key={post.title}>
@@ -186,7 +186,7 @@ const BlogPost = () => {
                   className="flex justify-between gap-x-4"
                   to={`/blog/BlogPost/${post.customId}`}
                 >
-                  <div className="w-20 h-16 flex mt-4 overflow-clip">
+                  <div className="w-20 h-12 flex my-4 overflow-hidden">
                     <img
                       src={post.imageUrl}
                       alt={post.title}

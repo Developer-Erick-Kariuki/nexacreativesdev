@@ -74,9 +74,9 @@ const Portfolioa = () => {
               isActive === index
                 ? "bg-gradient-to-tr from-purple-600 to-blue-600 text-slate-200"
                 : theme === "light"
-                ? " bg-slate-600/5"
+                ? "bg-slate-300/50"
                 : theme === "dark"
-                ? "bg-slate-600/10"
+                ? "bg-slate-800/50"
                 : ""
             }`}
             onClick={() => {
@@ -94,8 +94,8 @@ const Portfolioa = () => {
         <Masonry
           breakpointCols={breakpointColums}
           className={`${
-            theme === "dark" ? "bg-slate-800" : "bg-slate-300"
-          } px-1 py-2 flex mt-2 max-w-7xl rounded-md`}
+            theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+          } p-2 flex mt-2 max-w-7xl rounded-md`}
           columnClassName="masonry-column"
         >
           {images

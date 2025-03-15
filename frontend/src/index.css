@@ -101,3 +101,13 @@ html {
 .dots {
   justify-content: center;
 }
+
+.underline {
+  width: 0; /* Start with no width */
+
+  transition: width 0.3s ease-in-out; /* Smooth animation */
+}
+
+.onHover:hover .underline {
+  width: 100%; /* Expands on hover */
+}

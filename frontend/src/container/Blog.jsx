@@ -64,7 +64,7 @@ const Blog = () => {
           <h1 className="md:text-4xl text-3xl font-bold">
             Our Latest News & Blogs
           </h1>
-          <p className="mt-2 text-slate-300">
+          <p className="mt-2 text-slate-500">
             Insights and Trends from Nexa Creative Solutions
           </p>
           <CallToAction

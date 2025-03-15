@@ -9,10 +9,8 @@ export default function ThemeToggle() {
   return (
     <div
       className={`${
-        theme === "dark"
-          ? "bg-slate-800 hover:bg-slate-700"
-          : "bg-slate-300/25 hover:bg-slate-300"
-      } p-2 rounded-full transition-all duration-300 ease-linear`}
+        theme === "dark" ? " bg-slate-800/50" : "bg-slate-300/50"
+      } transition-all hover:scale-105 p-2 rounded-full duration-300 ease-linear`}
     >
       {theme === "dark" ? (
         <FiMoon

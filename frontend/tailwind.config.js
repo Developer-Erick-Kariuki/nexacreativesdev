@@ -7,7 +7,7 @@ export default {
       colors: {
         primary: "#F4F4F4",
         secondary: "#121212",
-        accent: "#FF2929",
+        accent: "#A020F0",
         accentTwo: "#353535",
         gradient: "bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500",
       },
