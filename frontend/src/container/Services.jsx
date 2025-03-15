@@ -181,16 +181,14 @@ const Services = () => {
                       setistop(index);
                     }}
                     className={`${
-                      isActive == index && index == 0
-                        ? "bg-purple-50"
-                        : isActive == index && index == 1
-                        ? "bg-blue-50"
-                        : isActive == index && index == 2
-                        ? "bg-green-50"
-                        : isActive == index && index == 3
-                        ? "bg-orange-50"
-                        : "hover:bg-purple-950/20 hover:scale-105"
-                    } flex cursor-pointer p-2 items-center w-full overflow-clip rounded-2xl gap-4 transition-all duration-500 ease-linear`}
+                      theme === "dark" && isActive === index
+                        ? "bg-slate-900"
+                        : theme === "light" && isActive === index
+                        ? "bg-slate-200"
+                        : isActive !== index && theme !== "dark"
+                        ? "bg-slate-200"
+                        : "bg-slate-800"
+                    }  flex cursor-pointer p-2 items-center w-full overflow-clip rounded-2xl gap-4 transition-all duration-500 ease-linear`}
                   >
                     <h1
                       className={`${
@@ -202,17 +200,21 @@ const Services = () => {
                           ? "bg-green-500"
                           : isActive == index && index == 3
                           ? "bg-orange-500"
-                          : "bg-slate-50 text-slate-400"
-                      }   text-xl p-3 rounded-2xl relative`}
+                          : "bg-slate-100 text-slate-400"
+                      }   text-xl p-3 text-slate-200 rounded-2xl relative`}
                     >
                       {link.number}
                     </h1>
 
                     <p
                       className={`${
-                        isActive === index
-                          ? "text-secondary"
-                          : "text-slate-400 "
+                        theme === "dark" && isActive === index
+                          ? "text-slate-100"
+                          : theme === "light" && isActive === index
+                          ? "text-slate-700"
+                          : theme !== "dark" && isActive !== index
+                          ? "text-slate-400"
+                          : "text-slate-500"
                       } flex justify-between items-center w-full font-medium`}
                     >
                       {link.name}
@@ -226,7 +228,7 @@ const Services = () => {
             </div>
 
             {/* begin process cards  */}
-            <div className="w-full h-[50vh] relative">
+            <div className="w-full h-[70vh] relative">
               {processes.map((process, index) => (
                 <div
                   key={index}
@@ -243,7 +245,11 @@ const Services = () => {
                   : index == 3 && isActive !== index
                   ? "top-2 translate-x-4 translate-y-4 opacity-0"
                   : ""
-              } text-slate-600 text-lg w-full p-4 flex absolute md:bottom-0 right-0 rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
+              } ${
+                    theme === "dark"
+                      ? "bg-slate-800 text-slate-300"
+                      : "bg-slate-200"
+                  }  text-lg w-full p-4 flex absolute h-full md:bottom-0 right-0 rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
                 >
                   <div className="flex justify-center gap-4 items-center">
                     <div className="flex justify-start flex-col gap-2 ">
