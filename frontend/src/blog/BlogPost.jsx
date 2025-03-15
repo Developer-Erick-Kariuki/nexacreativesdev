@@ -138,8 +138,8 @@ const BlogPost = () => {
         <div className="flex flex-col md:flex-row max-w-7xl gap-x-2">
           {SinglePost.map((current) => (
             <motion.div
-              initial={{ opacity: 0, y: 800 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 200 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0, ease: easeInOut }}
               className="px-4 max-w-4xl"
               key={current.customId}
@@ -161,6 +161,7 @@ const BlogPost = () => {
 
                 <div className="h-[14rem] md:h-[28rem] w-full">
                   <img
+                    loading="lazy"
                     className="object-cover w-full h-full rounded-md"
                     src={current.imageUrl}
                     alt={current.title}
@@ -188,6 +189,7 @@ const BlogPost = () => {
                 >
                   <div className="w-20 h-12 flex my-4 overflow-hidden">
                     <img
+                      loading="lazy"
                       src={post.imageUrl}
                       alt={post.title}
                       className="object-cover h-full w-full"

@@ -15,6 +15,7 @@ import Whyus from "./container/Whyus";
 
 function App() {
   const { theme } = useContext(ThemeContext);
+
   return (
     <>
       <main

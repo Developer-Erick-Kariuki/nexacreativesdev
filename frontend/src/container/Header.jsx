@@ -10,7 +10,6 @@ import { ThemeContext } from "../components/ThemeContextProvider";
 import NexaLogo from "/nexalogo.png";
 import LightLogo from "/logo light.png";
 import "../index.css";
-import LanguageSelector from "../components/LanguageApi";
 
 const imageSize = 150;
 
@@ -80,7 +79,12 @@ const Header = () => {
                   setisActive(index);
                 }}
               >
-                <a href={link.href}>{link.name}</a>
+                {index === 0 ? (
+                  <Link to={link.href}>{link.name}</Link>
+                ) : (
+                  <a href={link.href}>{link.name}</a>
+                )}
+
                 <div
                   className={`bg-gradient-to-tr mt-1 h-[2px] from-blue-500 to-purple-500 underline`}
                 ></div>
