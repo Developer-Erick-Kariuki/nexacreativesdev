@@ -29,22 +29,8 @@ function ThemeProvider({ children }) {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // Load the preferred language from localStorage (default to English)
-  const storedLanguage = localStorage.getItem("preferredLanguage");
-
-  console.log(storedLanguage);
-  const [language, setLanguage] = useState(storedLanguage);
-
-  // Function to change language and store in localStorage
-  const changeLanguage = (newLang) => {
-    setLanguage(newLang);
-    localStorage.setItem("preferredLanguage", newLang);
-  };
-
   return (
-    <ThemeContext.Provider
-      value={{ theme, setTheme, isSet, setIsSet, language, changeLanguage }}
-    >
+    <ThemeContext.Provider value={{ theme, setTheme, isSet, setIsSet }}>
       {children}
     </ThemeContext.Provider>
   );

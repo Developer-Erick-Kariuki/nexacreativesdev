@@ -90,18 +90,19 @@ const Portfolioa = () => {
       </ul>
 
       {/* Image Gallery */}
-      <div className="flex  justify-center mt-8">
-        <Masonry
-          breakpointCols={breakpointColums}
-          className={`${
-            theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-          } p-2 flex mt-2 max-w-7xl rounded-md`}
-          columnClassName="masonry-column"
+      <div className="flex justify-center mt-8">
+        <div
+          className={`p-2 grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 max-w-7xl rounded-md`}
         >
           {images
             .filter((image) => (isSlug ? image.category === isSlug : true))
             .map((image, index) => (
-              <div key={index}>
+              <div
+                key={index}
+                className={`${
+                  theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+                } w-[30rem] h-[30rem] justify-center  flex overflow-hidden`}
+              >
                 <motion.img
                   loading="lazy"
                   initial={{ opacity: 0, y: 100 }}
@@ -109,12 +110,12 @@ const Portfolioa = () => {
                   transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
                   src={image.imageUrl}
                   alt={image.title}
-                  className={`shadow-lg grid-item drop-shadow-md`}
+                  className={`shadow-lg object-cover drop-shadow-md`}
                   onClick={() => setSelectedImage(image.imageUrl)}
                 />
               </div>
             ))}
-        </Masonry>
+        </div>
       </div>
 
       {/* Full-Screen Modal with Framer Motion */}

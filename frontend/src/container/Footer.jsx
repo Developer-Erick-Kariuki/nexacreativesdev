@@ -28,9 +28,9 @@ const Footer = () => {
     <section
       className={`${
         theme === "dark"
-          ? "bg-slate-800 text-primary"
+          ? "bg-slate-900 text-primary"
           : "bg-slate-200 text-secondary"
-      }  text-primary py-4 mx-auto md:px-12  w-full`}
+      }  text-primary shadow-xl py-4 mx-auto md:px-12  w-full`}
     >
       <div className="flex  py-6 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-3">
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr />
+      <hr className={`${theme === "dark" ? "" : "border-gray-950"} `} />
 
       <div className="flex mt-8  flex-wrap justify-center items-center gap-6">
         {socialLinks.map((image, index) => (

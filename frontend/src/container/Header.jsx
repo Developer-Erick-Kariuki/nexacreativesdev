@@ -52,8 +52,8 @@ const Header = () => {
       <header
         className={` ${
           theme === "dark"
-            ? "bg-slate-900 text-primary"
-            : "bg-slate-200 text-secondary"
+            ? "bg-secondary text-primary"
+            : "bg-slate-100 text-secondary"
         } ${
           isSet ? "mt-12 md:mt-8" : "mt-0"
         } px-6 top-0 mx-auto md:px-10 fixed  drop-shadow-sm  h-16 z-40 w-full`}

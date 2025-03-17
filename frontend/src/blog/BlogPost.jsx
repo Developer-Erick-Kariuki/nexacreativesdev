@@ -63,7 +63,7 @@ const serializers = {
           <img
             src={asset.url}
             alt={caption}
-            className="w-full rounded-lg h-[300px] shadow-md object-cover"
+            className="w-full h-[20rem] shadow-md object-cover"
           />
           {caption && (
             <figcaption className="text-sm text-gray-500 mt-2 italic">
@@ -129,7 +129,7 @@ const BlogPost = () => {
     <section
       className={`${
         theme === "dark"
-          ? "bg-slate-900 text-primary"
+          ? "bg-secondary text-primary"
           : "bg-primary text-secondary"
       } ${isSet ? "mt-28 md:mt-24" : "mt-14"} `}
     >
@@ -159,10 +159,10 @@ const BlogPost = () => {
                   {moment(current.publishedAt).format("MMMM, YYYY")}
                 </p>
 
-                <div className="h-[14rem] md:h-[28rem] w-full">
+                <div className="h-[14rem] md:h-[24rem] w-full">
                   <img
                     loading="lazy"
-                    className="object-cover w-full h-full rounded-md"
+                    className="object-cover w-full h-full"
                     src={current.imageUrl}
                     alt={current.title}
                   />

@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       className={`${
-        theme === "dark" ? "bg-slate-900" : "bg-slate-200"
+        theme === "dark" ? "bg-secondary" : "bg-slate-100"
       }  justify-center relative  md:h-screen  flex md:flex-row`}
     >
       <div className="flex max-w-7xl px-6 mx-auto gap-4 flex-col-reverse md:flex-row z-10">
