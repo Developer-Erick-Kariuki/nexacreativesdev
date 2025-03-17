@@ -55,11 +55,11 @@ const AboutUs = () => {
             transition={{ duration: 1, ease: easeIn }}
             viewport={{ once: true }}
             className={`${
-              theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+              theme === "dark" ? "bg-slate-800" : "bg-slate-100"
             } flex p-5 rounded-3xl flex-col mt-8 md:mt-0`}
           >
             <h2 className="text-base text-accent font-bold">Our Story</h2>
-            <p className="text-base  leading-relaxed">
+            <p className="text-base leading-relaxed">
               Founded on a passion for creativity and technology, Nexa-Creative
               Solutions was born from a desire to bridge the gap between
               exceptional design and cutting-edge development. With years of

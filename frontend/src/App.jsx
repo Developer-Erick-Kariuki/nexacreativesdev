@@ -22,7 +22,7 @@ function App() {
         className={`${
           theme === "dark"
             ? "bg-secondary text-primary"
-            : "bg-primary text-secondary"
+            : "bg-white text-secondary"
         } overflow-x-hidden scroll-smooth w-full font-inter mx-auto`}
       >
         <Header />

@@ -3,13 +3,24 @@ import { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const WhatsAppButton = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    if (window.scrollY > 100) {
-      setScrolled(true);
-    }
-  }, [scrolled]);
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function to remove event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
 
   return (
     <motion.a
@@ -17,9 +28,11 @@ const WhatsAppButton = () => {
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, y: 20 }}
-      animate={scrolled ? { opacity: 1, y: 0 } : {}}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
-      className={` fixed  bottom-4 right-0 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition`}
+      className={`${
+        isScrolled ? "block" : "hidden"
+      } fixed  bottom-4 right-0 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition`}
     >
       <FaWhatsapp className="text-xl" />
     </motion.a>

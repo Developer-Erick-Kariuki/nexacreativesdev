@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { HiBars3 } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
@@ -22,6 +22,25 @@ const Header = () => {
   };
 
   const { theme, isSet, setIsSet } = useContext(ThemeContext);
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup function to remove event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
 
   return (
     <>
@@ -54,9 +73,11 @@ const Header = () => {
           theme === "dark"
             ? "bg-secondary text-primary"
             : "bg-slate-100 text-secondary"
-        } ${
-          isSet ? "mt-12 md:mt-8" : "mt-0"
-        } px-6 top-0 mx-auto md:px-10 fixed  drop-shadow-sm  h-16 z-40 w-full`}
+        } ${isSet ? "mt-12 md:mt-8" : "mt-0"}
+        
+        ${
+          isScrolled ? "drop-shadow-md" : ""
+        }  px-6 top-0 mx-auto md:px-10 fixed  h-16 z-40 w-full`}
       >
         {/* navigation for desktops */}
         <nav className="hidden md:flex mx-auto max-w-7xl items-center h-full tex-sm justify-between">
