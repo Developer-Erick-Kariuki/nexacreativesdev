@@ -23,6 +23,8 @@ const Header = () => {
 
   const { theme, isSet, setIsSet } = useContext(ThemeContext);
 
+  setTimeout(() => setIsSet(true), 1000 * 30);
+
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -46,7 +48,7 @@ const Header = () => {
     <>
       {isSet && (
         <>
-          <div className="bg-purple-600 transition-all h-12 md:h-8 duration-300 ease-linear flex items-center justify-center px-6 w-full mb-2 text-primary fixed top-0 z-50">
+          <div className="bg-purple-600 transition-all h-14 md:h-8 duration-300 ease-linear flex items-center justify-center px-6 w-full mb-2 text-primary fixed top-0 z-50">
             <p className="text-sm text-center">
               For any inquiries or if you are looking for graphic design,
               digital marketing or web development services, click

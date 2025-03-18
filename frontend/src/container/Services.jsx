@@ -228,7 +228,7 @@ const Services = () => {
             </div>
 
             {/* begin process cards  */}
-            <div className="w-full h-[32rem] md:h-[20rem] relative ">
+            <div className="w-full h-[32rem] md:h-[24rem] relative ">
               {processes.map((process, index) => (
                 <div
                   key={index}

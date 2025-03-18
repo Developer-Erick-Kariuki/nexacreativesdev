@@ -34,13 +34,6 @@ const Portfolioa = () => {
     fetchImages();
   }, [images]);
 
-  const breakpointColums = {
-    default: 4,
-    1100: 3,
-    768: 2,
-    580: 1,
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -60,7 +53,7 @@ const Portfolioa = () => {
       </div>
 
       {/* Filter Buttons */}
-      <ul className="flex w-full flex-wrap justify-center gap-2 mt-8 md:gap-8">
+      {/* <ul className="flex w-full flex-wrap justify-center gap-2 mt-8 md:gap-8">
         {[
           "All",
           "Social Media",
@@ -87,7 +80,7 @@ const Portfolioa = () => {
             {item}
           </li>
         ))}
-      </ul>
+      </ul> */}
 
       {/* Image Gallery */}
       <div className="flex justify-center mt-8">

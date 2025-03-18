@@ -1,4 +1,4 @@
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import SocialMedia from "../components/SocialMedia";
 import CallToAction from "../components/callToAction";
 import { useContext } from "react";
@@ -17,7 +17,7 @@ const Hero = () => {
           <h1 className="text-4xl md:text-5xl max-w-xl leading-slug font-bold uppercase">
             Transforming your vision into
             <span className="bg-gradient-to-l from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text mx-1">
-              stunning visual designs
+              stunning Websites
             </span>
           </h1>
           <p className="text-base font-light max-w-lg mt-8 leading-relaxed">
@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="flex-col gap-4 my-8  flex md:flex-row">
             <CallToAction
               href="#contact"
-              name="Get a Design"
+              name="Call Us Now"
               className="bg-gradient-to-tr hover:from-purple-600 hover:to-blue-600 transition-color text-primary duration-300 ease-linear from-blue-600 to-purple-600 "
             />
             <CallToAction
@@ -42,25 +42,14 @@ const Hero = () => {
         </div>
 
         {/* hero image */}
-        <div className="flex md:w-1/2 w-full justify-center items-center">
-          <div className="overflow-hidden mt-32 md:mt-0 w-[70%]">
-            <img
-              className="object-contain h-full"
-              src="/hero1.png"
-              alt="hero image"
-            />
-          </div>
-        </div>
-      </div>
 
-      <div className="absolute inset-0  w-full justify-center">
-        <h1
-          className={`${
-            theme === "dark" ? "text-gray-600/5" : "text-gray-600/5"
-          } rotate-90 md:rotate-0 text-[32rem] md:flex font-extrabold text-gray-200/5`}
-        >
-          NEXA
-        </h1>
+        <div className="overflow-hidden mt-32 w-full md:w-1/2 md:mt-0">
+          <img
+            className="object-cover w-full h-full"
+            src="/Hero-image.png"
+            alt="hero image"
+          />
+        </div>
       </div>
 
       <SocialMedia />
