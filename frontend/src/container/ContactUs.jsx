@@ -71,7 +71,9 @@ const ContactUs = () => {
       className="py-8 px-5 rounded-2xl w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
       <div className="flex w-full md:w-1/2 flex-col">
-        <h2 className="text-2xl font-bold">Contact Us</h2>
+        <h2 className="text-2xl font-bold">
+          For any enquiries, send us an E-mail
+        </h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-4">
           <input
             type="text"
@@ -113,7 +115,7 @@ const ContactUs = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            className="outline-none p-2  bg-slate-700/30"
+            className="outline-none p-3 h-[200px] bg-slate-700/30"
             placeholder="Type your message here"
           />
 

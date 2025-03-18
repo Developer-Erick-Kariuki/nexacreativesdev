@@ -8,15 +8,14 @@ const Hero = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <section
-      className={`${
-        theme === "dark" ? "bg-secondary" : "bg-slate-100"
-      }  justify-center relative  md:h-screen  flex md:flex-row`}
+      className={`justify-center relative  md:h-screen  flex md:flex-row`}
     >
       <div className="flex max-w-7xl px-6 mx-auto gap-4 flex-col-reverse md:flex-row z-10">
         <div className="flex flex-col justify-center">
-          <h1 className="text-4xl md:text-5xl max-w-xl leading-slug font-bold uppercase">
+          <h1 className="text-4xl md:text-5xl max-w-xl leading-slug  uppercase">
             Transforming your vision into
-            <span className="bg-gradient-to-l from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text mx-1">
+            <span className="bg-gradient-to-l from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text">
+              {" "}
               stunning Websites
             </span>
           </h1>
@@ -25,7 +24,7 @@ const Hero = () => {
             technology to deliver unique and engaging digital experiences. Let’s
             create something extraordinary together.
           </p>
-          <div className="flex-col gap-4 my-8  flex md:flex-row">
+          <div className="flex-col gap-4 mt-16 flex md:flex-row">
             <CallToAction
               href="#contact"
               name="Call Us Now"
@@ -42,13 +41,14 @@ const Hero = () => {
         </div>
 
         {/* hero image */}
-
-        <div className="overflow-hidden mt-32 w-full md:w-1/2 md:mt-0">
-          <img
-            className="object-cover w-full h-full"
-            src="/Hero-image.png"
-            alt="hero image"
-          />
+        <div className="h-full mt-20 md:mt-0  flex justify-center items-center">
+          <div className="overflow-hidden drop-shadow-md">
+            <img
+              className="object-cover w-full h-full"
+              src="/Hero-image.png"
+              alt="hero image"
+            />
+          </div>
         </div>
       </div>
 
