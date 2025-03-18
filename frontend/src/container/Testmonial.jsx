@@ -64,7 +64,7 @@ const Testmonial = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className={`flex cursor-pointer relative mx-2 flex-col  ring-1 ring-slate-700 py-4 px-6 rounded-2xl gap-8 mt-16`}
+              className={`flex cursor-pointer relative mx-2 flex-col border py-4 px-6 rounded-2xl gap-8 mt-16`}
             >
               <div className="flex justify-between gap-4">
                 <div className="flex space-x-1">

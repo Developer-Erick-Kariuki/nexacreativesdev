@@ -138,9 +138,9 @@ const BlogPost = () => {
         <div className="flex flex-col md:flex-row max-w-7xl gap-x-2">
           {SinglePost.map((current) => (
             <motion.div
-              initial={{ opacity: 0, x: 200 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0, ease: easeInOut }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, delay: 0, ease: "linear" }}
               className="px-4 max-w-4xl"
               key={current.customId}
             >
@@ -173,7 +173,7 @@ const BlogPost = () => {
                 blocks={current.body}
                 serializers={serializers}
               />
-              <Comment />
+              <Comment postId={current.customId} />
             </motion.div>
           ))}
 
