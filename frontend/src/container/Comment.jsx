@@ -92,7 +92,9 @@ const Comment = ({ postId }) => {
       className="py-8 px-5 rounded-2xl w-full md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
       <div className="flex w-full flex-col">
-        <h2 className="text-2xl font-bold">Comments</h2>
+        <h2 className="text-2xl font-bold">
+          Learned something? Leave us a comment
+        </h2>
 
         {/* Comment Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-4">
