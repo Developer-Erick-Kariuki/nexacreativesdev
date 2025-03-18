@@ -23,8 +23,6 @@ const Header = () => {
 
   const { theme, isSet, setIsSet } = useContext(ThemeContext);
 
-  setTimeout(() => setIsSet(true), 1000 * 30);
-
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {

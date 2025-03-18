@@ -15,7 +15,7 @@ function ThemeProvider({ children }) {
   };
 
   const [theme, setTheme] = useState(getInitialTheme);
-  const [isSet, setIsSet] = useState(false);
+  const [isSet, setIsSet] = useState(true);
 
   useEffect(() => {
     if (theme === "system") {
