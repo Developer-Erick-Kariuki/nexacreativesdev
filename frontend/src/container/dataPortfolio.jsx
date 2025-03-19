@@ -104,7 +104,7 @@ const Portfolioa = () => {
                     transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
                     src={image.imageUrl}
                     alt={image.title}
-                    className="w-full object-top hover:object-bottom transition-all duration-1000 ease-linear h-full object-cover"
+                    className="w-full object-top hover:object-bottom transition-all duration-[2s] ease-linear h-full object-cover"
                   />
                 </div>
                 <p className="mt-2">{image?.description}</p>
