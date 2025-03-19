@@ -188,7 +188,10 @@ const Header = () => {
             )}
 
             {isOpen && (
-              <div className="fixed z-0 w-screen h-screen inset-0 bg-slate-900 overscroll-y-none  opacity-75"></div>
+              <div
+                className="fixed z-0 w-screen h-screen inset-0 bg-slate-900 overscroll-y-none  opacity-75"
+                onClick={() => setIsOpen(false)}
+              ></div>
             )}
           </div>
         </nav>
