@@ -149,7 +149,7 @@ const Header = () => {
                 transition={{ duration: 1, ease: "easeInOut" }}
                 className={`${
                   theme === "dark" ? "bg-secondary" : "bg-primary"
-                } flex drop-shadow-md h-screen right-0 fixed top-0 flex-col gap-4 sm:w-1/2 w-3/4 z-10 py-6 items-end px-6`}
+                } flex drop-shadow-md h-screen right-0 fixed top-0 flex-col gap-4 sm:w-1/2 w-3/4 z-50 py-6 items-end px-6`}
               >
                 <div className="flex justify-between w-full">
                   <img
