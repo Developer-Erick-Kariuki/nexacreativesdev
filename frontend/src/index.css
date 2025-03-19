@@ -111,3 +111,7 @@ html {
 .onHover:hover .underline {
   width: 100%; /* Expands on hover */
 }
+
+.image-container:hover .image-hover {
+  transform: translateY(100);
+}

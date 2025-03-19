@@ -63,82 +63,88 @@ const ContactUs = () => {
   };
   return (
     <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
       id="contact"
-      className="py-8 px-5 rounded-2xl w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
+      className="rounded-2xl w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
-      <div className="flex w-full md:w-1/2 flex-col">
-        <h2 className="text-2xl font-bold">
-          For any enquiries, send us an E-mail
-        </h2>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-4">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="outline-none bg-transparent"
-            placeholder="Enter your name"
-            required
-          />
-          <hr className="h-2" />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="outline-none bg-transparent"
-            placeholder="Enter your email"
-          />
+      <div className="mx-auto max-w-7xl justify-between gap-4 py-6 w-full flex">
+        <div className="flex flex-col flex-1">
+          <h2 className="text-2xl font-bold">
+            For any enquiries, send us an E-mail
+          </h2>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 mt-4">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="outline-none bg-transparent"
+              placeholder="Enter your name"
+              required
+            />
+            <hr className="h-2" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="outline-none bg-transparent"
+              placeholder="Enter your email"
+            />
 
-          <hr className="h-2" />
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            className="outline-none bg-transparent"
-            required
-            placeholder="Subject"
-          />
-          <hr className="h-2" />
-          <textarea
-            name="message"
-            id="message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            className="outline-none p-3 h-[200px] bg-slate-700/30"
-            placeholder="Type your message here"
-          />
+            <hr className="h-2" />
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              className="outline-none bg-transparent"
+              required
+              placeholder="Subject"
+            />
+            <hr className="h-2" />
+            <textarea
+              name="message"
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+              className="outline-none p-3 h-[200px] bg-slate-700/30"
+              placeholder="Type your message here"
+            />
 
-          <button
-            className={`${
-              buttonText === "Success!"
-                ? "bg-green-500"
-                : buttonText === "Failed"
-                ? "bg-red-500"
-                : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 text-primary hover:to-purple-600"
-            } px-6 py-3 rounded-3xl flex items-center gap-4 justify-center text-lg outline-none mt-8`}
-            type="submit"
-            disabled={isLoading}
-          >
-            <span>
-              <BsFillSendFill />
-            </span>
-            {buttonText}
-          </button>
-        </form>
-      </div>
-      <div className="flex">
-        <img src="/contactimg.png" width={400} alt="" />
+            <button
+              className={`${
+                buttonText === "Success!"
+                  ? "bg-green-500"
+                  : buttonText === "Failed"
+                  ? "bg-red-500"
+                  : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 text-primary hover:to-purple-600"
+              } px-6 py-3 rounded-3xl flex items-center gap-4 justify-center text-lg outline-none mt-8`}
+              type="submit"
+              disabled={isLoading}
+            >
+              <span>
+                <BsFillSendFill />
+              </span>
+              {buttonText}
+            </button>
+          </form>
+        </div>
+        <div className="flex w-[32rem] h-[32rem] overflow-hidden">
+          <img
+            src="/contactimg.png"
+            alt="contact image"
+            className="object-contains"
+          />
+        </div>
       </div>
     </motion.section>
   );

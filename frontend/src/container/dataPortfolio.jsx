@@ -4,6 +4,7 @@ import { AnimatePresence, easeIn, easeInOut, motion } from "framer-motion";
 import Masonry from "react-masonry-css";
 import "../index.css";
 import { ThemeContext } from "../components/ThemeContextProvider";
+import "../index.css";
 
 const Portfolioa = () => {
   const { theme } = useContext(ThemeContext);
@@ -90,58 +91,27 @@ const Portfolioa = () => {
           {images
             .filter((image) => (isSlug ? image.category === isSlug : true))
             .map((image, index) => (
-              <div
-                key={index}
-                className={`${
-                  theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-                } w-[30rem] h-[30rem] justify-center  flex overflow-hidden`}
-              >
-                <motion.img
-                  loading="lazy"
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
-                  src={image.imageUrl}
-                  alt={image.title}
-                  className={`shadow-lg object-cover drop-shadow-md`}
-                  onClick={() => setSelectedImage(image.imageUrl)}
-                />
+              <div key={index}>
+                <div
+                  className={`${
+                    theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+                  } w-[30rem] h-[20rem] overflow-y-scroll overflow-x-hidden `}
+                >
+                  <motion.img
+                    loading="lazy"
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
+                    src={image.imageUrl}
+                    alt={image.title}
+                    className="w-full object-top hover:object-bottom transition-all duration-1000 ease-linear h-full object-cover"
+                  />
+                </div>
+                <p className="mt-2">{image?.description}</p>
               </div>
             ))}
         </div>
       </div>
-
-      {/* Full-Screen Modal with Framer Motion */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.img
-              src={selectedImage}
-              alt="Full Screen"
-              className="max-w-full max-h-full object-contain"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            />
-            <button
-              className="absolute top-4 right-4 text-white text-3xl"
-              onClick={() => setSelectedImage(null)}
-            >
-              ✕
-            </button>
-            <p className="text-sm text-slate-200 my-4">
-              {selectedImage.description}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </motion.section>
   );
 };
