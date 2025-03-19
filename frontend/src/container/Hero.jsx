@@ -3,12 +3,13 @@ import SocialMedia from "../components/SocialMedia";
 import CallToAction from "../components/callToAction";
 import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContextProvider";
+import "../index.css";
 
 const Hero = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <section
-      className={`justify-center relative  md:h-screen  flex md:flex-row`}
+      className={`justify-center relative  md:h-screen bg flex md:flex-row`}
     >
       <div className="flex max-w-7xl px-6 mx-auto gap-4 flex-col-reverse md:flex-row z-10">
         <div className="flex flex-col justify-center">
