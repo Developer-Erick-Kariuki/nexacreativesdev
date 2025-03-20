@@ -12,8 +12,8 @@ const Whyus = () => {
         } flex items-center max-w-7xl rounded-2xl px-10 justify-between flex-col md:flex-row`}
       >
         <motion.div
-          initial={{ opacity: 0, x: -200 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2, ease: easeIn }}
           viewport={{ once: true }}
           className=""
@@ -44,8 +44,8 @@ const Whyus = () => {
           </ul>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 200 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: easeInOut }}
           viewport={{ once: true }}
           className="flex justify-center items-center overflow-hidden max-w-md"

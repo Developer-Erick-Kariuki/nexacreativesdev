@@ -39,8 +39,8 @@ const AboutUs = () => {
       <div className="flex flex-col gap-8 justify-center md:flex-row mt-8">
         <div className="flex max-w-md w-full h-full">
           <motion.img
-            initial={{ opacity: 0, x: -300 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: easeInOut }}
             viewport={{ once: true }}
             src="/aboutImg.png"
@@ -50,8 +50,8 @@ const AboutUs = () => {
 
         <div className="flex max-w-md w-full flex-col gap-2">
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: easeIn }}
             viewport={{ once: true }}
             className={`${
@@ -68,8 +68,8 @@ const AboutUs = () => {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 200 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: easeIn }}
             viewport={{ once: true }}
             className="flex max-w-md flex-col"
