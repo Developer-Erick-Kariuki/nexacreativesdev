@@ -8,9 +8,7 @@ import "../index.css";
 const Hero = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <section
-      className={`justify-center relative  md:h-screen bg flex md:flex-row`}
-    >
+    <section className={`justify-center relative  bg flex md:flex-row`}>
       <div className="flex max-w-7xl px-6 mx-auto gap-4 flex-col-reverse md:flex-row z-10">
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl max-w-xl leading-slug  uppercase">
