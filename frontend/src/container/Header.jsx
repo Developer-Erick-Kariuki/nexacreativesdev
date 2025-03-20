@@ -4,7 +4,7 @@ import { MdClose } from "react-icons/md";
 import { motion } from "framer-motion";
 import { links } from "../constants";
 import { Link } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
 import ThemeToggle from "../components/ToggleTheme";
 import { ThemeContext } from "../components/ThemeContextProvider";
 import NexaLogo from "/nexalogo.png";
@@ -27,7 +27,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -44,43 +44,46 @@ const Header = () => {
 
   return (
     <>
-      {isSet && (
-        <>
-          <div className="bg-purple-600 transition-all h-14 md:h-8 duration-300 ease-linear flex items-center justify-center px-6 w-full mb-2 text-primary fixed top-0 z-50">
-            <p className="text-sm text-center">
-              For any inquiries or if you are looking for graphic design,
-              digital marketing or web development services, click
-              <span>
-                <a
-                  href="https://wa.me/254797710074" // Replace with your WhatsApp number
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline mx-1 hover:text-teal-400 text-sm"
-                >
-                  here
-                </a>
-              </span>
-            </p>
-            <MdClose
-              className="absolute right-4 cursor-pointer hover:scale-110"
-              onClick={() => setIsSet(false)}
-            />
-          </div>
-        </>
-      )}
       <header
         className={` ${
           theme === "dark"
             ? "bg-secondary text-white"
             : "bg-white text-secondary"
-        } ${isSet ? "mt-12 md:mt-8" : "mt-0"}
-        
+        }       
         ${
-          isScrolled ? "drop-shadow-md" : ""
-        }  px-6 top-0 mx-auto md:px-10 fixed  h-16 z-40 w-full`}
+          isScrolled ? " fixed" : ""
+        } top-0 mx-auto drop-shadow static transition-all ease-in-out duration-500 z-40 w-full`}
       >
+        {isSet && (
+          <>
+            <div
+              className={` hidden  bg-purple-600 relative  transition-all py-2 duration-300 ease-linear md:flex items-center justify-center px-6 w-full  text-primary`}
+            >
+              <p className="text-sm text-center flex items-center gap-4 flex-wrap">
+                Impressed by our work? Hire us for professional web development
+                services
+                <span className="flex justify-center items-center gap-2 bg-white hover:bg-purple-900 hover:text-white text-accent rounded-xl w-fit px-5 py-2">
+                  <FaWhatsapp />
+                  <a
+                    href="https://wa.me/254797710074" // Replace with your WhatsApp number
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp Us
+                  </a>
+                </span>
+              </p>
+
+              <MdClose
+                size={20}
+                className="absolute right-2 cursor-pointer hover:scale-110"
+                onClick={() => setIsSet(false)}
+              />
+            </div>
+          </>
+        )}
         {/* navigation for desktops */}
-        <nav className="hidden md:flex mx-auto max-w-7xl items-center h-full tex-sm justify-between">
+        <nav className="hidden md:flex mx-auto py-4 max-w-7xl items-center h-full justify-between">
           <Link to="/">
             <div className="flex">
               <img
@@ -119,7 +122,7 @@ const Header = () => {
 
         {/* mobile navbar */}
         <nav
-          className={`md:hidden w-full h-full flex justify-between items-center`}
+          className={`md:hidden w-full h-full py-4 px-6 flex justify-between items-center`}
         >
           <div className="flex justify-between w-full">
             <Link to="/" className="cursor-pointer">

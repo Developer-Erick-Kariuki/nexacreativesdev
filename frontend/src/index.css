@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-4xl my-4 font-bold;
+  }
+
+  h2 {
+    @apply text-2xl font-bold my-2;
+  }
+
+  h3 {
+    @apply text-xl font-bold my-2;
+  }
+
+  p {
+    @apply text-base font-normal leading-relaxed mt-1;
+  }
+
+  i {
+    @apply text-base font-bold my-4;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

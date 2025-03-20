@@ -126,14 +126,13 @@ const BlogPost = () => {
     );
 
   return (
-    <section
+    <body
       className={`${
-        theme === "dark"
-          ? "bg-secondary text-primary"
-          : "bg-primary text-secondary"
-      } ${isSet ? "mt-28 md:mt-24" : "mt-14"} `}
+        theme === "dark" ? "bg-secondary text-white" : "bg-white text-secondary"
+      }  `}
     >
       <Header />
+
       <div className="w-full  relative justify-center  flex">
         <div className="flex flex-col md:flex-row max-w-7xl gap-x-2">
           {SinglePost.map((current) => (
@@ -141,7 +140,9 @@ const BlogPost = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 2, delay: 0, ease: "linear" }}
-              className="px-4 max-w-4xl"
+              className={`${
+                theme === "dark" ? "bg-gray-900" : "bg-slate-50"
+              } px-4 max-w-4xl`}
               key={current.customId}
             >
               <div className="w-full overflow-clip">
@@ -177,9 +178,17 @@ const BlogPost = () => {
             </motion.div>
           ))}
 
-          <div className="flex flex-col h-fit md:sticky my-2 max-w-full inset-0 md:max-w-md drop-shadow-md p-2">
-            <h1 className="text-2xl font-bold my-4">Popular Posts</h1>
-            <hr className="w-full border-white" />
+          <div
+            className={`${
+              theme === "dark" ? "bg-gray-900" : "bg-slate-50"
+            } flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
+          >
+            <h1 className="text-2xl font-bold my-4">Recent Articles</h1>
+            <hr
+              className={`${
+                theme === "dark" ? "border-white" : "border-black"
+              } w-full`}
+            />
             {posts.map((post) => (
               <div key={post.title}>
                 <Link
@@ -212,7 +221,7 @@ const BlogPost = () => {
         </div>
       </div>
       <Footer />
-    </section>
+    </body>
   );
 };
 

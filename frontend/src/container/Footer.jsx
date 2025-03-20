@@ -11,6 +11,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../components/ThemeContextProvider";
 import NexaLogo from "/nexalogo.png";
 import LightLogo from "/logo light.png";
+import { Link } from "react-router-dom";
 
 const year = new Date().getFullYear();
 
@@ -23,6 +24,9 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const { theme } = useContext(ThemeContext);
   return (
     <section
@@ -30,7 +34,7 @@ const Footer = () => {
         theme === "dark"
           ? "bg-slate-900 text-primary"
           : "bg-slate-200 text-secondary"
-      }  text-primary shadow-xl py-4 mx-auto md:px-12  w-full`}
+      }  text-primary shadow-xl mx-auto  w-full`}
     >
       <div className="flex  py-6 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-3">
@@ -85,9 +89,19 @@ const Footer = () => {
           </div>
         ))}
       </div>
-      <p className="text-center text-sm mt-8">
-        {year} @nexacreatives copyrights all rights reserved
-      </p>
+      <div className="flex text-center w-full bg-black text-white py-2 text-sm mt-8 flex-wrap items-center justify-center gap-4">
+        <p className="text-sm">
+          Copyrights © {year}{" "}
+          <span className="text-accent">Nexa Creative Solution </span> All
+          rights reserved
+        </p>
+        <Link onClick={handleScrollToTop} to="/terms">
+          Terms & Conditions
+        </Link>
+        <Link onClick={handleScrollToTop} to="/privacy">
+          Privacy policy
+        </Link>
+      </div>
       <WhatsAppButton />
     </section>
   );

@@ -70,8 +70,8 @@ const ContactUs = () => {
       id="contact"
       className="rounded-2xl w-full mt-32  md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
-      <div className="mx-auto max-w-7xl justify-between gap-4 py-6 w-full flex">
-        <div className="flex flex-col flex-1">
+      <div className="mx-auto max-w-7xl justify-between flex-col-reverse md:flex-row px-6 md:px-0  gap-4 py-6 w-full flex">
+        <div className="flex flex-col ">
           <h2 className="text-2xl font-bold">
             For any enquiries, send us an E-mail
           </h2>
