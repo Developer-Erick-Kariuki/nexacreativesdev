@@ -10,10 +10,17 @@ import { MdOutlineAutoAwesomeMotion } from "react-icons/md";
 import { MdOutlineLinkedCamera } from "react-icons/md";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../components/ThemeContextProvider";
+import { ArrowBigDown } from "lucide-react";
 
 const size = 38;
 
 const services = [
+  {
+    name: "Web Design & Development",
+    description:
+      "Designing and developing custom websites, landing pages, and eCommerce platforms optimized for performance and user experience.",
+    icon: <SiWebgpu size={size} />,
+  },
   {
     name: "UX/UI Design",
     icon: <FaBorderTopLeft size={size} />,
@@ -38,12 +45,7 @@ const services = [
     description:
       "Producing engaging animations, logo intros, promotional videos, and social media video content to enhance brand storytelling.",
   },
-  {
-    name: "Web Design & Development",
-    description:
-      "Designing and developing custom websites, landing pages, and eCommerce platforms optimized for performance and user experience.",
-    icon: <SiWebgpu size={size} />,
-  },
+
   {
     name: "Photography & Videography",
     description:
@@ -93,13 +95,13 @@ const Services = () => {
                 key={index}
                 className={`${
                   theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-                } flex flex-col p-6 rounded-xl overflow-clip hover:-translate-x-3 transition-all duration-300 ease-in-out cursor-pointer`}
+                } flex flex-col p-6 rounded-xl overflow-clip hover:-translate-y-1 hover:ring-1 ring-accent transition-all duration-300 ease-in-out cursor-pointer`}
               >
-                <i className="mb-4 text-accent">{service.icon}</i>
+                <i className="mb-4  text-accent">{service.icon}</i>
                 <a href="#" className="uppercase z-20 font-light">
                   {service.name}
                 </a>
-                <p className="mt-4 text-slate-400 text-sm leading-relaxed">
+                <p className="mt-4 text-slate-400 leading-relaxed">
                   {service.description}
                 </p>
               </div>
@@ -118,12 +120,12 @@ const Services = () => {
           <p className="text-center text-3xl font-bold ">
             Our Solution Process
           </p>
-          <div className="flex flex-col md:flex-row max-w-7xl items-center mt-8 mb-32 gap-16 justify-center">
-            <div className=" flex flex-col md:w-1/2 w-full gap-4">
+          <div className="flex flex-col max-w-7xl items-center mt-8 mb-32 gap-16 justify-start">
+            <div className="flex w-full justify-start">
               <div
                 className={`${
                   theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-                } flex flex-col  rounded-3xl p-6 space-y-4`}
+                } flex flex-col md:w-1/2 w-full rounded-3xl p-6 space-y-4`}
               >
                 <div className="flex items-center">
                   <div className="flex items-center space-x-[-8px]">
@@ -135,7 +137,7 @@ const Services = () => {
                         <img
                           src={src.src}
                           alt={`Avatar ${index + 1}`}
-                          width={38}
+                          width={42}
                           className="object-cover"
                         />
                       </div>
@@ -168,14 +170,14 @@ const Services = () => {
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* start navigation */}
-              {cardNavigation.map((link, index) => (
-                <div
-                  key={index}
-                  className="flex relative flex-col justify-between items-start w-full"
-                >
+            <div className="flex gap-x-4 w-full">
+              <div className="md:w-full flex flex-col gap-y-2">
+                {/* start navigation */}
+                {cardNavigation.map((link, index) => (
                   <li
+                    key={link}
                     onClick={() => {
                       setisActive(index);
                       setistop(index);
@@ -188,9 +190,9 @@ const Services = () => {
                         : isActive !== index && theme !== "dark"
                         ? "bg-slate-200"
                         : "bg-slate-800"
-                    }  flex cursor-pointer p-2 items-center w-full overflow-clip rounded-2xl gap-4 transition-all duration-500 ease-linear`}
+                    }  flex cursor-pointer p-2  rounded-xl w-full overflow-clip  gap-x-2 transition-all duration-500 ease-linear`}
                   >
-                    <h1
+                    <h2
                       className={`${
                         isActive == index && index == 0
                           ? "bg-accent"
@@ -201,12 +203,12 @@ const Services = () => {
                           : isActive == index && index == 3
                           ? "bg-orange-500"
                           : "bg-slate-100 text-slate-400"
-                      }   text-xl px-4 py-3 text-slate-200 rounded-2xl relative`}
+                      }   text-lg rounded-lg px-3 py-2 text-slate-200 relative`}
                     >
                       {link.number}
-                    </h1>
+                    </h2>
 
-                    <p
+                    <h3
                       className={`${
                         theme === "dark" && isActive === index
                           ? "text-slate-100"
@@ -215,68 +217,72 @@ const Services = () => {
                           : theme !== "dark" && isActive !== index
                           ? "text-slate-400"
                           : "text-slate-500"
-                      } flex justify-between items-center w-full font-medium`}
+                      }  hidden md:flex w-full font-normal justify-between items-center`}
                     >
                       {link.name}
+
                       {isActive === index && (
                         <FaArrowRightLong className="-rotate-45 text-slate-500" />
                       )}
-                    </p>
+                    </h3>
                   </li>
-                </div>
-              ))}
-            </div>
-
-            {/* begin process cards  */}
-            <div className="w-full h-[38rem] md:h-[24rem] relative ">
-              {processes.map((process, index) => (
-                <div
-                  key={index}
-                  className={`${process.className} 
+                ))}
+              </div>
+              {/* begin process cards  */}
+              <div className="w-full relative ">
+                {processes.map((process, index) => (
+                  <div
+                    key={index}
+                    className={`${process.className} 
               ${
                 istop === index
                   ? "z-10 top-0 px-5 opacity-100 translate-x-0 translate-y-0"
                   : index == 0 && isActive !== index
-                  ? "top-2 translate-x-4 translate-y-4 opacity-50"
+                  ? "top-0 translate-x-4 translate-y-4 opacity-70"
                   : index == 1 && isActive !== index
-                  ? "top-4 translate-x-6 translate-y-6 opacity-30"
+                  ? "top-0 translate-x-6 translate-y-6 opacity-50"
                   : index == 2 && isActive !== index
-                  ? "top-8 translate-x-8 translate-y-8 opacity-10"
+                  ? "top-0 translate-x-8 translate-y-8 opacity-30"
                   : index == 3 && isActive !== index
                   ? "top-2 translate-x-4 translate-y-4 opacity-0"
                   : ""
               } ${
-                    theme === "dark"
-                      ? "bg-slate-800 text-slate-300"
-                      : "bg-slate-200"
-                  }  text-lg w-full p-4 flex absolute h-full md:bottom-0 right-0 rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
-                >
-                  <div className="flex justify-center gap-4 items-center">
-                    <div className="flex justify-start flex-col gap-2 ">
-                      <div className="flex items-center justify-start gap-y-4 ">
-                        <div
-                          className={`${
-                            index == 0
-                              ? "bg-accent "
-                              : index == 1
-                              ? "bg-blue-500"
-                              : index == 2
-                              ? "bg-green-500"
-                              : index == 3
-                              ? "bg-orange-400"
-                              : ""
-                          } text-white p-4 rounded-2xl mb-8 items-center"`}
-                        >
-                          <process.icon size={28} />
+                      theme === "dark"
+                        ? "bg-slate-800 text-slate-300"
+                        : "bg-slate-200"
+                    }  text-lg  py-6 px-2 flex absolute h-fit  rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
+                  >
+                    <div className="flex justify-center gap-4 items-center">
+                      <div className="flex justify-start flex-col gap-2 ">
+                        <div className="flex items-center justify-start gap-y-4 ">
+                          <div
+                            className={`${
+                              index == 0
+                                ? "bg-accent "
+                                : index == 1
+                                ? "bg-blue-500"
+                                : index == 2
+                                ? "bg-green-500"
+                                : index == 3
+                                ? "bg-orange-400"
+                                : ""
+                            } text-white p-4 rounded-2xl mb-8 items-center"`}
+                          >
+                            <process.icon size={28} />
+                          </div>
                         </div>
+                        <p
+                          className={`${
+                            isActive !== index ? "opacity-5" : "opacity-100"
+                          } transition-all leading-relaxed  duration-500 ease-in-out`}
+                        >
+                          {process.desc}
+                        </p>
                       </div>
-                      <p className="transition-all leading-relaxed  duration-500 ease-in-out">
-                        {process.desc}
-                      </p>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

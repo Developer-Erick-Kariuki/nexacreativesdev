@@ -42,10 +42,10 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className=" px-6"
+      className="px-6 mt-16"
     >
-      <div className="flex flex-col justify-center items-center">
-        <h2 className="font-bold text-center text-2xl my-4 flex flex-col">
+      <div className="flex flex-col  justify-center items-center">
+        <h2 className="font-bold text-center text-2xl  flex flex-col">
           <span className="text-accent text-base mt-4 font-bold">
             Portfolio
           </span>
@@ -84,7 +84,7 @@ const Portfolioa = () => {
       </ul> */}
 
       {/* Image Gallery */}
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-2">
         <div
           className={`p-2 grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 max-w-7xl rounded-md`}
         >

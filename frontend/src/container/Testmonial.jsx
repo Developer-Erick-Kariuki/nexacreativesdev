@@ -98,8 +98,8 @@ const Testmonial = () => {
                   className="rounded-full ring-slate-500 ring-1"
                   alt="default"
                 />
-                <div className="flex flex-col my-3">
-                  <h2 className="font-bold text-base">{item.name}</h2>
+                <div className="flex flex-col">
+                  <h2 className="font-bold my-0 text-base">{item.name}</h2>
                   <p className="text-sm text-gray-400">{item.designation}</p>
                 </div>
               </div>

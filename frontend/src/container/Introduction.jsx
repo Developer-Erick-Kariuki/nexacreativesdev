@@ -6,7 +6,7 @@ import { ThemeContext } from "../components/ThemeContextProvider";
 const Introduction = () => {
   const { theme } = useContext(ThemeContext);
   return (
-    <section className="mt-32 w-screen flex px-2 md:px-0 justify-center">
+    <section className="mt-32 w-screen flex px-2 drop-shadow-sm md:px-0 justify-center">
       <div
         className={`${
           theme === "dark" ? "bg-slate-800" : "bg-slate-200"

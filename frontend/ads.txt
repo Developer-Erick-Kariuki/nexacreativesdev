@@ -1,1 +1,3 @@
 google.com, pub-1271914571464336, DIRECT, f08c47fec0942fa0
+
+MONGODB password = wnlhBIo3TDMj9f6y

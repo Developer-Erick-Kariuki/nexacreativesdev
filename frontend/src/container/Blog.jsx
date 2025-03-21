@@ -96,9 +96,9 @@ const Blog = () => {
                 />
               </div>
               <Link to={`/blog/BlogPost/${post.customId}`}>
-                <h2 className="cursor-pointer hover:text-orange-600 mt-6">
+                <h3 className="cursor-pointer hover:text-accent mt-6">
                   {post.title}
-                </h2>
+                </h3>
               </Link>
               <h3 className="text-sm text-slate-500">
                 {moment(post.publishedAt).format("MMMM DD, YYYY")}
