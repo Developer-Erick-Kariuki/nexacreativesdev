@@ -78,7 +78,6 @@ const Blog = () => {
           responsive={responsive}
           showDots={true}
           infinite={true}
-          partialVisbile={true}
           focusOnSelect={true}
           removeArrowOnDeviceType={["tablet", "mobile"]}
           sliderClass="mine"

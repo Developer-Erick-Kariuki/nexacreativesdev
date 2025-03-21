@@ -1,9 +1,4 @@
 import { links } from "../constants";
-import { FaThreads } from "react-icons/fa6";
-import { FaInstagram } from "react-icons/fa";
-import { FaBehance } from "react-icons/fa6";
-import { FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import WhatsAppButton from "../components/Whatsapp";
 import { IoCall } from "react-icons/io5";
 import { SiMinutemailer } from "react-icons/si";
@@ -12,16 +7,19 @@ import { ThemeContext } from "../components/ThemeContextProvider";
 import NexaLogo from "/nexalogo.png";
 import LightLogo from "/logo light.png";
 import { Link } from "react-router-dom";
+import { FaThreads, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa";
+
+// Define socialLinks array
+export const socialLinks = [
+  { image: <FaGithub size={20} />, href: "https://github.com" },
+  { image: <FaInstagram size={20} />, href: "https://instagram.com" },
+  { image: <FaTiktok size={20} />, href: "https://tiktok.com" },
+  { image: <FaThreads size={20} />, href: "https://threads.net" },
+  { image: <FaXTwitter size={20} />, href: "https://twitter.com" },
+];
 
 const year = new Date().getFullYear();
-
-const socialLinks = [
-  { image: <FaXTwitter /> },
-  { image: <FaThreads /> },
-  { image: <FaFacebookF /> },
-  { image: <FaBehance /> },
-  { image: <FaInstagram /> },
-];
 
 const Footer = () => {
   const handleScrollToTop = () => {
@@ -59,19 +57,27 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h2 className="font-bold mb-2">Services</h2>
+          <h2 className="font-bold mb-2">Our Services</h2>
           <ul className="flex flex-col gap-2">
-            <li>Graphic Design</li>
-            <li>Social Media</li>
             <li>Web Design & Development</li>
+            <li>Graphic Design</li>
+            <li>UX/UI Design</li>
+            <li>Social Media Management</li>
             <li>Digital Marketing</li>
           </ul>
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="font-bold mb-2">Quick links</h2>
+
           <ul className="gap-2 flex flex-col">
-            {links.map((link) => (
-              <li key={link.name}>{link.name}</li>
+            {links.map((link, index) => (
+              <li className="hover:text-accent" key={link.name}>
+                {index !== 0 ? (
+                  <a href={link.href}>{link.name}</a>
+                ) : (
+                  <a href="#">{link.name}</a>
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -80,6 +86,7 @@ const Footer = () => {
       <hr className={`${theme === "dark" ? "" : "border-gray-950"} `} />
 
       <div className="flex mt-8  flex-wrap justify-center items-center gap-6">
+        <p className="">Follow us</p>{" "}
         {socialLinks.map((image, index) => (
           <div
             className="size-8 rounded-full ring-1 ring-slate-500 hover:ring-accent transition-all duration-300 ease-linear flex justify-center items-center"

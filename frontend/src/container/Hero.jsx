@@ -26,7 +26,7 @@ const Hero = () => {
           <div className="flex-col gap-4 mt-16 flex md:flex-row">
             <CallToAction
               href="#contact"
-              name="Call Us Now"
+              name="Get Started"
               className="bg-gradient-to-tr hover:from-purple-600 hover:to-blue-600 transition-color text-primary duration-300 ease-linear from-blue-600 to-purple-600 "
             />
             <CallToAction

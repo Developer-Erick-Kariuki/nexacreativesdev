@@ -10,6 +10,7 @@ import { ThemeContext } from "../components/ThemeContextProvider";
 import NexaLogo from "/nexalogo.png";
 import LightLogo from "/logo light.png";
 import "../index.css";
+import CallToAction from "../components/callToAction";
 
 const imageSize = 150;
 
@@ -106,7 +107,16 @@ const Header = () => {
                 {index === 0 ? (
                   <Link to={link.href}>{link.name}</Link>
                 ) : (
-                  <a href={link.href}>{link.name}</a>
+                  <a
+                    href={link.href}
+                    className={`${
+                      index === links.length - 1
+                        ? "bg-gradient-to-tr from-accent to-violet-500 text-white px-2 py-2  rounded"
+                        : ""
+                    }`}
+                  >
+                    {link.name}
+                  </a>
                 )}
 
                 <div
@@ -114,6 +124,7 @@ const Header = () => {
                 ></div>
               </li>
             ))}
+
             <div className="mx-4">
               <ThemeToggle />
             </div>

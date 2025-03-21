@@ -1,8 +1,8 @@
 import { HiOutlineLightBulb } from "react-icons/hi2";
-import { FaSearchPlus } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaSearchPlus, FaTiktok } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
-
 import { FaRocket } from "react-icons/fa";
+import { FaThreads, FaXTwitter } from "react-icons/fa6";
 
 export const links = [
   { name: "Home", href: "/" },
@@ -10,7 +10,7 @@ export const links = [
   { name: "Services", href: "#services" },
   { name: "Blog", href: "#blog" },
   { name: "Portfolio", href: "#portfolio" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact Us", href: "#contact" },
 ];
 
 export const animation = [
