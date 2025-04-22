@@ -7,11 +7,11 @@ const SocialMedia = () => {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 2, ease: "easeInOut" }}
-      className={`hidden md:flex flex-col right-0 bottom-0  w-fit rotate-90 absolute z-20 gap-3 md:px-12 `}
+      className={`hidden md:flex w-fit absolute z-20 gap-3 md:px-12 `}
     >
       {socialLinks.map((icon, index) => (
         <div
-          className={`cursor-pointer  text-slate-400 hover:text-accent`}
+          className={`cursor-pointer text-slate-400 hover:text-accent`}
           key={index}
         >
           {icon.image}

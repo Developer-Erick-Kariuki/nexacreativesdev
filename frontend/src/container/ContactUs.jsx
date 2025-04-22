@@ -68,10 +68,10 @@ const ContactUs = () => {
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
       id="contact"
-      className="rounded-2xl w-full mt-16   md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
+      className="rounded-2xl w-full mt-16 md:flex-row justify-center items-center flex gap-6 flex-col-reverse"
     >
       <div className="mx-auto max-w-7xl justify-between flex-col-reverse md:flex-row px-6 md:px-0  gap-4 py-6 w-full flex">
-        <div className="flex flex-col md:w-1/2 w-full">
+        <div className="flex flex-col md:w-1/2 shadow p-6 w-full">
           <h2 className="text-2xl font-bold">
             For any enquiries, send us an E-mail
           </h2>
@@ -127,7 +127,7 @@ const ContactUs = () => {
                   : buttonText === "Failed"
                   ? "bg-red-500"
                   : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 text-primary hover:to-purple-600"
-              } px-6 py-3 rounded-3xl flex items-center gap-4 justify-center text-lg outline-none mt-8`}
+              } px-6 py-3 rounded flex items-center gap-4 justify-center text-lg outline-none mt-8`}
               type="submit"
               disabled={isLoading}
             >
@@ -138,7 +138,7 @@ const ContactUs = () => {
             </button>
           </form>
         </div>
-        <div className="flex w-[32rem] h-[32rem] overflow-hidden">
+        <div className="flex w-[28rem] h-[32rem] overflow-hidden">
           <img
             src="/contactimg.png"
             alt="contact image"

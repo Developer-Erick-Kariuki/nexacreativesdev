@@ -27,7 +27,7 @@ const AboutUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-base max-w-2xl text-center leading-relaxed mb-4"
+          className="text-sm max-w-2xl text-center leading-relaxed mb-4"
         >
           At Nexa Creative Solutions, we believe that every brand has a unique
           story to tell. As a premier web design and development agency, we
@@ -36,15 +36,15 @@ const AboutUs = () => {
           into a powerful online presence that drives results.
         </motion.p>
       </div>
-      <div className="flex flex-col gap-8 justify-center md:flex-row mt-8">
-        <div className="flex max-w-md w-full h-full">
+      <div className="flex  flex-col gap-8 justify-center md:flex-row my-16">
+        <div className="flex max-w-md">
           <motion.img
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: easeInOut }}
             viewport={{ once: true }}
-            src="/aboutImg.png"
-            className="object-contain"
+            src="/about.png"
+            className="object-cover"
           />
         </div>
 
@@ -59,7 +59,7 @@ const AboutUs = () => {
             } flex p-5 rounded-3xl flex-col mt-8 md:mt-0`}
           >
             <h2 className="text-base text-accent font-bold">Our Story</h2>
-            <p className="text-base leading-relaxed">
+            <p className="text-sm leading-relaxed ">
               Founded on a passion for creativity and technology, Nexa-Creative
               Solutions was born from a desire to bridge the gap between
               exceptional design and cutting-edge development. With years of
@@ -82,7 +82,7 @@ const AboutUs = () => {
               <h2 className="text-base text-accent font-bold">
                 Our Philosophy
               </h2>
-              <p className="text-base leading-relaxed">
+              <p className="text-sm leading-relaxed">
                 Our Philosophy We approach each project with a commitment to
                 excellence, blending artistic vision with technical precision.
                 Our philosophy is simple: understand the client’s needs, create

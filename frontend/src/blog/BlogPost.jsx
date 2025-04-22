@@ -2,13 +2,14 @@ import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import moment from "moment";
 import SanityBlockContent from "@sanity/block-content-to-react";
-import { easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { client } from "../client";
 import Footer from "../container/Footer";
 import Comment from "../container/Comment";
 import "../blog/blog.css";
 import Header from "../container/Header";
 import { ThemeContext } from "../components/ThemeContextProvider";
+import { TimerIcon } from "lucide-react";
 
 // serializers
 
@@ -108,7 +109,7 @@ const BlogPost = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const { theme, isSet } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
   if (!SinglePost)
@@ -126,11 +127,7 @@ const BlogPost = () => {
     );
 
   return (
-    <body
-      className={`${
-        theme === "dark" ? "bg-secondary text-white" : "bg-white text-secondary"
-      }  `}
-    >
+    <body className="bg-slate-100">
       <Header />
 
       <div className="w-full  relative justify-center  flex">
@@ -150,7 +147,7 @@ const BlogPost = () => {
                   {current.title}
                 </h1>
                 <p className="my-4">
-                  <span className="text-slate-400">
+                  <span className="text-slate-400 text-sm">
                     {" "}
                     By
                     {current.postedBy
@@ -183,7 +180,7 @@ const BlogPost = () => {
               theme === "dark" ? "bg-gray-900" : "bg-slate-50"
             } flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
           >
-            <h1 className="text-2xl font-bold my-4">Recent Articles</h1>
+            <h1 className="text-2xl font-bold my-4">Recent Blogs</h1>
             <hr
               className={`${
                 theme === "dark" ? "border-white" : "border-black"
@@ -206,11 +203,12 @@ const BlogPost = () => {
                   </div>
 
                   <div className="flex flex-col justify-center w-full">
-                    <h2 className="mt-4 text-sm  hover:text-green-400 transition-colors duration-300 ease-in-out font-normal">
+                    <h2 className="text-sm  hover:text-green-400 transition-colors duration-300 ease-in-out font-semibold">
                       {post.title}
                     </h2>
 
-                    <p className="text-xs mt-2 text-slate-500">
+                    <p className="text-xs flex items-center gap-2 text-slate-500">
+                      <TimerIcon size={12} />{" "}
                       {moment(post.publishedAt).format("MMMM DD, YYYY")}
                     </p>
                   </div>

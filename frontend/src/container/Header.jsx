@@ -5,14 +5,12 @@ import { motion } from "framer-motion";
 import { links } from "../constants";
 import { Link } from "react-router-dom";
 import { FaArrowRight, FaWhatsapp } from "react-icons/fa";
-import ThemeToggle from "../components/ToggleTheme";
 import { ThemeContext } from "../components/ThemeContextProvider";
 import NexaLogo from "/nexalogo.png";
 import LightLogo from "/logo light.png";
 import "../index.css";
-import CallToAction from "../components/callToAction";
 
-const imageSize = 150;
+const imageSize = 120;
 
 const Header = () => {
   const [isActive, setisActive] = useState(0);
@@ -52,25 +50,27 @@ const Header = () => {
             : "bg-white text-secondary"
         }       
         ${
-          isScrolled ? " fixed" : ""
+          isScrolled ? "opacity-75 fixed" : ""
         } top-0 mx-auto drop-shadow static transition-all ease-in-out duration-500 z-40 w-full`}
       >
         {isSet && (
           <>
             <div
-              className={` hidden  bg-purple-600 relative  transition-all py-2 duration-300 ease-linear md:flex items-center justify-center px-6 w-full  text-primary`}
+              className={`${
+                isScrolled ? "hidden" : "md:flex"
+              } hidden   bg-purple-600 relative  transition-all h-10 duration-300 ease-linear  items-center justify-center px-6 w-full  text-primary`}
             >
-              <p className="text-sm text-center flex items-center gap-4 flex-wrap">
+              <p className="text-xs text-center flex items-center gap-4 flex-wrap">
                 Impressed by our work? Hire us for professional web development
                 services
-                <span className="flex justify-center items-center gap-2 bg-white hover:bg-purple-900 hover:text-white text-accent rounded-xl w-fit px-5 py-2">
-                  <FaWhatsapp />
+                <span className=" bg-slate-50 rounded py-1 text-accent px-2 flex items-center gap-2 ">
+                  <FaWhatsapp size={20} />
                   <a
                     href="https://wa.me/254797710074" // Replace with your WhatsApp number
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    WhatsApp Us
+                    WhatsApp us
                   </a>
                 </span>
               </p>
@@ -84,7 +84,7 @@ const Header = () => {
           </>
         )}
         {/* navigation for desktops */}
-        <nav className="hidden md:flex mx-auto py-4 max-w-7xl items-center h-full justify-between">
+        <nav className="hidden text-sm md:flex mx-auto max-w-7xl px-6 md:px-10 items-center h-12 justify-between">
           <Link to="/">
             <div className="flex">
               <img
@@ -109,31 +109,19 @@ const Header = () => {
                 ) : (
                   <a
                     href={link.href}
-                    className={`${
-                      index === links.length - 1
-                        ? "bg-gradient-to-tr from-accent to-violet-500 text-white px-2 py-2  rounded"
-                        : ""
-                    }`}
+                    className={`${index === links.length - 1 ? "" : ""}`}
                   >
                     {link.name}
                   </a>
                 )}
-
-                <div
-                  className={`bg-gradient-to-tr mt-1 h-[2px] from-blue-500 to-purple-500 underline`}
-                ></div>
               </li>
             ))}
-
-            <div className="mx-4">
-              <ThemeToggle />
-            </div>
           </div>
         </nav>
 
         {/* mobile navbar */}
         <nav
-          className={`md:hidden w-full h-full py-4 px-6 flex justify-between items-center`}
+          className={`md:hidden w-full h-12 px-4 flex justify-between items-center`}
         >
           <div className="flex justify-between w-full">
             <Link to="/" className="cursor-pointer">
@@ -145,8 +133,6 @@ const Header = () => {
             </Link>
 
             <div className="flex gap-4 items-center">
-              <ThemeToggle />
-
               {!isOpen && (
                 <HiBars3
                   className="cursor-pointer"
@@ -163,7 +149,7 @@ const Header = () => {
                 transition={{ duration: 1, ease: "easeInOut" }}
                 className={`${
                   theme === "dark" ? "bg-secondary" : "bg-primary"
-                } flex drop-shadow-md h-screen right-0 fixed top-0 flex-col gap-4 sm:w-1/2 w-3/4 z-50 py-6 items-end px-6`}
+                } flex drop-shadow-md h-screen right-0 fixed top-0 flex-col gap-4 sm:w-1/2 w-3/4 z-40 py-6 items-end px-6`}
               >
                 <div className="flex justify-between w-full">
                   <img

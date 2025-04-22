@@ -1,8 +1,7 @@
 import { HiOutlineLightBulb } from "react-icons/hi2";
-import { FaGithub, FaInstagram, FaSearchPlus, FaTiktok } from "react-icons/fa";
+import { FaSearchPlus } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
-import { FaThreads, FaXTwitter } from "react-icons/fa6";
 
 export const links = [
   { name: "Home", href: "/" },
@@ -10,7 +9,7 @@ export const links = [
   { name: "Services", href: "#services" },
   { name: "Blog", href: "#blog" },
   { name: "Portfolio", href: "#portfolio" },
-  { name: "Contact Us", href: "#contact" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export const animation = [
@@ -49,3 +48,23 @@ export const processes = [
     desc: "The design is finalized and prepared for deployment. This stage includes: Exporting & Delivering Assets: Providing final files in necessary formats(AI, PSD, PNG, JPEG, PDF, etc.).Print & Production Coordination(if needed): Ensuring high - quality results for printed materials.Web & Digital Implementation: Uploading or integrating designs into websites, social media, or marketing campaigns.Performance Review: Analyzing how the design performs post - launch and making any necessary refinements.",
   },
 ];
+
+export const responsive = {
+  superLargeDesktop: {
+    // the naming can be any, depends on you.
+    breakpoint: { max: 4000, min: 3000 },
+    items: 4,
+  },
+  desktop: {
+    breakpoint: { max: 2000, min: 1024 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};

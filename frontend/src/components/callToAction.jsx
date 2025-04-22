@@ -3,7 +3,7 @@ const CallToAction = ({ className, href, name }) => {
   return (
     <a href={href} className="">
       <div
-        className={`${className} flex justify-center items-baseline px-6  py-3 rounded-2xl`}
+        className={`${className} flex justify-center items-baseline px-5 py-2 text-sm rounded-md`}
       >
         {name}
       </div>

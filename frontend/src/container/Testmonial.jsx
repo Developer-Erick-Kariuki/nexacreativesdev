@@ -6,7 +6,7 @@ import { client } from "../client";
 import { useEffect, useState } from "react";
 import { easeIn, motion } from "framer-motion";
 
-const responsive = {
+export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
@@ -64,15 +64,12 @@ const Testmonial = () => {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className={`flex cursor-pointer relative mx-2 flex-col border py-4 px-6 rounded-2xl gap-8 mt-16`}
+              className={`flex cursor-pointer relative mx-2 flex-col border py-4 px-6 rounded-md shadow gap-8 mt-16`}
             >
               <div className="flex justify-between gap-4">
                 <div className="flex space-x-1">
                   {[...Array(item.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="text-amber-600 fill-amber-600 w-5 h-5"
-                    />
+                    <Star key={i} className="text-accent fill-accent w-5 h-5" />
                   ))}
 
                   {/* Render unfilled stars */}
@@ -84,24 +81,28 @@ const Testmonial = () => {
                   ))}
                 </div>
 
-                <div className="bg-amber-600 absolute text-primary -right-2 -top-2 rounded-full p-2 flex items-center justify-center">
-                  <PiQuotesFill size={48} />
+                <div className="bg-accent absolute text-primary -right-2 -top-2 rounded-full p-2 flex items-center justify-center">
+                  <PiQuotesFill size={32} />
                 </div>
               </div>
-              <p className="leading-relaxed font-light text-sm">
+              <p className="leading-relaxed font-light text-gray-500 text-sm">
                 {item.message}
               </p>
               <div className="flex gap-4 items-center">
-                <img
-                  width={50}
-                  src={item.profile.asset.url}
-                  className="rounded-full ring-slate-500 ring-1"
-                  alt="default"
-                />
-                <div className="flex flex-col">
-                  <h2 className="font-bold my-0 text-base">{item.name}</h2>
-                  <p className="text-sm text-gray-400">{item.designation}</p>
+                <div className="overflow-hidden rounded-full ring-offset-1 ring ring-accent">
+                  <img
+                    width={38}
+                    src={item.profile.asset.url}
+                    className="object-cover"
+                    alt="default"
+                  />
                 </div>
+                <p className="text-base font-bold flex flex-col">
+                  {item.name}{" "}
+                  <span className="text-gray-500 text-sm font-normal">
+                    {item.designation}
+                  </span>
+                </p>
               </div>
             </div>
           ))}

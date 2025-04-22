@@ -124,7 +124,7 @@ const Comment = ({ postId }) => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className={`${
-              theme === "dark" ? "bg-slate-800" : "bg-slate-300"
+              theme === "dark" ? "bg-slate-500" : "bg-slate-300"
             } outline-none p-6`}
             placeholder="Type your message here"
             required
@@ -136,7 +136,7 @@ const Comment = ({ postId }) => {
                 : buttonText === "Failed"
                 ? "bg-red-500"
                 : "bg-gradient-to-tr from-purple-600 to-blue-600 hover:from-blue-600 text-primary hover:to-purple-600"
-            } px-6 py-3 rounded-3xl flex items-center gap-4 justify-center text-lg outline-none mt-8`}
+            } px-6 py-3 rounded-md flex items-center gap-4 justify-center text-lg outline-none mt-8`}
             type="submit"
             disabled={isLoading}
           >

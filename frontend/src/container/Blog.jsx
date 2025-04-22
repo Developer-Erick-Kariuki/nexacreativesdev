@@ -60,11 +60,9 @@ const Blog = () => {
     >
       <div className="flex flex-col gap-4 md:flex-row max-w-7xl">
         <div className="flex flex-col">
-          <h2 className="text-accent">News & Blogs</h2>
-          <h1 className="md:text-4xl text-3xl font-bold">
-            Our Latest News & Blogs
-          </h1>
-          <p className="mt-2 text-slate-500">
+          <h2 className="text-accent text-base">News & Blogs</h2>
+          <h1 className="text-3xl font-bold">Our Latest News & Blogs</h1>
+          <p className="mt-2 text-sm text-slate-500">
             Insights and Trends from Nexa Creative Solutions
           </p>
           <CallToAction
@@ -87,7 +85,7 @@ const Blog = () => {
         >
           {posts.map((post) => (
             <div className="mx-4" key={post.title}>
-              <div className="overflow-hidden w-full h-[14rem]">
+              <div className="overflow-hidden rounded-t  w-full h-[14rem]">
                 <img
                   src={post.imageUrl}
                   alt="default"
@@ -95,7 +93,7 @@ const Blog = () => {
                 />
               </div>
               <Link to={`/blog/BlogPost/${post.customId}`}>
-                <h3 className="cursor-pointer hover:text-accent mt-6">
+                <h3 className="cursor-pointer hover:text-accent text-base mt-6">
                   {post.title}
                 </h3>
               </Link>

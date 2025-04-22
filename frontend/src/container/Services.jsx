@@ -114,66 +114,16 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: easeIn }}
           viewport={{ once: true }}
-          className="flex justify-center w-full mt-16 flex-col"
+          className="flex justify-center  w-full mt-16 flex-col"
         >
           <h2 className="text-accent font-bold text-center">Our Process</h2>
           <p className="text-center text-3xl font-bold ">
             Our Solution Process
           </p>
-          <div className="flex flex-col max-w-7xl items-center mt-8 mb-32 gap-16 justify-start">
-            <div className="flex w-full justify-start">
-              <div
-                className={`${
-                  theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-                } flex flex-col md:w-1/2 w-full rounded-3xl p-6 space-y-4`}
-              >
-                <div className="flex items-center">
-                  <div className="flex items-center space-x-[-8px]">
-                    {avatars.map((src, index) => (
-                      <div
-                        key={index}
-                        className="rounded-full ring-1 ring-accent overflow-clip"
-                      >
-                        <img
-                          src={src.src}
-                          alt={`Avatar ${index + 1}`}
-                          width={42}
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mx-4 text-sm text-slate-400">
-                    Trusted by <span className="">10K+</span> brands
-                  </p>
-                </div>
-                <hr className="h-1 border-slate-600" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 justify-end">
-                    <img
-                      src="/animation.gif"
-                      alt="gif"
-                      width={16}
-                      height={16}
-                    />
-                    <p className="text-sm text-slate-400">
-                      <span className="">24/7</span> Available support
-                    </p>
-                  </div>
-                  <div className="flex gap-1 items-center justify-between">
-                    <div className="flex text-yellow-400">
-                      {[...Array(5)].map((_, index) => (
-                        <AiFillStar key={index} size={20} />
-                      ))}
-                    </div>
-                    <p>4.9/5</p>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            <div className="flex gap-x-4 w-full">
-              <div className="md:w-full flex flex-col gap-y-2">
+          <div className="flex max-w-5xl w-full mx-auto p-6 items-center mt-8 mb-32">
+            <div className="gap-2 flex w-full">
+              <div className="flex justify-center md:w-full flex-col gap-y-2">
                 {/* start navigation */}
                 {cardNavigation.map((link, index) => (
                   <li
@@ -190,7 +140,7 @@ const Services = () => {
                         : isActive !== index && theme !== "dark"
                         ? "bg-slate-200"
                         : "bg-slate-800"
-                    }  flex cursor-pointer p-2  rounded-xl w-full overflow-clip  gap-x-2 transition-all duration-500 ease-linear`}
+                    }  flex  cursor-pointer md:px-2 px-1 rounded-xl w-full overflow-clip  gap-x-2 transition-all duration-500 ease-linear`}
                   >
                     <h2
                       className={`${
@@ -203,7 +153,7 @@ const Services = () => {
                           : isActive == index && index == 3
                           ? "bg-orange-500"
                           : "bg-slate-100 text-slate-400"
-                      }   text-lg rounded-lg px-3 py-2 text-slate-200 relative`}
+                      }   text-sm  rounded-lg px-3 py-2 text-slate-200 relative`}
                     >
                       {link.number}
                     </h2>
@@ -217,7 +167,7 @@ const Services = () => {
                           : theme !== "dark" && isActive !== index
                           ? "text-slate-400"
                           : "text-slate-500"
-                      }  hidden md:flex w-full font-normal justify-between items-center`}
+                      }  hidden md:flex w-full font-bold text-base justify-between items-center`}
                     >
                       {link.name}
 
@@ -229,28 +179,28 @@ const Services = () => {
                 ))}
               </div>
               {/* begin process cards  */}
-              <div className="w-full relative ">
+              <div className="w-full relative">
                 {processes.map((process, index) => (
                   <div
                     key={index}
                     className={`${process.className} 
               ${
                 istop === index
-                  ? "z-10 top-0 px-5 opacity-100 translate-x-0 translate-y-0"
+                  ? "z-10 top-0 px-5 opacity-100 md:translate-x-0 md:translate-y-0"
                   : index == 0 && isActive !== index
-                  ? "top-0 translate-x-4 translate-y-4 opacity-70"
+                  ? "top-0 md:translate-x-4 md:translate-y-4 opacity-70"
                   : index == 1 && isActive !== index
-                  ? "top-0 translate-x-6 translate-y-6 opacity-50"
+                  ? "top-0 md:translate-x-6 translate-y-6 opacity-50"
                   : index == 2 && isActive !== index
-                  ? "top-0 translate-x-8 translate-y-8 opacity-30"
+                  ? "top-0 md:translate-x-8 translate-y-8 opacity-30"
                   : index == 3 && isActive !== index
-                  ? "top-2 translate-x-4 translate-y-4 opacity-0"
+                  ? "top-2 md:translate-x-4 md:translate-y-4 opacity-0"
                   : ""
               } ${
                       theme === "dark"
                         ? "bg-slate-800 text-slate-300"
                         : "bg-slate-200"
-                    }  text-lg  py-6 px-2 flex absolute h-fit  rounded-3xl transition-transform duration-500 delay-75 ease-ilinear`}
+                    }  text-lg  py-6 px-2 flex absolute h-fit  rounded-md transition-transform duration-500 delay-75 ease-ilinear`}
                   >
                     <div className="flex justify-center gap-4 items-center">
                       <div className="flex justify-start flex-col gap-2 ">
@@ -266,15 +216,15 @@ const Services = () => {
                                 : index == 3
                                 ? "bg-orange-400"
                                 : ""
-                            } text-white p-4 rounded-2xl mb-8 items-center"`}
+                            } text-white p-2 rounded my-2 items-center"`}
                           >
-                            <process.icon size={28} />
+                            <process.icon size={20} />
                           </div>
                         </div>
                         <p
                           className={`${
                             isActive !== index ? "opacity-5" : "opacity-100"
-                          } transition-all leading-relaxed  duration-500 ease-in-out`}
+                          } transition-all leading-relaxed md:text-sm text-xs  duration-500 ease-in-out`}
                         >
                           {process.desc}
                         </p>

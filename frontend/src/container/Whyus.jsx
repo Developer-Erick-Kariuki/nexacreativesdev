@@ -8,7 +8,7 @@ const Whyus = () => {
     <section className="flex justify-center px-6 mt-16 w-full mx-auto">
       <div
         className={`${
-          theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+          theme === "dark" ? "bg-slate-800" : ""
         } flex items-center max-w-7xl rounded-2xl px-10 justify-between flex-col md:flex-row`}
       >
         <motion.div
@@ -20,21 +20,21 @@ const Whyus = () => {
         >
           <h2 className="text-3xl font-bold my-8">Why Choose Us?</h2>
           <ul className="list-outside leading-relaxed space-y-2 flex flex-col list-disc">
-            <li className="font-light leading-relaxed">
+            <li className="font-light max-w-lg leading-relaxed">
               <b className="font-bold text-accent text-lg">
                 Tailored Solutions:
               </b>
               We create customized strategies that align with your brand’s goals
               and target audience.
             </li>
-            <li className="text-base font-light leading-relaxed">
+            <li className="font-light max-w-lg leading-relaxed">
               <b className="font-bold text-accent text-lg">
                 Attention to Detail:
               </b>
               Every project is crafted with meticulous attention to detail,
               ensuring a polished final product.
             </li>
-            <li className="text-base font-light leading-relaxed">
+            <li className="font-light max-w-lg leading-relaxed">
               <b className="font-bold text-accent taxt-lg">
                 Commitment to Excellence:
               </b>

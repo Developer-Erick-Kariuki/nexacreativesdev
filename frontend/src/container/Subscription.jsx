@@ -85,7 +85,7 @@ const Subscription = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full outline-none py-3 bg-transparent ring-1 ring-slate-700 rounded-xl px-2"
+                className="w-full outline-none py-3 bg-transparent ring-1 ring-slate-700 rounded px-2"
                 placeholder="Your Email address"
               />
               <button
@@ -97,7 +97,7 @@ const Subscription = () => {
                     : buttonText === "Failed"
                     ? "bg-red-500"
                     : "bg-gradient-to-tr flex justify-center items-center gap-4 from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600 text-primary"
-                }  w-full py-3 px-4 rounded-3xl mt-2`}
+                }  w-full py-3 px-4 rounded mt-2`}
               >
                 <IoMdNotifications />
                 {buttonText}

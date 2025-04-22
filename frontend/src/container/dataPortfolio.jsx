@@ -6,6 +6,7 @@ import { ThemeContext } from "../components/ThemeContextProvider";
 import "../index.css";
 import Carousel from "react-multi-carousel";
 import { responsive } from "../constants";
+import { Link } from "lucide-react";
 
 const Portfolioa = () => {
   const { theme } = useContext(ThemeContext);
@@ -91,7 +92,7 @@ const Portfolioa = () => {
         autoPlay={true}
         autoPlaySpeed={3000}
         focusOnSelect={true}
-        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
         className="mt-8 pb-8"
       >
         {images
@@ -101,9 +102,9 @@ const Portfolioa = () => {
               key={index}
               className={`${
                 theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-              } mx-2 drop-shadow-sm`}
+              } m-2 rounded-md group`}
             >
-              <a href={image.description} target="_blank">
+              <a href={image.description} className="relative" target="_blank">
                 <motion.img
                   loading="lazy"
                   initial={{ opacity: 0, y: 100 }}
@@ -115,8 +116,11 @@ const Portfolioa = () => {
                   }}
                   src={image.imageUrl}
                   alt={image.title}
-                  className="w-full object-top rounded hover:object-bottom transition-all duration-[2s] ease-linear h-full object-cover"
+                  className="w-full object-top rounded hover:object-bottom transition-opacity duration-300 ease-linear h-full object-cover"
                 />
+                <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-75 transition-all duration-1000 absolute inset-0  bg-gray-900">
+                  <Link size={32} />
+                </div>
               </a>
             </div>
           ))}

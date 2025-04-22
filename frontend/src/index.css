@@ -100,7 +100,6 @@ html {
   content: attr(data);
   font-size: 16px;
   background: linear-gradient(to left, #00ffa3, #dc1fff);
-  -webkit-background-clip: text;
   color: transparent;
   transition: 200ms;
 }
@@ -136,4 +135,8 @@ html {
 
 .image-container:hover .image-hover {
   transform: translateY(100);
+}
+
+html {
+  scroll-behavior: smooth;
 }

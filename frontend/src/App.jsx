@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { ThemeContext } from "./components/ThemeContextProvider";
 import AboutUs from "./container/AboutUs";
 import Blog from "./container/Blog";
 import ContactUs from "./container/ContactUs";
@@ -14,20 +12,14 @@ import Testimonial from "./container/Testmonial";
 import Whyus from "./container/Whyus";
 
 function App() {
-  const { theme } = useContext(ThemeContext);
-
   return (
     <>
       <main
-        className={`${
-          theme === "dark"
-            ? "bg-secondary text-primary"
-            : "bg-white text-secondary"
-        } overflow-x-hidden scroll-smooth w-full font-inter mx-auto`}
+        className={` overflow-x-hidden bg-slate-100 w-full font-inter mx-auto`}
       >
         <Header />
         <Hero />
-        <Introduction />
+
         <AboutUs />
         <Whyus />
         <Services />
@@ -37,7 +29,6 @@ function App() {
         <Subscription />
         <ContactUs />
       </main>
-
       <Footer />
     </>
   );
