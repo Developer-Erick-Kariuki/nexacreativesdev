@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext } from "react";
 import { client } from "../client";
-import { AnimatePresence, easeIn, easeInOut, motion } from "framer-motion";
-import Masonry from "react-masonry-css";
+import { easeIn, easeInOut, motion } from "framer-motion";
 import "../index.css";
 import { ThemeContext } from "../components/ThemeContextProvider";
 import "../index.css";
+import Carousel from "react-multi-carousel";
+import { responsive } from "../constants";
 
 const Portfolioa = () => {
   const { theme } = useContext(ThemeContext);
@@ -12,7 +13,6 @@ const Portfolioa = () => {
   const [images, setImages] = useState([]);
   const [isSlug, setIsSlug] = useState(null);
   const [isActive, setIsActive] = useState(0);
-  const [selectedImage, setSelectedImage] = useState(null);
 
   // Fetch images from Sanity
   useEffect(() => {
@@ -33,7 +33,7 @@ const Portfolioa = () => {
     };
 
     fetchImages();
-  }, [images]);
+  }, []);
 
   return (
     <motion.section
@@ -42,9 +42,9 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="px-6 mt-16"
+      className="px-6 mt-16 md:px-10  bg-slate-100"
     >
-      <div className="flex flex-col  justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         <h2 className="font-bold text-center text-2xl  flex flex-col">
           <span className="text-accent text-base mt-4 font-bold">
             Portfolio
@@ -53,8 +53,7 @@ const Portfolioa = () => {
         </h2>
       </div>
 
-      {/* Filter Buttons */}
-      {/* <ul className="flex w-full flex-wrap justify-center gap-2 mt-8 md:gap-8">
+      <ul className="flex w-full flex-wrap justify-center gap-2 mt-8 md:gap-8">
         {[
           "All",
           "Social Media",
@@ -81,37 +80,47 @@ const Portfolioa = () => {
             {item}
           </li>
         ))}
-      </ul> */}
+      </ul>
 
       {/* Image Gallery */}
-      <div className="flex justify-center mt-2">
-        <div
-          className={`p-2 grid grid-cols-1 md:grid-cols-2 gap-2 mt-2 max-w-7xl rounded-md`}
-        >
-          {images
-            .filter((image) => (isSlug ? image.category === isSlug : true))
-            .map((image, index) => (
-              <div key={index}>
-                <div
-                  className={`${
-                    theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-                  } w-[30rem] h-[20rem] overflow-y-scroll overflow-x-hidden `}
-                >
-                  <motion.img
-                    loading="lazy"
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2, ease: easeInOut }}
-                    src={image.imageUrl}
-                    alt={image.title}
-                    className="w-full object-top hover:object-bottom transition-all duration-[2s] ease-linear h-full object-cover"
-                  />
-                </div>
-                <p className="mt-2">{image?.description}</p>
-              </div>
-            ))}
-        </div>
-      </div>
+
+      <Carousel
+        responsive={responsive}
+        showDots={true}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        focusOnSelect={true}
+        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        className="mt-8 pb-8"
+      >
+        {images
+          .filter((image) => (isSlug ? image.category === isSlug : true))
+          .map((image, index) => (
+            <div
+              key={index}
+              className={`${
+                theme === "dark" ? "bg-slate-800" : "bg-slate-200"
+              } mx-2 drop-shadow-sm`}
+            >
+              <a href={image.description} target="_blank">
+                <motion.img
+                  loading="lazy"
+                  initial={{ opacity: 0, y: 100 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.2,
+                    ease: easeInOut,
+                  }}
+                  src={image.imageUrl}
+                  alt={image.title}
+                  className="w-full object-top rounded hover:object-bottom transition-all duration-[2s] ease-linear h-full object-cover"
+                />
+              </a>
+            </div>
+          ))}
+      </Carousel>
     </motion.section>
   );
 };
