@@ -51,8 +51,8 @@ const Blog = () => {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="blog"
       className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-center bg-gradient-to-br from-blue-400/30 via-pink-200/80 to-slate-200/20 py-20 rounded-2xl"
@@ -73,8 +73,9 @@ const Blog = () => {
         responsive={responsive}
         infinite={true}
         focusOnSelect={true}
+        autoPlaySpeed={5000}
         autoPlay={true}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
         sliderClass="mine"
         itemClass="item"
         containerClass="container"

@@ -35,9 +35,7 @@ const Header = () => {
       {/* navigation for desktops */}
       <nav
         className={`hidden w-full fixed z-40 text-base md:flex mx-auto max-w-[1920px] px-6 lg:px-10 items-center py-3 justify-between ${
-          isScrolled
-            ? "bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50"
-            : "bg-transparent"
+          isScrolled ? "bg-white shadow-sm" : "bg-transparent"
         }`}
       >
         <Link to="/">

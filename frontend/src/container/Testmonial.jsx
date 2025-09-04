@@ -41,13 +41,13 @@ const Testmonial = () => {
     fetchTestimonials();
   }, []);
   return (
-    <section className="mt-32 mx-auto relative w-full flex justify-center">
+    <section className="md:mt-32 mt-16 mx-auto relative w-full flex justify-center">
       <div className="flex-col w-full justify-center mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeIn" }}
-          className="flex flex-col text-center text-3xl font-bold mb-8"
+          className="flex flex-col text-center text-2xl md:text-3xl font-bold mb-8"
         >
           <span className="text-accent text-base">Testmonials</span> What
           clients say about us

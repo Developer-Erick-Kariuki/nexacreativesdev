@@ -33,7 +33,7 @@ const Portfolioa = () => {
   }, []);
 
   return (
-    <section id="portfolio" className="hidden mt-16">
+    <section id="portfolio" className="mt-16">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -49,8 +49,8 @@ const Portfolioa = () => {
       </motion.div>
 
       <motion.ul
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeIn" }}
         className="flex flex-wrap my-8 justify-center items-center space-y-6 space-x-2 "
       >
@@ -91,8 +91,8 @@ const Portfolioa = () => {
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeIn" }}
               key={index}
               className={`overflow-hidden group`}
