@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { client } from "../client";
 import { easeIn, motion } from "framer-motion";
 import { IoMdNotifications } from "react-icons/io";
-import { ThemeContext } from "../components/ThemeContextProvider";
 
 const Subscription = () => {
   const [email, setEmail] = useState("");
@@ -43,68 +42,56 @@ const Subscription = () => {
     }
   };
 
-  const { theme } = useContext(ThemeContext);
   return (
     <motion.section
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
-      className="w-full flex justify-center mt-16"
+      className="w-full mx-auto bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 p-4 rounded-2xl flex justify-between flex-col-reverse md:flex-row items-center mt-16"
     >
-      <div className="w-full flex max-w-7xl flex-col px-4  justify-center">
-        <div
-          className={`${
-            theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-          } flex flex-col justify-evenly items-center w-full rounded-2xl px-2 md:flex-row`}
+      <div className="overflow-hidden h-auto">
+        <img
+          src="/Background.png"
+          className="object-cover w-full h-full"
+          alt="send"
+        />
+      </div>
+      <div className="flex-col justify-center gap-4 flex">
+        <h1 className="text-4xl font-bold">Join our team</h1>
+        <p className="text-base leading-relaxed tracking-wider">
+          Subscribe to our newsletter and stay ahead of the curve with cutting
+          edge designs ideas and tips
+        </p>
+        <form
+          className="flex flex-col w-full items-start gap-2"
+          onSubmit={handleSubmit}
         >
-          <div className="w-[32rem] overflow-hidden h-auto">
-            <img
-              src="/Background.png"
-              className="object-cover w-full h-full"
-              alt="send"
-              width={500}
-            />
-          </div>
-          <div className="flex-col justify-center gap-4 flex h-full">
-            <h1 className="text-4xl font-bold max-w-md">
-              Subscribe to Our Newsletter
-            </h1>
-            <p className="text-slate-500 max-w-sm">
-              Subscribe to our newsletter and stay ahead of the curve with
-              cutting edge designs ideas and tips
-            </p>
-            <form
-              className="flex flex-col w-full items-start gap-2"
-              onSubmit={handleSubmit}
-            >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full outline-none py-3 bg-transparent ring-1 ring-slate-700 rounded px-2"
-                placeholder="Your Email address"
-              />
-              <button
-                type="submit"
-                disabled={isLoading}
-                className={`${
-                  buttonText === "Success!"
-                    ? "bg-green-500"
-                    : buttonText === "Failed"
-                    ? "bg-red-500"
-                    : "bg-gradient-to-tr flex justify-center items-center gap-4 from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600 text-primary"
-                }  w-full py-3 px-4 rounded mt-2`}
-              >
-                <IoMdNotifications />
-                {buttonText}
-              </button>
-            </form>
-          </div>
-        </div>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full outline-none py-3 bg-transparent border-2 border-slate-300 rounded-full px-5"
+            placeholder="Your Email address"
+          />
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={`${
+              buttonText === "Success!"
+                ? "bg-green-500"
+                : buttonText === "Failed"
+                ? "bg-red-500"
+                : "bg-purple-600 text-white"
+            } flex items-center justify-center gap-4 w-full py-3 px-5 rounded-full mt-2`}
+          >
+            <IoMdNotifications size={24} />
+            {buttonText}
+          </button>
+        </form>
       </div>
     </motion.section>
   );

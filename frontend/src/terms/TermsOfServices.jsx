@@ -1,17 +1,10 @@
-import React, { useContext } from "react";
 import Header from "../container/Header";
 import { Link } from "react-router-dom";
 import Footer from "../container/Footer";
-import { ThemeContext } from "../components/ThemeContextProvider";
 
 const TermsOfServices = () => {
-  const { theme } = useContext(ThemeContext);
   return (
-    <body
-      className={` ${
-        theme === "dark" ? "bg-black text-white" : "bg-slate-50 text-black"
-      }`}
-    >
+    <body>
       <Header />
       <div
         className={` flex mt-16 mx-6 md:mx-auto max-w-4xl w-full flex-col justify-center h-auto static`}

@@ -3,7 +3,6 @@ import { client } from "../client"; // Ensure client is correctly imported
 import { easeIn, motion } from "framer-motion";
 import { BsFillSendFill } from "react-icons/bs";
 import moment from "moment";
-import { ThemeContext } from "../components/ThemeContextProvider";
 
 const Comment = ({ postId }) => {
   const [comments, setComments] = useState([]);

@@ -1,19 +1,15 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { client } from "../client";
 import { easeIn, easeInOut, motion } from "framer-motion";
 import "../index.css";
-import { ThemeContext } from "../components/ThemeContextProvider";
 import "../index.css";
-import Carousel from "react-multi-carousel";
-import { responsive } from "../constants";
+
 import { Link } from "lucide-react";
 
 const Portfolioa = () => {
-  const { theme } = useContext(ThemeContext);
-
   const [images, setImages] = useState([]);
   const [isSlug, setIsSlug] = useState(null);
-  const [isActive, setIsActive] = useState(0);
+  const [isActive, setIsActive] = useState(null);
 
   // Fetch images from Sanity
   useEffect(() => {
@@ -43,7 +39,7 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="px-6 mt-16 md:px-10  bg-slate-100"
+      className="mt-16"
     >
       <div className="flex flex-col justify-center items-center">
         <h2 className="font-bold text-center text-2xl  flex flex-col">
@@ -64,46 +60,34 @@ const Portfolioa = () => {
         ].map((item, index) => (
           <li
             key={index}
-            className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full ${
-              isActive === index
-                ? "bg-gradient-to-tr from-purple-600 to-blue-600 text-slate-200"
-                : theme === "light"
-                ? "bg-slate-300/50"
-                : theme === "dark"
-                ? "bg-slate-800/50"
-                : ""
-            }`}
+            className={` cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full `}
             onClick={() => {
               setIsActive(index);
               setIsSlug(item === "All" ? null : item.toLowerCase());
             }}
           >
-            {item}
+            {index !== 0 && (
+              <span
+                className={`${
+                  isActive === index
+                    ? "bg-purple-600 text-white rounded-full px-5 py-3"
+                    : ""
+                }`}
+              >
+                {item}
+              </span>
+            )}
           </li>
         ))}
       </ul>
 
       {/* Image Gallery */}
 
-      <Carousel
-        responsive={responsive}
-        showDots={true}
-        infinite={true}
-        autoPlay={true}
-        autoPlaySpeed={3000}
-        focusOnSelect={true}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        className="mt-8 pb-8"
-      >
+      <div className="mt-8 pb-8">
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
-            <div
-              key={index}
-              className={`${
-                theme === "dark" ? "bg-slate-800" : "bg-slate-200"
-              } m-2 rounded-md group`}
-            >
+            <div key={index} className={`m-2 rounded-md group`}>
               <a href={image.description} className="relative" target="_blank">
                 <motion.img
                   loading="lazy"
@@ -124,7 +108,7 @@ const Portfolioa = () => {
               </a>
             </div>
           ))}
-      </Carousel>
+      </div>
     </motion.section>
   );
 };

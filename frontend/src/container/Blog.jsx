@@ -6,7 +6,6 @@ import "../index.css";
 import moment from "moment";
 
 import { Link } from "react-router-dom";
-import CallToAction from "../components/callToAction";
 
 const responsive = {
   superLargeDesktop: {
@@ -56,54 +55,47 @@ const Blog = () => {
       transition={{ duration: 1, ease: easeIn }}
       viewport={{ once: true }}
       id="blog"
-      className="w-full px-6 md:px-10 mt-32 flex flex-col md:flex-row gap-8 justify-center"
+      className="w-full mt-32 flex flex-col md:flex-row gap-8 justify-center"
     >
-      <div className="flex flex-col gap-4 md:flex-row max-w-7xl">
-        <div className="flex flex-col">
-          <h2 className="text-accent text-base">News & Blogs</h2>
-          <h1 className="text-3xl font-bold">Our Latest News & Blogs</h1>
-          <p className="mt-2 text-sm text-slate-500">
-            Insights and Trends from Nexa Creative Solutions
-          </p>
-          <CallToAction
-            name="Get intouch"
-            href="#contact"
-            className="bg-gradient-to-tr w-full text-primary  from-purple-600 to-blue-600 hover:from-blue-600 hover:to-purple-600  mt-8"
-          />
-        </div>
-
-        <Carousel
-          responsive={responsive}
-          showDots={true}
-          infinite={true}
-          focusOnSelect={true}
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          sliderClass="mine"
-          itemClass="item"
-          containerClass="container"
-          dotListClass="dots"
-        >
-          {posts.map((post) => (
-            <div className="mx-4" key={post.title}>
-              <div className="overflow-hidden rounded-t  w-full h-[14rem]">
-                <img
-                  src={post.imageUrl}
-                  alt="default"
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <Link to={`/blog/BlogPost/${post.customId}`}>
-                <h3 className="cursor-pointer hover:text-accent text-base mt-6">
-                  {post.title}
-                </h3>
-              </Link>
-              <h3 className="text-sm text-slate-500">
-                {moment(post.publishedAt).format("MMMM DD, YYYY")}
-              </h3>
-            </div>
-          ))}
-        </Carousel>
+      <div className="flex flex-col">
+        <h2 className="text-accent text-base font-semibold uppercase tracking-widest">
+          News & Blogs
+        </h2>
+        <h1 className="text-4xl font-bold">Our Latest News & Blogs</h1>
+        <p className="mt-2 text-base text-slate-500">
+          Insights and Trends from Nexa Creative Solutions
+        </p>
       </div>
+
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        focusOnSelect={true}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        sliderClass="mine"
+        itemClass="item"
+        containerClass="container"
+      >
+        {posts.map((post) => (
+          <div className="mx-4" key={post.title}>
+            <div className="overflow-hidden rounded-t  w-full h-[14rem]">
+              <img
+                src={post.imageUrl}
+                alt="default"
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <Link to={`/blog/BlogPost/${post.customId}`}>
+              <h3 className="cursor-pointer hover:text-accent text-base mt-6">
+                {post.title}
+              </h3>
+            </Link>
+            <h3 className="text-sm text-slate-500">
+              {moment(post.publishedAt).format("MMMM DD, YYYY")}
+            </h3>
+          </div>
+        ))}
+      </Carousel>
     </motion.section>
   );
 };

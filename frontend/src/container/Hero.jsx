@@ -1,48 +1,31 @@
-import CallToAction from "../components/callToAction";
 import "../index.css";
 
 const Hero = () => {
   return (
-    <section
-      className={`bg-slate-200 px-6 md:px-0 w-full mx-auto  md:py-20 md:flex-row`}
-    >
-      <div className="flex mx-auto gap-4 flex-col justify-center md:flex-row">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-4xl md:text-6xl max-w-xl leading-slug capitalize">
-            Transforming your vision into
-            <span className="bg-gradient-to-l from-purple-600 via-green-500 to-red-400 text-transparent font-extrabold bg-clip-text">
-              {" "}
-              stunning Websites
-            </span>
+    <section className="bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50  ">
+      <div className="w-full min-h-screen  mx-auto justify-between items-center flex flex-col md:flex-row max-w-7xl px-6 lg:px-10">
+        <div className="flex md:w-1/2 w-full mt-[20%] md:mt-0 flex-col">
+          <h1 className="text-4xl md:text-6xl font-bold mt-12 mb-8">
+            We transform vision into stuning visual reality
           </h1>
-          <p className="text-base font-light max-w-lg my-4 leading-relaxed">
-            Our award-winning design agency blends creativity with cutting-edge
-            technology to deliver unique and engaging digital experiences. Let’s
-            create something extraordinary together.
+          <p className="text-lg my-4 leading-relaxed tracking-wider">
+            We blends creativity with cutting-edge technology to deliver unique
+            and engaging digital experiences. Let’s create something
+            extraordinary together.
           </p>
-          <div className="flex-col gap-4 my-4 flex md:flex-row">
-            <CallToAction
-              href="#contact"
-              name="Get Started"
-              className="bg-gradient-to-tr hover:from-purple-600 hover:to-blue-600 transition-color text-primary duration-300 ease-linear from-blue-600 to-purple-600 "
-            />
-            <CallToAction
-              href="#portfolio"
-              name="See our work"
-              className={`transition-color duration-300 text-slate-500 ease-linear border-slate-500 border hover:border-black hover:text-secondary`}
-            />
+          <div className="flex-col gap-4 mt-8 flex md:flex-row">
+            <button className="rounded-full shadow-md bg-purple-600 py-3 px-5 text-white">
+              Get in touch
+            </button>
+            <button className="rounded-full bg-slate-50 shadow-md py-3 px-5">
+              See Our Work
+            </button>
           </div>
         </div>
 
         {/* hero image */}
-        <div className="h-full mt-20 md:mt-0 flex justify-center items-center">
-          <div className="overflow-hidden">
-            <img
-              className="drop-shadow-md w-full h-full"
-              src="/Hero-image.png"
-              alt="hero image"
-            />
-          </div>
+        <div className="">
+          <img src="/Hero-image.png" alt="hero image" />
         </div>
       </div>
     </section>

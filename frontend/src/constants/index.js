@@ -4,7 +4,6 @@ import { FaPencilRuler } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
 
 export const links = [
-  { name: "Home", href: "/" },
   { name: "About Us", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Blog", href: "#blog" },

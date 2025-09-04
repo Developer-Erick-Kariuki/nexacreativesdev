@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import moment from "moment";
 import SanityBlockContent from "@sanity/block-content-to-react";
 import { motion } from "framer-motion";
@@ -8,7 +8,6 @@ import Footer from "../container/Footer";
 import Comment from "../container/Comment";
 import "../blog/blog.css";
 import Header from "../container/Header";
-import { ThemeContext } from "../components/ThemeContextProvider";
 import { TimerIcon } from "lucide-react";
 
 // serializers
@@ -109,7 +108,6 @@ const BlogPost = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const { theme } = useContext(ThemeContext);
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
   if (!SinglePost)
@@ -127,9 +125,8 @@ const BlogPost = () => {
     );
 
   return (
-    <body className="bg-slate-100">
+    <body>
       <Header />
-
       <div className="w-full  relative justify-center  flex">
         <div className="flex flex-col md:flex-row max-w-7xl gap-x-2">
           {SinglePost.map((current) => (
@@ -137,9 +134,7 @@ const BlogPost = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 2, delay: 0, ease: "linear" }}
-              className={`${
-                theme === "dark" ? "bg-gray-900" : "bg-slate-50"
-              } px-4 max-w-4xl`}
+              className={`px-4 max-w-4xl`}
               key={current.customId}
             >
               <div className="w-full overflow-clip">
@@ -148,7 +143,6 @@ const BlogPost = () => {
                 </h1>
                 <p className="my-4">
                   <span className="text-slate-400 text-sm">
-                    {" "}
                     By
                     {current.postedBy
                       ? current.postedBy
@@ -176,16 +170,10 @@ const BlogPost = () => {
           ))}
 
           <div
-            className={`${
-              theme === "dark" ? "bg-gray-900" : "bg-slate-50"
-            } flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
+            className={` flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
           >
             <h1 className="text-2xl font-bold my-4">Recent Blogs</h1>
-            <hr
-              className={`${
-                theme === "dark" ? "border-white" : "border-black"
-              } w-full`}
-            />
+            <hr className={` w-full`} />
             {posts.map((post) => (
               <div key={post.title}>
                 <Link

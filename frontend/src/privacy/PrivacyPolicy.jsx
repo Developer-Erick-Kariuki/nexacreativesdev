@@ -1,17 +1,9 @@
-import { useContext } from "react";
 import Footer from "../container/Footer";
 import Header from "../container/Header";
-import { ThemeContext } from "../components/ThemeContextProvider";
 
 const PrivacyPolicy = () => {
-  const { theme } = useContext(ThemeContext);
-
   return (
-    <body
-      className={`${
-        theme === "dark" ? "bg-black text-white" : "bg-slate-50 text-black"
-      } `}
-    >
+    <body>
       <Header />
       <div className="flex justify-center mt-16 max-w-4xl mx-6 md:mx-auto flex-col">
         <h1>Privacy policy</h1>
