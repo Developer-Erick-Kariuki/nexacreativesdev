@@ -39,7 +39,7 @@ const Portfolioa = () => {
       transition={{ duration: 0.5, ease: easeIn }}
       viewport={{ once: true }}
       id="portfolio"
-      className="mt-16"
+      className="min-h-screen"
     >
       <div className="flex flex-col justify-center items-center">
         <h2 className="font-bold text-center text-2xl  flex flex-col">
@@ -50,7 +50,7 @@ const Portfolioa = () => {
         </h2>
       </div>
 
-      <ul className="flex w-full flex-wrap justify-center gap-2 mt-8 md:gap-8">
+      <ul className="flex my-8 justify-center flex-wrap gap-y-2">
         {[
           "All",
           "Social Media",
@@ -60,7 +60,7 @@ const Portfolioa = () => {
         ].map((item, index) => (
           <li
             key={index}
-            className={` cursor-pointer transition-all duration-300 ease-linear px-5 py-2 rounded-full `}
+            className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-3 rounded-full `}
             onClick={() => {
               setIsActive(index);
               setIsSlug(item === "All" ? null : item.toLowerCase());
@@ -70,9 +70,9 @@ const Portfolioa = () => {
               <span
                 className={`${
                   isActive === index
-                    ? "bg-purple-600 text-white rounded-full px-5 py-3"
-                    : ""
-                }`}
+                    ? "bg-purple-600 text-white "
+                    : "bg-purple-600/10"
+                } rounded-full px-5 py-3`}
               >
                 {item}
               </span>
@@ -83,11 +83,11 @@ const Portfolioa = () => {
 
       {/* Image Gallery */}
 
-      <div className="mt-8 pb-8">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
-            <div key={index} className={`m-2 rounded-md group`}>
+            <div key={index} className={`rounded-xl overflow-hidden group`}>
               <a href={image.description} className="relative" target="_blank">
                 <motion.img
                   loading="lazy"
@@ -100,9 +100,9 @@ const Portfolioa = () => {
                   }}
                   src={image.imageUrl}
                   alt={image.title}
-                  className="w-full object-top rounded hover:object-bottom transition-opacity duration-300 ease-linear h-full object-cover"
+                  className="w-full bject-cover"
                 />
-                <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-75 transition-all duration-1000 absolute inset-0  bg-gray-900">
+                <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-80 transition-all duration-1000 absolute inset-0  bg-black">
                   <Link size={32} />
                 </div>
               </a>

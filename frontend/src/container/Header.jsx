@@ -64,7 +64,7 @@ const Header = () => {
         }`}
       >
         <Link to="/">
-          <img src={NexaLogo} width={200} alt="" />
+          <img src={NexaLogo} width={180} alt="" />
         </Link>
         {!isOpen && (
           <HiBars3
