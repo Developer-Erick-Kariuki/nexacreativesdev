@@ -7,8 +7,8 @@ import { client } from "../client";
 import Footer from "../container/Footer";
 import Comment from "../container/Comment";
 import "../blog/blog.css";
-import Header from "../container/Header";
 import { TimerIcon } from "lucide-react";
+import { timeAgo } from "../constants";
 
 // serializers
 
@@ -36,7 +36,7 @@ const serializers = {
           );
         case "normal":
         case "p":
-          return <p className="leading-relaxed mb-5">{children}</p>;
+          return <p className="leading-relaxed text-base mb-5">{children}</p>;
         default:
           return <p className="leading-relaxed mb-5">{children}</p>;
       }
@@ -63,10 +63,10 @@ const serializers = {
           <img
             src={asset.url}
             alt={caption}
-            className="w-full h-[20rem] shadow-md object-cover"
+            className="w-full shadow-md object-cover"
           />
           {caption && (
-            <figcaption className="text-sm text-gray-500 mt-2 italic">
+            <figcaption className="text-base text-gray-500 mt-2 italic">
               {caption}
             </figcaption>
           )}
@@ -125,40 +125,24 @@ const BlogPost = () => {
     );
 
   return (
-    <body>
-      <Header />
+    <main className="max-w-7xl mt-20 px-6  mx-auto">
       <div className="w-full  relative justify-center  flex">
-        <div className="flex flex-col md:flex-row max-w-7xl gap-x-2">
+        <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2, delay: 0, ease: "linear" }}
-              className={`px-4 max-w-4xl`}
-              key={current.customId}
-            >
+            <div className={`px-4 max-w-4xl`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="text-3xl md:text-4xl font-bold my-4">
-                  {current.title}
-                </h1>
-                <p className="my-4">
-                  <span className="text-slate-400 text-sm">
-                    By
-                    {current.postedBy
-                      ? current.postedBy
-                      : " Nexa Creative Solutions"}{" "}
-                  </span>
-                  {moment(current.publishedAt).format("MMMM, YYYY")}
+                <h1 className="text-3xl font-bold my-4">{current.title}</h1>
+                <p className="my-4 flex gap-2 items-center">
+                  <span className="opacity-85 text-sm">Posted</span>
+                  {timeAgo(current.publishedAt)}
                 </p>
 
-                <div className="h-[14rem] md:h-[24rem] w-full">
-                  <img
-                    loading="lazy"
-                    className="object-cover w-full h-full"
-                    src={current.imageUrl}
-                    alt={current.title}
-                  />
-                </div>
+                <img
+                  loading="lazy"
+                  className="object-cover rounded-2xl w-full max-h-[60vh]"
+                  src={current.imageUrl}
+                  alt={current.title}
+                />
               </div>
 
               <SanityBlockContent
@@ -166,48 +150,48 @@ const BlogPost = () => {
                 serializers={serializers}
               />
               <Comment postId={current.customId} />
-            </motion.div>
+            </div>
           ))}
 
           <div
             className={` flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
           >
-            <h1 className="text-2xl font-bold my-4">Recent Blogs</h1>
-            <hr className={` w-full`} />
-            {posts.map((post) => (
-              <div key={post.title}>
-                <Link
-                  onClick={handleScrollToTop}
-                  className="flex justify-between gap-x-4"
-                  to={`/blog/BlogPost/${post.customId}`}
-                >
-                  <div className="w-20 h-12 flex my-4 overflow-hidden">
+            <h2 className="text-base font-bold my-4 uppercase tracking-widest">
+              Recent Blogs
+            </h2>
+            <hr className={`w-full mb-2`} />
+            <div className="flex flex-col flex-wrap gap-4">
+              {posts.map((post) => (
+                <div key={post.title}>
+                  <Link
+                    onClick={handleScrollToTop}
+                    className="flex flex-col justify-between"
+                    to={`/blog/BlogPost/${post.customId}`}
+                  >
                     <img
                       loading="lazy"
                       src={post.imageUrl}
+                      className="rounded-2xl max-h-[300px] h-[250px] object-cover object-left mb-2"
                       alt={post.title}
-                      className="object-cover h-full w-full"
                     />
-                  </div>
 
-                  <div className="flex flex-col justify-center w-full">
-                    <h2 className="text-sm  hover:text-green-400 transition-colors duration-300 ease-in-out font-semibold">
-                      {post.title}
-                    </h2>
+                    <div className="flex flex-col justify-center w-full">
+                      <h2 className="text-base hover:opacity-75 transition-colors duration-300 ease-in-out font-semibold">
+                        {post.title}
+                      </h2>
 
-                    <p className="text-xs flex items-center gap-2 text-slate-500">
-                      <TimerIcon size={12} />{" "}
-                      {moment(post.publishedAt).format("MMMM DD, YYYY")}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
+                      <p className="text-sm flex mt-2 items-center gap-2 opacity-80">
+                        <TimerIcon size={16} /> {timeAgo(post.publishedAt)}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <Footer />
-    </body>
+    </main>
   );
 };
 

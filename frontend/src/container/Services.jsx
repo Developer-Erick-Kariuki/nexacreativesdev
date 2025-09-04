@@ -1,14 +1,11 @@
 import { easeIn, motion } from "framer-motion";
-import { processes } from "../constants";
-import { AiFillStar } from "react-icons/ai";
-import { FaArrowRightLong } from "react-icons/fa6";
+
 import { FaBorderTopLeft } from "react-icons/fa6";
 import { IoBulbOutline } from "react-icons/io5";
 import { SiWebgpu } from "react-icons/si";
 import { SiGooglemarketingplatform } from "react-icons/si";
 import { MdOutlineAutoAwesomeMotion } from "react-icons/md";
 import { MdOutlineLinkedCamera } from "react-icons/md";
-import { useContext, useState } from "react";
 
 const size = 38;
 
@@ -54,28 +51,29 @@ const services = [
 
 const Services = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: easeIn }}
-      viewport={{ once: true }}
-      id="services"
-      className="z-10 w-full min-h-screen flex"
-    >
+    <section id="services" className="z-10 relative w-full min-h-screen flex">
       <div className="max-w-7xl">
-        <div className="flex flex-col w-full mx-auto justify-center items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeIn" }}
+          className="flex flex-col w-full mx-auto justify-center items-center"
+        >
           <h2 className="text-base font-bold text-accent">Services</h2>
           <p className="text-3xl max-w-xs md:max-w-md font-bold text-center">
             We offer the best services in
           </p>
-        </div>
+        </motion.div>
 
-        <div className="w-full flex  justify-center">
+        <div className="w-full flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 justify-center gap-6 mt-16">
             {services.map((service, index) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
                 key={index}
-                className={`flex bg-gradient-to-br from-blue-400/30 via-pink-200/20 to-slate-200/20 flex-col p-6 rounded-xl overflow-clip hover:-translate-y-1 hover:ring-1 ring-purple-600 transition-all duration-300 ease-in-out cursor-pointer`}
+                className={`flex bg-gradient-to-br from-blue-400/30 via-pink-200/20 to-slate-200/20 hover:shadow transition duration-300 ease-in-out hover:ring-1 ring-purple-500 flex-col p-6 rounded-xl overflow-clip`}
               >
                 <i className="mb-4 text-purple-600">{service.icon}</i>
                 <a
@@ -87,12 +85,19 @@ const Services = () => {
                 <p className="mt-4 text-slate-400 leading-relaxed">
                   {service.description}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </motion.section>
+      <div className="absolute inset-0">
+        <img
+          src="/pattern3.png"
+          className="object-cover opacity-10 w-full h-full"
+          alt=""
+        />
+      </div>
+    </section>
   );
 };
 

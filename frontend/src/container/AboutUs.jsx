@@ -5,56 +5,47 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="mx-auto justify-center w-full items-center mt-32 min-h-screen"
+      className="mx-auto  justify-center w-full items-center mt-32 min-h-screen"
     >
-      <div className="bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 rounded-2xl p-5 mb-4">
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: easeIn }}
-          viewport={{ once: true }}
-          className="text-2xl flex-col font-bold flex mb-8 text-center"
-        >
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeIn" }}
+        viewport={{ once: false }}
+        className="bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 rounded-2xl p-5 mb-4"
+      >
+        <h2 className="text-2xl flex-col font-bold flex mb-8 text-center">
           <span className="text-accent text-lg">About</span> Nexa Digital
           Solutions
-        </motion.h2>
+        </h2>
 
         <div className="flex flex-col-reverse  items-center justify-between  w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-base max-w-2xl  leading-relaxed mb-4"
-          >
+          <p className="text-base max-w-2xl  leading-relaxed mb-4">
             At Nexa Digital Solutions, we believe that every brand has a unique
             story to tell. As a premier web design and development agency, we
             specialize in crafting innovative digital experiences that not only
             captivate but also convert. Our mission is to transform your vision
             into a powerful online presence that drives results.
-          </motion.p>
+          </p>
         </div>
-      </div>
+      </motion.div>
       <div className="flex  flex-col gap-8 justify-between md:flex-row">
-        <div className="flex bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 md:w-[512px]  rounded-2xl">
-          <motion.img
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: easeInOut }}
-            viewport={{ once: true }}
-            src="/about.png"
-            className="object-cover"
-          />
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeIn" }}
+          className="flex bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 md:w-[512px]  rounded-2xl"
+        >
+          <img src="/about.png" className="object-cover" />
+        </motion.div>
 
-        <div className="flex bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 w-full  flex-col p-5 rounded-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 200 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: easeIn }}
-            viewport={{ once: true }}
-            className={` flex p-5 rounded-3xl flex-col mt-8 md:mt-0`}
-          >
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeIn" }}
+          className="flex  bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 w-full  flex-col p-5 rounded-2xl"
+        >
+          <div className={` flex p-5 rounded-3xl flex-col mt-8 md:mt-0`}>
             <h2 className="text-base text-accent font-bold mb-2">Our Story</h2>
             <p className="text-base leading-relaxed max-w-xl ">
               Founded on a passion for creativity and technology, Nexa-Creative
@@ -63,14 +54,8 @@ const AboutUs = () => {
               experience in the industry, our team of experts brings a wealth of
               knowledge and a fresh perspective to every project we undertake.
             </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 200 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: easeIn }}
-            viewport={{ once: true }}
-            className="flex flex-col"
-          >
+          </div>
+          <div className="flex flex-col">
             <div className={`flex  p-5 rounded-2xl flex-col mt-8 md:mt-0`}>
               <h2 className="text-base text-accent mb-2 font-bold">
                 Our Philosophy
@@ -84,8 +69,8 @@ const AboutUs = () => {
                 stunning but also functional and user-friendly.
               </p>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

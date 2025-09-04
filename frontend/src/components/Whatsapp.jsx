@@ -32,7 +32,7 @@ const WhatsAppButton = () => {
       transition={{ duration: 0.5, delay: 2, ease: "easeOut" }}
       className={`${
         isScrolled ? "block" : "hidden"
-      } fixed  bottom-4 right-0 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition`}
+      } fixed  bottom-4 right-0 bg-green-500 text-white p-3 rounded-full shadow-lg  hover:bg-green-600 transition`}
     >
       <FaWhatsapp className="text-xl" />
     </motion.a>

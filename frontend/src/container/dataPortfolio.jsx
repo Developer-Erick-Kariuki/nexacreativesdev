@@ -33,24 +33,27 @@ const Portfolioa = () => {
   }, []);
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.5, ease: easeIn }}
-      viewport={{ once: true }}
-      id="portfolio"
-      className="min-h-screen"
-    >
-      <div className="flex flex-col justify-center items-center">
+    <section id="portfolio" className="hidden mt-16">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+        className="flex flex-col justify-center items-center"
+      >
         <h2 className="font-bold text-center text-2xl  flex flex-col">
           <span className="text-accent text-base mt-4 font-bold">
             Portfolio
           </span>
           Our Recent Projects
         </h2>
-      </div>
+      </motion.div>
 
-      <ul className="flex my-8 justify-center flex-wrap gap-y-2">
+      <motion.ul
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeIn" }}
+        className="flex flex-wrap my-8 justify-center items-center space-y-6 space-x-2 "
+      >
         {[
           "All",
           "Social Media",
@@ -60,7 +63,7 @@ const Portfolioa = () => {
         ].map((item, index) => (
           <li
             key={index}
-            className={`cursor-pointer transition-all duration-300 ease-linear px-5 py-3 rounded-full `}
+            className={`cursor-pointer  transition-all duration-300 ease-linear rounded-full `}
             onClick={() => {
               setIsActive(index);
               setIsSlug(item === "All" ? null : item.toLowerCase());
@@ -79,7 +82,7 @@ const Portfolioa = () => {
             )}
           </li>
         ))}
-      </ul>
+      </motion.ul>
 
       {/* Image Gallery */}
 
@@ -87,29 +90,27 @@ const Portfolioa = () => {
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
-            <div key={index} className={`rounded-xl overflow-hidden group`}>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeIn" }}
+              key={index}
+              className={`overflow-hidden group`}
+            >
               <a href={image.description} className="relative" target="_blank">
-                <motion.img
-                  loading="lazy"
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.2,
-                    ease: easeInOut,
-                  }}
+                <img
                   src={image.imageUrl}
                   alt={image.title}
-                  className="w-full bject-cover"
+                  className="w-full rounded-2xl object-cover"
                 />
-                <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-80 transition-all duration-1000 absolute inset-0  bg-black">
+                <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-80 transition-all duration-1000 absolute inset-0 rounded-2xl bg-black">
                   <Link size={32} />
                 </div>
               </a>
-            </div>
+            </motion.div>
           ))}
       </div>
-    </motion.section>
+    </section>
   );
 };
 

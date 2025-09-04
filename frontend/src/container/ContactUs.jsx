@@ -65,10 +65,9 @@ const ContactUs = () => {
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1, ease: easeIn }}
-      viewport={{ once: true }}
+      transition={{ duration: 1, ease: "easeIn" }}
       id="contact"
-      className="w-full mt-16 md:flex-row justify-between items-center min-h-screen flex gap-10 flex-col"
+      className="w-full bg-white mt-16 md:flex-row justify-between items-center flex gap-10 flex-col"
     >
       <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6 mt-4">
         <h2 className="text-4xl font-bold">Contact Us</h2>

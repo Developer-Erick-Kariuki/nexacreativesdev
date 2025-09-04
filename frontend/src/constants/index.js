@@ -2,6 +2,7 @@ import { HiOutlineLightBulb } from "react-icons/hi2";
 import { FaSearchPlus } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
+import moment from "moment";
 
 export const links = [
   { name: "About Us", href: "#about" },
@@ -67,3 +68,26 @@ export const responsive = {
     items: 1,
   },
 };
+
+export function timeAgo(dbTime) {
+  const now = moment();
+  const posted = moment(dbTime); // handles timestamp or ISO string
+
+  const years = now.diff(posted, "years");
+  if (years > 0) return `${years} year${years > 1 ? "s" : ""} ago`;
+
+  const months = now.diff(posted, "months");
+  if (months > 0) return `${months} month${months > 1 ? "s" : ""} ago`;
+
+  const days = now.diff(posted, "days");
+  if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
+
+  const hours = now.diff(posted, "hours");
+  if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
+
+  const minutes = now.diff(posted, "minutes");
+  if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
+
+  const seconds = now.diff(posted, "seconds");
+  return `${seconds} second${seconds > 1 ? "s" : ""} ago`;
+}

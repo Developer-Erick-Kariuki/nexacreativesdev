@@ -41,74 +41,83 @@ const Testmonial = () => {
     fetchTestimonials();
   }, []);
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 200 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: easeIn }}
-      viewport={{ once: true }}
-      className="mt-32 mx-auto w-full flex justify-center"
-    >
-      <div className="flex-col w-full max-w-7xl justify-center mx-auto">
-        <h2 className="flex flex-col text-center text-3xl font-bold">
+    <section className="mt-32 mx-auto relative w-full flex justify-center">
+      <div className="flex-col w-full justify-center mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeIn" }}
+          className="flex flex-col text-center text-3xl font-bold mb-8"
+        >
           <span className="text-accent text-base">Testmonials</span> What
           clients say about us
-        </h2>
+        </motion.h2>
         <Carousel
           responsive={responsive}
-          showDots={true}
+          autoPlay={true}
           infinite={true}
           focusOnSelect={true}
           removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
-          className="mt-4 py-6"
         >
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className={`flex cursor-pointer relative mx-2 flex-col border py-4 px-6 rounded-md shadow gap-8 mt-16`}
+              className={`flex cursor-pointer flex-col shadow-sm p-5 rounded-2xl w-full gap-8 bg-gradient-to-br from-blue-400/30 via-pink-200/20 to-slate-200/20`}
             >
-              <div className="flex justify-between gap-4">
-                <div className="flex space-x-1">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="text-accent fill-accent w-5 h-5" />
-                  ))}
-
-                  {/* Render unfilled stars */}
-                  {[...Array(5 - item.rating)].map((_, i) => (
-                    <Star
-                      key={i + item.rating}
-                      className="text-gray-400 fill-transparent w-5 h-5"
+              <div className="flex gap-8">
+                <div className="flex gap-4 items-center">
+                  <div className="overflow-hidden rounded-full ring-offset-1 ring ring-accent">
+                    <img
+                      width={38}
+                      src={item.profile.asset.url}
+                      className="object-cover"
+                      alt="default"
                     />
-                  ))}
-                </div>
-
-                <div className="bg-accent absolute text-primary -right-2 -top-2 rounded-full p-2 flex items-center justify-center">
-                  <PiQuotesFill size={32} />
-                </div>
-              </div>
-              <p className="leading-relaxed font-light text-gray-500 text-sm">
-                {item.message}
-              </p>
-              <div className="flex gap-4 items-center">
-                <div className="overflow-hidden rounded-full ring-offset-1 ring ring-accent">
-                  <img
-                    width={38}
-                    src={item.profile.asset.url}
-                    className="object-cover"
-                    alt="default"
-                  />
+                  </div>
                 </div>
                 <p className="text-base font-bold flex flex-col">
-                  {item.name}{" "}
-                  <span className="text-gray-500 text-sm font-normal">
+                  <div className="flex gap-4">
+                    {item.name}{" "}
+                    <div className="flex space-x-1">
+                      {[...Array(item.rating)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="fill-yellow-400 text-yellow-400  w-5 h-5"
+                        />
+                      ))}
+
+                      {/* Render unfilled stars */}
+                      {[...Array(5 - item.rating)].map((_, i) => (
+                        <Star
+                          key={i + item.rating}
+                          className="text-slate-700 fill-transparent w-5 h-5"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <span className="opacity-50 text-sm font-normal">
                     {item.designation}
                   </span>
                 </p>
               </div>
+
+              <p className="leading-relaxed text-base">
+                <PiQuotesFill size={32} className="text-purple-600" />{" "}
+                {item.message}
+              </p>
             </div>
           ))}
         </Carousel>
       </div>
-    </motion.section>
+      <div className="-z-50  absolute flex justify-end top-0 left-0 overflow-hidden">
+        <img
+          src="pattern2.png"
+          alt=""
+          className="opacity-10 hi object-contain w-full h-full"
+        />
+      </div>
+    </section>
   );
 };
 

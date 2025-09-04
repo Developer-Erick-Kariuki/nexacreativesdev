@@ -46,9 +46,8 @@ const Subscription = () => {
     <motion.section
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: easeIn }}
-      viewport={{ once: true }}
-      className="w-full mx-auto bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50 p-4 rounded-2xl flex justify-between flex-col-reverse md:flex-row items-center mt-16"
+      transition={{ duration: 1, ease: "easeIn" }}
+      className="w-full mx-auto  bg-white p-4 rounded-2xl flex justify-between  flex-col-reverse hidden md:flex-row items-center  mt-16"
     >
       <div className="overflow-hidden h-auto">
         <img

@@ -13,9 +13,8 @@ import Whyus from "./container/Whyus";
 function App() {
   return (
     <main className="w-full relative overflow-x-hidden font-inter  mx-auto">
-      <Header />
       <Hero />
-      <div className="max-w-7xl px-6 lg:px-10 mx-auto">
+      <div className="max-w-7xl overflow-y-hidden overflow-x-hidden px-6 lg:px-10 mx-auto">
         <AboutUs />
         <Whyus />
         <Services />
@@ -25,7 +24,6 @@ function App() {
         <Subscription />
         <ContactUs />
       </div>
-      <Footer />
     </main>
   );
 }

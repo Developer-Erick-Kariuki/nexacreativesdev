@@ -1,11 +1,16 @@
-import { motion, easeInOut, easeIn } from "framer-motion";
+import { motion, easeInOut, easeIn, delay } from "framer-motion";
 
 const Whyus = () => {
   return (
-    <section className="w-full relative flex flex-col md:flex-row justify-between items-center min-h-screen mx-auto">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, ease: "easeIn" }}
+      className="w-full relative flex flex-col md:flex-row justify-between items-center mt-16 mx-auto"
+    >
       <motion.div
-        initial={{ opacity: 0, y: 200 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2, ease: easeIn }}
         viewport={{ once: true }}
       >
@@ -33,21 +38,23 @@ const Whyus = () => {
         </ul>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 200 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: easeInOut }}
         viewport={{ once: true }}
         className="flex justify-center  items-center overflow-hidden"
       >
         <img src="/whyus.png" alt="why-us" width={512} />
       </motion.div>
-      <img
-        src="globe.png"
-        width={800}
-        className="absolute right-0 -z-10"
+      <motion.img
+        initial={{ y: 500 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 1, ease: "easeIn" }}
+        src="/globe.png"
+        className="absolute w-[500px] right-0 -z-10 opacity-10"
         alt=""
       />
-    </section>
+    </motion.section>
   );
 };
 

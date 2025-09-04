@@ -4,6 +4,7 @@ import { IoCall } from "react-icons/io5";
 import { SiMinutemailer } from "react-icons/si";
 import NexaLogo from "/nexalogo.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { FaThreads, FaXTwitter } from "react-icons/fa6";
 import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa";
 
@@ -25,12 +26,19 @@ const Footer = () => {
   };
 
   return (
-    <section className={`bg-slate-50 mx-auto  w-full`}>
-      <div className="flex max-w-7xl mx-auto py-6 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
+      className={`mx-auto border-t mt-32 relative w-full`}
+    >
+      <div className="flex max-w-7xl mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-2">
           <img src={NexaLogo} alt="logo" width={180} />
-          <p className="max-w-sm text-gray-500 mt-3">
-            Enhancing online presence simply the best
+          <p className="max-w-sm opacity-75 mt-3">
+            We blends creativity with cutting-edge technology to deliver unique
+            and engaging digital experiences. Let’s create something
+            extraordinary together.
           </p>
           <a className="flex gap-2 items-center" href="tel:0797710074">
             {" "}
@@ -82,7 +90,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex text-center w-full py-2 text-sm mt-8 flex-wrap items-center justify-center gap-4">
+      <div className="flex text-center w-full py-2 text-sm mt-8 flex-wrap items-center justify-center opacity-85 gap-4">
         <p className="text-sm">
           Copyrights © {year}{" "}
           <span className="text-accent">Nexa Creative Solution </span> All
@@ -98,7 +106,14 @@ const Footer = () => {
         </Link>
       </div>
       <WhatsAppButton />
-    </section>
+      <div className="absolute inset-0 flex justify-center -z-10">
+        <img
+          src="/pattern.png"
+          className="w-full h-full object-contain opacity-10"
+          alt=""
+        />
+      </div>
+    </motion.section>
   );
 };
 

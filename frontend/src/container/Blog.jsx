@@ -6,6 +6,7 @@ import "../index.css";
 import moment from "moment";
 
 import { Link } from "react-router-dom";
+import { timeAgo } from "../constants";
 
 const responsive = {
   superLargeDesktop: {
@@ -52,16 +53,17 @@ const Blog = () => {
     <motion.section
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: easeIn }}
-      viewport={{ once: true }}
+      transition={{ duration: 1, ease: "easeIn" }}
       id="blog"
-      className="w-full mt-32 flex flex-col md:flex-row gap-8 justify-center"
+      className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-center bg-gradient-to-br from-blue-400/30 via-pink-200/80 to-slate-200/20 py-20 rounded-2xl"
     >
       <div className="flex flex-col">
         <h2 className="text-accent text-base font-semibold uppercase tracking-widest">
           News & Blogs
         </h2>
-        <h1 className="text-4xl font-bold">Our Latest News & Blogs</h1>
+        <h1 className="text-4xl md:text-6xl font-bold">
+          Our Latest News & Blogs
+        </h1>
         <p className="mt-2 text-base text-slate-500">
           Insights and Trends from Nexa Creative Solutions
         </p>
@@ -71,6 +73,7 @@ const Blog = () => {
         responsive={responsive}
         infinite={true}
         focusOnSelect={true}
+        autoPlay={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         sliderClass="mine"
         itemClass="item"
@@ -78,7 +81,7 @@ const Blog = () => {
       >
         {posts.map((post) => (
           <div className="mx-4" key={post.title}>
-            <div className="overflow-hidden rounded-t  w-full h-[14rem]">
+            <div className="overflow-hidden w-full h-[200px] rounded-2xl">
               <img
                 src={post.imageUrl}
                 alt="default"
@@ -86,12 +89,12 @@ const Blog = () => {
               />
             </div>
             <Link to={`/blog/BlogPost/${post.customId}`}>
-              <h3 className="cursor-pointer hover:text-accent text-base mt-6">
+              <h3 className="cursor-pointer hover:opacity-75 text-base mt-6">
                 {post.title}
               </h3>
             </Link>
             <h3 className="text-sm text-slate-500">
-              {moment(post.publishedAt).format("MMMM DD, YYYY")}
+              {timeAgo(post.publishedAt)}
             </h3>
           </div>
         ))}
