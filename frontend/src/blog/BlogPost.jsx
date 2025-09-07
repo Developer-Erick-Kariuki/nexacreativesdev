@@ -125,16 +125,16 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="max-w-7xl mt-20 px-2  mx-auto">
-      <div className="w-full  relative justify-center  flex">
+    <main className="mt-20 px-2 mx-auto">
+      <div className="w-full  relative justify-center flex">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="md:text-4xl text-3xl font-bold my-4">
+                <h1 className="md:text-5xl text-4xl font-bold my-4">
                   {current.title}
                 </h1>
-                <p className="my-6 flex gap-2 items-center">
+                <p className="flex gap-2 mb-4 items-center">
                   By Nexa Creative
                   <span className="opacity-85">
                     {" "}
@@ -144,7 +144,7 @@ const BlogPost = () => {
 
                 <img
                   loading="lazy"
-                  className="object-cover rounded-xl w-full max-h-[35vh] md:max-h-[60vh]"
+                  className="object-cover rounded-xl w-full"
                   src={current.imageUrl}
                   alt={current.title}
                 />
@@ -176,7 +176,7 @@ const BlogPost = () => {
                     <img
                       loading="lazy"
                       src={post.imageUrl}
-                      className="rounded-xl md:max-h-[200px] h-[300px] md:h-[200px] object-cover object-left mb-2"
+                      className="rounded-xl md:max-h-[200px] h-[300px] object-cover object-left mb-2"
                       alt={post.title}
                     />
 
