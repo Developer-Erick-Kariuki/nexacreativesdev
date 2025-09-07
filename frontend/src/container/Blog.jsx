@@ -75,7 +75,7 @@ const Blog = () => {
             <img
               src={post.imageUrl}
               alt="default"
-              className="rounded-xl max-h-[300px] md:h-[300px] h-[200px] object-cover object-right"
+              className="rounded-xl max-h-[300px] md:h-[300px] h-[150px] object-cover object-right"
               width={400}
             />
             <Link
