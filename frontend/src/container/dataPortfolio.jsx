@@ -53,7 +53,7 @@ const Portfolioa = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeIn" }}
-        className="flex flex-wrap my-8 justify-center items-center space-y-6 space-x-2 "
+        className="flex flex-wrap mb-16  justify-center items-center space-y-6 space-x-2 "
       >
         {[
           "All",
@@ -87,7 +87,7 @@ const Portfolioa = () => {
 
       {/* Image Gallery */}
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {images
           .filter((image) => (isSlug ? image.category === isSlug : true))
           .map((image, index) => (
@@ -102,7 +102,7 @@ const Portfolioa = () => {
                 <img
                   src={image.imageUrl}
                   alt={image.title}
-                  className="w-full rounded-2xl object-cover"
+                  className="w-full rounded-xl object-cover"
                 />
                 <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-80 transition-all duration-1000 absolute inset-0 rounded-2xl bg-black">
                   <Link
