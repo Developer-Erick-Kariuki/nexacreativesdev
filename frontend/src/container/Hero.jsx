@@ -6,7 +6,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50"
+      className="bg-gradient-to-br from-violet-400/10 via-violet-200/80 to-slate-200/50"
     >
       <div className="w-full min-h-screen  mx-auto justify-between items-center flex flex-col md:flex-row max-w-7xl px-4">
         <div className="flex md:w-1/2 w-full mt-[20%] md:mt-0 flex-col">
@@ -14,9 +14,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-4xl md:text-6xl font-bold mt-12 mb-8"
+            className="text-4xl sm:text-6xl font-bold mt-12 mb-8 capitalize"
           >
-            We transform vision into stuning visual reality
+            We transform your vision into stuning visual reality
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
@@ -33,7 +33,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 300 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeIn", delay: 1 }}
-              className="rounded-full shadow-md bg-purple-600 py-3 px-5 text-white"
+              className="rounded-full shadow bg-purple-600 py-3 px-5 text-white"
             >
               Get in touch
             </motion.button>
@@ -41,7 +41,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeIn", delay: 1.2 }}
-              className="rounded-full bg-slate-50 shadow-md py-3 px-5"
+              className="rounded-full bg-white shadow py-3 px-5"
             >
               See Our Work
             </motion.button>

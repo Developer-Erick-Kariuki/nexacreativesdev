@@ -65,29 +65,27 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="w-full flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-2 justify-center gap-6 mt-16">
-            {services.map((service, index) => (
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
-                key={index}
-                className={`flex bg-gradient-to-br from-blue-400/30 via-pink-200/20 to-slate-200/20 hover:shadow transition duration-300 ease-in-out hover:ring-1 ring-purple-500 flex-col p-6 rounded-xl overflow-clip`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-6 mt-16">
+          {services.map((service, index) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
+              key={index}
+              className={`flex bg-gradient-to-br from-blue-400/30 via-pink-200/20 to-slate-200/20 hover:shadow transition duration-300 ease-in-out hover:ring-1 py-10 ring-purple-500 flex-col p-6 rounded-xl overflow-clip`}
+            >
+              <i className="mb-8 text-purple-600">{service.icon}</i>
+              <a
+                href="#"
+                className="uppercase text-purple-600 z-20 tracking-widest"
               >
-                <i className="mb-4 text-purple-600">{service.icon}</i>
-                <a
-                  href="#"
-                  className="uppercase text-purple-600 z-20 tracking-widest"
-                >
-                  {service.name}
-                </a>
-                <p className="mt-4 text-slate-400 leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+                {service.name}
+              </a>
+              <p className="mt-4 text-slate-400 max-w-md leading-relaxed">
+                {service.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
       <div className="absolute inset-0">

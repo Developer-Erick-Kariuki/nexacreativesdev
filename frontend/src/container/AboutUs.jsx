@@ -19,7 +19,7 @@ const AboutUs = () => {
           Solutions
         </h2>
 
-        <div className="flex flex-col-reverse  items-center justify-between  w-full">
+        <div className="flex flex-col-reverse py-16  items-center justify-between  w-full">
           <p className="text-base max-w-2xl  leading-relaxed mb-4">
             At Nexa Digital Solutions, we believe that every brand has a unique
             story to tell. As a premier web design and development agency, we

@@ -131,10 +131,15 @@ const BlogPost = () => {
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="text-3xl font-bold my-4">{current.title}</h1>
+                <h1 className="md:text-4xl text-3xl font-bold my-4">
+                  {current.title}
+                </h1>
                 <p className="my-6 flex gap-2 items-center">
-                  <span className="opacity-85 text-xs">Posted</span>
-                  {timeAgo(current.publishedAt)}
+                  By Nexa Creative
+                  <span className="opacity-85">
+                    {" "}
+                    {timeAgo(current.publishedAt)}
+                  </span>
                 </p>
 
                 <img

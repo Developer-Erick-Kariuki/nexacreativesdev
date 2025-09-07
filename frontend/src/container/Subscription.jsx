@@ -47,15 +47,10 @@ const Subscription = () => {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeIn" }}
-      className="w-full mx-auto  bg-white p-4 rounded-2xl flex justify-between  flex-col-reverse hidden md:flex-row items-center  mt-16"
+      className="w-full mx-auto  flex justify-between  flex-col-reverse md:flex-row items-center mt-16"
     >
-      <div className="overflow-hidden h-auto">
-        <img
-          src="/Background.png"
-          className="object-cover w-full h-full"
-          alt="send"
-        />
-      </div>
+      <img src="/Background.png" alt="send" width={750} />
+
       <div className="flex-col justify-center gap-4 flex">
         <h1 className="text-4xl font-bold">Join our team</h1>
         <p className="text-base leading-relaxed tracking-wider">

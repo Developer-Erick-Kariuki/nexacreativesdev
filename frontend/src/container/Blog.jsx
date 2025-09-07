@@ -55,9 +55,9 @@ const Blog = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="blog"
-      className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-center "
+      className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-between"
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col w-1/4">
         <h2 className="text-accent text-base font-semibold uppercase tracking-widest">
           News & Blogs
         </h2>
@@ -69,26 +69,15 @@ const Blog = () => {
         </p>
       </div>
 
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        focusOnSelect={true}
-        autoPlaySpeed={5000}
-        autoPlay={true}
-        removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
-        sliderClass="mine"
-        itemClass="item"
-        containerClass="container"
-      >
-        {posts.map((post) => (
+      <div className="flex flex-col w-3/4  md:flex-row">
+        {posts.slice(0, 2).map((post) => (
           <div className="mx-4" key={post.title}>
-            <div className="overflow-hidden  h-[200px] rounded-2xl">
-              <img
-                src={post.imageUrl}
-                alt="default"
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <img
+              src={post.imageUrl}
+              alt="default"
+              className="rounded-xl max-h-[300px] h-[300px] object-center object-cover "
+              width={400}
+            />
             <Link
               onClick={handleScrollToTop}
               to={`/blog/BlogPost/${post.customId}`}
@@ -102,7 +91,7 @@ const Blog = () => {
             </h3>
           </div>
         ))}
-      </Carousel>
+      </div>
     </motion.section>
   );
 };

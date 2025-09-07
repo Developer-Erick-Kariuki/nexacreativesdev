@@ -45,7 +45,7 @@ const Whyus = () => {
         src="/whyus.png"
         alt="why-us"
         width={512}
-        className="-mt-8"
+        className="md:-mt-8"
       />
     </motion.section>
   );
