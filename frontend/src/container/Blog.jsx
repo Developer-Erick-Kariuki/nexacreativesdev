@@ -57,7 +57,7 @@ const Blog = () => {
       id="blog"
       className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-between"
     >
-      <div className="flex flex-col w-1/4">
+      <div className="flex flex-col md:w-1/4">
         <h2 className="text-accent text-base font-semibold uppercase tracking-widest">
           News & Blogs
         </h2>
@@ -69,9 +69,9 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="flex flex-col w-3/4  md:flex-row">
+      <div className="flex flex-col gap-6 md:w-3/4 md:flex-row">
         {posts.slice(0, 2).map((post) => (
-          <div className="mx-4" key={post.title}>
+          <div key={post.title}>
             <img
               src={post.imageUrl}
               alt="default"
@@ -82,7 +82,7 @@ const Blog = () => {
               onClick={handleScrollToTop}
               to={`/blog/BlogPost/${post.customId}`}
             >
-              <h3 className="cursor-pointer hover:opacity-75 text-base mt-6">
+              <h3 className="cursor-pointer hover:opacity-75 text-lg font-semibold mt-2">
                 {post.title}
               </h3>
             </Link>
