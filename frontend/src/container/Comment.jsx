@@ -117,7 +117,7 @@ const Comment = ({ postId }) => {
             name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className={`outline-none`}
+            className={`outline-none bg-transparent`}
             placeholder="Comment"
             required
           />

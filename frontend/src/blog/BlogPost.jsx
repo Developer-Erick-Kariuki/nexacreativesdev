@@ -63,7 +63,7 @@ const serializers = {
           <img
             src={asset.url}
             alt={caption}
-            className="w-full shadow-md object-cover"
+            className="w-full shadow-md rounded-xl object-cover"
           />
           {caption && (
             <figcaption className="text-base text-gray-500 mt-2 italic">
@@ -125,21 +125,21 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="max-w-7xl mt-20 px-6  mx-auto">
+    <main className="max-w-7xl mt-20 px-2  mx-auto">
       <div className="w-full  relative justify-center  flex">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl`} key={current.customId}>
               <div className="w-full overflow-clip">
                 <h1 className="text-3xl font-bold my-4">{current.title}</h1>
-                <p className="my-4 flex gap-2 items-center">
-                  <span className="opacity-85 text-sm">Posted</span>
+                <p className="my-6 flex gap-2 items-center">
+                  <span className="opacity-85 text-xs">Posted</span>
                   {timeAgo(current.publishedAt)}
                 </p>
 
                 <img
                   loading="lazy"
-                  className="object-cover rounded-2xl w-full max-h-[60vh]"
+                  className="object-cover rounded-xl w-full max-h-[35vh] md:max-h-[60vh]"
                   src={current.imageUrl}
                   alt={current.title}
                 />
@@ -162,7 +162,7 @@ const BlogPost = () => {
             <hr className={`w-full mt-2 mb-4`} />
             <div className="flex flex-col flex-wrap gap-4">
               {posts.map((post) => (
-                <div key={post.title}>
+                <div key={post.title} className="bg-slate-50 p-2 rounded-2xl">
                   <Link
                     onClick={handleScrollToTop}
                     className="flex flex-col justify-between"
@@ -180,7 +180,7 @@ const BlogPost = () => {
                         {post.title}
                       </h2>
 
-                      <p className="text-sm flex mt-2 items-center gap-2 opacity-80">
+                      <p className="text-xs flex mt-2 items-center gap-2 opacity-80">
                         <TimerIcon size={16} /> {timeAgo(post.publishedAt)}
                       </p>
                     </div>
