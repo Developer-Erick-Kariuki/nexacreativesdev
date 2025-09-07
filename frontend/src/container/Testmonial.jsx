@@ -27,7 +27,7 @@ export const responsive = {
   },
 };
 
-const item = "mx-4 my-6";
+const item = "md:mx-4 my-6";
 const container = "py-8";
 const Testmonial = () => {
   const [testimonials, setTestimonials] = useState([]);
