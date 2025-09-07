@@ -5,6 +5,7 @@ import "../index.css";
 import "../index.css";
 
 import { Link } from "lucide-react";
+import { Tooltip } from "react-tooltip";
 
 const Portfolioa = () => {
   const [images, setImages] = useState([]);
@@ -33,7 +34,7 @@ const Portfolioa = () => {
   }, []);
 
   return (
-    <section id="portfolio" className="mt-16">
+    <section id="portfolio" className="mt-32">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +64,7 @@ const Portfolioa = () => {
         ].map((item, index) => (
           <li
             key={index}
-            className={`cursor-pointer  transition-all duration-300 ease-linear rounded-full `}
+            className={`cursor-pointer transition-all duration-300 ease-linear rounded-full `}
             onClick={() => {
               setIsActive(index);
               setIsSlug(item === "All" ? null : item.toLowerCase());
@@ -74,7 +75,7 @@ const Portfolioa = () => {
                 className={`${
                   isActive === index
                     ? "bg-purple-600 text-white "
-                    : "bg-purple-600/10"
+                    : "bg-slate-50"
                 } rounded-full px-5 py-3`}
               >
                 {item}
@@ -104,7 +105,12 @@ const Portfolioa = () => {
                   className="w-full rounded-2xl object-cover"
                 />
                 <div className="w-full h-full flex justify-center text-white items-center opacity-0 group-hover:opacity-80 transition-all duration-1000 absolute inset-0 rounded-2xl bg-black">
-                  <Link size={32} />
+                  <Link
+                    size={32}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={image.description}
+                  />
+                  <Tooltip id="my-tooltip" />
                 </div>
               </a>
             </motion.div>

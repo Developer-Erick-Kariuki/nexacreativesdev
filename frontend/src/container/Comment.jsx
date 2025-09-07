@@ -127,8 +127,8 @@ const Comment = ({ postId }) => {
                 ? "bg-green-500"
                 : buttonText === "Failed"
                 ? "bg-red-500"
-                : "text-white bg-purple-600"
-            } px-5 py-3 rounded-full flex items-center gap-4 justify-center text-lg outline-none mt-8`}
+                : " bg-purple-600"
+            } px-5 py-3 rounded-full flex items-center gap-4 justify-center text-lg text-white outline-none mt-8`}
             type="submit"
             disabled={isLoading}
           >
@@ -147,7 +147,7 @@ const Comment = ({ postId }) => {
               <div key={comment._id} className="p-4 ">
                 <h3 className="font-semibold">{comment.name}</h3>
                 <p className="text-xs text-gray-500">
-                  {timeAgo(comment.publishedAt)}
+                  {timeAgo(comment.createdAt)}
                 </p>
                 <p className="text-sm text-gray-400">{comment.subject}</p>
                 <p className="mt-2">{comment.message}</p>

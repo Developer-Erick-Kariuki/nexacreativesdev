@@ -6,7 +6,7 @@ import "../index.css";
 import moment from "moment";
 
 import { Link } from "react-router-dom";
-import { timeAgo } from "../constants";
+import { handleScrollToTop, timeAgo } from "../constants";
 
 const responsive = {
   superLargeDesktop: {
@@ -55,7 +55,7 @@ const Blog = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="blog"
-      className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-center bg-gradient-to-br from-blue-400/30 via-pink-200/80 to-slate-200/20 py-20 rounded-2xl"
+      className="w-full mt-32 px-5 flex flex-col md:flex-row gap-8 justify-center "
     >
       <div className="flex flex-col">
         <h2 className="text-accent text-base font-semibold uppercase tracking-widest">
@@ -82,14 +82,17 @@ const Blog = () => {
       >
         {posts.map((post) => (
           <div className="mx-4" key={post.title}>
-            <div className="overflow-hidden w-full h-[200px] rounded-2xl">
+            <div className="overflow-hidden  h-[200px] rounded-2xl">
               <img
                 src={post.imageUrl}
                 alt="default"
                 className="object-cover w-full h-full"
               />
             </div>
-            <Link to={`/blog/BlogPost/${post.customId}`}>
+            <Link
+              onClick={handleScrollToTop}
+              to={`/blog/BlogPost/${post.customId}`}
+            >
               <h3 className="cursor-pointer hover:opacity-75 text-base mt-6">
                 {post.title}
               </h3>

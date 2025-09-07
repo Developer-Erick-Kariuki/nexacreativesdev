@@ -156,10 +156,10 @@ const BlogPost = () => {
           <div
             className={` flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
           >
-            <h2 className="text-base font-bold my-4 uppercase tracking-widest">
-              Recent Blogs
+            <h2 className="text-base font-bold uppercase tracking-widest">
+              Most Recent Blogs
             </h2>
-            <hr className={`w-full mb-2`} />
+            <hr className={`w-full mt-2 mb-4`} />
             <div className="flex flex-col flex-wrap gap-4">
               {posts.map((post) => (
                 <div key={post.title}>
@@ -171,7 +171,7 @@ const BlogPost = () => {
                     <img
                       loading="lazy"
                       src={post.imageUrl}
-                      className="rounded-2xl max-h-[300px] h-[250px] object-cover object-left mb-2"
+                      className="rounded-xl md:max-h-[200px] h-[300px] md:h-[200px] object-cover object-left mb-2"
                       alt={post.title}
                     />
 

@@ -51,7 +51,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="z-10 relative w-full min-h-screen flex">
+    <section id="services" className="z-10 relative w-full mt-32 flex">
       <div className="max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

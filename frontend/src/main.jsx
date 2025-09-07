@@ -8,6 +8,7 @@ import TermsOfServices from "./terms/TermsOfServices.jsx";
 import PrivacyPolicy from "./privacy/PrivacyPolicy.jsx";
 import Header from "./container/Header.jsx";
 import Footer from "./container/Footer.jsx";
+import WhatsAppButton from "./components/Whatsapp.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
+      <WhatsAppButton />
       <Footer />
     </BrowserRouter>
   </StrictMode>

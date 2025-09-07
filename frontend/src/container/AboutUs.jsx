@@ -1,11 +1,11 @@
 import "../index.css";
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
     <section
       id="about"
-      className="mx-auto  justify-center w-full items-center mt-32 min-h-screen"
+      className="mx-auto justify-center mt-32 w-full items-center "
     >
       <motion.div
         initial={{ opacity: 0 }}

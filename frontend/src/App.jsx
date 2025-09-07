@@ -14,7 +14,7 @@ function App() {
   return (
     <main className="w-full relative overflow-x-hidden font-inter  mx-auto">
       <Hero />
-      <div className="max-w-7xl overflow-y-hidden overflow-x-hidden px-6 lg:px-10 mx-auto">
+      <div className="max-w-7xl overflow-y-hidden overflow-x-hidden px-4 mx-auto">
         <AboutUs />
         <Whyus />
         <Services />

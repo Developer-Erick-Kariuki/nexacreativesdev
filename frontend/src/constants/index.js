@@ -70,24 +70,29 @@ export const responsive = {
 };
 
 export function timeAgo(dbTime) {
+  const posted = moment(dbTime);
   const now = moment();
-  const posted = moment(dbTime); // handles timestamp or ISO string
 
-  const years = now.diff(posted, "years");
-  if (years > 0) return `${years} year${years > 1 ? "s" : ""} ago`;
+  const diff = moment.duration(now.diff(posted));
 
-  const months = now.diff(posted, "months");
-  if (months > 0) return `${months} month${months > 1 ? "s" : ""} ago`;
-
-  const days = now.diff(posted, "days");
-  if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`;
-
-  const hours = now.diff(posted, "hours");
-  if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`;
-
-  const minutes = now.diff(posted, "minutes");
-  if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`;
-
-  const seconds = now.diff(posted, "seconds");
-  return `${seconds} second${seconds > 1 ? "s" : ""} ago`;
+  if (diff.years() > 0) {
+    return `${diff.years()} year${diff.years() > 1 ? "s" : ""} ago`;
+  }
+  if (diff.months() > 0) {
+    return `${diff.months()} month${diff.months() > 1 ? "s" : ""} ago`;
+  }
+  if (diff.days() > 0) {
+    return `${diff.days()} day${diff.days() > 1 ? "s" : ""} ago`;
+  }
+  if (diff.hours() > 0) {
+    return `${diff.hours()} hour${diff.hours() > 1 ? "s" : ""} ago`;
+  }
+  if (diff.minutes() > 0) {
+    return `${diff.minutes()} minute${diff.minutes() > 1 ? "s" : ""} ago`;
+  }
+  return `${diff.seconds()} second${diff.seconds() > 1 ? "s" : ""} ago`;
 }
+
+export const handleScrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};

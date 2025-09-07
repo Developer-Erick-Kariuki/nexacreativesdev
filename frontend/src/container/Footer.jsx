@@ -1,4 +1,4 @@
-import { links } from "../constants";
+import { handleScrollToTop, links } from "../constants";
 import WhatsAppButton from "../components/Whatsapp";
 import { IoCall } from "react-icons/io5";
 import { SiMinutemailer } from "react-icons/si";
@@ -21,10 +21,6 @@ export const socialLinks = [
 const year = new Date().getFullYear();
 
 const Footer = () => {
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -97,15 +93,23 @@ const Footer = () => {
           rights reserved
         </p>
         <div className="h-1 w-1 bg-black rounded-full"></div>
-        <Link onClick={handleScrollToTop} className="text-sm" to="/terms">
+        <Link
+          onClick={handleScrollToTop}
+          className="text-sm hover:font-bold"
+          to="/terms"
+        >
           Terms & Conditions
         </Link>
         <div className="h-1 w-1 bg-black rounded-full"></div>
-        <Link onClick={handleScrollToTop} className="text-sm" to="/privacy">
+        <Link
+          onClick={handleScrollToTop}
+          className="text-sm hover:font-bold"
+          to="/privacy"
+        >
           Privacy policy
         </Link>
       </div>
-      <WhatsAppButton />
+
       <div className="absolute inset-0 flex justify-center -z-10">
         <img
           src="/pattern.png"

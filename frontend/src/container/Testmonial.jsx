@@ -4,7 +4,8 @@ import "react-multi-carousel/lib/styles.css";
 import Carousel from "react-multi-carousel";
 import { client } from "../client";
 import { useEffect, useState } from "react";
-import { easeIn, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { FcGoogle } from "react-icons/fc";
 
 export const responsive = {
   superLargeDesktop: {
@@ -66,9 +67,9 @@ const Testmonial = () => {
             >
               <div className="flex gap-8">
                 <div className="flex gap-4 items-center">
-                  <div className="overflow-hidden rounded-full ring-offset-1 ring ring-accent">
+                  <div className="overflow-hidden rounded-full">
                     <img
-                      width={38}
+                      width={42}
                       src={item.profile.asset.url}
                       className="object-cover"
                       alt="default"
@@ -77,7 +78,7 @@ const Testmonial = () => {
                 </div>
                 <p className="text-base font-bold flex flex-col">
                   <div className="flex gap-4">
-                    {item.name}{" "}
+                    {item.name} <FcGoogle size={20} />
                     <div className="flex space-x-1">
                       {[...Array(item.rating)].map((_, i) => (
                         <Star
@@ -114,7 +115,7 @@ const Testmonial = () => {
         <img
           src="pattern2.png"
           alt=""
-          className="opacity-10 hi object-contain w-full h-full"
+          className="opacity-5 object-contain w-full h-full"
         />
       </div>
     </section>

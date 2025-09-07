@@ -6,16 +6,16 @@ const Whyus = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
-      className="w-full relative flex flex-col md:flex-row justify-between items-center mt-16 mx-auto"
+      className="w-full rounded-2xl flex flex-col md:flex-row justify-between overflow-x-clip items-center mt-32 mx-auto bg-gradient-to-br from-blue-400/30 via-pink-200/30 to-slate-200/50"
     >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2, ease: easeIn }}
-        viewport={{ once: true }}
+        className="mx-12 my-8 md:my-0"
       >
-        <h2 className="text-3xl font-bold my-8">Why Choose Us?</h2>
-        <ul className="list-outside leading-relaxed gap-4 px-4 flex flex-col list-disc">
+        <h2 className="text-3xl mb-8 font-bold">Why Choose Us?</h2>
+        <ul className="list-outside leading-relaxed gap-4  flex flex-col list-disc">
           <li className="font-light max-w-lg leading-relaxed">
             <p className="font-bold  text-base">Tailored Solutions: </p>
             We create customized strategies that align with your brand’s goals
@@ -37,22 +37,15 @@ const Whyus = () => {
           </li>
         </ul>
       </motion.div>
-      <motion.div
+
+      <motion.img
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: easeInOut }}
-        viewport={{ once: true }}
-        className="flex justify-center  items-center overflow-hidden"
-      >
-        <img src="/whyus.png" alt="why-us" width={512} />
-      </motion.div>
-      <motion.img
-        initial={{ y: 500 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 1, ease: "easeIn" }}
-        src="/globe.png"
-        className="absolute w-[500px] right-0 -z-10 opacity-10"
-        alt=""
+        src="/whyus.png"
+        alt="why-us"
+        width={512}
+        className="-mt-8"
       />
     </motion.section>
   );
