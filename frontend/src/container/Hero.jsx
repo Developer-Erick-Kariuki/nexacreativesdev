@@ -14,7 +14,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-4xl sm:text-6xl font-bold mt-12 mb-8 capitalize"
+            className="text-4xl md:text-6xl lg:text-7xl xl:text-9xl font-bold mt-12 mb-8 capitalize"
           >
             We transform your vision into stuning visual reality
           </motion.h1>
