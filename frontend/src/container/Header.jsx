@@ -31,11 +31,8 @@ const Header = () => {
   }, [isScrolled]);
 
   return (
-    <header>
-      {/* navigation for desktops */}
-      <nav
-        className={`hidden w-full text-base md:flex px-2 items-center py-3 justify-between max-w-7xl}`}
-      >
+    <header className="absolute w-full bg-transparent z-50">
+      <nav className="hidden w-full text-base md:flex px-2 items-center py-3 justify-between max-w-7xl mx-auto">
         <Link to="/">
           <div className="flex">
             <img width={imageSize} src={NexaLogo} alt="site-logo" />
@@ -55,9 +52,7 @@ const Header = () => {
       </nav>
       {/* mobile navigation */}
       <nav
-        className={`flex fixed md:hidden z-40  items-center justify-between py-2 w-full px-2 ${
-          isScrolled ? "bg-white" : "bg-transparent"
-        }`}
+        className={`flex md:hidden z-40  items-center justify-between py-2 w-full px-2`}
       >
         <Link to="/">
           <img src={NexaLogo} width={180} alt="" />
