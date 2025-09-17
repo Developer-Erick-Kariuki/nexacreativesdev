@@ -6,7 +6,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="bg-gradient-to-br from-violet-400/10 via-pink-200/80 to-slate-200/50"
+      className="bg-gradient-to-br from-blue-400/10 via-purple-200/90 to-blue-200/50"
     >
       <div className="w-full h-screen mx-auto justify-between items-center flex flex-col md:flex-row max-w-7xl px-4">
         <div className="flex w-full mt-[20%] md:mt-0 flex-col">
