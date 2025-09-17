@@ -8,13 +8,13 @@ const Hero = () => {
       transition={{ duration: 1, ease: "easeInOut" }}
       className="bg-gradient-to-br from-violet-400/10 via-pink-200/80 to-slate-200/50"
     >
-      <div className="w-full pt-32 pb-8 mx-auto justify-between items-center flex flex-col md:flex-row max-w-7xl px-4">
-        <div className="flex md:w-1/2 w-full mt-[20%] md:mt-0 flex-col">
+      <div className="w-full h-screen mx-auto justify-between items-center flex flex-col md:flex-row max-w-7xl px-4">
+        <div className="flex w-full mt-[20%] md:mt-0 flex-col">
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-4xl md:text-6xl lg:text-7xl xl:text-9xl font-bold mt-12 mb-8 capitalize"
+            className="text-4xl sm:text-6xl font-bold mt-12 mb-8 capitalize"
           >
             We transform your vision into stuning visual reality
           </motion.h1>
@@ -51,7 +51,8 @@ const Hero = () => {
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeIn", delay: 0 }}
-          src="/Hero-image.png"
+          src="/Hero-image.webp"
+          className="w-full"
           alt="hero image"
         />
       </div>
