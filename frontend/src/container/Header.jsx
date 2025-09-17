@@ -16,7 +16,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 500) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -31,12 +31,10 @@ const Header = () => {
   }, [isScrolled]);
 
   return (
-    <header className={`relative overflow-x-hidden  w-full top-0`}>
+    <header>
       {/* navigation for desktops */}
       <nav
-        className={`hidden w-full fixed z-40 text-base md:flex mx-auto max-w-[1920px] px-6 lg:px-10 items-center py-3 justify-between ${
-          isScrolled ? "bg-white shadow-sm" : "bg-transparent"
-        }`}
+        className={`hidden w-full text-base md:flex px-2 items-center py-3 justify-between max-w-7xl}`}
       >
         <Link to="/">
           <div className="flex">
