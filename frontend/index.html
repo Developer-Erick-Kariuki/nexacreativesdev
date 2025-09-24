@@ -12,9 +12,40 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexa Digital Solutions</title>
+
+    <style>
+      .black {
+        color: white;
+        background-color: rgb(51, 50, 50);
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      function getSystemTheme() {
+        let currentTheme = null;
+        if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          currentTheme = "dark";
+        } else {
+          currentTheme = "light";
+        }
+        const root = document.querySelector("#root").classList;
+
+        if (currentTheme === "dark") {
+          root.add("black");
+        } else if (currentTheme === "light") {
+          root.remove("black");
+        }
+      }
+
+      setInterval(() => {
+        getSystemTheme();
+      }, 2000);
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { client } from "../client";
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "../index.css";
 import "../index.css";
 
@@ -42,7 +42,7 @@ const Portfolioa = () => {
         className="flex flex-col justify-center items-center"
       >
         <h2 className="font-bold text-center text-2xl  flex flex-col">
-          <span className="text-accent text-base mt-4 font-bold">
+          <span className="text-sm uppercase tracking-widest mt-4 font-bold">
             Portfolio
           </span>
           Our Recent Projects
@@ -73,10 +73,8 @@ const Portfolioa = () => {
             {index !== 0 && (
               <span
                 className={`${
-                  isActive === index
-                    ? "bg-purple-600 text-white "
-                    : "bg-slate-50"
-                } rounded-full px-5 py-3`}
+                  isActive === index ? "bg-violet-800 text-white " : ""
+                } rounded-full shadow-xl px-5 py-3`}
               >
                 {item}
               </span>
@@ -96,7 +94,7 @@ const Portfolioa = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeIn" }}
               key={index}
-              className={`overflow-hidden group`}
+              className={`overflow-hidden shadow-md p-2 rounded-2xl group`}
             >
               <a href={image.description} className="relative" target="_blank">
                 <img

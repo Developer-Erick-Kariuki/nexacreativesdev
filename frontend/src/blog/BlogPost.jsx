@@ -19,9 +19,7 @@ const serializers = {
 
       switch (style) {
         case "h1":
-          return (
-            <h1 className="text-3xl font-extrabold mt-10 mb-6">{children}</h1>
-          );
+          return <h1 className="text-3xl font-bold mt-10 mb-6">{children}</h1>;
         case "h2":
           return <h2 className="text-2xl font-bold mt-8 mb-5">{children}</h2>;
         case "h3":
@@ -125,19 +123,16 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="mt-20 px-2 mx-auto">
-      <div className="w-full  relative justify-center flex">
+    <main className="py-20 px-6 max-w-7xl flex-col md:flex-row flex mx-auto">
+      <section className="w-full  relative justify-center flex">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="md:text-5xl text-4xl font-bold my-4">
-                  {current.title}
-                </h1>
-                <p className="flex gap-2 mb-4 items-center">
-                  By Nexa Creative
-                  <span className="opacity-85">
-                    {" "}
+                <h1 className="text-3xl font-bold mb-2">{current.title}</h1>
+                <p className="flex gap-2 mb-4 text-sm items-center">
+                  Nexa Digital
+                  <span className="opacity-75">
                     {timeAgo(current.publishedAt)}
                   </span>
                 </p>
@@ -157,45 +152,46 @@ const BlogPost = () => {
               <Comment postId={current.customId} />
             </div>
           ))}
-
-          <div
-            className={` flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
-          >
-            <h2 className="text-base font-bold uppercase tracking-widest">
-              Most Recent Blogs
-            </h2>
-            <hr className={`w-full mt-2 mb-4`} />
-            <div className="flex flex-col flex-wrap gap-4">
-              {posts.map((post) => (
-                <div key={post.title} className="bg-slate-50 p-2 rounded-2xl">
-                  <Link
-                    onClick={handleScrollToTop}
-                    className="flex flex-col justify-between"
-                    to={`/blog/BlogPost/${post.customId}`}
-                  >
-                    <img
-                      loading="lazy"
-                      src={post.imageUrl}
-                      className="rounded-xl md:max-h-[200px] h-[300px] object-cover object-left mb-2"
-                      alt={post.title}
-                    />
-
-                    <div className="flex flex-col justify-center w-full">
-                      <h2 className="text-base hover:opacity-75 transition-colors duration-300 ease-in-out font-semibold">
-                        {post.title}
-                      </h2>
-
-                      <p className="text-xs flex mt-2 items-center gap-2 opacity-80">
-                        <TimerIcon size={16} /> {timeAgo(post.publishedAt)}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
-      </div>
+      </section>
+
+      {/* section other blogs */}
+      <section
+        className={` flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
+      >
+        <h2 className="text-base font-bold uppercase tracking-widest">
+          Most Recent Blogs
+        </h2>
+        <hr className={`w-full mt-2 mb-4`} />
+        <div className="flex flex-col flex-wrap gap-4">
+          {posts.map((post) => (
+            <div key={post.title} className="shadow-xl p-4 rounded-2xl">
+              <Link
+                onClick={handleScrollToTop}
+                className="flex flex-col justify-between"
+                to={`/blog/BlogPost/${post.customId}`}
+              >
+                <img
+                  loading="lazy"
+                  src={post.imageUrl}
+                  className="rounded-xl md:max-h-[200px] h-[300px] object-cover object-left mb-2"
+                  alt={post.title}
+                />
+
+                <div className="flex flex-col justify-center w-full">
+                  <h2 className="hover:opacity-75 transition-colors duration-300 ease-in-out font-semibold">
+                    {post.title}
+                  </h2>
+
+                  <p className="text-xs flex mt-2 items-center gap-2 opacity-80">
+                    <TimerIcon size={16} /> {timeAgo(post.publishedAt)}
+                  </p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 };

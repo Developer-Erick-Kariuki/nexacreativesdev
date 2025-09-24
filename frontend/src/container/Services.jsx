@@ -59,7 +59,9 @@ const Services = () => {
           transition={{ duration: 1, ease: "easeIn" }}
           className="flex flex-col w-full mx-auto justify-center items-center"
         >
-          <h2 className="text-base font-bold text-accent">Services</h2>
+          <h2 className="text-sm font-bold tracking-widest uppercase">
+            Services
+          </h2>
           <p className="text-3xl max-w-xs md:max-w-md font-bold text-center">
             We offer the best services in
           </p>
@@ -72,16 +74,16 @@ const Services = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
               key={index}
-              className={`flex bg-gradient-to-br from-blue-400/30 via-pink-200/20 to-slate-200/20 hover:shadow transition duration-300 ease-in-out hover:ring-1 py-10 ring-purple-500 flex-col p-6 rounded-xl overflow-clip`}
+              className={`flex shadow-md transition duration-300 ease-in-out p-8 flex-col rounded-2xl overflow-clip`}
             >
-              <i className="mb-8 text-purple-600">{service.icon}</i>
+              <i className="text-yellow-500 mb-4">{service.icon}</i>
               <a
                 href="#"
-                className="uppercase text-purple-600 z-20 tracking-widest"
+                className="uppercase text-sm text-purple-600 z-20 tracking-widest"
               >
                 {service.name}
               </a>
-              <p className="mt-4 text-slate-400 max-w-md leading-relaxed">
+              <p className="mt-4 opacity-65 max-w-md leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

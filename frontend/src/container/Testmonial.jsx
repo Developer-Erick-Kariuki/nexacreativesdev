@@ -51,8 +51,10 @@ const Testmonial = () => {
         transition={{ duration: 0.5, ease: "easeIn" }}
         className="flex flex-col text-center text-2xl md:text-3xl font-bold mb-8"
       >
-        <span className="text-accent text-base">Testmonials</span> What clients
-        say about us
+        <span className="text-sm uppercase tracking-widest font-bold">
+          Testmonials
+        </span>{" "}
+        What clients say about us
       </motion.h2>
       <Carousel
         responsive={responsive}
@@ -60,14 +62,13 @@ const Testmonial = () => {
         infinite={true}
         focusOnSelect={true}
         itemClass={item}
-        showDots={true}
         containerClass={container}
         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
       >
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className={`flex cursor-pointer flex-col shadow-sm p-5 rounded-2xl w-full gap-8 bg-gradient-to-br min-h-[300px] from-blue-400/30 via-pink-200/20 to-slate-200/20`}
+            className={`flex cursor-pointer flex-col shadow-xl p-5 rounded-2xl w-full gap-8`}
           >
             <div className="flex  gap-8">
               <div className="flex gap-4 items-center">
@@ -114,14 +115,6 @@ const Testmonial = () => {
           </div>
         ))}
       </Carousel>
-
-      <div className="-z-50  absolute flex justify-end top-0 left-0 overflow-hidden">
-        <img
-          src="pattern2.png"
-          alt=""
-          className="opacity-5 object-contain w-full h-full"
-        />
-      </div>
     </section>
   );
 };

@@ -67,9 +67,12 @@ const ContactUs = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="contact"
-      className="w-full mt-32 md:flex-row justify-between items-center flex gap-10 flex-col"
+      className="w-full mt-32 md:flex-row shadow-md rounded-2xl p-8 justify-between items-center flex gap-10 flex-col"
     >
-      <form onSubmit={handleSubmit} className="flex flex-col w-full gap-6 mt-4">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-full md:max-w-md gap-6 mt-4"
+      >
         <h2 className="text-4xl font-bold">Contact Us</h2>
         <div className="flex flex-col gap-2">
           <input
@@ -137,7 +140,7 @@ const ContactUs = () => {
         </button>
       </form>
 
-      <img src="/contactimg.png" className="w-[512px]" alt="contact image" />
+      <img src="/contactimg.png" width={400} alt="contact image" />
     </motion.section>
   );
 };

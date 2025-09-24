@@ -8,11 +8,12 @@ import "../index.css";
 import { HiBars3 } from "react-icons/hi2";
 import { MdClose } from "react-icons/md";
 
-const imageSize = 180;
+const imageSize = 150;
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isActive, setIsActive] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,21 +32,28 @@ const Header = () => {
   }, [isScrolled]);
 
   return (
-    <header className="absolute w-full bg-transparent z-50">
-      <nav className="hidden w-full text-base md:flex px-2 items-center py-3 justify-between max-w-7xl mx-auto">
+    <header className="fixed py-2 top-0 shadow w-full z-50">
+      <nav className="hidden w-full text-base md:flex px-6 items-center py-2 justify-between max-w-7xl mx-auto">
         <Link to="/">
           <div className="flex">
             <img width={imageSize} src={NexaLogo} alt="site-logo" />
           </div>
         </Link>
 
-        <div className="flex justify-between gap-6 items-center">
-          {links.map((link) => (
-            <a className="hover:font-semibold" href={link.href}>
+        <div className="flex justify-between  items-center">
+          {links.map((link, index) => (
+            <a
+              onClick={() => setIsActive(index)}
+              key={index}
+              className={`hover:bg-violet-800/10 rounded-full px-5 py-2 ${
+                isActive === index ? "bg-violet-800 text-white" : ""
+              }`}
+              href={link.href}
+            >
               {link.name}
             </a>
           ))}
-          <button className="bg-purple-600 shadow-md px-5 py-3 text-white hover:bg-black transition duration-300 ease-in-out rounded-full">
+          <button className="bg-violet-800 mx-8 shadow-md px-6 py-2 text-white hover:bg-black transition duration-300 ring-violet-800 ring-2 ring-offset-2 ease-in-out rounded-full">
             Get a quote
           </button>
         </div>

@@ -47,11 +47,11 @@ const Subscription = () => {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeIn" }}
-      className="w-full mx-auto  flex justify-between  flex-col-reverse md:flex-row items-center mt-16"
+      className="w-full mx-auto  flex justify-between shadow-md p-4 rounded-2xl flex-col-reverse md:flex-row items-center mt-16"
     >
-      <img src="/Background.png" alt="send" width={750} />
+      <img src="/Background.png" alt="send" width={512} />
 
-      <div className="flex-col justify-center gap-4 flex">
+      <div className="flex-col justify-center gap-4 w-full md:max-w-md flex">
         <h1 className="text-4xl font-bold">Join our team</h1>
         <p className="text-base leading-relaxed tracking-wider">
           Subscribe to our newsletter and stay ahead of the curve with cutting

@@ -58,7 +58,7 @@ const Blog = () => {
       className="w-full mt-32 flex flex-col md:flex-row gap-8 justify-between"
     >
       <div className="flex flex-col md:w-1/4">
-        <h2 className="text-accent text-base font-semibold uppercase tracking-widest">
+        <h2 className="text-sm font-bold uppercase tracking-widest">
           News & Blogs
         </h2>
         <h1 className="text-4xl md:text-6xl font-bold">
@@ -71,22 +71,22 @@ const Blog = () => {
 
       <div className="flex flex-col gap-6 md:w-3/4 md:flex-row">
         {posts.slice(0, 2).map((post) => (
-          <div key={post.title}>
+          <div key={post.title} className="shadow-md p-2 rounded-2xl">
             <img
               src={post.imageUrl}
               alt="default"
-              className="rounded-xl max-h-[300px] md:h-[300px] h-[200px] object-cover object-right"
+              className="rounded-xl h-[200px] object-cover object-right"
               width={400}
             />
             <Link
               onClick={handleScrollToTop}
               to={`/blog/BlogPost/${post.customId}`}
             >
-              <h3 className="cursor-pointer hover:opacity-75 text-lg font-semibold mt-2">
+              <h3 className="cursor-pointer px-2 hover:opacity-75 text-lg font-semibold mt-2">
                 {post.title}
               </h3>
             </Link>
-            <h3 className="text-sm text-slate-500">
+            <h3 className="text-sm opacity-75 pb-2 px-2">
               {timeAgo(post.publishedAt)}
             </h3>
           </div>
