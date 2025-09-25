@@ -22,7 +22,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 0.8, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
-            className="my-4 tracking-wide uppercase text-sm leading-relaxed"
+            className="my-4 tracking-wider leading-relaxed"
           >
             We blends creativity with cutting-edge technology to deliver unique
             and engaging digital experiences. Let’s create something
@@ -41,7 +41,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeIn", delay: 1.2 }}
-              className="rounded-full shadow-md py-3 px-5"
+              className="rounded-full dark:bg-gray-600/40 shadow-md py-3 px-5"
             >
               See Our Work
             </motion.button>

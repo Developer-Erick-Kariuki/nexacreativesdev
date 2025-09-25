@@ -68,7 +68,7 @@ const Testmonial = () => {
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className={`flex cursor-pointer flex-col shadow-xl p-5 rounded-2xl w-full gap-8`}
+            className={`flex cursor-pointer flex-col p-5 dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl w-full gap-8`}
           >
             <div className="flex  gap-8">
               <div className="flex gap-4 items-center">

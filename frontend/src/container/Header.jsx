@@ -32,7 +32,7 @@ const Header = () => {
   }, [isScrolled]);
 
   return (
-    <header className="fixed py-2 top-0 shadow w-full z-50">
+    <header className="fixed py-2 top-0 dark:bg-black/75 bg-white/75 w-full z-50">
       <nav className="hidden w-full text-base md:flex px-6 items-center py-2 justify-between max-w-7xl mx-auto">
         <Link to="/">
           <div className="flex">
@@ -40,12 +40,12 @@ const Header = () => {
           </div>
         </Link>
 
-        <div className="flex justify-between  items-center">
+        <div className="flex justify-between gap-2 items-center">
           {links.map((link, index) => (
             <a
               onClick={() => setIsActive(index)}
               key={index}
-              className={`hover:bg-violet-800/10 rounded-full px-5 py-2 ${
+              className={`hover:bg-violet-800/30 rounded-full px-5 py-2 ${
                 isActive === index ? "bg-violet-800 text-white" : ""
               }`}
               href={link.href}
@@ -53,7 +53,7 @@ const Header = () => {
               {link.name}
             </a>
           ))}
-          <button className="bg-violet-800 mx-8 shadow-md px-6 py-2 text-white hover:bg-black transition duration-300 ring-violet-800 ring-2 ring-offset-2 ease-in-out rounded-full">
+          <button className="dark:bg-slate-50 bg-black dark:text-black mx-8 shadow-md px-6 py-2 text-white transition duration-300 ease-in-out rounded-full">
             Get a quote
           </button>
         </div>

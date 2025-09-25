@@ -74,7 +74,7 @@ const Portfolioa = () => {
               <span
                 className={`${
                   isActive === index ? "bg-violet-800 text-white " : ""
-                } rounded-full shadow-xl px-5 py-3`}
+                } rounded-full bg-slate-300/25 dark:bg-gray-600/30 px-5 py-3`}
               >
                 {item}
               </span>
@@ -94,7 +94,7 @@ const Portfolioa = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1, ease: "easeIn" }}
               key={index}
-              className={`overflow-hidden shadow-md p-2 rounded-2xl group`}
+              className={`overflow-hidden rounded-2xl group`}
             >
               <a href={image.description} className="relative" target="_blank">
                 <img

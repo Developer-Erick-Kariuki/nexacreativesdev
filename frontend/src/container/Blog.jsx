@@ -71,7 +71,10 @@ const Blog = () => {
 
       <div className="flex flex-col gap-6 md:w-3/4 md:flex-row">
         {posts.slice(0, 2).map((post) => (
-          <div key={post.title} className="shadow-md p-2 rounded-2xl">
+          <div
+            key={post.title}
+            className="shadow-md dark:bg-gray-600/30 bg-slate-300/25  p-2 rounded-2xl"
+          >
             <img
               src={post.imageUrl}
               alt="default"

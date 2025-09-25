@@ -47,7 +47,7 @@ const Subscription = () => {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeIn" }}
-      className="w-full mx-auto  flex justify-between shadow-md p-4 rounded-2xl flex-col-reverse md:flex-row items-center mt-16"
+      className="w-full mx-auto  flex justify-between bg-slate-300/25 dark:bg-gray-600/30 p-4 rounded-2xl flex-col-reverse md:flex-row items-center mt-16"
     >
       <img src="/Background.png" alt="send" width={512} />
 

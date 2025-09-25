@@ -12,7 +12,7 @@ const AboutUs = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeIn" }}
         viewport={{ once: false }}
-        className="shadow-md flex justify-between p-8 items-center rounded-2xl mb-4"
+        className="dark:bg-gray-600/30 bg-slate-300/20 flex flex-col md:flex-row justify-between p-8 items-center rounded-2xl mb-4"
       >
         <div>
           <h3 className="text-sm uppercase tracking-widest flex-col font-bold flex">
@@ -32,12 +32,13 @@ const AboutUs = () => {
         </div>
         <img src="hero1.png" width={350} alt="" className="shadow-sm" />
       </motion.div>
-      <div className="flex  flex-col gap-8 justify-between md:flex-row">
+
+      <div className="flex dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl flex-col gap-8 ">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeIn" }}
-          className="flex justify-between w-full shadow-md px-8 items-center  rounded-2xl"
+          className="flex justify-between w-full flex-col gap-6 md:flex-row shadow-md px-8 items-center  rounded-2xl"
         >
           <img src="/about.png" width={350} className="object-cover" />
           <div className={`flex rounded-2xl flex-col`}>

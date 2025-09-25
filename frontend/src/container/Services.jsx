@@ -74,7 +74,7 @@ const Services = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
               key={index}
-              className={`flex shadow-md transition duration-300 ease-in-out p-8 flex-col rounded-2xl overflow-clip`}
+              className={`flex dark:bg-gray-600/30 bg-slate-300/25 transition duration-300 ease-in-out p-8 flex-col rounded-2xl overflow-clip`}
             >
               <i className="text-yellow-500 mb-4">{service.icon}</i>
               <a

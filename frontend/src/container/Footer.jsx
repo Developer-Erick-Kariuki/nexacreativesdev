@@ -25,27 +25,29 @@ const Footer = () => {
     <motion.section
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5, ease: "easeInOut" }}
-      className={`mx-auto border-t mt-32 relative w-full`}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      className={`mx-auto dark:bg-gray-600/25 bg-slate-300/20 relative w-full`}
     >
       <div className="flex max-w-7xl mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-8">
           <img src={NexaLogo} alt="logo" width={180} />
           <p className="max-w-sm opacity-75 mt-3">
             We blends creativity with cutting-edge technology to deliver unique
             and engaging digital experiences. Let’s create something
             extraordinary together.
           </p>
-          <a className="flex gap-2 items-center" href="tel:0797710074">
-            {" "}
-            <IoCall size={20} /> +254 797710074
-          </a>
-          <a
-            className="flex gap-2 items-center"
-            href="mailto:nexacreatives@gmail.com"
-          >
-            <SiMinutemailer size={20} /> info@nexacreatives.com
-          </a>
+          <div className="flex flex-col">
+            <a className="flex gap-2 items-center" href="tel:0797710074">
+              {" "}
+              <IoCall size={20} /> +254 797710074
+            </a>
+            <a
+              className="flex gap-2 items-center"
+              href="mailto:nexacreatives@gmail.com"
+            >
+              <SiMinutemailer size={20} /> info@nexacreatives.com
+            </a>
+          </div>
           <div className="flex flex-wrap items-center gap-2">
             {socialLinks.map((image, index) => (
               <div
@@ -108,14 +110,6 @@ const Footer = () => {
         >
           Privacy policy
         </Link>
-      </div>
-
-      <div className="absolute inset-0 flex justify-center -z-10">
-        <img
-          src="/pattern.png"
-          className="w-full h-full object-contain opacity-10"
-          alt=""
-        />
       </div>
     </motion.section>
   );

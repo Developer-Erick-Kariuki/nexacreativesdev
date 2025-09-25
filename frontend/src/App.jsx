@@ -10,7 +10,7 @@ import Whyus from "./container/Whyus";
 
 function App() {
   return (
-    <main className="w-full px-6 max-w-7xl mx-auto">
+    <main className="w-full px-4 max-w-7xl mx-auto">
       <Hero />
       <AboutUs />
 

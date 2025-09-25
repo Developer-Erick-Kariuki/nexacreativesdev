@@ -123,11 +123,11 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="py-20 px-6 max-w-7xl flex-col md:flex-row flex mx-auto">
-      <section className="w-full  relative justify-center flex">
+    <main className="py-20 px-2 max-w-7xl flex-col md:flex-row flex mx-auto">
+      <section className="w-full justify-center flex">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
-            <div className={`px-4 max-w-4xl`} key={current.customId}>
+            <div className={`px-4 max-w-4xl w-full`} key={current.customId}>
               <div className="w-full overflow-clip">
                 <h1 className="text-3xl font-bold mb-2">{current.title}</h1>
                 <p className="flex gap-2 mb-4 text-sm items-center">
@@ -157,7 +157,7 @@ const BlogPost = () => {
 
       {/* section other blogs */}
       <section
-        className={` flex flex-col h-fit md:sticky max-w-full inset-0 md:max-w-md  p-3`}
+        className={` flex flex-col h-fit md:sticky w-full md:max-w-sm  p-3`}
       >
         <h2 className="text-base font-bold uppercase tracking-widest">
           Most Recent Blogs
@@ -165,21 +165,23 @@ const BlogPost = () => {
         <hr className={`w-full mt-2 mb-4`} />
         <div className="flex flex-col flex-wrap gap-4">
           {posts.map((post) => (
-            <div key={post.title} className="shadow-xl p-4 rounded-2xl">
+            <div
+              key={post.title}
+              className="dark:bg-gray-600/30 bg-slate-300/25 p-2 rounded-2xl"
+            >
               <Link
                 onClick={handleScrollToTop}
                 className="flex flex-col justify-between"
                 to={`/blog/BlogPost/${post.customId}`}
               >
                 <img
-                  loading="lazy"
                   src={post.imageUrl}
-                  className="rounded-xl md:max-h-[200px] h-[300px] object-cover object-left mb-2"
+                  className="rounded-xl max-h-[200px] md:h-[200px] h-[150px] object-cover object-left mb-2"
                   alt={post.title}
                 />
 
                 <div className="flex flex-col justify-center w-full">
-                  <h2 className="hover:opacity-75 transition-colors duration-300 ease-in-out font-semibold">
+                  <h2 className="hover:opacity-75 text-sm md:text-base transition-colors duration-300 ease-in-out font-semibold">
                     {post.title}
                   </h2>
 
