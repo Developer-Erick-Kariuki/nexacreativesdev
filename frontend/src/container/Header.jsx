@@ -74,7 +74,7 @@ const Header = () => {
         )}
         {isOpen && (
           <div
-            className={`absolute top-0 flex flex-col p-4 gap-6 bg-white w-full h-screen ${
+            className={`absolute top-0 flex flex-col p-4 gap-6 dark:bg-black bg-white w-full h-screen ${
               isOpen
                 ? "translate-x-0 opacity-100"
                 : "-translate-x-[200px] opacity-0"
