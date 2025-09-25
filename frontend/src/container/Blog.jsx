@@ -55,7 +55,7 @@ const Blog = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="blog"
-      className="w-full mt-32 flex flex-col md:flex-row gap-8 justify-between"
+      className="w-full mt-16 flex flex-col md:flex-row gap-8 justify-between"
     >
       <div className="flex flex-col md:w-1/4">
         <h2 className="text-sm font-bold uppercase tracking-widest">
