@@ -6,14 +6,12 @@ import Hero from "./container/Hero";
 import Services from "./container/Services";
 import Subscription from "./container/Subscription";
 import Testimonial from "./container/Testmonial";
-import Whyus from "./container/Whyus";
 
 function App() {
   return (
-    <main className="w-full px-4 max-w-7xl mx-auto">
+    <main className="w-full px-4 max-w-[1440px] mx-auto">
       <Hero />
       <AboutUs />
-
       <Services />
       <Portfolioa />
       <Testimonial />

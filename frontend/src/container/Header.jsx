@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { links } from "../constants";
+import { icons, links } from "../constants";
 import { Link } from "react-router-dom";
 
 import NexaLogo from "/nexalogo.png";
@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 500) {
+      if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -32,30 +32,35 @@ const Header = () => {
   }, [isScrolled]);
 
   return (
-    <header className="fixed py-2 top-0 dark:bg-black/75 bg-white/75 w-full z-50">
-      <nav className="hidden w-full text-base md:flex px-6 items-center py-2 justify-between max-w-7xl mx-auto">
+    <header
+      className={`${
+        isScrolled ? "opacity-85 dark:border-gray-800 border-b" : ""
+      } fixed w-full m-auto z-50 bg-white dark:bg-black`}
+    >
+      <nav className="hidden w-full text-base md:flex px-6 items-center py-4 justify-between max-w-[1440px] mx-auto">
         <Link to="/">
           <div className="flex">
-            <img width={imageSize} src={NexaLogo} alt="site-logo" />
+            <img width={150} src="/nexalogo.png" alt="site-logo" />
           </div>
         </Link>
 
-        <div className="flex justify-between gap-2 items-center">
+        <div className="flex justify-between gap-6 items-center">
           {links.map((link, index) => (
             <a
-              onClick={() => setIsActive(index)}
               key={index}
-              className={`hover:bg-violet-800/30 rounded-full px-5 py-2 ${
-                isActive === index ? "bg-violet-800 text-white" : ""
-              }`}
+              className="hover:opacity-65 transition duration-300 ease-linear"
               href={link.href}
             >
               {link.name}
             </a>
           ))}
-          <button className="dark:bg-slate-50 bg-black dark:text-black mx-8 shadow-md px-6 py-2 text-white transition duration-300 ease-in-out rounded-full">
-            Get a quote
-          </button>
+        </div>
+        <div className="flex gap-2 ">
+          {icons.map(({ icon: Icon, href }) => (
+            <a href={href}>
+              <Icon size={18} />
+            </a>
+          ))}
         </div>
       </nav>
       {/* mobile navigation */}
@@ -63,7 +68,7 @@ const Header = () => {
         className={`flex md:hidden z-40  items-center justify-between py-2 w-full px-2`}
       >
         <Link to="/">
-          <img src={NexaLogo} width={180} alt="" />
+          <img src="/logo light.png" width={180} alt="logo" />
         </Link>
         {!isOpen && (
           <HiBars3

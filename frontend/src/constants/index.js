@@ -1,8 +1,10 @@
 import { HiOutlineLightBulb } from "react-icons/hi2";
-import { FaSearchPlus } from "react-icons/fa";
+import { FaFacebook, FaFacebookF, FaSearchPlus } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
 import moment from "moment";
+import { FaThreads, FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa";
 
 export const links = [
   { name: "About Us", href: "#about" },
@@ -96,3 +98,11 @@ export function timeAgo(dbTime) {
 export const handleScrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
+// Define socialLinks array
+export const icons = [
+  { icon: FaInstagram, href: "" },
+  { icon: FaTiktok, href: "" },
+  { icon: FaFacebookF, href: "" },
+  { icon: FaXTwitter, href: "" },
+];

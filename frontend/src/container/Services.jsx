@@ -51,8 +51,8 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="z-10 relative w-full mt-32 flex">
-      <div className="max-w-7xl">
+    <section id="services" className="z-10 relative  w-full mt-32 flex">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,23 +67,23 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center gap-6 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:grid-cols-3 gap-6 mt-16">
           {services.map((service, index) => (
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
               key={index}
-              className={`flex dark:bg-gray-600/30 bg-slate-300/25 transition duration-300 ease-in-out p-8 flex-col rounded-2xl overflow-clip`}
+              className={`flex bg-violet-800 text-white  transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
             >
               <i className="text-yellow-500 mb-4">{service.icon}</i>
               <a
                 href="#"
-                className="uppercase text-sm text-purple-600 z-20 tracking-widest"
+                className="uppercase font-bold text-sm z-20 tracking-widest"
               >
                 {service.name}
               </a>
-              <p className="mt-4 opacity-65 max-w-md leading-relaxed">
+              <p className="mt-4 opacity-90 max-w-md leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

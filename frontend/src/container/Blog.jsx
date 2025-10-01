@@ -57,7 +57,7 @@ const Blog = () => {
       id="blog"
       className="w-full mt-16 flex flex-col md:flex-row gap-8 justify-between"
     >
-      <div className="flex flex-col md:w-1/4">
+      <div className="flex flex-col md:w-1/4 ">
         <h2 className="text-sm font-bold uppercase tracking-widest">
           News & Blogs
         </h2>
@@ -69,7 +69,7 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-6 md:w-3/4 md:flex-row">
+      <div className="flex flex-col gap-6  md:flex-row">
         {posts.slice(0, 2).map((post) => (
           <div
             key={post.title}

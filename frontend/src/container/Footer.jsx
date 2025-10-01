@@ -26,11 +26,11 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className={`mx-auto dark:bg-gray-600/25 bg-slate-300/20 relative w-full`}
+      className={`mx-auto bg-black text-white relative w-full`}
     >
-      <div className="flex max-w-7xl mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
+      <div className="flex max-w-[1440px] mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-8">
-          <img src={NexaLogo} alt="logo" width={180} />
+          <img src="/logo light.png" alt="logo" width={180} />
           <p className="max-w-sm opacity-75 mt-3">
             We blends creativity with cutting-edge technology to deliver unique
             and engaging digital experiences. Let’s create something

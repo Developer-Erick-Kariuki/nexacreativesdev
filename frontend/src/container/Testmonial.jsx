@@ -62,6 +62,7 @@ const Testmonial = () => {
         infinite={true}
         focusOnSelect={true}
         itemClass={item}
+        showDots={true}
         containerClass={container}
         removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
       >

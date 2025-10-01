@@ -1,14 +1,15 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import moment from "moment";
+
 import SanityBlockContent from "@sanity/block-content-to-react";
-import { motion } from "framer-motion";
+
 import { client } from "../client";
-import Footer from "../container/Footer";
+
 import Comment from "../container/Comment";
 import "../blog/blog.css";
-import { TimerIcon } from "lucide-react";
+
 import { timeAgo } from "../constants";
+import BlogList from "./BlogList";
 
 // serializers
 
@@ -19,12 +20,12 @@ const serializers = {
 
       switch (style) {
         case "h1":
-          return <h1 className="text-3xl font-bold mt-10 mb-6">{children}</h1>;
+          return <h1 className="text-5xl font-bold mt-10 mb-6">{children}</h1>;
         case "h2":
-          return <h2 className="text-2xl font-bold mt-8 mb-5">{children}</h2>;
+          return <h2 className="text-3xl font-bold mt-8 mb-5">{children}</h2>;
         case "h3":
           return (
-            <h3 className="text-xl font-semibold mt-6 mb-4">{children}</h3>
+            <h3 className="text-2xl font-semibold mt-6 mb-4">{children}</h3>
           );
         case "blockquote":
           return (
@@ -34,7 +35,7 @@ const serializers = {
           );
         case "normal":
         case "p":
-          return <p className="leading-relaxed text-base mb-5">{children}</p>;
+          return <p className="leading-relaxed text-lg mb-5">{children}</p>;
         default:
           return <p className="leading-relaxed mb-5">{children}</p>;
       }
@@ -102,10 +103,6 @@ const BlogPost = () => {
     fetchPosts();
   }, []);
 
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
   if (!SinglePost)
@@ -123,13 +120,13 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="py-20 px-2 max-w-7xl flex-col md:flex-row flex mx-auto">
-      <section className="w-full justify-center flex">
+    <main className="py-20 px-2 max-w-[1440px] flex-col md:flex-row flex mx-auto">
+      <section className="flex flex-1">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl w-full`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="text-3xl font-bold mb-2">{current.title}</h1>
+                <h1 className="text-5xl font-bold mb-2">{current.title}</h1>
                 <p className="flex gap-2 mb-4 text-sm items-center">
                   Nexa Digital
                   <span className="opacity-75">
@@ -139,61 +136,26 @@ const BlogPost = () => {
 
                 <img
                   loading="lazy"
-                  className="object-cover rounded-xl w-full"
+                  className="object-cover rounded-xl w-full max-h-[60rem] object-center h-[32rem]"
                   src={current.imageUrl}
                   alt={current.title}
                 />
               </div>
 
-              <SanityBlockContent
-                blocks={current.body}
-                serializers={serializers}
-              />
+              <div className="max-w-3xl">
+                <SanityBlockContent
+                  blocks={current.body}
+                  serializers={serializers}
+                />
+              </div>
+
               <Comment postId={current.customId} />
             </div>
           ))}
         </div>
       </section>
-
       {/* section other blogs */}
-      <section
-        className={` flex flex-col h-fit md:sticky w-full md:max-w-sm  p-3`}
-      >
-        <h2 className="text-base font-bold uppercase tracking-widest">
-          Most Recent Blogs
-        </h2>
-        <hr className={`w-full mt-2 mb-4`} />
-        <div className="flex flex-col flex-wrap gap-4">
-          {posts.map((post) => (
-            <div
-              key={post.title}
-              className="dark:bg-gray-600/30 bg-slate-300/25 p-2 rounded-2xl"
-            >
-              <Link
-                onClick={handleScrollToTop}
-                className="flex flex-col justify-between"
-                to={`/blog/BlogPost/${post.customId}`}
-              >
-                <img
-                  src={post.imageUrl}
-                  className="rounded-xl max-h-[200px] md:h-[200px] h-[150px] object-cover object-left mb-2"
-                  alt={post.title}
-                />
-
-                <div className="flex flex-col justify-center w-full">
-                  <h2 className="hover:opacity-75 text-sm md:text-base transition-colors duration-300 ease-in-out font-semibold">
-                    {post.title}
-                  </h2>
-
-                  <p className="text-xs flex mt-2 items-center gap-2 opacity-80">
-                    <TimerIcon size={16} /> {timeAgo(post.publishedAt)}
-                  </p>
-                </div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
+      <BlogList posts={posts} />
     </main>
   );
 };

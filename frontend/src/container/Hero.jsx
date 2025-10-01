@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Button from "../components/Button";
 
 const Hero = () => {
   return (
@@ -6,55 +7,36 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="mb-16 py-8 px-2 "
+      className="mb-16 rounded-2xl "
     >
-      <div className="w-full mx-auto justify-between items-center flex flex-col md:flex-row ">
-        <div className="flex w-full mt-[20%] md:mt-0 flex-col">
+      <div className="w-full py-20 mx-auto justify-between items-center flex flex-col md:flex-row ">
+        <div className="flex w-1/2  md:mt-0 flex-col">
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-4xl sm:text-5xl font-bold mt-12 mb-8 capitalize"
+            className="text-4xl sm:text-5xl font-bold mt-12"
           >
-            We transform your vision into stuning visual reality
+            Make Designs that Engage, Delight and Connect
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 0.8, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
-            className="my-4 tracking-wider leading-relaxed"
+            className="max-w-md mt-4"
           >
-            We blends creativity with cutting-edge technology to deliver unique
-            and engaging digital experiences. Let’s create something
-            extraordinary together.
+            We craft lightning-fast websites for ambitious brands. From UX to
+            launch — we don’t just build pretty sites. We build results.
           </motion.p>
-          <div className="flex-col gap-4 mt-8 flex md:flex-row">
-            <motion.button
-              initial={{ opacity: 0, y: 300 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeIn", delay: 1 }}
-              className="rounded-full shadow bg-violet-800 py-3 px-5 text-white"
-            >
-              Get in touch
-            </motion.button>
-            <motion.button
-              initial={{ opacity: 0, y: 200 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeIn", delay: 1.2 }}
-              className="rounded-full dark:bg-gray-600/40 shadow-md py-3 px-5"
-            >
-              See Our Work
-            </motion.button>
+          <div className="flex-col gap-4 mt-16 flex md:flex-row">
+            <Button
+              name="Get in touch"
+              className="bg-violet-800 border text-white"
+            />
+            <Button name="Our work" className="text-black bg-white" />
           </div>
         </div>
-        <motion.img
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeIn", delay: 0 }}
-          src="/Hero-image.webp"
-          className="w-full"
-          alt="hero image"
-        />
+        <img src="/hero.png" alt="" width={512} className="drop-shadow-2xl" />
       </div>
     </motion.section>
   );

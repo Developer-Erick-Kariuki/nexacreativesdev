@@ -11,7 +11,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 html::-webkit-scrollbar {
