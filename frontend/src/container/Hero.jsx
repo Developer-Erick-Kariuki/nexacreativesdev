@@ -10,7 +10,7 @@ const Hero = () => {
       className="mb-16 rounded-2xl "
     >
       <div className="w-full py-20 mx-auto justify-between items-center flex flex-col md:flex-row ">
-        <div className="flex w-1/2  md:mt-0 flex-col">
+        <div className="flex md:w-1/2  md:mt-0 flex-col">
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}

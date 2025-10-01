@@ -136,7 +136,7 @@ const BlogPost = () => {
 
                 <img
                   loading="lazy"
-                  className="object-cover rounded-xl w-full max-h-[60rem] object-center h-[32rem]"
+                  className="object-cover rounded-xl w-full object-center md:h-[32rem]"
                   src={current.imageUrl}
                   alt={current.title}
                 />
