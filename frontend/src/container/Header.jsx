@@ -34,10 +34,10 @@ const Header = () => {
   return (
     <header
       className={`${
-        isScrolled ? "opacity-85 dark:border-gray-800 border-b" : ""
+        isScrolled ? "dark:border-gray-800" : ""
       } fixed w-full m-auto z-50 bg-white dark:bg-black`}
     >
-      <nav className="hidden w-full text-base md:flex px-6 items-center py-4 justify-between max-w-[1440px] mx-auto">
+      <nav className="hidden w-full text-base md:flex px-6 items-center py-5 justify-between max-w-[1440px] mx-auto">
         <Link to="/">
           <div className="flex">
             <img width={150} src="/nexalogo.png" alt="site-logo" />
