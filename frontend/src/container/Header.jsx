@@ -68,7 +68,7 @@ const Header = () => {
         className={`flex md:hidden z-40  items-center justify-between py-2 w-full px-2`}
       >
         <Link to="/">
-          <img src="/logo light.png" width={180} alt="logo" />
+          <img src="/nexalogo.png" width={180} alt="logo" />
         </Link>
         {!isOpen && (
           <HiBars3
