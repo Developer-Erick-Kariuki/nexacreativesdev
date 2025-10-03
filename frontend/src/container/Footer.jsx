@@ -88,7 +88,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex text-center w-full py-2 text-sm mt-8 flex-wrap items-center justify-center opacity-85 gap-4">
+      <div className="flex text-center w-full py-2 text-xs flex-wrap items-center justify-center opacity-85 gap-4">
         <p className="text-sm">
           Copyrights © {year}{" "}
           <span className="text-accent">Nexa Creative Solution </span> All

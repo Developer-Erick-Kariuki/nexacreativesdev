@@ -13,7 +13,6 @@ const imageSize = 150;
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,8 +55,8 @@ const Header = () => {
           ))}
         </div>
         <div className="flex gap-2 ">
-          {icons.map(({ icon: Icon, href }) => (
-            <a href={href}>
+          {icons.map(({ icon: Icon, href }, index) => (
+            <a key={index} href={href}>
               <Icon size={18} />
             </a>
           ))}
@@ -97,6 +96,7 @@ const Header = () => {
             <div className="flex flex-col gap-4">
               {links.map((link, index) => (
                 <a
+                  key={index}
                   className="py-6  px-5"
                   href={link.href}
                   onClick={() => setIsOpen(false)}

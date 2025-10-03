@@ -6,20 +6,21 @@ import { client } from "../client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FcGoogle } from "react-icons/fc";
+import ButtonGroup from "../components/CustomRightArrow";
 
 export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    items: 1,
   },
   desktop: {
     breakpoint: { max: 2000, min: 1024 },
-    items: 3,
+    items: 1,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 2,
+    items: 1,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -27,8 +28,9 @@ export const responsive = {
   },
 };
 
-const item = "md:mx-4 my-6";
+const item = "mt-8";
 const container = "py-8";
+
 const Testmonial = () => {
   const [testimonials, setTestimonials] = useState([]);
 
@@ -43,6 +45,7 @@ const Testmonial = () => {
 
     fetchTestimonials();
   }, []);
+
   return (
     <section className="md:mt-32 mt-16 relative">
       <motion.h2
@@ -57,25 +60,23 @@ const Testmonial = () => {
         What clients say about us
       </motion.h2>
       <Carousel
-        responsive={responsive}
-        autoPlay={true}
-        infinite={true}
-        focusOnSelect={true}
-        itemClass={item}
-        showDots={true}
         containerClass={container}
-        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        arrows={false}
+        itemClass={item}
+        responsive={responsive}
+        renderButtonGroupOutside={true}
+        customButtonGroup={<ButtonGroup />}
       >
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className={`flex cursor-pointer flex-col p-5 dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl w-full gap-8`}
+            className={`flex cursor-pointer py-16 px-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl w-full gap-8`}
           >
-            <div className="flex  gap-8">
-              <div className="flex gap-4 items-center">
+            <div className="flex items-center gap-x-4">
+              <div className="flex gap-4  items-center">
                 <div className="overflow-hidden rounded-full">
                   <img
-                    width={42}
+                    width={64}
                     src={item.profile.asset.url}
                     className="object-cover"
                     alt="default"
@@ -89,7 +90,7 @@ const Testmonial = () => {
                     {[...Array(item.rating)].map((_, i) => (
                       <Star
                         key={i}
-                        className="fill-yellow-400 text-yellow-400  w-5 h-5"
+                        className="fill-yellow-400 text-yellow-400  w-4 h-4"
                       />
                     ))}
 
@@ -110,7 +111,7 @@ const Testmonial = () => {
             </div>
 
             <p className="leading-relaxed text-base">
-              <PiQuotesFill size={32} className="text-purple-600" />{" "}
+              <PiQuotesFill size={64} className="text-purple-600" />{" "}
               {item.message}
             </p>
           </div>
