@@ -33,7 +33,7 @@ const AboutUs = () => {
         <img src="hero1.png" width={350} alt="" className="shadow-sm" />
       </motion.div>
 
-      <div className="flex dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl flex-col gap-8 ">
+      <div className="flex md:px-8 px-0 py-8 md:py-0 dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl flex-col justify-center ">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -45,7 +45,7 @@ const AboutUs = () => {
             <h2 className="text-sm uppercase tracking-widest  mb-8 font-bold">
               Our Philosophy
             </h2>
-            <p className="text-base max-w-xl leading-relaxed">
+            <p className="text-base max-w-2xl leading-relaxed">
               We approach each project with a commitment to excellence, blending
               artistic vision with technical precision. Our philosophy is
               simple: understand the client’s needs, create a tailored solution,

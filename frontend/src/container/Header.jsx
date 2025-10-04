@@ -36,7 +36,7 @@ const Header = () => {
         isScrolled ? "dark:border-gray-800" : ""
       } fixed w-full m-auto z-50 bg-white dark:bg-black`}
     >
-      <nav className="hidden w-full text-base md:flex px-6 items-center py-5 justify-between max-w-[1440px] mx-auto">
+      <nav className="hidden w-full font-bold md:flex px-6 items-center py-5 justify-between max-w-[1440px] mx-auto">
         <Link to="/">
           <div className="flex">
             <img width={150} src="/nexalogo.png" alt="site-logo" />
@@ -104,9 +104,13 @@ const Header = () => {
                   {link.name}
                 </a>
               ))}
-              <button className="bg-purple-600 text-white rounded-full px-5 py-3">
-                Get a quote
-              </button>
+              <div className="flex gap-2 ">
+                {icons.map(({ icon: Icon, href }, index) => (
+                  <a key={index} href={href}>
+                    <Icon size={18} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}

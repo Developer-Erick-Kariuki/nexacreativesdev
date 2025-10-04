@@ -75,12 +75,9 @@ const Blog = () => {
             key={post.title}
             className="shadow-md dark:bg-gray-600/30 bg-slate-300/25  p-2 rounded-2xl"
           >
-            <img
-              src={post.imageUrl}
-              alt="default"
-              className="rounded-xl h-[200px] object-cover object-right"
-              width={400}
-            />
+            <div className="max-h-64 overflow-hidden rounded-xl">
+              <img src={post.imageUrl} alt="default" fill />
+            </div>
             <Link
               onClick={handleScrollToTop}
               to={`/blog/BlogPost/${post.customId}`}

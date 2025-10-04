@@ -15,9 +15,9 @@ const Hero = () => {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-4xl sm:text-5xl font-bold mt-12"
+            className="text-5xl sm:text-6xl text-violet-700 font-bold mt-12"
           >
-            Make Designs that Engage, Delight and Connect
+            We make Designs that Engage, Delight and Connect
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
@@ -31,9 +31,12 @@ const Hero = () => {
           <div className="flex-col gap-4 mt-16 flex md:flex-row">
             <Button
               name="Get in touch"
-              className="bg-violet-800 border text-white"
+              className="bg-black/95 dark:bg-white/95 dark:text-black  text-white"
             />
-            <Button name="Our work" className="text-black bg-white" />
+            <Button
+              name="Our work"
+              className="text-black dark:outline-2 dark:bg-transparent dark:text-white bg-white"
+            />
           </div>
         </div>
         <img src="/hero.png" alt="" width={512} className="drop-shadow-2xl" />

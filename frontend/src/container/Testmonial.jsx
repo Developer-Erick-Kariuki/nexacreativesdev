@@ -64,28 +64,30 @@ const Testmonial = () => {
         arrows={false}
         itemClass={item}
         responsive={responsive}
+        showDots={true}
         renderButtonGroupOutside={true}
         customButtonGroup={<ButtonGroup />}
       >
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className={`flex cursor-pointer py-16 px-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl w-full gap-8`}
+            className={`flex cursor-pointer p-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl w-full gap-8`}
           >
             <div className="flex items-center gap-x-4">
-              <div className="flex gap-4  items-center">
-                <div className="overflow-hidden rounded-full">
+              <div className="flex gap-4 items-center">
+                <div className="overflow-hidden w-20 rounded-full">
                   <img
-                    width={64}
+                    fill
                     src={item.profile.asset.url}
                     className="object-cover"
                     alt="default"
                   />
                 </div>
               </div>
-              <p className="text-base font-bold flex flex-col">
-                <div className="flex gap-4">
-                  {item.name} <FcGoogle size={20} />
+
+              <div>
+                <div className="flex gap-2 items-center">
+                  <FcGoogle size={20} />
                   <div className="flex space-x-1">
                     {[...Array(item.rating)].map((_, i) => (
                       <Star
@@ -103,15 +105,16 @@ const Testmonial = () => {
                     ))}
                   </div>
                 </div>
-
-                <span className="opacity-50 text-sm font-normal">
+                <h2 className="text-lg font-bold mt-4 flex flex-col">
+                  {item.name}
+                </h2>
+                <h3 className="opacity-50 uppercase tracking-widest text-xs font-normal">
                   {item.designation}
-                </span>
-              </p>
+                </h3>
+              </div>
             </div>
 
-            <p className="leading-relaxed text-base">
-              <PiQuotesFill size={64} className="text-purple-600" />{" "}
+            <p className="leading-relaxed max-w-[1000px] text-base">
               {item.message}
             </p>
           </div>

@@ -122,7 +122,7 @@ const BlogPost = () => {
 
   return (
     <main className="py-20 px-2 max-w-[1440px] justify-between w-full flex-col md:flex-row flex mx-auto">
-      <section className="flex sticky top-0 w-full ">
+      <section className="flex  w-full ">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl w-full`} key={current.customId}>
@@ -137,12 +137,9 @@ const BlogPost = () => {
                   </span>
                 </p>
 
-                <img
-                  width={1200}
-                  className="object-cover rounded-xl w-full object-top h-[24rem]"
-                  src={current.imageUrl}
-                  alt={current.title}
-                />
+                <div className="rounded-xl overflow-hidden max-h-72 md:max-h-96">
+                  <img fill src={current.imageUrl} alt={current.title} />
+                </div>
               </div>
 
               <div className="max-w-3xl">

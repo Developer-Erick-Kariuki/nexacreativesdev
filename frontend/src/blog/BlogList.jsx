@@ -9,7 +9,7 @@ export default function BlogList({ posts }) {
   };
 
   return (
-    <section className={`flex flex-col sticky top-0 `}>
+    <section className={`flex flex-col md:sticky top-0 `}>
       <h2 className="text-base font-bold uppercase tracking-widest">
         Most Recent Blogs
       </h2>
