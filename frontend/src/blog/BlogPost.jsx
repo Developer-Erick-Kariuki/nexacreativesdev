@@ -5,7 +5,6 @@ import SanityBlockContent from "@sanity/block-content-to-react";
 
 import { client } from "../client";
 
-import Comment from "../container/Comment";
 import "../blog/blog.css";
 
 import { timeAgo } from "../constants";
@@ -106,7 +105,7 @@ const BlogPost = () => {
 
   const SinglePost = posts?.filter((current) => current.customId === customId);
 
-  if (!SinglePost)
+  if (!posts)
     return (
       <section className="w-screen h-screen flex justify-center items-center">
         <div className="loader">
@@ -121,13 +120,15 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="py-20 px-2 max-w-[1440px] justify-between w-full flex-col md:flex-row flex mx-auto">
-      <section className="flex  w-full ">
+    <main className="w-full pt-24 flex-col mb-4 md:flex-row flex ">
+      <section className="flex w-full ">
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
-            <div className={`px-4 max-w-4xl w-full`} key={current.customId}>
+            <div className={`px-4 w-full`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="text-3xl md:text-5xl mb-2">{current.title}</h1>
+                <h1 className="text-3xl md:text-5xl font-bold mb-2">
+                  {current.title}
+                </h1>
                 <p className="flex gap-2 mb-4 text-sm items-center">
                   Nexa Digital
                   <span className="opacity-75">
@@ -135,12 +136,16 @@ const BlogPost = () => {
                   </span>
                 </p>
 
-                <div className="rounded-xl overflow-hidden max-h-96">
-                  <img fill src={current.imageUrl} alt={current.title} />
+                <div className=" flex justify-center rounded-xl items-center bg-slate-300">
+                  <img
+                    src={current.imageUrl}
+                    alt={current.title}
+                    className="w-full h-full max-h-[400px] rounded-xl object-cover object-center"
+                  />
                 </div>
               </div>
 
-              <div className="max-w-3xl">
+              <div className="max-w-4xl">
                 <SanityBlockContent
                   blocks={current.body}
                   serializers={serializers}
@@ -150,6 +155,7 @@ const BlogPost = () => {
           ))}
         </div>
       </section>
+
       {/* section other blogs */}
       <BlogList posts={posts} />
     </main>

@@ -9,21 +9,27 @@ export default function BlogList({ posts }) {
   };
 
   return (
-    <section className={`flex flex-col md:sticky md:max-w-sm top-0 `}>
+    <section
+      className={`flex flex-col md:max-w-md sticky w-full mx-auto items-start`}
+    >
       <h2 className="text-base font-bold uppercase tracking-widest">
         Most Recent Blogs
       </h2>
       <hr className={`w-full mt-2 mb-4`} />
 
-      {posts.map((post) => (
-        <figure className="flex flex-col gap-4 justify-between p-4 ">
-          <div className="overflow-hidden rounded-xl max-h-56">
-            <img src={post.imageUrl} fill alt={post.title} />
-          </div>
+      <div className="flex flex-col gap-4">
+        {posts.map((post) => (
+          <div>
+            <div className="overflow-hidden rounded-xl bg-slate-500">
+              <img
+                src={post.imageUrl}
+                className="w-full h-full max-h-[300px]  object-cover object-center"
+                alt={post.title}
+              />
+            </div>
 
-          <figcaption>
-            <div className="flex flex-col justify-center w-full">
-              <h2 className="hover:opacity-85 md:text-lg transition-colors duration-300 ease-in-out font-semibold">
+            <div className="flex flex-col justify-center">
+              <h2 className="hover:opacity-85 md:text-xl text-lg  transition font-semibold">
                 <Link
                   onClick={handleScrollToTop}
                   to={`/blog/BlogPost/${post.customId}`}
@@ -36,9 +42,9 @@ export default function BlogList({ posts }) {
                 <TimerIcon size={16} /> {timeAgo(post.publishedAt)}
               </p>
             </div>
-          </figcaption>
-        </figure>
-      ))}
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

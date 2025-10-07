@@ -69,11 +69,15 @@ const Blog = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+      <div className="flex flex-col sm:flex-row gap-2 justify-center w-full mx-auto">
         {posts.slice(0, 2).map((post) => (
-          <div key={post.title} className="">
-            <div className="max-h-64 overflow-hidden rounded-xl">
-              <img src={post.imageUrl} alt="default" fill />
+          <div key={post.title}>
+            <div className="w-[372px] h-[250px] overflow-clip bg-slate-200 rounded-xl">
+              <img
+                src={post.imageUrl}
+                alt="default"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
             <Link
               onClick={handleScrollToTop}

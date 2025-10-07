@@ -12,16 +12,18 @@ import WhatsAppButton from "./components/Whatsapp.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/blog/BlogPost/:customId" element={<BlogPost />} />
-        <Route path="/terms" element={<TermsOfServices />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-      </Routes>
-      <WhatsAppButton />
-      <Footer />
-    </BrowserRouter>
+    <main className="max-w-[1440px] m-auto w-full px-2">
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/blog/BlogPost/:customId" element={<BlogPost />} />
+          <Route path="/terms" element={<TermsOfServices />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+        </Routes>
+        <WhatsAppButton />
+        <Footer />
+      </BrowserRouter>
+    </main>
   </StrictMode>
 );

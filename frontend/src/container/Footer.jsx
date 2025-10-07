@@ -1,8 +1,6 @@
 import { handleScrollToTop, links } from "../constants";
-import WhatsAppButton from "../components/Whatsapp";
 import { IoCall } from "react-icons/io5";
 import { SiMinutemailer } from "react-icons/si";
-import NexaLogo from "/nexalogo.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaThreads, FaXTwitter } from "react-icons/fa6";
@@ -26,7 +24,7 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className={`mx-auto bg-black text-white relative w-full`}
+      className={`mx-auto bg-black/95 rounded-t-xl text-white relative w-full`}
     >
       <div className="flex max-w-[1440px] mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-8">

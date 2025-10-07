@@ -67,7 +67,7 @@ const ContactUs = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="contact"
-      className="w-full mt-32 md:flex-row mb-16 justify-between items-center flex gap-10 flex-col"
+      className="w-full mt-4 p-2 md:flex-row justify-between items-center flex gap-10 flex-col"
     >
       <form
         onSubmit={handleSubmit}

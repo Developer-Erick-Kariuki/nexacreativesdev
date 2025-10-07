@@ -54,8 +54,8 @@ const Services = () => {
     <section id="services" className="z-10 relative  w-full mt-32 flex">
       <div>
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 1, ease: "easeIn" }}
           className="flex flex-col w-full mx-auto justify-center items-center"
         >
@@ -74,18 +74,16 @@ const Services = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
               key={index}
-              className={`flex bg-violet-700 text-white  transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
+              className={`flex bg-slate-50 transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
             >
-              <i className="text-yellow-500 mb-4">{service.icon}</i>
+              <i className="text-yellow-500 mb-2">{service.icon}</i>
               <a
                 href="#"
-                className="uppercase font-bold text-sm z-20 tracking-widest"
+                className="uppercase mb-4 font-bold text-sm z-20 tracking-widest"
               >
                 {service.name}
               </a>
-              <p className="mt-4 opacity-90 max-w-md leading-relaxed">
-                {service.description}
-              </p>
+              <p className="mt-2 opacity-75">{service.description}</p>
             </motion.div>
           ))}
         </div>

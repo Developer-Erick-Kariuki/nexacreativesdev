@@ -9,7 +9,7 @@ import Testimonial from "./container/Testmonial";
 
 function App() {
   return (
-    <main className="w-full px-4 max-w-[1440px] mx-auto">
+    <main>
       <Hero />
       <AboutUs />
       <Services />

@@ -28,8 +28,7 @@ export const responsive = {
   },
 };
 
-const item = "mt-8";
-const container = "py-8";
+const container = "pb-4";
 
 const Testmonial = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -47,23 +46,27 @@ const Testmonial = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl mt-16 relative w-full m-auto ">
-      <motion.h2
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
+    <section className="mt-16 w-full m-auto relative ">
+      <motion.h3
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeIn" }}
-        className="flex flex-col text-center text-2xl md:text-3xl font-bold mb-8"
+        className="text-sm uppercase text-center tracking-widest font-bold"
       >
-        <span className="text-sm uppercase tracking-widest font-bold">
-          Testmonials
-        </span>{" "}
+        Testmonials
+      </motion.h3>
+      <motion.h2
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+        className="text-center text-2xl md:text-3xl mb-4 font-bold"
+      >
         What clients say about us
       </motion.h2>
 
       <Carousel
         containerClass={container}
         arrows={false}
-        itemClass={item}
         responsive={responsive}
         showDots={true}
         renderButtonGroupOutside={true}

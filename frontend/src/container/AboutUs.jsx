@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="mx-auto justify-center  w-full items-center "
+      className="mx-auto justify-center mt-4  w-full items-center "
     >
       <motion.div
         initial={{ opacity: 0 }}

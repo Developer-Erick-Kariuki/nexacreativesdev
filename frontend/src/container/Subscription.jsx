@@ -44,16 +44,21 @@ const Subscription = () => {
 
   return (
     <motion.section
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
-      className="w-full mx-auto  flex justify-between bg-slate-300/25 dark:bg-gray-600/30 p-4 rounded-2xl flex-col-reverse md:flex-row items-center mt-16"
+      className="w-full mx-auto  flex justify-between bg-slate-300/25 dark:bg-gray-600/30 p-4 rounded-2xl flex-col md:flex-row items-center mt-16"
     >
-      <img src="/Background.png" alt="send" width={512} />
+      <img
+        src="/Background.png"
+        className="hidden md:block"
+        alt="send"
+        width={512}
+      />
 
       <div className="flex-col justify-center gap-4 w-full md:max-w-md flex">
         <h1 className="text-4xl font-bold">Join our team</h1>
-        <p className="text-base leading-relaxed tracking-wider">
+        <p className="text-base max-w-md">
           Subscribe to our newsletter and stay ahead of the curve with cutting
           edge designs ideas and tips
         </p>
@@ -71,6 +76,7 @@ const Subscription = () => {
             className="w-full outline-none py-3 bg-transparent border-2 border-slate-300 rounded-full px-5"
             placeholder="Your Email address"
           />
+
           <button
             type="submit"
             disabled={isLoading}
