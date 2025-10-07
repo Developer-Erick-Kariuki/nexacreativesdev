@@ -127,9 +127,7 @@ const BlogPost = () => {
           {SinglePost.map((current) => (
             <div className={`px-4 max-w-4xl w-full`} key={current.customId}>
               <div className="w-full overflow-clip">
-                <h1 className="text-3xl md:text-5xl font-bold mb-2">
-                  {current.title}
-                </h1>
+                <h1 className="text-3xl md:text-5xl mb-2">{current.title}</h1>
                 <p className="flex gap-2 mb-4 text-sm items-center">
                   Nexa Digital
                   <span className="opacity-75">
@@ -137,7 +135,7 @@ const BlogPost = () => {
                   </span>
                 </p>
 
-                <div className="rounded-xl overflow-hidden max-h-72 md:max-h-96">
+                <div className="rounded-xl overflow-hidden max-h-96">
                   <img fill src={current.imageUrl} alt={current.title} />
                 </div>
               </div>
@@ -148,8 +146,6 @@ const BlogPost = () => {
                   serializers={serializers}
                 />
               </div>
-
-              <Comment postId={current.customId} />
             </div>
           ))}
         </div>

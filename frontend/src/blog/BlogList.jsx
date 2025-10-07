@@ -9,7 +9,7 @@ export default function BlogList({ posts }) {
   };
 
   return (
-    <section className={`flex flex-col md:sticky md:max-w-md top-0 `}>
+    <section className={`flex flex-col md:sticky md:max-w-sm top-0 `}>
       <h2 className="text-base font-bold uppercase tracking-widest">
         Most Recent Blogs
       </h2>
@@ -17,7 +17,7 @@ export default function BlogList({ posts }) {
 
       {posts.map((post) => (
         <figure className="flex flex-col gap-4 justify-between p-4 ">
-          <div className="overflow-hidden rounded-xl max-h-56 md:max-h-64 ">
+          <div className="overflow-hidden rounded-xl max-h-56">
             <img src={post.imageUrl} fill alt={post.title} />
           </div>
 

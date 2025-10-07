@@ -10,20 +10,20 @@ const Hero = () => {
       className="mb-16 rounded-2xl "
     >
       <div className="w-full py-20 mx-auto justify-between items-center flex flex-col md:flex-row ">
-        <div className="flex md:w-1/2  md:mt-0 flex-col">
+        <div className="flex w-full md:mt-0 flex-col">
           <motion.h1
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
-            className="text-5xl sm:text-6xl text-violet-700 font-bold mt-12"
+            className="text-5xl md:text-6xl text-center capitalize md:text-start font-bold mt-12"
           >
-            We make Designs that Engage, Delight and Connect
+            We Create Designs that Engage, Delight & Connect
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 0.8, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
-            className="max-w-md mt-4"
+            className="mt-4 max-w-md text-center md:text-start"
           >
             We craft lightning-fast websites for ambitious brands. From UX to
             launch — we don’t just build pretty sites. We build results.

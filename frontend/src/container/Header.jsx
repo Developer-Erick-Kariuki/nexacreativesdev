@@ -16,7 +16,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 0 && window.scrollY < 500) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -33,10 +33,14 @@ const Header = () => {
   return (
     <header
       className={`${
-        isScrolled ? "dark:border-gray-800" : ""
-      } fixed w-full m-auto z-50 bg-white dark:bg-black`}
+        isScrolled ? "-translate-y-[100%]" : "opacity-80"
+      } transition  w-full m-auto top-0 fixed z-50 bg-white dark:bg-black`}
     >
-      <nav className="hidden w-full font-bold md:flex px-6 items-center py-5 justify-between max-w-[1440px] mx-auto">
+      <nav
+        className={`${
+          isScrolled ? "py-0" : "py-2"
+        } hidden w-full font-bold md:flex px-6 items-center  justify-between max-w-[1440px] mx-auto`}
+      >
         <Link to="/">
           <div className="flex">
             <img width={150} src="/nexalogo.png" alt="site-logo" />

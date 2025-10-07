@@ -47,7 +47,7 @@ const Testmonial = () => {
   }, []);
 
   return (
-    <section className="md:mt-32 mt-16 relative">
+    <section className="md:mt-32 max-w-7xl w-full m-auto mt-16 relative">
       <motion.h2
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +71,7 @@ const Testmonial = () => {
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className={`flex cursor-pointer p-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl w-full gap-8`}
+            className={`flex cursor-pointer w-full p-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-xl  gap-8`}
           >
             <div className="flex items-center gap-x-4">
               <div className="flex gap-4 items-center">
@@ -114,7 +114,7 @@ const Testmonial = () => {
               </div>
             </div>
 
-            <p className="leading-relaxed max-w-[1000px] text-base">
+            <p className="leading-relaxed max-w-[800px] text-base">
               {item.message}
             </p>
           </div>

@@ -8,7 +8,7 @@ export default function Button({ name, className }) {
       {/* Expanding content */}
       <div
         className={`absolute inset-0 flex items-center px-8 justify-between text-white
-        bg-black transition-[clip-path] duration-700 ease-in-out
+        bg-violet-800 transition-[clip-path] duration-700 ease-in-out
         [clip-path:ellipse(0%_0%_at_50%_100%)]
         group-hover:[clip-path:ellipse(150%_150%_at_50%_100%)]`}
       >
