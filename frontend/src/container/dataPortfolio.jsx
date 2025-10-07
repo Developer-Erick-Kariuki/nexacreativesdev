@@ -34,7 +34,7 @@ const Portfolioa = () => {
   }, []);
 
   return (
-    <section id="portfolio" className="mt-32">
+    <section id="portfolio" className="mt-16">
       <motion.div
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const Portfolioa = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeIn" }}
-        className="flex flex-wrap mb-16  justify-center items-center space-y-6 space-x-2 "
+        className="flex flex-wrap gap-2 gap-y-8 mt-4 mb-8 w-full mx-auto justify-center"
       >
         {[
           "All",

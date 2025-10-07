@@ -57,7 +57,7 @@ const Blog = () => {
       id="blog"
       className="w-full mt-16 flex flex-col md:flex-row gap-8 justify-between"
     >
-      <div className="flex flex-col">
+      <div className="flex w-full flex-col">
         <h2 className="text-sm font-bold uppercase tracking-widest">
           News & Blogs
         </h2>

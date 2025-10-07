@@ -33,13 +33,15 @@ const Header = () => {
   return (
     <header
       className={`${
-        isScrolled ? "-translate-y-[100%]" : "opacity-80"
-      } transition  w-full m-auto top-0 fixed z-50 bg-white dark:bg-black`}
+        isScrolled
+          ? "-translate-y-[100%] bg-transparent"
+          : "translate-y-0 bg-slate-50 shadow-md"
+      } transition  w-full m-auto top-0 fixed z-50  dark:bg-black`}
     >
       <nav
         className={`${
           isScrolled ? "py-0" : "py-2"
-        } hidden w-full font-bold md:flex px-6 items-center  justify-between max-w-[1440px] mx-auto`}
+        } hidden w-full py-3 font-bold md:flex px-6 items-center  justify-between max-w-[1440px] mx-auto`}
       >
         <Link to="/">
           <div className="flex">

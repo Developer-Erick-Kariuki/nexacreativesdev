@@ -33,14 +33,16 @@ const AboutUs = () => {
         <img src="hero1.png" width={350} alt="" className="shadow-sm" />
       </motion.div>
 
-      <div className="flex md:px-8 px-0 py-8 md:py-0 dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl flex-col justify-center ">
+      <div className="flex md:px-8 pt-8  dark:bg-gray-600/30 bg-slate-300/25 rounded-2xl flex-col justify-between  ">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeIn" }}
-          className="flex justify-between w-full flex-col gap-6 md:flex-row shadow-md px-8 items-center  rounded-2xl"
+          className="flex justify-between w-full flex-col-reverse gap-6 md:flex-row px-8 items-center  rounded-2xl"
         >
-          <img src="/about.png" width={350} className="object-cover" />
+          <div className="max-h-[500px] overflow-clip">
+            <img src="/about.png" fill className="object-cover" />
+          </div>
           <div className={`flex rounded-2xl flex-col`}>
             <h2 className="text-sm uppercase tracking-widest  mb-8 font-bold">
               Our Philosophy

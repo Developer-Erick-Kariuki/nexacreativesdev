@@ -23,7 +23,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 200 }}
             animate={{ opacity: 0.8, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
-            className="mt-4 max-w-md text-center md:text-start"
+            className="mt-4 md:max-w-md w-full text-center md:text-start"
           >
             We craft lightning-fast websites for ambitious brands. From UX to
             launch — we don’t just build pretty sites. We build results.

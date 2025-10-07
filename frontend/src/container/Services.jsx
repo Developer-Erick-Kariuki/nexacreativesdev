@@ -74,7 +74,7 @@ const Services = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
               key={index}
-              className={`flex bg-violet-800 text-white  transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
+              className={`flex bg-violet-700 text-white  transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
             >
               <i className="text-yellow-500 mb-4">{service.icon}</i>
               <a
@@ -89,13 +89,6 @@ const Services = () => {
             </motion.div>
           ))}
         </div>
-      </div>
-      <div className="absolute inset-0">
-        <img
-          src="/pattern3.png"
-          className="object-cover opacity-10 w-full h-full"
-          alt=""
-        />
       </div>
     </section>
   );

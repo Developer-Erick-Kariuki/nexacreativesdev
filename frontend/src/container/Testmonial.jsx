@@ -47,7 +47,7 @@ const Testmonial = () => {
   }, []);
 
   return (
-    <section className="md:mt-32 max-w-7xl w-full m-auto mt-16 relative">
+    <section className="max-w-7xl mt-16 relative w-full m-auto ">
       <motion.h2
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
