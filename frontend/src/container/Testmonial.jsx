@@ -59,6 +59,7 @@ const Testmonial = () => {
         </span>{" "}
         What clients say about us
       </motion.h2>
+
       <Carousel
         containerClass={container}
         arrows={false}
@@ -71,7 +72,7 @@ const Testmonial = () => {
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className={`flex cursor-pointer w-full p-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-xl  gap-8`}
+            className={`flex cursor-pointer w-full py-16 px-8 flex-col dark:bg-gray-600/30 bg-slate-300/25 rounded-xl  gap-8`}
           >
             <div className="flex items-center gap-x-4">
               <div className="flex gap-4 items-center">
