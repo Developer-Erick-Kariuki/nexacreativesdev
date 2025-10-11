@@ -24,7 +24,7 @@ const Footer = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className={`mx-auto bg-black/95 rounded-t-xl text-white relative w-full`}
+      className={`mx-auto bg-black/95  text-white relative w-full`}
     >
       <div className="flex max-w-[1440px] mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-8">

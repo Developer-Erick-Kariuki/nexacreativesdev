@@ -5,7 +5,7 @@ import Container from "../components/Container";
 const Header = () => {
   return (
     <header
-      className={` transition max-w-[1440px]   w-full m-auto px-4 z-50  dark:bg-black`}
+      className={` transition max-w-[1440px] w-full m-auto px-4 z-50  dark:bg-black`}
     >
       <Container>
         <nav

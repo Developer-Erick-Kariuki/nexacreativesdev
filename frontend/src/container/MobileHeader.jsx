@@ -8,7 +8,7 @@ export default function MobileHeader() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav
-      className={`flex md:hidden items-center justify-between max-w-[1440px] z-50 px-2 py-2 w-full bg-white dark:bg-black `}
+      className={`flex md:hidden items-center justify-between max-w-[1440px] z-50 px-2 py-2 w-full bg-transparent `}
     >
       <Link to="/">
         <img src="/nexalogo.png" width={180} alt="logo" />
