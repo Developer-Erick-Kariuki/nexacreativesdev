@@ -14,11 +14,9 @@ export default function MobileHeader() {
         <img src="/nexalogo.png" width={180} alt="logo" />
       </Link>
       {!isOpen && (
-        <HiBars3
-          className="cursor-pointer"
-          onClick={() => setIsOpen(true)}
-          size={32}
-        />
+        <div className="cursor-pointer fixed z-50 right-2 bg-white dark:bg-black shadow p-2 rounded-full">
+          <HiBars3 onClick={() => setIsOpen(true)} size={32} />
+        </div>
       )}
       {isOpen && (
         <div
