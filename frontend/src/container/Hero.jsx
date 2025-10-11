@@ -8,7 +8,7 @@ const Hero = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="mb-16 rounded-b-xl px-8 overflow-hidden  "
+      className="mb-16 rounded-b-xl px-2 overflow-hidden  "
     >
       <Container>
         <div className="bg-[url(/gradient.png)] md:left-[40%] -top-64 h-[500px] w-96 bg-cover absolute -z-10 opacity-50 blur-3xl rounded-full"></div>
