@@ -2,6 +2,7 @@ import { useState } from "react";
 import { client } from "../client";
 import { easeIn, motion } from "framer-motion";
 import { BsFillSendFill } from "react-icons/bs";
+import Container from "../components/Container";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -67,80 +68,81 @@ const ContactUs = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeIn" }}
       id="contact"
-      className="w-full mt-4 p-2 md:flex-row justify-between items-center flex gap-10 flex-col"
     >
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col w-full md:max-w-md gap-6 mt-4"
-      >
-        <h2 className="text-4xl font-bold">Contact Us</h2>
-        <div className="flex flex-col gap-2">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="outline-none bg-transparent"
-            placeholder="Enter your name"
-            required
-          />
-          <hr className="h-2" />
-        </div>
-        <div className="flex flex-col gap-2">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="outline-none bg-transparent"
-            placeholder="Enter your email"
-          />
-
-          <hr className="h-2" />
-        </div>
-        <div className="flex flex-col gap-2">
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            className="outline-none bg-transparent"
-            required
-            placeholder="Subject"
-          />
-          <hr className="h-2" />
-        </div>
-        <textarea
-          name="message"
-          id="message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          required
-          className="outline-none"
-          placeholder="Type your message here"
-        />
-        <hr className="h-2" />
-        <button
-          className={`${
-            buttonText === "Success!"
-              ? "bg-green-500"
-              : buttonText === "Failed"
-              ? "bg-red-500"
-              : "bg-purple-600"
-          } px-5 py-3 rounded-full flex items-center gap-4 justify-center text-white`}
-          type="submit"
-          disabled={isLoading}
+      <Container className="w-full mt-4 p-2 md:flex-row justify-between items-center flex gap-10 flex-col">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col w-full md:max-w-md gap-6 mt-4"
         >
-          <BsFillSendFill />
-          {buttonText}
-        </button>
-      </form>
+          <h2 className="text-4xl font-bold">Contact Us</h2>
+          <div className="flex flex-col gap-2">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="outline-none bg-transparent"
+              placeholder="Enter your name"
+              required
+            />
+            <hr className="h-2" />
+          </div>
+          <div className="flex flex-col gap-2">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="outline-none bg-transparent"
+              placeholder="Enter your email"
+            />
 
-      <img src="/contactimg.png" width={400} alt="contact image" />
+            <hr className="h-2" />
+          </div>
+          <div className="flex flex-col gap-2">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              className="outline-none bg-transparent"
+              required
+              placeholder="Subject"
+            />
+            <hr className="h-2" />
+          </div>
+          <textarea
+            name="message"
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+            className="outline-none"
+            placeholder="Type your message here"
+          />
+          <hr className="h-2" />
+          <button
+            className={`${
+              buttonText === "Success!"
+                ? "bg-green-500"
+                : buttonText === "Failed"
+                ? "bg-red-500"
+                : "bg-purple-600"
+            } px-5 py-3 rounded-full flex items-center gap-4 justify-center text-white`}
+            type="submit"
+            disabled={isLoading}
+          >
+            <BsFillSendFill />
+            {buttonText}
+          </button>
+        </form>
+
+        <img src="/contactimg.png" width={400} alt="contact image" />
+      </Container>
     </motion.section>
   );
 };

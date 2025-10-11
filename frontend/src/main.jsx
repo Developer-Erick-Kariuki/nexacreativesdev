@@ -9,12 +9,14 @@ import PrivacyPolicy from "./privacy/PrivacyPolicy.jsx";
 import Header from "./container/Header.jsx";
 import Footer from "./container/Footer.jsx";
 import WhatsAppButton from "./components/Whatsapp.jsx";
+import MobileHeader from "./container/MobileHeader.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <main className="max-w-[1440px] m-auto w-full px-2">
+    <main>
       <BrowserRouter>
         <Header />
+        <MobileHeader />
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/blog/BlogPost/:customId" element={<BlogPost />} />

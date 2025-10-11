@@ -9,24 +9,21 @@ export default function BlogList({ posts }) {
   };
 
   return (
-    <section
-      className={`flex flex-col md:max-w-md sticky w-full mx-auto items-start`}
-    >
+    <section className={`flex flex-col sticky w-full mx-auto items-start`}>
       <h2 className="text-base font-bold uppercase tracking-widest">
         Most Recent Blogs
       </h2>
       <hr className={`w-full mt-2 mb-4`} />
 
-      <div className="flex flex-col gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {posts.map((post) => (
-          <div>
-            <div className="overflow-hidden rounded-xl bg-slate-500">
-              <img
-                src={post.imageUrl}
-                className="w-full h-full max-h-[300px]  object-cover object-center"
-                alt={post.title}
-              />
-            </div>
+          <div key={post.customId}>
+            <img
+              src={post.imageUrl}
+              fill
+              className="w-full max-h-[300px] h-[200px] object-cover object-center rounded-lg"
+              alt={post.title}
+            />
 
             <div className="flex flex-col justify-center">
               <h2 className="hover:opacity-85 md:text-xl text-lg  transition font-semibold">

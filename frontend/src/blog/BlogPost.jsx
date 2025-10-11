@@ -9,6 +9,7 @@ import "../blog/blog.css";
 
 import { timeAgo } from "../constants";
 import BlogList from "./BlogList";
+import Container from "../components/Container";
 
 // serializers
 
@@ -120,8 +121,8 @@ const BlogPost = () => {
     );
 
   return (
-    <main className="w-full pt-24 flex-col mb-4 md:flex-row flex ">
-      <section className="flex w-full ">
+    <main className="w-full flex-col my-4 justify-center flex ">
+      <Container>
         <div className="flex flex-col md:flex-row">
           {SinglePost.map((current) => (
             <div className={`px-4 w-full`} key={current.customId}>
@@ -136,13 +137,12 @@ const BlogPost = () => {
                   </span>
                 </p>
 
-                <div className=" flex justify-center rounded-xl items-center bg-slate-300">
-                  <img
-                    src={current.imageUrl}
-                    alt={current.title}
-                    className="w-full h-full max-h-[400px] rounded-xl object-cover object-center"
-                  />
-                </div>
+                <img
+                  src={current.imageUrl}
+                  fill
+                  alt={current.title}
+                  className="max-w-[800px] w-full max-h-[500px]"
+                />
               </div>
 
               <div className="max-w-4xl">
@@ -154,10 +154,13 @@ const BlogPost = () => {
             </div>
           ))}
         </div>
-      </section>
+      </Container>
+
+      <Container>
+        <BlogList posts={posts} />
+      </Container>
 
       {/* section other blogs */}
-      <BlogList posts={posts} />
     </main>
   );
 };

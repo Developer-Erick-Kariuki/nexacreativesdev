@@ -6,6 +6,7 @@ import { SiWebgpu } from "react-icons/si";
 import { SiGooglemarketingplatform } from "react-icons/si";
 import { MdOutlineAutoAwesomeMotion } from "react-icons/md";
 import { MdOutlineLinkedCamera } from "react-icons/md";
+import Container from "../components/Container";
 
 const size = 38;
 
@@ -51,43 +52,45 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="z-10 relative  w-full mt-32 flex">
-      <div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeIn" }}
-          className="flex flex-col w-full mx-auto justify-center items-center"
-        >
-          <h2 className="text-sm font-bold tracking-widest uppercase">
-            Services
-          </h2>
-          <p className="text-3xl max-w-xs md:max-w-md font-bold text-center">
-            We offer the best services in
-          </p>
-        </motion.div>
+    <section id="services" className="z-10 relative w-full mt-32 flex">
+      <Container>
+        <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "easeIn" }}
+            className="flex flex-col w-full mx-auto justify-center items-center"
+          >
+            <h2 className="text-sm font-bold tracking-widest uppercase">
+              Services
+            </h2>
+            <p className="text-3xl max-w-xs md:max-w-md font-bold text-center">
+              We offer the best services in
+            </p>
+          </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:grid-cols-3 gap-6 mt-16">
-          {services.map((service, index) => (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
-              key={index}
-              className={`flex bg-slate-50 transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
-            >
-              <i className="text-yellow-500 mb-2">{service.icon}</i>
-              <a
-                href="#"
-                className="uppercase mb-4 font-bold text-sm z-20 tracking-widest"
+          <div className="grid grid-cols-1 sm:grid-cols-2 w-full md:grid-cols-3 gap-6 mt-16">
+            {services.map((service, index) => (
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeIn" }}
+                key={index}
+                className={`flex bg-slate-50 dark:bg-gray-600/30 hover:bg-violet-800 hover:text-white transition duration-300 ease-in-out p-8 py-16 flex-col rounded-2xl overflow-clip`}
               >
-                {service.name}
-              </a>
-              <p className="mt-2 opacity-75">{service.description}</p>
-            </motion.div>
-          ))}
+                <i className="text-yellow-500 mb-2">{service.icon}</i>
+                <a
+                  href="#"
+                  className="uppercase mb-4 font-bold text-sm z-20 tracking-widest"
+                >
+                  {service.name}
+                </a>
+                <p className="mt-2 opacity-75">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 };
