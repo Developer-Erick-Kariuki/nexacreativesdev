@@ -34,10 +34,13 @@ const Hero = () => {
             <div className="flex-col gap-4 flex md:flex-row">
               <Button
                 name="Get in touch"
+                href="https://wa.me/254797710074"
+                target="_blank"
                 className="bg-black/95 dark:bg-white/95 dark:text-black  text-white"
               />
               <Button
-                name="Our work"
+                href="#services"
+                name="What we do"
                 className="text-black dark:outline-2 dark:bg-transparent dark:text-white bg-white"
               />
             </div>

@@ -1,6 +1,6 @@
 import { ArrowRight, ChevronRight } from "lucide-react";
 
-export default function Button({ name, className }) {
+export default function Button({ name, className, href, target }) {
   return (
     <button
       className={`${className} group relative border-2  overflow-hidden px-8 py-4 rounded-full`}
@@ -12,7 +12,12 @@ export default function Button({ name, className }) {
         [clip-path:ellipse(0%_0%_at_50%_100%)]
         group-hover:[clip-path:ellipse(150%_150%_at_50%_100%)]`}
       >
-        {name}
+        <a
+          href={href} // Replace with your WhatsApp number
+          target={target}
+        >
+          {name}
+        </a>
         <ChevronRight />
       </div>
 

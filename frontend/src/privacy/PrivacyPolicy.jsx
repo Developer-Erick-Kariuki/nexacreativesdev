@@ -4,7 +4,6 @@ import Header from "../container/Header";
 const PrivacyPolicy = () => {
   return (
     <body>
-      <Header />
       <div className="flex justify-center mt-16 max-w-4xl mx-6 md:mx-auto flex-col">
         <h1>Privacy policy</h1>
         <h2>Privacy Policy for Nexa Creative Solutions</h2>

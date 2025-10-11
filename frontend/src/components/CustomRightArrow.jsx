@@ -5,7 +5,7 @@ const ButtonGroup = ({ next, previous, goToSlide, ...rest }) => {
     carouselState: { currentSlide },
   } = rest;
   return (
-    <div className="absolute flex top-8 right-2 mt-4 gap-2">
+    <div className="hidden absolute md:flex top-8 right-2 mt-4 gap-2">
       <button
         className={`${
           currentSlide === 0 ? "" : ""

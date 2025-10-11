@@ -4,7 +4,8 @@ import { SiMinutemailer } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaThreads, FaXTwitter } from "react-icons/fa6";
-import { FaGithub, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaPinterest, FaTiktok } from "react-icons/fa";
+import { LocateIcon } from "lucide-react";
 
 const iconSize = 20;
 // Define socialLinks array
@@ -14,6 +15,10 @@ export const socialLinks = [
   { image: <FaTiktok size={iconSize} />, href: "https://tiktok.com" },
   { image: <FaThreads size={iconSize} />, href: "https://threads.net" },
   { image: <FaXTwitter size={iconSize} />, href: "https://twitter.com" },
+  {
+    image: <FaPinterest size={iconSize} />,
+    href: "https://www.pinterest.com/erick_simplex/",
+  },
 ];
 
 const year = new Date().getFullYear();
@@ -29,15 +34,15 @@ const Footer = () => {
       <div className="flex max-w-[1440px] mx-auto py-12 w-full flex-wrap gap-6 justify-between px-6 md:px-12">
         <div className="flex flex-col gap-8">
           <img src="/logo light.png" alt="logo" width={180} />
-          <p className="max-w-sm opacity-75 mt-3">
+          <p className="max-w-md font-extralight">
             We blends creativity with cutting-edge technology to deliver unique
             and engaging digital experiences. Let’s create something
             extraordinary together.
           </p>
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-2">
             <a className="flex gap-2 items-center" href="tel:0797710074">
               {" "}
-              <IoCall size={20} /> +254 797710074
+              <IoCall size={20} /> +1(9745) 797710074
             </a>
             <a
               className="flex gap-2 items-center"
@@ -45,15 +50,21 @@ const Footer = () => {
             >
               <SiMinutemailer size={20} /> info@nexacreatives.com
             </a>
+            <a href="" className="flex gap-2">
+              <LocateIcon />
+              Kenya
+            </a>
           </div>
           <div className="flex flex-wrap items-center gap-2">
             {socialLinks.map((image, index) => (
-              <div
-                className="p-1 rounded-full transition-all duration-300 ease-linear flex justify-center items-center"
-                key={index}
+              <a
+                href={image.href}
+                target="_blank"
+                key={image.href}
+                className="p-1 cursor-pointer hover:scale-110 hover:text-violet-800 rounded-full transition-all duration-300 ease-linear flex justify-center items-center"
               >
                 {image.image}
-              </div>
+              </a>
             ))}
             @nexacreatives
           </div>
@@ -73,13 +84,14 @@ const Footer = () => {
           <h2 className="font-bold mb-2">Quick links</h2>
 
           <ul className="gap-2 text-gray-500 flex flex-col">
-            {links.map((link, index) => (
+            {links.map((link) => (
               <li className="hover:text-accent" key={link.name}>
-                {index !== 0 ? (
-                  <a href={link.href}>{link.name}</a>
-                ) : (
-                  <a href="#">{link.name}</a>
-                )}
+                <a href={link.href} className="group">
+                  {link.name}
+                  <div
+                    className={`w-0 group-hover:w-full transition-all duration-700 h-[2px] bg-white`}
+                  ></div>
+                </a>
               </li>
             ))}
           </ul>
