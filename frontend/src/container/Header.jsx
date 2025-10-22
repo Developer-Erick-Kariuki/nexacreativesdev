@@ -25,7 +25,7 @@ const Header = () => {
   
   return (
     <header
-      className={`${isScrolled ? "bg-white dark:bg-black":""} transition w-full fixed top-0 w-full m-auto px-4 z-50`}
+      className={`${isScrolled ? "bg-white dark:bg-black" : "bg-transparent"} transition w-full fixed top-0 w-full m-auto px-4 z-50`}
     >
       <Container>
         <nav
