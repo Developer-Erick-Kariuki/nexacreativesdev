@@ -2,7 +2,7 @@ import { icons, links } from "../constants";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Button from "../components/Button";
-import * from "react"
+import React, { useState, useEffect } from 'react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
