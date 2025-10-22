@@ -5,13 +5,16 @@ import Button from "../components/Button";
 import React, { useState, useEffect } from 'react';
 
 const Header = () => {
+  
   const [isScrolled, setIsScrolled] = useState(false);
 
   const handleScroll = () => 
-    if (window.scrollY > 100) {
+    {
+      if (window.scrollY > 100) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
+    }
     }
   };
 
