@@ -2,27 +2,14 @@ import { icons, links } from "../constants";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Button from "../components/Button";
-import React, { useState, useEffect } from 'react';
+
 
 const Header = () => {
     
-  
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header
-      className={`${isScrolled ? "bg-white dark:bg-black" : "bg-transparent"} transition w-full fixed top-0 w-full m-auto px-4 z-50`}
+      className={`transition w-full  m-auto px-4 z-50`}
     >
       <Container>
         <nav
