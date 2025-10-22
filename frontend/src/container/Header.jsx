@@ -14,9 +14,8 @@ const Header = () => {
     } else {
       setIsScrolled(false);
     }
-  };
-
-
+  }
+  
   useEffect(() => {
      window.addEventListener('scroll', handleScroll);
     return () => {
