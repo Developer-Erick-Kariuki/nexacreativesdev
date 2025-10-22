@@ -2,11 +2,30 @@ import { icons, links } from "../constants";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import Button from "../components/Button";
+import * from "react"
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll event
+  const handleScroll = () => 
+    if (window.scrollY > 100) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+     window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isScrolled]); 
+  
   return (
     <header
-      className={` transition bg-white w-full fixed top-0 w-full m-auto px-4 z-50  dark:bg-black`}
+      className={`${isScrolled ? "bg-white dark:bg-black":""} transition w-full fixed top-0 w-full m-auto px-4 z-50`}
     >
       <Container>
         <nav
